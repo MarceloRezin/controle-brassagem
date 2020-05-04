@@ -15,7 +15,7 @@ entity detector_passagem_zero is
    
         out_display_unidade :   out std_logic_vector(6 downto 0);
         out_display_dezena  :   out std_logic_vector(6 downto 0);
-        out_display_centena :   out std_logic_vector(6 downto 0);
+        out_display_centena :   out std_logic_vector(6 downto 0)
     );
 end detector_passagem_zero;
 
@@ -23,7 +23,7 @@ architecture main of detector_passagem_zero is
 
     component sete_seg_display is
         port(
-            digito      :   in std_logic_vector(3 downto 0); -- valor entre 0 e 9
+            numero      :   in std_logic_vector(3 downto 0); -- valor entre 0 e 9
             out_display :   out std_logic_vector(6 downto 0)
         );
     end component sete_seg_display;
@@ -60,11 +60,7 @@ begin
                 unidade_tmp :=  (others => '0');
                 dezena_tmp  :=  (others => '0');
                 centena_tmp :=  (others => '0');
-
-                soma_tmp    <=  (others => '0');
-
-                z   <=  '1';
-
+                
             end if;
 
             if reset = '1' then
