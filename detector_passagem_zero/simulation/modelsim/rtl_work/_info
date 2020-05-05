@@ -1,0 +1,93 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/marcelo-note/controle-brassagem/detector_passagem_zero/simulation/modelsim
+Edetector_passagem_zero
+Z1 w1588698184
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8/home/marcelo-note/controle-brassagem/detector_passagem_zero/detector_passagem_zero.vhd
+Z6 F/home/marcelo-note/controle-brassagem/detector_passagem_zero/detector_passagem_zero.vhd
+l0
+L11
+VgCmM0b6EX2=ikO;NjEGl11
+!s100 49agRY<:?1QI0jM8Fke8b3
+Z7 OV;C;10.5b;63
+31
+Z8 !s110 1588698213
+!i10b 1
+Z9 !s108 1588698213.000000
+Z10 !s90 -reportprogress|300|-93|-work|work|/home/marcelo-note/controle-brassagem/detector_passagem_zero/detector_passagem_zero.vhd|
+Z11 !s107 /home/marcelo-note/controle-brassagem/detector_passagem_zero/detector_passagem_zero.vhd|
+!i113 1
+Z12 o-93 -work work
+Z13 tExplicit 1 CvgOpt 0
+Amain
+R2
+R3
+R4
+Z14 DEx4 work 22 detector_passagem_zero 0 22 gCmM0b6EX2=ikO;NjEGl11
+l21
+L19
+VLlH^jX?fdD0Ic^@eBa2S;3
+!s100 Q`Ob5?Hbe^:Q9hj`KS4`83
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Edetector_passagem_zero_tb
+Z15 w1588698066
+R2
+R3
+R4
+R0
+Z16 8/home/marcelo-note/controle-brassagem/detector_passagem_zero/detector_passagem_zero_tb.vhd
+Z17 F/home/marcelo-note/controle-brassagem/detector_passagem_zero/detector_passagem_zero_tb.vhd
+l0
+L10
+VDBfT=Cf>V37SIJO9PcX?f1
+!s100 M=^em4VWl0XgXERl03@2Q2
+R7
+31
+R8
+!i10b 1
+R9
+Z18 !s90 -reportprogress|300|-93|-work|work|/home/marcelo-note/controle-brassagem/detector_passagem_zero/detector_passagem_zero_tb.vhd|
+Z19 !s107 /home/marcelo-note/controle-brassagem/detector_passagem_zero/detector_passagem_zero_tb.vhd|
+!i113 1
+R12
+R13
+Amain
+R14
+R2
+R3
+R4
+DEx4 work 25 detector_passagem_zero_tb 0 22 DBfT=Cf>V37SIJO9PcX?f1
+l20
+L13
+VZOE:Y^T?Io`O^6Gh8:MUM0
+!s100 Paz<dMi<6:am`9_ljNbE<2
+R7
+31
+R8
+!i10b 1
+R9
+R18
+R19
+!i113 1
+R12
+R13
