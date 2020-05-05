@@ -1,0 +1,45 @@
+-- Divide o clock informado pelo valor especificado
+-- Autor: Marcelo Rezin
+-- Data: 04/05/2020
+
+-- Libs
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+-- Entidade
+entity divisor_clock is
+    port(
+        clock           :   in  std_logic;
+        divisor         :   in  integer range 0 to 50000000; -- divisão máxima de 1hz. Dá pra usar divisores em cascata  
+        
+        clock_dividido  :   out std_logic
+    );
+end divisor_clock;
+
+architecture main of divisor_clock is
+
+begin
+
+    process(clock)
+        variable count_tmp      :   integer range 0 to 50000000 :=  0;
+    begin
+        
+       if rising_edge(clock) then
+            count_tmp := count_tmp + 1;
+
+            if clock_dividido = '1' then
+                clock_dividido   <=  '0';
+            end if;
+            
+            if count = divisor then
+                count_tmp   :=  0; 
+
+                clock_dividido  <=  '1';             
+            end if;
+
+       end if;
+
+    end process;
+
+end main;
