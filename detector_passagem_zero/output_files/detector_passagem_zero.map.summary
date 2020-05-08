@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Tue May  5 14:06:45 2020
+Analysis & Synthesis Status : Successful - Fri May  8 14:53:30 2020
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : detector_passagem_zero
 Top-level Entity Name : detector_passagem_zero
 Family : MAX 10
-Total logic elements : 0
-    Total combinational functions : 0
-    Dedicated logic registers : 0
-Total registers : 0
-Total pins : 2
+Total logic elements : 195
+    Total combinational functions : 192
+    Dedicated logic registers : 118
+Total registers : 118
+Total pins : 24
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

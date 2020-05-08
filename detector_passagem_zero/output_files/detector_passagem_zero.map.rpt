@@ -1,5 +1,5 @@
 Analysis & Synthesis report for detector_passagem_zero
-Tue May  5 14:06:45 2020
+Fri May  8 14:53:30 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -13,10 +13,13 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Port Connectivity Checks: "divisor_clock:divisor_50x"
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -42,16 +45,16 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue May  5 14:06:45 2020       ;
+; Analysis & Synthesis Status        ; Successful - Fri May  8 14:53:30 2020       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; detector_passagem_zero                      ;
 ; Top-level Entity Name              ; detector_passagem_zero                      ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 0                                           ;
-;     Total combinational functions  ; 0                                           ;
-;     Dedicated logic registers      ; 0                                           ;
-; Total registers                    ; 0                                           ;
-; Total pins                         ; 2                                           ;
+; Total logic elements               ; 195                                         ;
+;     Total combinational functions  ; 192                                         ;
+;     Dedicated logic registers      ; 118                                         ;
+; Total registers                    ; 118                                         ;
+; Total pins                         ; 24                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -156,61 +159,79 @@ refer to the applicable agreement for further details.
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                   ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                            ; Library ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------+---------+
-; detector_passagem_zero.vhd       ; yes             ; User VHDL File  ; /home/marcelo-note/controle-brassagem/detector_passagem_zero/detector_passagem_zero.vhd ;         ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                           ;
++------------------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path         ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                            ; Library ;
++------------------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------+---------+
+; ../divisor_clock/divisor_clock.vhd       ; yes             ; User VHDL File  ; /home/marcelo-note/controle-brassagem/divisor_clock/divisor_clock.vhd                   ;         ;
+; ../sete_seg_display/sete_seg_display.vhd ; yes             ; User VHDL File  ; /home/marcelo-note/controle-brassagem/sete_seg_display/sete_seg_display.vhd             ;         ;
+; detector_passagem_zero.vhd               ; yes             ; User VHDL File  ; /home/marcelo-note/controle-brassagem/detector_passagem_zero/detector_passagem_zero.vhd ;         ;
++------------------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------+---------+
 
 
-+------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                ;
-+---------------------------------------------+--------------+
-; Resource                                    ; Usage        ;
-+---------------------------------------------+--------------+
-;                                             ;              ;
-; Total combinational functions               ; 0            ;
-; Logic element usage by number of LUT inputs ;              ;
-;     -- 4 input functions                    ; 0            ;
-;     -- 3 input functions                    ; 0            ;
-;     -- <=2 input functions                  ; 0            ;
-;                                             ;              ;
-; Logic elements by mode                      ;              ;
-;     -- normal mode                          ; 0            ;
-;     -- arithmetic mode                      ; 0            ;
-;                                             ;              ;
-; Total registers                             ; 0            ;
-;     -- Dedicated logic registers            ; 0            ;
-;     -- I/O registers                        ; 0            ;
-;                                             ;              ;
-; I/O pins                                    ; 2            ;
-;                                             ;              ;
-; Embedded Multiplier 9-bit elements          ; 0            ;
-;                                             ;              ;
-; Maximum fan-out node                        ; saida~output ;
-; Maximum fan-out                             ; 1            ;
-; Total fan-out                               ; 3            ;
-; Average fan-out                             ; 0.75         ;
-+---------------------------------------------+--------------+
++-------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                         ;
++---------------------------------------------+---------------------------------------+
+; Resource                                    ; Usage                                 ;
++---------------------------------------------+---------------------------------------+
+; Estimated Total logic elements              ; 195                                   ;
+;                                             ;                                       ;
+; Total combinational functions               ; 192                                   ;
+; Logic element usage by number of LUT inputs ;                                       ;
+;     -- 4 input functions                    ; 65                                    ;
+;     -- 3 input functions                    ; 12                                    ;
+;     -- <=2 input functions                  ; 115                                   ;
+;                                             ;                                       ;
+; Logic elements by mode                      ;                                       ;
+;     -- normal mode                          ; 109                                   ;
+;     -- arithmetic mode                      ; 83                                    ;
+;                                             ;                                       ;
+; Total registers                             ; 118                                   ;
+;     -- Dedicated logic registers            ; 118                                   ;
+;     -- I/O registers                        ; 0                                     ;
+;                                             ;                                       ;
+; I/O pins                                    ; 24                                    ;
+;                                             ;                                       ;
+; Embedded Multiplier 9-bit elements          ; 0                                     ;
+;                                             ;                                       ;
+; Maximum fan-out node                        ; divisor_clock:divisor_50x|out_clk_tmp ;
+; Maximum fan-out                             ; 88                                    ;
+; Total fan-out                               ; 816                                   ;
+; Average fan-out                             ; 2.28                                  ;
++---------------------------------------------+---------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                               ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------+------------------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name     ; Entity Name            ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------+------------------------+--------------+
-; |detector_passagem_zero    ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 2    ; 0            ; 0          ; |detector_passagem_zero ; detector_passagem_zero ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------+------------------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                           ;
++---------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------+------------------------+--------------+
+; Compilation Hierarchy Node            ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                      ; Entity Name            ; Library Name ;
++---------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------+------------------------+--------------+
+; |detector_passagem_zero               ; 192 (132)           ; 118 (89)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 24   ; 0            ; 0          ; |detector_passagem_zero                                  ; detector_passagem_zero ; work         ;
+;    |divisor_clock:divisor_50x|        ; 39 (39)             ; 29 (29)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |detector_passagem_zero|divisor_clock:divisor_50x        ; divisor_clock          ; work         ;
+;    |sete_seg_display:display_centena| ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |detector_passagem_zero|sete_seg_display:display_centena ; sete_seg_display       ; work         ;
+;    |sete_seg_display:display_dezena|  ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |detector_passagem_zero|sete_seg_display:display_dezena  ; sete_seg_display       ; work         ;
+;    |sete_seg_display:display_unidade| ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |detector_passagem_zero|sete_seg_display:display_unidade ; sete_seg_display       ; work         ;
++---------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------+------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------+
+; Registers Removed During Synthesis                             ;
++---------------------------------------+------------------------+
+; Register name                         ; Reason for Removal     ;
++---------------------------------------+------------------------+
+; delay_triac                           ; Merged with saida~reg0 ;
+; Total Number of Removed Registers = 1 ;                        ;
++---------------------------------------+------------------------+
 
 
 +------------------------------------------------------+
@@ -218,26 +239,65 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
+; Total registers                              ; 118   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Clear ; 2     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 12    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |detector_passagem_zero|count_unidade                                   ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |detector_passagem_zero|count_dezena                                    ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |detector_passagem_zero|sete_seg_display:display_centena|out_display[5] ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |detector_passagem_zero|sete_seg_display:display_dezena|out_display[5]  ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |detector_passagem_zero|sete_seg_display:display_unidade|out_display[6] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------+
+
+
++-------------------------------------------------------+
+; Port Connectivity Checks: "divisor_clock:divisor_50x" ;
++----------------+-------+----------+-------------------+
+; Port           ; Type  ; Severity ; Details           ;
++----------------+-------+----------+-------------------+
+; divisor[5..4]  ; Input ; Info     ; Stuck at VCC      ;
+; divisor[25..6] ; Input ; Info     ; Stuck at GND      ;
+; divisor[3..2]  ; Input ; Info     ; Stuck at GND      ;
+; divisor[1]     ; Input ; Info     ; Stuck at VCC      ;
+; divisor[0]     ; Input ; Info     ; Stuck at GND      ;
++----------------+-------+----------+-------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
-+-------------------+---------------------------------+
-; Type              ; Count                           ;
-+-------------------+---------------------------------+
-; boundary_port     ; 2                               ;
-;                   ;                                 ;
-; Max LUT depth     ; 0.00                            ;
-; Average LUT depth ; 0.00                            ;
-+-------------------+---------------------------------+
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 24                          ;
+; cycloneiii_ff         ; 118                         ;
+;     CLR               ; 2                           ;
+;     ENA               ; 12                          ;
+;     plain             ; 104                         ;
+; cycloneiii_lcell_comb ; 198                         ;
+;     arith             ; 83                          ;
+;         2 data inputs ; 81                          ;
+;         3 data inputs ; 2                           ;
+;     normal            ; 115                         ;
+;         1 data inputs ; 10                          ;
+;         2 data inputs ; 30                          ;
+;         3 data inputs ; 10                          ;
+;         4 data inputs ; 65                          ;
+;                       ;                             ;
+; Max LUT depth         ; 9.50                        ;
+; Average LUT depth     ; 6.68                        ;
++-----------------------+-----------------------------+
 
 
 +-------------------------------+
@@ -245,7 +305,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -255,7 +315,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue May  5 14:06:30 2020
+    Info: Processing started: Fri May  8 14:53:13 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off detector_passagem_zero -c detector_passagem_zero
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -266,18 +326,22 @@ Info (12021): Found 2 design units, including 1 entities, in source file /home/m
     Info (12022): Found design unit 1: sete_seg_display-behavioral File: /home/marcelo-note/controle-brassagem/sete_seg_display/sete_seg_display.vhd Line: 18
     Info (12023): Found entity 1: sete_seg_display File: /home/marcelo-note/controle-brassagem/sete_seg_display/sete_seg_display.vhd Line: 11
 Info (12021): Found 2 design units, including 1 entities, in source file detector_passagem_zero.vhd
-    Info (12022): Found design unit 1: detector_passagem_zero-main File: /home/marcelo-note/controle-brassagem/detector_passagem_zero/detector_passagem_zero.vhd Line: 19
+    Info (12022): Found design unit 1: detector_passagem_zero-main File: /home/marcelo-note/controle-brassagem/detector_passagem_zero/detector_passagem_zero.vhd Line: 24
     Info (12023): Found entity 1: detector_passagem_zero File: /home/marcelo-note/controle-brassagem/detector_passagem_zero/detector_passagem_zero.vhd Line: 11
 Info (12127): Elaborating entity "detector_passagem_zero" for the top level hierarchy
+Info (12128): Elaborating entity "divisor_clock" for hierarchy "divisor_clock:divisor_50x" File: /home/marcelo-note/controle-brassagem/detector_passagem_zero/detector_passagem_zero.vhd Line: 57
+Info (12128): Elaborating entity "sete_seg_display" for hierarchy "sete_seg_display:display_centena" File: /home/marcelo-note/controle-brassagem/detector_passagem_zero/detector_passagem_zero.vhd Line: 59
+Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 2 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 1 input pins
-    Info (21059): Implemented 1 output pins
+Info (21057): Implemented 295 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 22 output pins
+    Info (21061): Implemented 271 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 966 megabytes
-    Info: Processing ended: Tue May  5 14:06:45 2020
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:37
+    Info: Peak virtual memory: 985 megabytes
+    Info: Processing ended: Fri May  8 14:53:30 2020
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:39
 
 

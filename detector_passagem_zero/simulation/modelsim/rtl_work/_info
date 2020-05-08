@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 d/home/marcelo-note/controle-brassagem/detector_passagem_zero/simulation/modelsim
 Edetector_passagem_zero
-Z1 w1588698184
+Z1 w1588955349
 Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
 Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
@@ -18,13 +18,13 @@ Z5 8/home/marcelo-note/controle-brassagem/detector_passagem_zero/detector_passag
 Z6 F/home/marcelo-note/controle-brassagem/detector_passagem_zero/detector_passagem_zero.vhd
 l0
 L11
-VgCmM0b6EX2=ikO;NjEGl11
-!s100 49agRY<:?1QI0jM8Fke8b3
+VR`8D`Y]CQ;_nOT9YK52WY3
+!s100 ET@nEaIe@ll4V5T4T@@ha2
 Z7 OV;C;10.5b;63
 31
-Z8 !s110 1588698213
+Z8 !s110 1588955437
 !i10b 1
-Z9 !s108 1588698213.000000
+Z9 !s108 1588955437.000000
 Z10 !s90 -reportprogress|300|-93|-work|work|/home/marcelo-note/controle-brassagem/detector_passagem_zero/detector_passagem_zero.vhd|
 Z11 !s107 /home/marcelo-note/controle-brassagem/detector_passagem_zero/detector_passagem_zero.vhd|
 !i113 1
@@ -34,11 +34,11 @@ Amain
 R2
 R3
 R4
-Z14 DEx4 work 22 detector_passagem_zero 0 22 gCmM0b6EX2=ikO;NjEGl11
-l21
-L19
-VLlH^jX?fdD0Ic^@eBa2S;3
-!s100 Q`Ob5?Hbe^:Q9hj`KS4`83
+Z14 DEx4 work 22 detector_passagem_zero 0 22 R`8D`Y]CQ;_nOT9YK52WY3
+l55
+L24
+VC[djTIHFjJzSLDROSnS;@1
+!s100 mAk?Eb4CigI@I]1Hz5^K51
 R7
 31
 R8
@@ -50,7 +50,7 @@ R11
 R12
 R13
 Edetector_passagem_zero_tb
-Z15 w1588698066
+Z15 w1588955383
 R2
 R3
 R4
@@ -77,10 +77,10 @@ R2
 R3
 R4
 DEx4 work 25 detector_passagem_zero_tb 0 22 DBfT=Cf>V37SIJO9PcX?f1
-l20
+l25
 L13
-VZOE:Y^T?Io`O^6Gh8:MUM0
-!s100 Paz<dMi<6:am`9_ljNbE<2
+V`j<ZSb09<OP_ZRfO4Gl3^1
+!s100 YdJMPbZd^8YDHj9aCdFV12
 R7
 31
 R8
@@ -88,6 +88,88 @@ R8
 R9
 R18
 R19
+!i113 1
+R12
+R13
+Edivisor_clock
+Z20 w1588681821
+R2
+R3
+R4
+R0
+Z21 8/home/marcelo-note/controle-brassagem/divisor_clock/divisor_clock.vhd
+Z22 F/home/marcelo-note/controle-brassagem/divisor_clock/divisor_clock.vhd
+l0
+L11
+V<n=5Wg4ziYQ5<Q@e<HWP23
+!s100 bB82fhmBkMSQm6MHBFLnz3
+R7
+31
+R8
+!i10b 1
+Z23 !s108 1588955436.000000
+Z24 !s90 -reportprogress|300|-93|-work|work|/home/marcelo-note/controle-brassagem/divisor_clock/divisor_clock.vhd|
+Z25 !s107 /home/marcelo-note/controle-brassagem/divisor_clock/divisor_clock.vhd|
+!i113 1
+R12
+R13
+Amain
+R2
+R3
+R4
+DEx4 work 13 divisor_clock 0 22 <n=5Wg4ziYQ5<Q@e<HWP23
+l26
+L20
+V`06JdIUWD`<39jO]6G?X62
+!s100 Va2YV28k@W[@Q]G1F9PVG1
+R7
+31
+R8
+!i10b 1
+R23
+R24
+R25
+!i113 1
+R12
+R13
+Esete_seg_display
+Z26 w1586824931
+R2
+R3
+R4
+R0
+Z27 8/home/marcelo-note/controle-brassagem/sete_seg_display/sete_seg_display.vhd
+Z28 F/home/marcelo-note/controle-brassagem/sete_seg_display/sete_seg_display.vhd
+l0
+L11
+VcWYInVibQ=0S3Ah0M8U302
+!s100 JUOZdmlYb:kJM0OZ3i^B^1
+R7
+31
+R8
+!i10b 1
+R9
+Z29 !s90 -reportprogress|300|-93|-work|work|/home/marcelo-note/controle-brassagem/sete_seg_display/sete_seg_display.vhd|
+Z30 !s107 /home/marcelo-note/controle-brassagem/sete_seg_display/sete_seg_display.vhd|
+!i113 1
+R12
+R13
+Abehavioral
+R2
+R3
+R4
+DEx4 work 16 sete_seg_display 0 22 cWYInVibQ=0S3Ah0M8U302
+l22
+L18
+VKzSf@1=bSaj`kgmYj<NEI3
+!s100 4FLFV7a858N82>>Z^CT2j1
+R7
+31
+R8
+!i10b 1
+R9
+R29
+R30
 !i113 1
 R12
 R13
