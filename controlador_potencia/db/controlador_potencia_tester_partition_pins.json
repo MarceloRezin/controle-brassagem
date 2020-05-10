@@ -1,0 +1,101 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "centena[0]",
+					"strict" : false
+				},
+				{
+					"name" : "centena[3]",
+					"strict" : false
+				},
+				{
+					"name" : "centena[4]",
+					"strict" : false
+				},
+				{
+					"name" : "centena[5]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena[3]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena[4]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena[5]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena[6]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade[0]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade[1]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade[2]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade[3]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade[4]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade[5]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade[6]",
+					"strict" : false
+				},
+				{
+					"name" : "disparo_triac",
+					"strict" : false
+				},
+				{
+					"name" : "clk_50MHZ",
+					"strict" : false
+				},
+				{
+					"name" : "porcentagem_mais",
+					"strict" : false
+				},
+				{
+					"name" : "porcentagem_menos",
+					"strict" : false
+				},
+				{
+					"name" : "passagem_zero",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
