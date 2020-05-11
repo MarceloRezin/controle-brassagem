@@ -1,0 +1,216 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/marcelo-note/controle-brassagem/leitor_temperatura/simulation/modelsim
+Edivisor_clock
+Z1 w1588681821
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8/home/marcelo-note/controle-brassagem/divisor_clock/divisor_clock.vhd
+Z6 F/home/marcelo-note/controle-brassagem/divisor_clock/divisor_clock.vhd
+l0
+L11
+V<n=5Wg4ziYQ5<Q@e<HWP23
+!s100 bB82fhmBkMSQm6MHBFLnz3
+Z7 OV;C;10.5b;63
+31
+Z8 !s110 1589218146
+!i10b 1
+Z9 !s108 1589218146.000000
+Z10 !s90 -reportprogress|300|-93|-work|work|/home/marcelo-note/controle-brassagem/divisor_clock/divisor_clock.vhd|
+Z11 !s107 /home/marcelo-note/controle-brassagem/divisor_clock/divisor_clock.vhd|
+!i113 1
+Z12 o-93 -work work
+Z13 tExplicit 1 CvgOpt 0
+Amain
+R2
+R3
+R4
+DEx4 work 13 divisor_clock 0 22 <n=5Wg4ziYQ5<Q@e<HWP23
+l26
+L20
+V`06JdIUWD`<39jO]6G?X62
+!s100 Va2YV28k@W[@Q]G1F9PVG1
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Eleitor_temperatura
+Z14 w1589216469
+R2
+R3
+R4
+R0
+Z15 8/home/marcelo-note/controle-brassagem/leitor_temperatura/leitor_temperatura.vhd
+Z16 F/home/marcelo-note/controle-brassagem/leitor_temperatura/leitor_temperatura.vhd
+l0
+L9
+V`S<QVh^blMiK2DKY;lUlL2
+!s100 BE8RfMBJh8]ad9V_AADO`3
+R7
+31
+R8
+!i10b 1
+R9
+Z17 !s90 -reportprogress|300|-93|-work|work|/home/marcelo-note/controle-brassagem/leitor_temperatura/leitor_temperatura.vhd|
+Z18 !s107 /home/marcelo-note/controle-brassagem/leitor_temperatura/leitor_temperatura.vhd|
+!i113 1
+R12
+R13
+Amain
+R2
+R3
+R4
+DEx4 work 18 leitor_temperatura 0 22 `S<QVh^blMiK2DKY;lUlL2
+l26
+L20
+V3hm6WRjOhWUUU=aD`^X@h3
+!s100 6[>il]VLHIV3ViJAicgEo1
+R7
+31
+R8
+!i10b 1
+R9
+R17
+R18
+!i113 1
+R12
+R13
+Eleitor_temperatura_tester
+Z19 w1589218102
+R2
+R3
+R4
+R0
+Z20 8/home/marcelo-note/controle-brassagem/leitor_temperatura/leitor_temperatura_tester.vhd
+Z21 F/home/marcelo-note/controle-brassagem/leitor_temperatura/leitor_temperatura_tester.vhd
+l0
+L11
+VU2j6g?]VRO[leJX:deNfL1
+!s100 TFG]=1@WalJf:>PEGN8:O2
+R7
+31
+R8
+!i10b 1
+R9
+Z22 !s90 -reportprogress|300|-93|-work|work|/home/marcelo-note/controle-brassagem/leitor_temperatura/leitor_temperatura_tester.vhd|
+Z23 !s107 /home/marcelo-note/controle-brassagem/leitor_temperatura/leitor_temperatura_tester.vhd|
+!i113 1
+R12
+R13
+Amain
+R2
+R3
+R4
+Z24 DEx4 work 25 leitor_temperatura_tester 0 22 U2j6g?]VRO[leJX:deNfL1
+l59
+L23
+VNlMAFLG^0@i`9T>Q>Ufcl0
+!s100 Zm>eFbM4k4@gV]4fDFgDC3
+R7
+31
+R8
+!i10b 1
+R9
+R22
+R23
+!i113 1
+R12
+R13
+Eleitor_temperatura_tester_tb
+Z25 w1589217947
+R2
+R3
+R4
+R0
+Z26 8/home/marcelo-note/controle-brassagem/leitor_temperatura/leitor_temperatura_tester_tb.vhd
+Z27 F/home/marcelo-note/controle-brassagem/leitor_temperatura/leitor_temperatura_tester_tb.vhd
+l0
+L11
+VB4iDK[RoThP97QZX=S48Z0
+!s100 _OD^]iz?lLU6nFRXl`[H>3
+R7
+31
+R8
+!i10b 1
+R9
+Z28 !s90 -reportprogress|300|-93|-work|work|/home/marcelo-note/controle-brassagem/leitor_temperatura/leitor_temperatura_tester_tb.vhd|
+Z29 !s107 /home/marcelo-note/controle-brassagem/leitor_temperatura/leitor_temperatura_tester_tb.vhd|
+!i113 1
+R12
+R13
+Amain
+R24
+R2
+R3
+R4
+DEx4 work 28 leitor_temperatura_tester_tb 0 22 B4iDK[RoThP97QZX=S48Z0
+l25
+L14
+Vk:YO@A8lLG^RdeI3P46_T3
+!s100 jcBn7ng_33V77HTk;9gZQ2
+R7
+31
+R8
+!i10b 1
+R9
+R28
+R29
+!i113 1
+R12
+R13
+Esete_seg_display
+Z30 w1589054327
+R2
+R3
+R4
+R0
+Z31 8/home/marcelo-note/controle-brassagem/sete_seg_display/sete_seg_display.vhd
+Z32 F/home/marcelo-note/controle-brassagem/sete_seg_display/sete_seg_display.vhd
+l0
+L11
+V0;H9nBd`naSL_WPaD5B6D2
+!s100 ^z6Xoe6C2z]gFV3UAQoIF0
+R7
+31
+R8
+!i10b 1
+R9
+Z33 !s90 -reportprogress|300|-93|-work|work|/home/marcelo-note/controle-brassagem/sete_seg_display/sete_seg_display.vhd|
+Z34 !s107 /home/marcelo-note/controle-brassagem/sete_seg_display/sete_seg_display.vhd|
+!i113 1
+R12
+R13
+Abehavioral
+R2
+R3
+R4
+DEx4 work 16 sete_seg_display 0 22 0;H9nBd`naSL_WPaD5B6D2
+l20
+L18
+V>KIZM_3<Zd3iA3Xa6@4lT0
+!s100 07c@mVlNBl=jVHEj9;ZUc0
+R7
+31
+R8
+!i10b 1
+R9
+R33
+R34
+!i113 1
+R12
+R13
