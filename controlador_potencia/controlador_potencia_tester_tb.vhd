@@ -1,6 +1,6 @@
-
+-- Testbench para o tester do controlador de potência
 -- Autor: Marcelo Rezin
--- Data: 05/05/2020
+-- Data: 08/05/2020
 
 -- Libs
 library ieee;

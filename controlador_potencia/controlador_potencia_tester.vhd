@@ -1,6 +1,6 @@
 -- Utilitario para testar o controlador na placa
 -- Autor: Marcelo Rezin
--- Data: 13/04/2020
+-- Data: 08/05/2020
 
 -- Libs
 library ieee;

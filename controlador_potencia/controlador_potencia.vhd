@@ -1,4 +1,3 @@
-
 -- Por meio da porcetagem de potencia recebida faz o acionamento do triac no tempo correto
 -- Autor: Marcelo Rezin
 -- Data: 08/05/2020
