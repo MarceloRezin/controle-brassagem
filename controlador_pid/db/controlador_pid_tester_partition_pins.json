@@ -1,0 +1,201 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "pid_ativo",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_set_point[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_set_point[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_set_point[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_set_point[3]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_set_point[4]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_set_point[5]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_set_point[6]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_set_point[0]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_set_point[1]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_set_point[2]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_set_point[3]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_set_point[4]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_set_point[5]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_set_point[6]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_temperatura[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_temperatura[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_temperatura[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_temperatura[3]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_temperatura[4]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_temperatura[5]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_temperatura[6]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_temperatura[0]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_temperatura[1]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_temperatura[2]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_temperatura[3]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_temperatura[4]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_temperatura[5]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_temperatura[6]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_potencia[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_potencia[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_potencia[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_potencia[3]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_potencia[4]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_potencia[5]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_potencia[6]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_potencia[0]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_potencia[1]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_potencia[2]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_potencia[3]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_potencia[4]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_potencia[5]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_potencia[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ativar_pid",
+					"strict" : false
+				},
+				{
+					"name" : "func_select",
+					"strict" : false
+				},
+				{
+					"name" : "btn_mais",
+					"strict" : false
+				},
+				{
+					"name" : "btn_menos",
+					"strict" : false
+				},
+				{
+					"name" : "clk_50MHZ",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
