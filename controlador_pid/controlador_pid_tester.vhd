@@ -39,7 +39,8 @@ architecture main of controlador_pid_tester is
 
     component controlador_pid is
         port(
-            set_point           :   in std_logic_vector(8 downto 0); -- Ponto fixo, 2 últimos bits é fração decimal - Faixa de 0 a 128
+            clk                 :   in std_logic;
+            set_point           :   in std_logic_vector(11 downto 0); -- Ponto fixo, 2 últimos bits é fração decimal - Faixa de 0 a 128
             temperatura_atual   :   in std_logic_vector(11 downto 0); --Ponto fixo, 2 últimos bits é fração decimal
             
             percentual_potencia :   out integer range 0 to 100
@@ -64,9 +65,10 @@ architecture main of controlador_pid_tester is
 
     constant    prescaler               :   integer                         :=  50;
     signal      clk_1MHZ                :   std_logic                       :=  '0';
+    signal      clk_pid                 :   std_logic                       :=  '0';
     
-    signal      set_point               :   std_logic_vector(8 downto 0)    :=  (others => '0');
-    signal      set_point_tmp           :   std_logic_vector(8 downto 0)    :=  "101010100"; --85
+    signal      set_point               :   std_logic_vector(11 downto 0)    := (others => '0');
+    signal      set_point_tmp           :   std_logic_vector(11 downto 0)    := "000101010100"; --85
     
     signal      temperatura             :   std_logic_vector(11 downto 0)   :=  (others => '0');
     signal      temperatura_tmp         :   std_logic_vector(11 downto 0)   :=  "000100101000"; --74
@@ -93,7 +95,7 @@ architecture main of controlador_pid_tester is
 begin
 
     divisor_50x                 :   divisor_clock port map(clk_50MHZ, prescaler, clk_1MHZ);
-    pid                         :   controlador_pid port map(set_point, temperatura, porcentagem_potencia);
+    pid                         :   controlador_pid port map(clk_pid, set_point, temperatura, porcentagem_potencia);
     
     display_dezena_set_point    :   sete_seg_display port map(dezena_set_point_tmp, dezena_set_point);
     display_unidade_set_point   :   sete_seg_display port map(unidade_set_point_tmp, unidade_set_point);
@@ -112,7 +114,7 @@ begin
         variable update_display             :   integer range 0 to 200_000      :=  0; --Atualiza os displays a cada 200 ms
         variable update_variaveis           :   integer range 0 to 1_000_000    :=  0; --Atualiza as variaveis a casa 1s
 
-        variable set_point_tmp_unsigned     :   unsigned(8 downto 0)            :=  (others => '0');
+        variable set_point_tmp_unsigned     :   unsigned(11 downto 0)           :=  (others => '0');
         variable temperatura_tmp_unsigned   :   unsigned(11 downto 0)           :=  (others => '0');
 
     begin
@@ -160,7 +162,7 @@ begin
                 if func_select = '1' then --Altera set point
 
                     if set_point_tmp_unsigned = 0 then
-                        set_point_tmp_unsigned   := "110001100"; --396 = 99
+                        set_point_tmp_unsigned   := "000110001100"; --396 = 99
                     else
                         set_point_tmp_unsigned   :=  set_point_tmp_unsigned - 4;
                     end if;
@@ -205,6 +207,7 @@ begin
                 update_display              :=  0;
 
                 pid_ativo                   <=  '0';
+                clk_pid                     <=  '0';
             end if;
             
             if update_variaveis = 1000000 then
@@ -214,6 +217,7 @@ begin
                     temperatura <=  temperatura_tmp;
 
                     pid_ativo   <=  '1';
+                    clk_pid     <=  '1';
                 end if;
 
                 update_variaveis  :=  0;
