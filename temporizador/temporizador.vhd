@@ -46,6 +46,8 @@ architecture main of temporizador is
     signal      alteracao_set_point_tmp :   std_logic   :=  '0';
     signal      fim_tmp                 :   std_logic   :=  '0';
 
+    signal      iniciado                :   std_logic   :=  '0';
+
 begin
 
     divisor_1Mx :   divisor_clock port map(clk_1MHZ, prescaler, clk_1HZ);
@@ -55,24 +57,14 @@ begin
 
     process(clk_1HZ, iniciar)
         
-        variable    iniciado        :   bit :=  '0';
-        variable    index           :   integer range 0 to 9; --Indica qual rampa que está sendo executada no momento 
-        variable    tempo_alvo      :   integer range 0 to 8_191;
-        variable    tempo_decorrido :   integer range 0 to 8_191; --Tempo máximo em segundos de uma rampa
+        variable    segundo_zero        :   std_logic :=  '1';
+        variable    index               :   integer range 0 to 9; --Indica qual rampa que está sendo executada no momento 
+        variable    tempo_alvo          :   integer range 0 to 8_191;
+        variable    tempo_decorrido     :   integer range 0 to 8_191; --Tempo máximo em segundos de uma rampa
 
     begin
 
-        if rising_edge(iniciar) then
-
-            index           :=  0;
-            tempo_decorrido :=  0;
-
-            tempo_alvo      :=  set_tempo_alvo(index, rampas);
-            set_point       <=  set_set_point(index, rampas);
-
-            iniciado        =   '1';
-
-        elsif rising_edge(clk_1HZ) then
+        if rising_edge(clk_1HZ) then
             
             if alteracao_set_point_tmp =  '1' then
                 alteracao_set_point_tmp <=  '0';
@@ -83,24 +75,34 @@ begin
             end if;
 
             if iniciado = '1' then
-                tempo_decorrido :=  tempo_decorrido + 1;
+                if segundo_zero = '1' then
+                    segundo_zero    := '0';
 
-                if tempo_decorrido = tempo_alvo then
+                    index           :=  0;
                     tempo_decorrido :=  0;
+        
+                    tempo_alvo      :=  set_tempo_alvo(index, rampas);
+                    set_point       <=  set_set_point(index, rampas);
+                else
+                    tempo_decorrido :=  tempo_decorrido + 1;
 
-                    if index = 9 then -- acabou
-                        fim_tmp     <=  '1';
-                        iniciado    <=  '0';
-                    else
-                        index       :=  index + 1;
-                        tempo_alvo  :=  set_tempo_alvo(index, rampas);
-                        
-                        if tempo_alvo = 0 then -- acabou
-                            fim_tmp     <=  '1';
-                            iniciado    <=  '0';
-                        else --Trocou o set point
-                            set_point               <=  set_set_point(index, rampas);
-                            alteracao_set_point_tmp <=  '1';
+                    if tempo_decorrido = tempo_alvo then
+                        tempo_decorrido :=  0;
+
+                        if index = 9 then -- acabou
+                            fim_tmp         <=  '1';
+                            segundo_zero    := '1';
+                        else
+                            index       :=  index + 1;
+                            tempo_alvo  :=  set_tempo_alvo(index, rampas);
+                            
+                            if tempo_alvo = 0 then -- acabou
+                                fim_tmp         <=  '1';
+                                segundo_zero    := '1';
+                            else --Trocou o set point
+                                set_point               <=  set_set_point(index, rampas);
+                                alteracao_set_point_tmp <=  '1';
+                            end if;
                         end if;
 
                     end if;
@@ -110,6 +112,17 @@ begin
             end if;
 
         end if;
+    end process;
+
+    process(iniciar, fim_tmp)
+    begin
+
+        if fim_tmp = '1' then
+            iniciado    <=  '0';
+        elsif rising_edge(iniciar) then
+            iniciado    <=   '1';
+        end if;
+
     end process;
 
 end main;
