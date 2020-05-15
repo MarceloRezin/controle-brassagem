@@ -1,0 +1,233 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'divisor_clock:divisor_50x|out_clk_tmp'
+Slack : -6.334
+TNS   : -142.780
+
+Type  : Slow 1200mV 85C Model Setup 'temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp'
+Slack : -5.267
+TNS   : -104.515
+
+Type  : Slow 1200mV 85C Model Setup 'clk_50MHZ'
+Slack : -5.104
+TNS   : -60.279
+
+Type  : Slow 1200mV 85C Model Hold 'temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp'
+Slack : 0.347
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clk_50MHZ'
+Slack : 0.409
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'divisor_clock:divisor_50x|out_clk_tmp'
+Slack : 0.409
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'divisor_clock:divisor_50x|out_clk_tmp_up'
+Slack : -3.135
+TNS   : -3.135
+
+Type  : Slow 1200mV 85C Model Recovery 'temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp_up'
+Slack : -2.947
+TNS   : -2.947
+
+Type  : Slow 1200mV 85C Model Recovery 'iniciar_tmp'
+Slack : -2.653
+TNS   : -2.653
+
+Type  : Slow 1200mV 85C Model Removal 'iniciar_tmp'
+Slack : 3.115
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp_up'
+Slack : 3.395
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'divisor_clock:divisor_50x|out_clk_tmp_up'
+Slack : 3.608
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk_50MHZ'
+Slack : -3.000
+TNS   : -42.284
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'iniciar'
+Slack : -3.000
+TNS   : -4.403
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'divisor_clock:divisor_50x|out_clk_tmp'
+Slack : -1.403
+TNS   : -71.553
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp'
+Slack : -1.403
+TNS   : -39.284
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'divisor_clock:divisor_50x|out_clk_tmp_up'
+Slack : -1.403
+TNS   : -1.403
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'iniciar_tmp'
+Slack : -1.403
+TNS   : -1.403
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp_up'
+Slack : -1.403
+TNS   : -1.403
+
+Type  : Slow 1200mV 0C Model Setup 'divisor_clock:divisor_50x|out_clk_tmp'
+Slack : -5.664
+TNS   : -125.164
+
+Type  : Slow 1200mV 0C Model Setup 'temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp'
+Slack : -4.753
+TNS   : -93.813
+
+Type  : Slow 1200mV 0C Model Setup 'clk_50MHZ'
+Slack : -4.573
+TNS   : -52.168
+
+Type  : Slow 1200mV 0C Model Hold 'temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp'
+Slack : 0.311
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clk_50MHZ'
+Slack : 0.376
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'divisor_clock:divisor_50x|out_clk_tmp'
+Slack : 0.376
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'divisor_clock:divisor_50x|out_clk_tmp_up'
+Slack : -2.796
+TNS   : -2.796
+
+Type  : Slow 1200mV 0C Model Recovery 'temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp_up'
+Slack : -2.562
+TNS   : -2.562
+
+Type  : Slow 1200mV 0C Model Recovery 'iniciar_tmp'
+Slack : -2.335
+TNS   : -2.335
+
+Type  : Slow 1200mV 0C Model Removal 'iniciar_tmp'
+Slack : 2.842
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp_up'
+Slack : 3.054
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'divisor_clock:divisor_50x|out_clk_tmp_up'
+Slack : 3.310
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk_50MHZ'
+Slack : -3.000
+TNS   : -42.284
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'iniciar'
+Slack : -3.000
+TNS   : -4.403
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'divisor_clock:divisor_50x|out_clk_tmp'
+Slack : -1.403
+TNS   : -71.553
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp'
+Slack : -1.403
+TNS   : -39.284
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'divisor_clock:divisor_50x|out_clk_tmp_up'
+Slack : -1.403
+TNS   : -1.403
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'iniciar_tmp'
+Slack : -1.403
+TNS   : -1.403
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp_up'
+Slack : -1.403
+TNS   : -1.403
+
+Type  : Fast 1200mV 0C Model Setup 'divisor_clock:divisor_50x|out_clk_tmp'
+Slack : -1.912
+TNS   : -30.754
+
+Type  : Fast 1200mV 0C Model Setup 'temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp'
+Slack : -1.687
+TNS   : -27.825
+
+Type  : Fast 1200mV 0C Model Setup 'clk_50MHZ'
+Slack : -1.435
+TNS   : -8.247
+
+Type  : Fast 1200mV 0C Model Hold 'temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp'
+Slack : 0.152
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clk_50MHZ'
+Slack : 0.163
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'divisor_clock:divisor_50x|out_clk_tmp'
+Slack : 0.163
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'divisor_clock:divisor_50x|out_clk_tmp_up'
+Slack : -1.597
+TNS   : -1.597
+
+Type  : Fast 1200mV 0C Model Recovery 'temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp_up'
+Slack : -1.311
+TNS   : -1.311
+
+Type  : Fast 1200mV 0C Model Recovery 'iniciar_tmp'
+Slack : -0.789
+TNS   : -0.789
+
+Type  : Fast 1200mV 0C Model Removal 'iniciar_tmp'
+Slack : 1.531
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp_up'
+Slack : 2.043
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'divisor_clock:divisor_50x|out_clk_tmp_up'
+Slack : 2.329
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk_50MHZ'
+Slack : -3.000
+TNS   : -31.991
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'iniciar'
+Slack : -3.000
+TNS   : -4.096
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'divisor_clock:divisor_50x|out_clk_tmp'
+Slack : -1.000
+TNS   : -51.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp'
+Slack : -1.000
+TNS   : -28.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'divisor_clock:divisor_50x|out_clk_tmp_up'
+Slack : -1.000
+TNS   : -1.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'iniciar_tmp'
+Slack : -1.000
+TNS   : -1.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp_up'
+Slack : -1.000
+TNS   : -1.000
+
+------------------------------------------------------------
