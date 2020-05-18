@@ -1,0 +1,145 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "tx",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_r[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_r[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_r[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_r[3]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_r[4]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_r[5]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_r[6]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_r[0]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_r[1]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_r[2]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_r[3]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_r[4]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_r[5]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_r[6]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_t[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_t[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_t[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_t[3]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_t[4]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_t[5]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_t[6]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_t[0]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_t[1]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_t[2]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_t[3]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_t[4]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_t[5]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_t[6]",
+					"strict" : false
+				},
+				{
+					"name" : "funcao",
+					"strict" : false
+				},
+				{
+					"name" : "btn_mais",
+					"strict" : false
+				},
+				{
+					"name" : "btn_menos",
+					"strict" : false
+				},
+				{
+					"name" : "clk_50MHZ",
+					"strict" : false
+				},
+				{
+					"name" : "rx",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
