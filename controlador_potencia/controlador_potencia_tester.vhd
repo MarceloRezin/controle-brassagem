@@ -28,7 +28,7 @@ architecture main of controlador_potencia_tester is
         port(
             clk_1MHZ                :   in  std_logic;
             passagem_zero           :   in  std_logic;
-            porcentagem_potencia    :   in  integer range 0 to 101;
+            porcentagem_potencia    :   in  integer range 0 to 100;
        
             disparo_triac           :   out std_logic
         );
@@ -53,7 +53,7 @@ architecture main of controlador_potencia_tester is
     constant prescaler              :   integer range 0 to 50   :=  50;
 
     signal  clk_1MHZ                :   std_logic               :=  '0';
-    signal  porcentagem_potencia    :   integer range 0 to 101  :=  0;
+    signal  porcentagem_potencia    :   integer range 0 to 100  :=  0;
 
     signal  not_porcentagem_mais       :   std_logic               :=  '0';
     signal  rising_mais                :   std_logic               :=  '0';

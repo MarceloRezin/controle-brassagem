@@ -3,15 +3,15 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'divisor_clock:divisor_50x|out_clk_tmp'
-Slack : -11.583
-TNS   : -300.869
+Slack : -11.081
+TNS   : -296.840
 
 Type  : Slow 1200mV 85C Model Setup 'clk_50MHZ'
-Slack : -5.084
-TNS   : -59.460
+Slack : -5.030
+TNS   : -59.073
 
 Type  : Slow 1200mV 85C Model Hold 'divisor_clock:divisor_50x|out_clk_tmp'
-Slack : 0.340
+Slack : 0.342
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'clk_50MHZ'
@@ -19,35 +19,35 @@ Slack : 0.402
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Recovery 'divisor_clock:divisor_50x|out_clk_tmp_up'
-Slack : -3.498
-TNS   : -3.498
+Slack : -3.727
+TNS   : -3.727
 
 Type  : Slow 1200mV 85C Model Recovery 'porcentagem_mais'
-Slack : -0.956
-TNS   : -0.956
+Slack : -1.733
+TNS   : -1.733
 
 Type  : Slow 1200mV 85C Model Recovery 'porcentagem_menos'
-Slack : -0.949
-TNS   : -0.949
+Slack : -1.278
+TNS   : -1.278
 
 Type  : Slow 1200mV 85C Model Recovery 'passagem_zero'
-Slack : -0.057
-TNS   : -0.057
+Slack : -0.313
+TNS   : -0.313
 
 Type  : Slow 1200mV 85C Model Removal 'passagem_zero'
-Slack : 0.415
+Slack : 0.657
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Removal 'porcentagem_menos'
-Slack : 1.349
+Slack : 1.637
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Removal 'porcentagem_mais'
-Slack : 1.350
+Slack : 2.112
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Removal 'divisor_clock:divisor_50x|out_clk_tmp_up'
-Slack : 3.965
+Slack : 4.205
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk_50MHZ'
@@ -68,22 +68,22 @@ TNS   : -4.403
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'divisor_clock:divisor_50x|out_clk_tmp'
 Slack : -1.403
-TNS   : -103.822
+TNS   : -86.986
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'divisor_clock:divisor_50x|out_clk_tmp_up'
 Slack : -1.403
 TNS   : -1.403
 
 Type  : Slow 1200mV 0C Model Setup 'divisor_clock:divisor_50x|out_clk_tmp'
-Slack : -10.500
-TNS   : -268.755
+Slack : -9.999
+TNS   : -266.761
 
 Type  : Slow 1200mV 0C Model Setup 'clk_50MHZ'
-Slack : -4.532
-TNS   : -51.334
+Slack : -4.478
+TNS   : -50.962
 
 Type  : Slow 1200mV 0C Model Hold 'divisor_clock:divisor_50x|out_clk_tmp'
-Slack : 0.305
+Slack : 0.308
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'clk_50MHZ'
@@ -91,35 +91,35 @@ Slack : 0.370
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Recovery 'divisor_clock:divisor_50x|out_clk_tmp_up'
-Slack : -3.113
-TNS   : -3.113
+Slack : -3.340
+TNS   : -3.340
 
 Type  : Slow 1200mV 0C Model Recovery 'porcentagem_mais'
-Slack : -0.800
-TNS   : -0.800
+Slack : -1.497
+TNS   : -1.497
 
 Type  : Slow 1200mV 0C Model Recovery 'porcentagem_menos'
-Slack : -0.797
-TNS   : -0.797
+Slack : -1.106
+TNS   : -1.106
 
 Type  : Slow 1200mV 0C Model Recovery 'passagem_zero'
-Slack : 0.165
-TNS   : 0.000
+Slack : -0.084
+TNS   : -0.084
 
 Type  : Slow 1200mV 0C Model Removal 'passagem_zero'
-Slack : 0.264
+Slack : 0.472
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Removal 'porcentagem_menos'
-Slack : 1.241
+Slack : 1.511
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Removal 'porcentagem_mais'
-Slack : 1.269
+Slack : 1.946
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Removal 'divisor_clock:divisor_50x|out_clk_tmp_up'
-Slack : 3.620
+Slack : 3.857
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk_50MHZ'
@@ -140,19 +140,19 @@ TNS   : -4.403
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'divisor_clock:divisor_50x|out_clk_tmp'
 Slack : -1.403
-TNS   : -103.822
+TNS   : -86.986
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'divisor_clock:divisor_50x|out_clk_tmp_up'
 Slack : -1.403
 TNS   : -1.403
 
 Type  : Fast 1200mV 0C Model Setup 'divisor_clock:divisor_50x|out_clk_tmp'
-Slack : -4.047
-TNS   : -86.741
+Slack : -3.793
+TNS   : -93.870
 
 Type  : Fast 1200mV 0C Model Setup 'clk_50MHZ'
-Slack : -1.443
-TNS   : -8.092
+Slack : -1.413
+TNS   : -7.859
 
 Type  : Fast 1200mV 0C Model Hold 'divisor_clock:divisor_50x|out_clk_tmp'
 Slack : 0.148
@@ -163,56 +163,56 @@ Slack : 0.159
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Recovery 'divisor_clock:divisor_50x|out_clk_tmp_up'
-Slack : -1.780
-TNS   : -1.780
+Slack : -1.859
+TNS   : -1.859
 
 Type  : Fast 1200mV 0C Model Recovery 'porcentagem_mais'
-Slack : -0.052
-TNS   : -0.052
+Slack : -0.401
+TNS   : -0.401
 
 Type  : Fast 1200mV 0C Model Recovery 'porcentagem_menos'
-Slack : -0.031
-TNS   : -0.031
+Slack : -0.191
+TNS   : -0.191
 
 Type  : Fast 1200mV 0C Model Recovery 'passagem_zero'
-Slack : 0.284
+Slack : 0.133
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Removal 'passagem_zero'
-Slack : 0.369
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Removal 'porcentagem_mais'
-Slack : 0.715
+Slack : 0.534
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Removal 'porcentagem_menos'
-Slack : 0.721
+Slack : 0.859
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'porcentagem_mais'
+Slack : 1.056
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Removal 'divisor_clock:divisor_50x|out_clk_tmp_up'
-Slack : 2.509
+Slack : 2.593
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk_50MHZ'
 Slack : -3.000
-TNS   : -32.041
+TNS   : -32.048
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'passagem_zero'
 Slack : -3.000
-TNS   : -4.181
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'porcentagem_mais'
-Slack : -3.000
-TNS   : -4.133
+TNS   : -4.172
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'porcentagem_menos'
 Slack : -3.000
-TNS   : -4.109
+TNS   : -4.156
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'porcentagem_mais'
+Slack : -3.000
+TNS   : -4.140
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'divisor_clock:divisor_50x|out_clk_tmp'
 Slack : -1.000
-TNS   : -74.000
+TNS   : -62.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'divisor_clock:divisor_50x|out_clk_tmp_up'
 Slack : -1.000

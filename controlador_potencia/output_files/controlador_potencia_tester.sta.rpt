@@ -1,5 +1,5 @@
 Timing Analyzer report for controlador_potencia_tester
-Sun May 10 17:18:43 2020
+Fri May 22 19:07:26 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -91,12 +91,12 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
-; Average used               ; 1.13        ;
+; Average used               ; 1.11        ;
 ; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  12.6%      ;
+;     Processor 2            ;  11.2%      ;
 +----------------------------+-------------+
 
 
@@ -119,8 +119,8 @@ refer to the applicable agreement for further details.
 +------------+-----------------+---------------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                            ; Note ;
 +------------+-----------------+---------------------------------------+------+
-; 79.47 MHz  ; 79.47 MHz       ; divisor_clock:divisor_50x|out_clk_tmp ;      ;
-; 164.37 MHz ; 164.37 MHz      ; clk_50MHZ                             ;      ;
+; 82.77 MHz  ; 82.77 MHz       ; divisor_clock:divisor_50x|out_clk_tmp ;      ;
+; 165.84 MHz ; 165.84 MHz      ; clk_50MHZ                             ;      ;
 +------------+-----------------+---------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -130,8 +130,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------------------------+---------+---------------+
 ; Clock                                 ; Slack   ; End Point TNS ;
 +---------------------------------------+---------+---------------+
-; divisor_clock:divisor_50x|out_clk_tmp ; -11.583 ; -300.869      ;
-; clk_50MHZ                             ; -5.084  ; -59.460       ;
+; divisor_clock:divisor_50x|out_clk_tmp ; -11.081 ; -296.840      ;
+; clk_50MHZ                             ; -5.030  ; -59.073       ;
 +---------------------------------------+---------+---------------+
 
 
@@ -140,7 +140,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------------------------+-------+---------------+
 ; Clock                                 ; Slack ; End Point TNS ;
 +---------------------------------------+-------+---------------+
-; divisor_clock:divisor_50x|out_clk_tmp ; 0.340 ; 0.000         ;
+; divisor_clock:divisor_50x|out_clk_tmp ; 0.342 ; 0.000         ;
 ; clk_50MHZ                             ; 0.402 ; 0.000         ;
 +---------------------------------------+-------+---------------+
 
@@ -150,10 +150,10 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------------------------------------+--------+---------------+
 ; Clock                                    ; Slack  ; End Point TNS ;
 +------------------------------------------+--------+---------------+
-; divisor_clock:divisor_50x|out_clk_tmp_up ; -3.498 ; -3.498        ;
-; porcentagem_mais                         ; -0.956 ; -0.956        ;
-; porcentagem_menos                        ; -0.949 ; -0.949        ;
-; passagem_zero                            ; -0.057 ; -0.057        ;
+; divisor_clock:divisor_50x|out_clk_tmp_up ; -3.727 ; -3.727        ;
+; porcentagem_mais                         ; -1.733 ; -1.733        ;
+; porcentagem_menos                        ; -1.278 ; -1.278        ;
+; passagem_zero                            ; -0.313 ; -0.313        ;
 +------------------------------------------+--------+---------------+
 
 
@@ -162,10 +162,10 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------------------------------------+-------+---------------+
 ; Clock                                    ; Slack ; End Point TNS ;
 +------------------------------------------+-------+---------------+
-; passagem_zero                            ; 0.415 ; 0.000         ;
-; porcentagem_menos                        ; 1.349 ; 0.000         ;
-; porcentagem_mais                         ; 1.350 ; 0.000         ;
-; divisor_clock:divisor_50x|out_clk_tmp_up ; 3.965 ; 0.000         ;
+; passagem_zero                            ; 0.657 ; 0.000         ;
+; porcentagem_menos                        ; 1.637 ; 0.000         ;
+; porcentagem_mais                         ; 2.112 ; 0.000         ;
+; divisor_clock:divisor_50x|out_clk_tmp_up ; 4.205 ; 0.000         ;
 +------------------------------------------+-------+---------------+
 
 
@@ -178,7 +178,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; passagem_zero                            ; -3.000 ; -4.403        ;
 ; porcentagem_mais                         ; -3.000 ; -4.403        ;
 ; porcentagem_menos                        ; -3.000 ; -4.403        ;
-; divisor_clock:divisor_50x|out_clk_tmp    ; -1.403 ; -103.822      ;
+; divisor_clock:divisor_50x|out_clk_tmp    ; -1.403 ; -86.986       ;
 ; divisor_clock:divisor_50x|out_clk_tmp_up ; -1.403 ; -1.403        ;
 +------------------------------------------+--------+---------------+
 
@@ -194,20 +194,20 @@ No synchronizer chains to report.
 +------------+-----------------+---------------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                            ; Note ;
 +------------+-----------------+---------------------------------------+------+
-; 86.96 MHz  ; 86.96 MHz       ; divisor_clock:divisor_50x|out_clk_tmp ;      ;
-; 180.77 MHz ; 180.77 MHz      ; clk_50MHZ                             ;      ;
+; 90.92 MHz  ; 90.92 MHz       ; divisor_clock:divisor_50x|out_clk_tmp ;      ;
+; 182.55 MHz ; 182.55 MHz      ; clk_50MHZ                             ;      ;
 +------------+-----------------+---------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
-+-----------------------------------------------------------------+
-; Slow 1200mV 0C Model Setup Summary                              ;
-+---------------------------------------+---------+---------------+
-; Clock                                 ; Slack   ; End Point TNS ;
-+---------------------------------------+---------+---------------+
-; divisor_clock:divisor_50x|out_clk_tmp ; -10.500 ; -268.755      ;
-; clk_50MHZ                             ; -4.532  ; -51.334       ;
-+---------------------------------------+---------+---------------+
++----------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup Summary                             ;
++---------------------------------------+--------+---------------+
+; Clock                                 ; Slack  ; End Point TNS ;
++---------------------------------------+--------+---------------+
+; divisor_clock:divisor_50x|out_clk_tmp ; -9.999 ; -266.761      ;
+; clk_50MHZ                             ; -4.478 ; -50.962       ;
++---------------------------------------+--------+---------------+
 
 
 +---------------------------------------------------------------+
@@ -215,7 +215,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------------------------+-------+---------------+
 ; Clock                                 ; Slack ; End Point TNS ;
 +---------------------------------------+-------+---------------+
-; divisor_clock:divisor_50x|out_clk_tmp ; 0.305 ; 0.000         ;
+; divisor_clock:divisor_50x|out_clk_tmp ; 0.308 ; 0.000         ;
 ; clk_50MHZ                             ; 0.370 ; 0.000         ;
 +---------------------------------------+-------+---------------+
 
@@ -225,10 +225,10 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------------------------------------+--------+---------------+
 ; Clock                                    ; Slack  ; End Point TNS ;
 +------------------------------------------+--------+---------------+
-; divisor_clock:divisor_50x|out_clk_tmp_up ; -3.113 ; -3.113        ;
-; porcentagem_mais                         ; -0.800 ; -0.800        ;
-; porcentagem_menos                        ; -0.797 ; -0.797        ;
-; passagem_zero                            ; 0.165  ; 0.000         ;
+; divisor_clock:divisor_50x|out_clk_tmp_up ; -3.340 ; -3.340        ;
+; porcentagem_mais                         ; -1.497 ; -1.497        ;
+; porcentagem_menos                        ; -1.106 ; -1.106        ;
+; passagem_zero                            ; -0.084 ; -0.084        ;
 +------------------------------------------+--------+---------------+
 
 
@@ -237,10 +237,10 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------------------------------------+-------+---------------+
 ; Clock                                    ; Slack ; End Point TNS ;
 +------------------------------------------+-------+---------------+
-; passagem_zero                            ; 0.264 ; 0.000         ;
-; porcentagem_menos                        ; 1.241 ; 0.000         ;
-; porcentagem_mais                         ; 1.269 ; 0.000         ;
-; divisor_clock:divisor_50x|out_clk_tmp_up ; 3.620 ; 0.000         ;
+; passagem_zero                            ; 0.472 ; 0.000         ;
+; porcentagem_menos                        ; 1.511 ; 0.000         ;
+; porcentagem_mais                         ; 1.946 ; 0.000         ;
+; divisor_clock:divisor_50x|out_clk_tmp_up ; 3.857 ; 0.000         ;
 +------------------------------------------+-------+---------------+
 
 
@@ -253,7 +253,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; passagem_zero                            ; -3.000 ; -4.403        ;
 ; porcentagem_mais                         ; -3.000 ; -4.403        ;
 ; porcentagem_menos                        ; -3.000 ; -4.403        ;
-; divisor_clock:divisor_50x|out_clk_tmp    ; -1.403 ; -103.822      ;
+; divisor_clock:divisor_50x|out_clk_tmp    ; -1.403 ; -86.986       ;
 ; divisor_clock:divisor_50x|out_clk_tmp_up ; -1.403 ; -1.403        ;
 +------------------------------------------+--------+---------------+
 
@@ -269,8 +269,8 @@ No synchronizer chains to report.
 +---------------------------------------+--------+---------------+
 ; Clock                                 ; Slack  ; End Point TNS ;
 +---------------------------------------+--------+---------------+
-; divisor_clock:divisor_50x|out_clk_tmp ; -4.047 ; -86.741       ;
-; clk_50MHZ                             ; -1.443 ; -8.092        ;
+; divisor_clock:divisor_50x|out_clk_tmp ; -3.793 ; -93.870       ;
+; clk_50MHZ                             ; -1.413 ; -7.859        ;
 +---------------------------------------+--------+---------------+
 
 
@@ -289,10 +289,10 @@ No synchronizer chains to report.
 +------------------------------------------+--------+---------------+
 ; Clock                                    ; Slack  ; End Point TNS ;
 +------------------------------------------+--------+---------------+
-; divisor_clock:divisor_50x|out_clk_tmp_up ; -1.780 ; -1.780        ;
-; porcentagem_mais                         ; -0.052 ; -0.052        ;
-; porcentagem_menos                        ; -0.031 ; -0.031        ;
-; passagem_zero                            ; 0.284  ; 0.000         ;
+; divisor_clock:divisor_50x|out_clk_tmp_up ; -1.859 ; -1.859        ;
+; porcentagem_mais                         ; -0.401 ; -0.401        ;
+; porcentagem_menos                        ; -0.191 ; -0.191        ;
+; passagem_zero                            ; 0.133  ; 0.000         ;
 +------------------------------------------+--------+---------------+
 
 
@@ -301,10 +301,10 @@ No synchronizer chains to report.
 +------------------------------------------+-------+---------------+
 ; Clock                                    ; Slack ; End Point TNS ;
 +------------------------------------------+-------+---------------+
-; passagem_zero                            ; 0.369 ; 0.000         ;
-; porcentagem_mais                         ; 0.715 ; 0.000         ;
-; porcentagem_menos                        ; 0.721 ; 0.000         ;
-; divisor_clock:divisor_50x|out_clk_tmp_up ; 2.509 ; 0.000         ;
+; passagem_zero                            ; 0.534 ; 0.000         ;
+; porcentagem_menos                        ; 0.859 ; 0.000         ;
+; porcentagem_mais                         ; 1.056 ; 0.000         ;
+; divisor_clock:divisor_50x|out_clk_tmp_up ; 2.593 ; 0.000         ;
 +------------------------------------------+-------+---------------+
 
 
@@ -313,11 +313,11 @@ No synchronizer chains to report.
 +------------------------------------------+--------+---------------+
 ; Clock                                    ; Slack  ; End Point TNS ;
 +------------------------------------------+--------+---------------+
-; clk_50MHZ                                ; -3.000 ; -32.041       ;
-; passagem_zero                            ; -3.000 ; -4.181        ;
-; porcentagem_mais                         ; -3.000 ; -4.133        ;
-; porcentagem_menos                        ; -3.000 ; -4.109        ;
-; divisor_clock:divisor_50x|out_clk_tmp    ; -1.000 ; -74.000       ;
+; clk_50MHZ                                ; -3.000 ; -32.048       ;
+; passagem_zero                            ; -3.000 ; -4.172        ;
+; porcentagem_menos                        ; -3.000 ; -4.156        ;
+; porcentagem_mais                         ; -3.000 ; -4.140        ;
+; divisor_clock:divisor_50x|out_clk_tmp    ; -1.000 ; -62.000       ;
 ; divisor_clock:divisor_50x|out_clk_tmp_up ; -1.000 ; -1.000        ;
 +------------------------------------------+--------+---------------+
 
@@ -333,20 +333,20 @@ No synchronizer chains to report.
 +-------------------------------------------+----------+-------+----------+---------+---------------------+
 ; Clock                                     ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +-------------------------------------------+----------+-------+----------+---------+---------------------+
-; Worst-case Slack                          ; -11.583  ; 0.148 ; -3.498   ; 0.264   ; -3.000              ;
-;  clk_50MHZ                                ; -5.084   ; 0.159 ; N/A      ; N/A     ; -3.000              ;
-;  divisor_clock:divisor_50x|out_clk_tmp    ; -11.583  ; 0.148 ; N/A      ; N/A     ; -1.403              ;
-;  divisor_clock:divisor_50x|out_clk_tmp_up ; N/A      ; N/A   ; -3.498   ; 2.509   ; -1.403              ;
-;  passagem_zero                            ; N/A      ; N/A   ; -0.057   ; 0.264   ; -3.000              ;
-;  porcentagem_mais                         ; N/A      ; N/A   ; -0.956   ; 0.715   ; -3.000              ;
-;  porcentagem_menos                        ; N/A      ; N/A   ; -0.949   ; 0.721   ; -3.000              ;
-; Design-wide TNS                           ; -360.329 ; 0.0   ; -5.46    ; 0.0     ; -160.718            ;
-;  clk_50MHZ                                ; -59.460  ; 0.000 ; N/A      ; N/A     ; -42.284             ;
-;  divisor_clock:divisor_50x|out_clk_tmp    ; -300.869 ; 0.000 ; N/A      ; N/A     ; -103.822            ;
-;  divisor_clock:divisor_50x|out_clk_tmp_up ; N/A      ; N/A   ; -3.498   ; 0.000   ; -1.403              ;
-;  passagem_zero                            ; N/A      ; N/A   ; -0.057   ; 0.000   ; -4.403              ;
-;  porcentagem_mais                         ; N/A      ; N/A   ; -0.956   ; 0.000   ; -4.403              ;
-;  porcentagem_menos                        ; N/A      ; N/A   ; -0.949   ; 0.000   ; -4.403              ;
+; Worst-case Slack                          ; -11.081  ; 0.148 ; -3.727   ; 0.472   ; -3.000              ;
+;  clk_50MHZ                                ; -5.030   ; 0.159 ; N/A      ; N/A     ; -3.000              ;
+;  divisor_clock:divisor_50x|out_clk_tmp    ; -11.081  ; 0.148 ; N/A      ; N/A     ; -1.403              ;
+;  divisor_clock:divisor_50x|out_clk_tmp_up ; N/A      ; N/A   ; -3.727   ; 2.593   ; -1.403              ;
+;  passagem_zero                            ; N/A      ; N/A   ; -0.313   ; 0.472   ; -3.000              ;
+;  porcentagem_mais                         ; N/A      ; N/A   ; -1.733   ; 1.056   ; -3.000              ;
+;  porcentagem_menos                        ; N/A      ; N/A   ; -1.278   ; 0.859   ; -3.000              ;
+; Design-wide TNS                           ; -355.913 ; 0.0   ; -7.051   ; 0.0     ; -143.882            ;
+;  clk_50MHZ                                ; -59.073  ; 0.000 ; N/A      ; N/A     ; -42.284             ;
+;  divisor_clock:divisor_50x|out_clk_tmp    ; -296.840 ; 0.000 ; N/A      ; N/A     ; -86.986             ;
+;  divisor_clock:divisor_50x|out_clk_tmp_up ; N/A      ; N/A   ; -3.727   ; 0.000   ; -1.403              ;
+;  passagem_zero                            ; N/A      ; N/A   ; -0.313   ; 0.000   ; -4.403              ;
+;  porcentagem_mais                         ; N/A      ; N/A   ; -1.733   ; 0.000   ; -4.403              ;
+;  porcentagem_menos                        ; N/A      ; N/A   ; -1.278   ; 0.000   ; -4.403              ;
 +-------------------------------------------+----------+-------+----------+---------+---------------------+
 
 
@@ -500,7 +500,7 @@ No synchronizer chains to report.
 +------------------------------------------+---------------------------------------+----------+----------+----------+----------+
 ; clk_50MHZ                                ; clk_50MHZ                             ; 1755     ; 0        ; 0        ; 1        ;
 ; divisor_clock:divisor_50x|out_clk_tmp_up ; clk_50MHZ                             ; 0        ; 0        ; 1        ; 1        ;
-; divisor_clock:divisor_50x|out_clk_tmp    ; divisor_clock:divisor_50x|out_clk_tmp ; 518543   ; 0        ; 0        ; 0        ;
+; divisor_clock:divisor_50x|out_clk_tmp    ; divisor_clock:divisor_50x|out_clk_tmp ; 518183   ; 0        ; 0        ; 0        ;
 ; passagem_zero                            ; divisor_clock:divisor_50x|out_clk_tmp ; 2        ; 0        ; 0        ; 0        ;
 ; porcentagem_mais                         ; divisor_clock:divisor_50x|out_clk_tmp ; 0        ; 24       ; 0        ; 0        ;
 ; porcentagem_menos                        ; divisor_clock:divisor_50x|out_clk_tmp ; 0        ; 8        ; 0        ; 0        ;
@@ -515,7 +515,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------------------------------------+---------------------------------------+----------+----------+----------+----------+
 ; clk_50MHZ                                ; clk_50MHZ                             ; 1755     ; 0        ; 0        ; 1        ;
 ; divisor_clock:divisor_50x|out_clk_tmp_up ; clk_50MHZ                             ; 0        ; 0        ; 1        ; 1        ;
-; divisor_clock:divisor_50x|out_clk_tmp    ; divisor_clock:divisor_50x|out_clk_tmp ; 518543   ; 0        ; 0        ; 0        ;
+; divisor_clock:divisor_50x|out_clk_tmp    ; divisor_clock:divisor_50x|out_clk_tmp ; 518183   ; 0        ; 0        ; 0        ;
 ; passagem_zero                            ; divisor_clock:divisor_50x|out_clk_tmp ; 2        ; 0        ; 0        ; 0        ;
 ; porcentagem_mais                         ; divisor_clock:divisor_50x|out_clk_tmp ; 0        ; 24       ; 0        ; 0        ;
 ; porcentagem_menos                        ; divisor_clock:divisor_50x|out_clk_tmp ; 0        ; 8        ; 0        ; 0        ;
@@ -649,7 +649,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun May 10 17:18:40 2020
+    Info: Processing started: Fri May 22 19:07:21 2020
 Info: Command: quartus_sta controlador_potencia_tester -c controlador_potencia_tester
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -662,8 +662,8 @@ Info (332105): Deriving Clocks
     Info (332105): create_clock -period 1.000 -name divisor_clock:divisor_50x|out_clk_tmp divisor_clock:divisor_50x|out_clk_tmp
     Info (332105): create_clock -period 1.000 -name divisor_clock:divisor_50x|out_clk_tmp_up divisor_clock:divisor_50x|out_clk_tmp_up
     Info (332105): create_clock -period 1.000 -name clk_50MHZ clk_50MHZ
-    Info (332105): create_clock -period 1.000 -name porcentagem_menos porcentagem_menos
     Info (332105): create_clock -period 1.000 -name porcentagem_mais porcentagem_mais
+    Info (332105): create_clock -period 1.000 -name porcentagem_menos porcentagem_menos
     Info (332105): create_clock -period 1.000 -name passagem_zero passagem_zero
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
@@ -671,30 +671,30 @@ Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
 Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -11.583
+Info (332146): Worst-case setup slack is -11.081
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -11.583            -300.869 divisor_clock:divisor_50x|out_clk_tmp 
-    Info (332119):    -5.084             -59.460 clk_50MHZ 
-Info (332146): Worst-case hold slack is 0.340
+    Info (332119):   -11.081            -296.840 divisor_clock:divisor_50x|out_clk_tmp 
+    Info (332119):    -5.030             -59.073 clk_50MHZ 
+Info (332146): Worst-case hold slack is 0.342
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.340               0.000 divisor_clock:divisor_50x|out_clk_tmp 
+    Info (332119):     0.342               0.000 divisor_clock:divisor_50x|out_clk_tmp 
     Info (332119):     0.402               0.000 clk_50MHZ 
-Info (332146): Worst-case recovery slack is -3.498
+Info (332146): Worst-case recovery slack is -3.727
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.498              -3.498 divisor_clock:divisor_50x|out_clk_tmp_up 
-    Info (332119):    -0.956              -0.956 porcentagem_mais 
-    Info (332119):    -0.949              -0.949 porcentagem_menos 
-    Info (332119):    -0.057              -0.057 passagem_zero 
-Info (332146): Worst-case removal slack is 0.415
+    Info (332119):    -3.727              -3.727 divisor_clock:divisor_50x|out_clk_tmp_up 
+    Info (332119):    -1.733              -1.733 porcentagem_mais 
+    Info (332119):    -1.278              -1.278 porcentagem_menos 
+    Info (332119):    -0.313              -0.313 passagem_zero 
+Info (332146): Worst-case removal slack is 0.657
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.415               0.000 passagem_zero 
-    Info (332119):     1.349               0.000 porcentagem_menos 
-    Info (332119):     1.350               0.000 porcentagem_mais 
-    Info (332119):     3.965               0.000 divisor_clock:divisor_50x|out_clk_tmp_up 
+    Info (332119):     0.657               0.000 passagem_zero 
+    Info (332119):     1.637               0.000 porcentagem_menos 
+    Info (332119):     2.112               0.000 porcentagem_mais 
+    Info (332119):     4.205               0.000 divisor_clock:divisor_50x|out_clk_tmp_up 
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
@@ -702,37 +702,37 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):    -3.000              -4.403 passagem_zero 
     Info (332119):    -3.000              -4.403 porcentagem_mais 
     Info (332119):    -3.000              -4.403 porcentagem_menos 
-    Info (332119):    -1.403            -103.822 divisor_clock:divisor_50x|out_clk_tmp 
+    Info (332119):    -1.403             -86.986 divisor_clock:divisor_50x|out_clk_tmp 
     Info (332119):    -1.403              -1.403 divisor_clock:divisor_50x|out_clk_tmp_up 
 Info: Analyzing Slow 1200mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -10.500
+Info (332146): Worst-case setup slack is -9.999
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -10.500            -268.755 divisor_clock:divisor_50x|out_clk_tmp 
-    Info (332119):    -4.532             -51.334 clk_50MHZ 
-Info (332146): Worst-case hold slack is 0.305
+    Info (332119):    -9.999            -266.761 divisor_clock:divisor_50x|out_clk_tmp 
+    Info (332119):    -4.478             -50.962 clk_50MHZ 
+Info (332146): Worst-case hold slack is 0.308
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.305               0.000 divisor_clock:divisor_50x|out_clk_tmp 
+    Info (332119):     0.308               0.000 divisor_clock:divisor_50x|out_clk_tmp 
     Info (332119):     0.370               0.000 clk_50MHZ 
-Info (332146): Worst-case recovery slack is -3.113
+Info (332146): Worst-case recovery slack is -3.340
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.113              -3.113 divisor_clock:divisor_50x|out_clk_tmp_up 
-    Info (332119):    -0.800              -0.800 porcentagem_mais 
-    Info (332119):    -0.797              -0.797 porcentagem_menos 
-    Info (332119):     0.165               0.000 passagem_zero 
-Info (332146): Worst-case removal slack is 0.264
+    Info (332119):    -3.340              -3.340 divisor_clock:divisor_50x|out_clk_tmp_up 
+    Info (332119):    -1.497              -1.497 porcentagem_mais 
+    Info (332119):    -1.106              -1.106 porcentagem_menos 
+    Info (332119):    -0.084              -0.084 passagem_zero 
+Info (332146): Worst-case removal slack is 0.472
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.264               0.000 passagem_zero 
-    Info (332119):     1.241               0.000 porcentagem_menos 
-    Info (332119):     1.269               0.000 porcentagem_mais 
-    Info (332119):     3.620               0.000 divisor_clock:divisor_50x|out_clk_tmp_up 
+    Info (332119):     0.472               0.000 passagem_zero 
+    Info (332119):     1.511               0.000 porcentagem_menos 
+    Info (332119):     1.946               0.000 porcentagem_mais 
+    Info (332119):     3.857               0.000 divisor_clock:divisor_50x|out_clk_tmp_up 
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
@@ -740,50 +740,50 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):    -3.000              -4.403 passagem_zero 
     Info (332119):    -3.000              -4.403 porcentagem_mais 
     Info (332119):    -3.000              -4.403 porcentagem_menos 
-    Info (332119):    -1.403            -103.822 divisor_clock:divisor_50x|out_clk_tmp 
+    Info (332119):    -1.403             -86.986 divisor_clock:divisor_50x|out_clk_tmp 
     Info (332119):    -1.403              -1.403 divisor_clock:divisor_50x|out_clk_tmp_up 
 Info: Analyzing Fast 1200mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -4.047
+Info (332146): Worst-case setup slack is -3.793
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.047             -86.741 divisor_clock:divisor_50x|out_clk_tmp 
-    Info (332119):    -1.443              -8.092 clk_50MHZ 
+    Info (332119):    -3.793             -93.870 divisor_clock:divisor_50x|out_clk_tmp 
+    Info (332119):    -1.413              -7.859 clk_50MHZ 
 Info (332146): Worst-case hold slack is 0.148
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     0.148               0.000 divisor_clock:divisor_50x|out_clk_tmp 
     Info (332119):     0.159               0.000 clk_50MHZ 
-Info (332146): Worst-case recovery slack is -1.780
+Info (332146): Worst-case recovery slack is -1.859
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -1.780              -1.780 divisor_clock:divisor_50x|out_clk_tmp_up 
-    Info (332119):    -0.052              -0.052 porcentagem_mais 
-    Info (332119):    -0.031              -0.031 porcentagem_menos 
-    Info (332119):     0.284               0.000 passagem_zero 
-Info (332146): Worst-case removal slack is 0.369
+    Info (332119):    -1.859              -1.859 divisor_clock:divisor_50x|out_clk_tmp_up 
+    Info (332119):    -0.401              -0.401 porcentagem_mais 
+    Info (332119):    -0.191              -0.191 porcentagem_menos 
+    Info (332119):     0.133               0.000 passagem_zero 
+Info (332146): Worst-case removal slack is 0.534
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.369               0.000 passagem_zero 
-    Info (332119):     0.715               0.000 porcentagem_mais 
-    Info (332119):     0.721               0.000 porcentagem_menos 
-    Info (332119):     2.509               0.000 divisor_clock:divisor_50x|out_clk_tmp_up 
+    Info (332119):     0.534               0.000 passagem_zero 
+    Info (332119):     0.859               0.000 porcentagem_menos 
+    Info (332119):     1.056               0.000 porcentagem_mais 
+    Info (332119):     2.593               0.000 divisor_clock:divisor_50x|out_clk_tmp_up 
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.000             -32.041 clk_50MHZ 
-    Info (332119):    -3.000              -4.181 passagem_zero 
-    Info (332119):    -3.000              -4.133 porcentagem_mais 
-    Info (332119):    -3.000              -4.109 porcentagem_menos 
-    Info (332119):    -1.000             -74.000 divisor_clock:divisor_50x|out_clk_tmp 
+    Info (332119):    -3.000             -32.048 clk_50MHZ 
+    Info (332119):    -3.000              -4.172 passagem_zero 
+    Info (332119):    -3.000              -4.156 porcentagem_menos 
+    Info (332119):    -3.000              -4.140 porcentagem_mais 
+    Info (332119):    -1.000             -62.000 divisor_clock:divisor_50x|out_clk_tmp 
     Info (332119):    -1.000              -1.000 divisor_clock:divisor_50x|out_clk_tmp_up 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 864 megabytes
-    Info: Processing ended: Sun May 10 17:18:43 2020
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:04
+    Info: Peak virtual memory: 865 megabytes
+    Info: Processing ended: Fri May 22 19:07:26 2020
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:05
 
 

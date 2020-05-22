@@ -12,7 +12,7 @@ entity controlador_potencia is
     port(
         clk_1MHZ                :   in  std_logic;
         passagem_zero           :   in  std_logic;
-        porcentagem_potencia    :   in  integer range 0 to 101;
+        porcentagem_potencia    :   in  integer range 0 to 100;
    
         disparo_triac           :   out std_logic
     );
@@ -25,45 +25,45 @@ architecture main of controlador_potencia is
     begin
     
         if porcentagem < 5 then
-            return 8600;
+            return 8800;
         elsif porcentagem < 10 then
             return 8400;
         elsif porcentagem < 15 then
-            return 8250;
+            return 8200;
         elsif porcentagem < 20 then
-            return 8150;
+            return 7850;
         elsif porcentagem < 25 then
-            return 8000;
+            return 7500;
         elsif porcentagem < 30 then
-            return 7800;
+            return 7250;
         elsif porcentagem < 35 then
-            return 7600;
+            return 7050;
         elsif porcentagem < 40 then
-            return 7400;
-        elsif porcentagem < 45 then
-            return 7000;
-        elsif porcentagem < 50 then
             return 6800;
+        elsif porcentagem < 45 then
+            return 6600;
+        elsif porcentagem < 50 then
+            return 6400;
         elsif porcentagem < 55 then
-            return 6500;
+            return 6200;
         elsif porcentagem < 60 then
-            return 6100;
+            return 5950;
         elsif porcentagem < 65 then
-            return 5800;
+            return 5750;
         elsif porcentagem < 70 then
-            return 5400;
+            return 5500;
         elsif porcentagem < 75 then
-            return 5100;
+            return 5200;
         elsif porcentagem < 80 then
-            return 4900;
+            return 4950;
         elsif porcentagem < 85 then
-            return 4500;
+            return 4600;
         elsif porcentagem < 90 then
-            return 4000;
+            return 4300;
         elsif porcentagem < 95 then
-            return 3500;
+            return 4050;
         else
-            return 1700;
+            return 3500;
         end if;
         
     end porcentagem_to_pulsos;
@@ -95,7 +95,7 @@ begin
             end if;
 
             -- A cada 1us são 1 pulso
-            if count_ativacao = pulsos_potencia then
+            if count_ativacao >= pulsos_potencia then
                 count_ativacao   :=  0;
                 
                 delay_ativacao   <=  '0';
