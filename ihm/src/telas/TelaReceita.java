@@ -136,6 +136,13 @@ public class TelaReceita extends JFrame {
 			panelSul.add(btnSalvar);
 			
 			JButton btnExcluir = new JButton("Excluir");
+			btnExcluir.addActionListener((ActionEvent) -> {
+				if(JOptionPane.showConfirmDialog(this, "Tem certeza que deseja remover essa receita?", "Confirmação de exclusão:", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+					ReceitaWrapper.getInstance().removeReceita(receita);
+					JOptionPane.showMessageDialog(this, "Receita removida com sucesso!");
+					actionVoltar();	
+				}
+			}); 
 			panelSul.add(btnExcluir);
 			
 			addVoltar();
@@ -155,11 +162,13 @@ public class TelaReceita extends JFrame {
 	
 	private void addVoltar() {		
 		JButton btnVoltar = new JButton("Voltar");
-		btnVoltar.addActionListener((ActionEvent e) -> {
-			new TelaPrincial().setVisible(true);
-			dispose();
-		});
+		btnVoltar.addActionListener((ActionEvent e) -> actionVoltar());
 		panelSul.add(btnVoltar);
+	}
+	
+	private void actionVoltar() {
+		new TelaPrincial().setVisible(true);
+		dispose();
 	}
 	
 	private void actionSalvar() {

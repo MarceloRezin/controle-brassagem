@@ -53,5 +53,18 @@ public class Receita implements Serializable {
 			this.receitas.add(receita);
 			Persistencia.save();
 		}
+		
+		public void removeReceita(Receita receita) {
+			int index = -1;
+			for(int i=0; i<receitas.size(); i++) {
+				if(receitas.get(i).getNome().equals(receita.getNome())) {
+					index = i;
+					break;
+				}
+			}
+			
+			this.receitas.remove(index);
+			Persistencia.save();
+		}
     }
 }
