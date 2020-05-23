@@ -1,7 +1,6 @@
 package telas;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -28,7 +27,7 @@ public class TelaPrincial extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 460, 377);
 		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 35));
 		setContentPane(contentPane);
 		contentPane.setLayout(new BorderLayout(0, 10));
 		
@@ -37,10 +36,7 @@ public class TelaPrincial extends JFrame {
 		panelSul.setLayout(new GridLayout(1, 0, 0, 0));
 		
 		JButton btnAdiconarReceita = new JButton("+ Receita");
-		btnAdiconarReceita.addActionListener((ActionEvent e) -> {
-			new TelaReceita(null).setVisible(true);
-			dispose();
-		});
+		btnAdiconarReceita.addActionListener((ActionEvent e) -> abrirReceita(null));
 		panelSul.add(btnAdiconarReceita);
 		
 		Component horizontalStrut_1 = Box.createHorizontalStrut(20);
@@ -49,7 +45,7 @@ public class TelaPrincial extends JFrame {
 		Component horizontalStrut = Box.createHorizontalStrut(20);
 		panelSul.add(horizontalStrut);
 		
-		JLabel lblControleDeBrassagem = new JLabel("<html>Controle de Brassagem - Selecione ou adicione uma receita<br />para iniciar o processo</html>");
+		JLabel lblControleDeBrassagem = new JLabel("<html>Controle de Brassagem - Selecione ou adicione uma receita para iniciar o processo</html>");
 		contentPane.add(lblControleDeBrassagem, BorderLayout.NORTH);
 		
 		loadReceitas();
@@ -60,9 +56,7 @@ public class TelaPrincial extends JFrame {
 		ArrayList<Receita> receitas = ReceitaWrapper.getInstance().getReceitas();
 		
 		JPanel panelCenter = new JPanel();
-		panelCenter.setBackground(Color.white);
 		contentPane.add(panelCenter, BorderLayout.CENTER);
-		
 		
 		if(receitas.isEmpty()) {
 			panelCenter.setLayout(new GridLayout(1, 0, 0, 0));
@@ -70,9 +64,30 @@ public class TelaPrincial extends JFrame {
 			lblSemReceitas.setVerticalAlignment(SwingConstants.TOP);
 			panelCenter.add(lblSemReceitas);
 		}else {
-			
+			panelCenter.setLayout(new GridLayout(receitas.size(), 1, 0,50));
+			receitas.forEach(r -> {
+				JPanel panelItem = new JPanel();
+				panelItem.setLayout(new GridLayout(1, 3, 20, 20));
+				panelCenter.add(panelItem);
+				
+				
+				panelItem.add(new JLabel(r.getNome()));
+				
+				JButton btnIniciar = new JButton("Inicar");
+//				btnIniciar.addActionListener((ActionEvent e) -> {}); 
+				panelItem.add(btnIniciar);
+				
+				
+				JButton btnEditar = new JButton("Editar");
+				btnEditar.addActionListener((ActionEvent e) -> abrirReceita(r)); 
+				panelItem.add(btnEditar);
+			});
 		}
-		
+	}
+	
+	private void abrirReceita(Receita receita) {
+		new TelaReceita(receita).setVisible(true);
+		dispose();
 	}
 
 }
