@@ -1,25 +1,29 @@
 package telas;
 
 import java.awt.BorderLayout;
-import java.awt.EventQueue;
+import java.awt.Color;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import model.Receita;
+import model.Receita.ReceitaWrapper;
+
 import javax.swing.JLabel;
-import javax.swing.JList;
 import javax.swing.JButton;
 import java.awt.GridLayout;
 import java.awt.Component;
 import javax.swing.Box;
+import java.awt.event.ActionEvent;
+import java.util.ArrayList;
+import javax.swing.SwingConstants;
 
 public class TelaPrincial extends JFrame {
 
+	private static final long serialVersionUID = -1212230852038951116L;
 	private JPanel contentPane;
 
-	/**
-	 * Create the frame.
-	 */
 	public TelaPrincial() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 460, 377);
@@ -41,13 +45,30 @@ public class TelaPrincial extends JFrame {
 		Component horizontalStrut = Box.createHorizontalStrut(20);
 		panelSul.add(horizontalStrut);
 		
-		JList list = new JList();
-		contentPane.add(list, BorderLayout.CENTER);
-		
-//		<html>First Line<br />Second Line</html>
-//		JLabel lblControleDeBrassagem = new JLabel("Controle de Brassagem - Selecione ou adicione uma receita para iniciar o processo");
 		JLabel lblControleDeBrassagem = new JLabel("<html>Controle de Brassagem - Selecione ou adicione uma receita<br />para iniciar o processo</html>");
 		contentPane.add(lblControleDeBrassagem, BorderLayout.NORTH);
+		
+		loadReceitas();
+	}
+	
+	private void loadReceitas() {
+		
+		ArrayList<Receita> receitas = ReceitaWrapper.getInstance().getReceitas();
+		
+		JPanel panelCenter = new JPanel();
+		panelCenter.setBackground(Color.white);
+		contentPane.add(panelCenter, BorderLayout.CENTER);
+		
+		
+		if(receitas.isEmpty()) {
+			panelCenter.setLayout(new GridLayout(1, 0, 0, 0));
+			JLabel lblSemReceitas = new JLabel("Nenhuma receita salva.");
+			lblSemReceitas.setVerticalAlignment(SwingConstants.TOP);
+			panelCenter.add(lblSemReceitas);
+		}else {
+			
+		}
+		
 	}
 
 }
