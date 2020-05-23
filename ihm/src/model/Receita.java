@@ -2,15 +2,20 @@ package model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.List;
+import persistencia.Persistencia;
 
 public class Receita implements Serializable {
 
 	private static final long serialVersionUID = -3479047172273556895L;
 	private String nome;
-    private ArrayList<Rampa> rampas;
+    private ArrayList<Rampa> rampas = new ArrayList<>();
+    
+    public Receita(String nome, ArrayList<Rampa> rampas) {
+		this.nome = nome;
+		this.rampas = rampas;
+	}
 
-    public String getNome() {
+	public String getNome() {
         return nome;
     }
 
@@ -42,6 +47,11 @@ public class Receita implements Serializable {
 
 		public void setReceitas(ArrayList<Receita> receitas) {
 			this.receitas = receitas;
+		}
+		
+		public void addReceita(Receita receita) {
+			this.receitas.add(receita);
+			Persistencia.save();
 		}
     }
 }
