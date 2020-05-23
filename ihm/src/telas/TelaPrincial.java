@@ -38,7 +38,7 @@ public class TelaPrincial extends JFrame {
 		
 		JButton btnAdiconarReceita = new JButton("+ Receita");
 		btnAdiconarReceita.addActionListener((ActionEvent e) -> {
-			new TelaReceita().setVisible(true);
+			new TelaReceita(null).setVisible(true);
 			dispose();
 		});
 		panelSul.add(btnAdiconarReceita);
