@@ -1,15 +1,15 @@
-Fitter Status : Successful - Wed May 13 16:34:01 2020
+Fitter Status : Successful - Fri May 22 22:00:17 2020
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : controlador_pid_tester
 Top-level Entity Name : controlador_pid_tester
 Family : MAX 10
 Device : 10M50DAF484C7G
 Timing Models : Final
-Total logic elements : 928 / 49,760 ( 2 % )
-    Total combinational functions : 917 / 49,760 ( 2 % )
-    Dedicated logic registers : 150 / 49,760 ( < 1 % )
-Total registers : 150
-Total pins : 48 / 360 ( 13 % )
+Total logic elements : 1,106 / 49,760 ( 2 % )
+    Total combinational functions : 1,072 / 49,760 ( 2 % )
+    Dedicated logic registers : 208 / 49,760 ( < 1 % )
+Total registers : 208
+Total pins : 52 / 360 ( 14 % )
 Total virtual pins : 0
 Total memory bits : 0 / 1,677,312 ( 0 % )
 Embedded Multiplier 9-bit elements : 0 / 288 ( 0 % )

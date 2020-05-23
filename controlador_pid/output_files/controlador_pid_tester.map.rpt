@@ -1,5 +1,5 @@
 Analysis & Synthesis report for controlador_pid_tester
-Wed May 13 16:33:42 2020
+Fri May 22 21:59:50 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -53,16 +53,16 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed May 13 16:33:42 2020       ;
+; Analysis & Synthesis Status        ; Successful - Fri May 22 21:59:50 2020       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; controlador_pid_tester                      ;
 ; Top-level Entity Name              ; controlador_pid_tester                      ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 941                                         ;
-;     Total combinational functions  ; 913                                         ;
-;     Dedicated logic registers      ; 150                                         ;
-; Total registers                    ; 150                                         ;
-; Total pins                         ; 48                                          ;
+; Total logic elements               ; 1,115                                       ;
+;     Total combinational functions  ; 1,067                                       ;
+;     Dedicated logic registers      ; 208                                         ;
+; Total registers                    ; 208                                         ;
+; Total pins                         ; 52                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -175,34 +175,36 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                           ;
-+------------------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path         ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                               ; Library ;
-+------------------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------+---------+
-; ../sete_seg_display/sete_seg_display.vhd ; yes             ; User VHDL File               ; /home/marcelo-note/controle-brassagem/sete_seg_display/sete_seg_display.vhd                ;         ;
-; ../divisor_clock/divisor_clock.vhd       ; yes             ; User VHDL File               ; /home/marcelo-note/controle-brassagem/divisor_clock/divisor_clock.vhd                      ;         ;
-; controlador_pid.vhd                      ; yes             ; User VHDL File               ; /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid.vhd                  ;         ;
-; controlador_pid_tester.vhd               ; yes             ; User VHDL File               ; /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid_tester.vhd           ;         ;
-; lpm_divide.tdf                           ; yes             ; Megafunction                 ; /home/marcelo-note/intelFPGA_lite/18.1/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
-; abs_divider.inc                          ; yes             ; Megafunction                 ; /home/marcelo-note/intelFPGA_lite/18.1/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
-; sign_div_unsign.inc                      ; yes             ; Megafunction                 ; /home/marcelo-note/intelFPGA_lite/18.1/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
-; aglobal181.inc                           ; yes             ; Megafunction                 ; /home/marcelo-note/intelFPGA_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc      ;         ;
-; db/lpm_divide_ktl.tdf                    ; yes             ; Auto-Generated Megafunction  ; /home/marcelo-note/controle-brassagem/controlador_pid/db/lpm_divide_ktl.tdf                ;         ;
-; db/sign_div_unsign_mlh.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/marcelo-note/controle-brassagem/controlador_pid/db/sign_div_unsign_mlh.tdf           ;         ;
-; db/alt_u_div_mhe.tdf                     ; yes             ; Auto-Generated Megafunction  ; /home/marcelo-note/controle-brassagem/controlador_pid/db/alt_u_div_mhe.tdf                 ;         ;
-; db/add_sub_t3c.tdf                       ; yes             ; Auto-Generated Megafunction  ; /home/marcelo-note/controle-brassagem/controlador_pid/db/add_sub_t3c.tdf                   ;         ;
-; db/add_sub_u3c.tdf                       ; yes             ; Auto-Generated Megafunction  ; /home/marcelo-note/controle-brassagem/controlador_pid/db/add_sub_u3c.tdf                   ;         ;
-; db/lpm_divide_6nl.tdf                    ; yes             ; Auto-Generated Megafunction  ; /home/marcelo-note/controle-brassagem/controlador_pid/db/lpm_divide_6nl.tdf                ;         ;
-; db/sign_div_unsign_5nh.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/marcelo-note/controle-brassagem/controlador_pid/db/sign_div_unsign_5nh.tdf           ;         ;
-; db/alt_u_div_kke.tdf                     ; yes             ; Auto-Generated Megafunction  ; /home/marcelo-note/controle-brassagem/controlador_pid/db/alt_u_div_kke.tdf                 ;         ;
-; db/lpm_divide_8sl.tdf                    ; yes             ; Auto-Generated Megafunction  ; /home/marcelo-note/controle-brassagem/controlador_pid/db/lpm_divide_8sl.tdf                ;         ;
-; db/sign_div_unsign_akh.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/marcelo-note/controle-brassagem/controlador_pid/db/sign_div_unsign_akh.tdf           ;         ;
-; db/alt_u_div_uee.tdf                     ; yes             ; Auto-Generated Megafunction  ; /home/marcelo-note/controle-brassagem/controlador_pid/db/alt_u_div_uee.tdf                 ;         ;
-; db/lpm_divide_ekl.tdf                    ; yes             ; Auto-Generated Megafunction  ; /home/marcelo-note/controle-brassagem/controlador_pid/db/lpm_divide_ekl.tdf                ;         ;
-; db/sign_div_unsign_dkh.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/marcelo-note/controle-brassagem/controlador_pid/db/sign_div_unsign_dkh.tdf           ;         ;
-; db/alt_u_div_4fe.tdf                     ; yes             ; Auto-Generated Megafunction  ; /home/marcelo-note/controle-brassagem/controlador_pid/db/alt_u_div_4fe.tdf                 ;         ;
-+------------------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                   ;
++--------------------------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                 ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                               ; Library ;
++--------------------------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------+---------+
+; ../leitor_temperatura/leitor_temperatura.vhd     ; yes             ; User VHDL File               ; /home/marcelo-note/controle-brassagem/leitor_temperatura/leitor_temperatura.vhd            ;         ;
+; ../controlador_potencia/controlador_potencia.vhd ; yes             ; User VHDL File               ; /home/marcelo-note/controle-brassagem/controlador_potencia/controlador_potencia.vhd        ;         ;
+; ../sete_seg_display/sete_seg_display.vhd         ; yes             ; User VHDL File               ; /home/marcelo-note/controle-brassagem/sete_seg_display/sete_seg_display.vhd                ;         ;
+; ../divisor_clock/divisor_clock.vhd               ; yes             ; User VHDL File               ; /home/marcelo-note/controle-brassagem/divisor_clock/divisor_clock.vhd                      ;         ;
+; controlador_pid.vhd                              ; yes             ; User VHDL File               ; /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid.vhd                  ;         ;
+; controlador_pid_tester.vhd                       ; yes             ; User VHDL File               ; /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid_tester.vhd           ;         ;
+; lpm_divide.tdf                                   ; yes             ; Megafunction                 ; /home/marcelo-note/intelFPGA_lite/18.1/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
+; abs_divider.inc                                  ; yes             ; Megafunction                 ; /home/marcelo-note/intelFPGA_lite/18.1/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
+; sign_div_unsign.inc                              ; yes             ; Megafunction                 ; /home/marcelo-note/intelFPGA_lite/18.1/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
+; aglobal181.inc                                   ; yes             ; Megafunction                 ; /home/marcelo-note/intelFPGA_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc      ;         ;
+; db/lpm_divide_ktl.tdf                            ; yes             ; Auto-Generated Megafunction  ; /home/marcelo-note/controle-brassagem/controlador_pid/db/lpm_divide_ktl.tdf                ;         ;
+; db/sign_div_unsign_mlh.tdf                       ; yes             ; Auto-Generated Megafunction  ; /home/marcelo-note/controle-brassagem/controlador_pid/db/sign_div_unsign_mlh.tdf           ;         ;
+; db/alt_u_div_mhe.tdf                             ; yes             ; Auto-Generated Megafunction  ; /home/marcelo-note/controle-brassagem/controlador_pid/db/alt_u_div_mhe.tdf                 ;         ;
+; db/add_sub_t3c.tdf                               ; yes             ; Auto-Generated Megafunction  ; /home/marcelo-note/controle-brassagem/controlador_pid/db/add_sub_t3c.tdf                   ;         ;
+; db/add_sub_u3c.tdf                               ; yes             ; Auto-Generated Megafunction  ; /home/marcelo-note/controle-brassagem/controlador_pid/db/add_sub_u3c.tdf                   ;         ;
+; db/lpm_divide_6nl.tdf                            ; yes             ; Auto-Generated Megafunction  ; /home/marcelo-note/controle-brassagem/controlador_pid/db/lpm_divide_6nl.tdf                ;         ;
+; db/sign_div_unsign_5nh.tdf                       ; yes             ; Auto-Generated Megafunction  ; /home/marcelo-note/controle-brassagem/controlador_pid/db/sign_div_unsign_5nh.tdf           ;         ;
+; db/alt_u_div_kke.tdf                             ; yes             ; Auto-Generated Megafunction  ; /home/marcelo-note/controle-brassagem/controlador_pid/db/alt_u_div_kke.tdf                 ;         ;
+; db/lpm_divide_8sl.tdf                            ; yes             ; Auto-Generated Megafunction  ; /home/marcelo-note/controle-brassagem/controlador_pid/db/lpm_divide_8sl.tdf                ;         ;
+; db/sign_div_unsign_akh.tdf                       ; yes             ; Auto-Generated Megafunction  ; /home/marcelo-note/controle-brassagem/controlador_pid/db/sign_div_unsign_akh.tdf           ;         ;
+; db/alt_u_div_uee.tdf                             ; yes             ; Auto-Generated Megafunction  ; /home/marcelo-note/controle-brassagem/controlador_pid/db/alt_u_div_uee.tdf                 ;         ;
+; db/lpm_divide_ekl.tdf                            ; yes             ; Auto-Generated Megafunction  ; /home/marcelo-note/controle-brassagem/controlador_pid/db/lpm_divide_ekl.tdf                ;         ;
+; db/sign_div_unsign_dkh.tdf                       ; yes             ; Auto-Generated Megafunction  ; /home/marcelo-note/controle-brassagem/controlador_pid/db/sign_div_unsign_dkh.tdf           ;         ;
+; db/alt_u_div_4fe.tdf                             ; yes             ; Auto-Generated Megafunction  ; /home/marcelo-note/controle-brassagem/controlador_pid/db/alt_u_div_4fe.tdf                 ;         ;
++--------------------------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------+---------+
 
 
 +-------------------------------------------------------------------------------------+
@@ -210,30 +212,30 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+---------------------------------------+
 ; Resource                                    ; Usage                                 ;
 +---------------------------------------------+---------------------------------------+
-; Estimated Total logic elements              ; 941                                   ;
+; Estimated Total logic elements              ; 1,115                                 ;
 ;                                             ;                                       ;
-; Total combinational functions               ; 913                                   ;
+; Total combinational functions               ; 1067                                  ;
 ; Logic element usage by number of LUT inputs ;                                       ;
-;     -- 4 input functions                    ; 272                                   ;
-;     -- 3 input functions                    ; 242                                   ;
-;     -- <=2 input functions                  ; 399                                   ;
+;     -- 4 input functions                    ; 316                                   ;
+;     -- 3 input functions                    ; 298                                   ;
+;     -- <=2 input functions                  ; 453                                   ;
 ;                                             ;                                       ;
 ; Logic elements by mode                      ;                                       ;
-;     -- normal mode                          ; 581                                   ;
-;     -- arithmetic mode                      ; 332                                   ;
+;     -- normal mode                          ; 681                                   ;
+;     -- arithmetic mode                      ; 386                                   ;
 ;                                             ;                                       ;
-; Total registers                             ; 150                                   ;
-;     -- Dedicated logic registers            ; 150                                   ;
+; Total registers                             ; 208                                   ;
+;     -- Dedicated logic registers            ; 208                                   ;
 ;     -- I/O registers                        ; 0                                     ;
 ;                                             ;                                       ;
-; I/O pins                                    ; 48                                    ;
+; I/O pins                                    ; 52                                    ;
 ;                                             ;                                       ;
 ; Embedded Multiplier 9-bit elements          ; 0                                     ;
 ;                                             ;                                       ;
 ; Maximum fan-out node                        ; divisor_clock:divisor_50x|out_clk_tmp ;
-; Maximum fan-out                             ; 103                                   ;
-; Total fan-out                               ; 2946                                  ;
-; Average fan-out                             ; 2.54                                  ;
+; Maximum fan-out                             ; 142                                   ;
+; Total fan-out                               ; 3539                                  ;
+; Average fan-out                             ; 2.57                                  ;
 +---------------------------------------------+---------------------------------------+
 
 
@@ -242,9 +244,11 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------------------------+------------------------+--------------+
 ; Compilation Hierarchy Node                        ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                     ; Entity Name            ; Library Name ;
 +---------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------------------------+------------------------+--------------+
-; |controlador_pid_tester                           ; 913 (198)           ; 150 (105)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 48   ; 0            ; 0          ; |controlador_pid_tester                                                                                                 ; controlador_pid_tester ; work         ;
-;    |controlador_pid:pid|                          ; 51 (51)             ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |controlador_pid_tester|controlador_pid:pid                                                                             ; controlador_pid        ; work         ;
+; |controlador_pid_tester                           ; 1067 (136)          ; 208 (78)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 52   ; 0            ; 0          ; |controlador_pid_tester                                                                                                 ; controlador_pid_tester ; work         ;
+;    |controlador_pid:pid|                          ; 73 (73)             ; 18 (18)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |controlador_pid_tester|controlador_pid:pid                                                                             ; controlador_pid        ; work         ;
+;    |controlador_potencia:controlador|             ; 121 (121)           ; 27 (27)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |controlador_pid_tester|controlador_potencia:controlador                                                                ; controlador_potencia   ; work         ;
 ;    |divisor_clock:divisor_50x|                    ; 39 (39)             ; 29 (29)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |controlador_pid_tester|divisor_clock:divisor_50x                                                                       ; divisor_clock          ; work         ;
+;    |leitor_temperatura:termometro|                ; 73 (73)             ; 56 (56)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |controlador_pid_tester|leitor_temperatura:termometro                                                                   ; leitor_temperatura     ; work         ;
 ;    |lpm_divide:Div0|                              ; 78 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |controlador_pid_tester|lpm_divide:Div0                                                                                 ; lpm_divide             ; work         ;
 ;       |lpm_divide_ktl:auto_generated|             ; 78 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |controlador_pid_tester|lpm_divide:Div0|lpm_divide_ktl:auto_generated                                                   ; lpm_divide_ktl         ; work         ;
 ;          |sign_div_unsign_mlh:divider|            ; 78 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |controlador_pid_tester|lpm_divide:Div0|lpm_divide_ktl:auto_generated|sign_div_unsign_mlh:divider                       ; sign_div_unsign_mlh    ; work         ;
@@ -279,39 +283,65 @@ refer to the applicable agreement for further details.
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+----------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                 ;
-+--------------------------------------------+-------------------------------------------------------+
-; Register name                              ; Reason for Removal                                    ;
-+--------------------------------------------+-------------------------------------------------------+
-; controlador_pid:pid|ultima_temperatura[13] ; Stuck at GND due to stuck port data_in                ;
-; controlador_pid:pid|percentual_potencia[0] ; Stuck at GND due to stuck port data_in                ;
-; set_point_tmp[1]                           ; Merged with set_point_tmp[0]                          ;
-; temperatura_tmp[1]                         ; Merged with temperatura_tmp[0]                        ;
-; temperatura[1]                             ; Merged with temperatura[0]                            ;
-; controlador_pid:pid|ultima_temperatura[2]  ; Merged with controlador_pid:pid|ultima_temperatura[1] ;
-; set_point[1]                               ; Merged with set_point[0]                              ;
-; temperatura_tmp[0]                         ; Stuck at GND due to stuck port data_in                ;
-; set_point_tmp[0]                           ; Stuck at GND due to stuck port data_in                ;
-; set_point[0]                               ; Stuck at GND due to stuck port data_in                ;
-; temperatura[0]                             ; Stuck at GND due to stuck port data_in                ;
-; controlador_pid:pid|ultima_temperatura[1]  ; Stuck at GND due to stuck port data_in                ;
-; update_display[0]                          ; Merged with update_variaveis[0]                       ;
-; update_display[1]                          ; Merged with update_variaveis[1]                       ;
-; Total Number of Removed Registers = 14     ;                                                       ;
-+--------------------------------------------+-------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                 ;
++---------------------------------------------------------+----------------------------------------------------------+
+; Register name                                           ; Reason for Removal                                       ;
++---------------------------------------------------------+----------------------------------------------------------+
+; controlador_pid:pid|ultima_temperatura[13]              ; Stuck at GND due to stuck port data_in                   ;
+; controlador_pid:pid|percentual_potencia[0]              ; Stuck at GND due to stuck port data_in                   ;
+; controlador_potencia:controlador|disparo_triac          ; Merged with controlador_potencia:controlador|delay_triac ;
+; update_variaveis[19]                                    ; Merged with leitor_temperatura:termometro|delay_1s[19]   ;
+; update_variaveis[18]                                    ; Merged with leitor_temperatura:termometro|delay_1s[18]   ;
+; update_variaveis[17]                                    ; Merged with leitor_temperatura:termometro|delay_1s[17]   ;
+; update_variaveis[16]                                    ; Merged with leitor_temperatura:termometro|delay_1s[16]   ;
+; update_variaveis[15]                                    ; Merged with leitor_temperatura:termometro|delay_1s[15]   ;
+; update_variaveis[14]                                    ; Merged with leitor_temperatura:termometro|delay_1s[14]   ;
+; update_variaveis[13]                                    ; Merged with leitor_temperatura:termometro|delay_1s[13]   ;
+; update_variaveis[12]                                    ; Merged with leitor_temperatura:termometro|delay_1s[12]   ;
+; update_variaveis[11]                                    ; Merged with leitor_temperatura:termometro|delay_1s[11]   ;
+; update_variaveis[10]                                    ; Merged with leitor_temperatura:termometro|delay_1s[10]   ;
+; update_variaveis[9]                                     ; Merged with leitor_temperatura:termometro|delay_1s[9]    ;
+; update_variaveis[8]                                     ; Merged with leitor_temperatura:termometro|delay_1s[8]    ;
+; update_variaveis[7]                                     ; Merged with leitor_temperatura:termometro|delay_1s[7]    ;
+; update_variaveis[6]                                     ; Merged with leitor_temperatura:termometro|delay_1s[6]    ;
+; update_variaveis[5]                                     ; Merged with leitor_temperatura:termometro|delay_1s[5]    ;
+; update_variaveis[4]                                     ; Merged with leitor_temperatura:termometro|delay_1s[4]    ;
+; update_variaveis[3]                                     ; Merged with leitor_temperatura:termometro|delay_1s[3]    ;
+; update_variaveis[2]                                     ; Merged with leitor_temperatura:termometro|delay_1s[2]    ;
+; update_variaveis[1]                                     ; Merged with leitor_temperatura:termometro|delay_1s[1]    ;
+; update_variaveis[0]                                     ; Merged with leitor_temperatura:termometro|delay_1s[0]    ;
+; set_point_tmp[1]                                        ; Merged with set_point_tmp[0]                             ;
+; set_point[1]                                            ; Merged with set_point[0]                                 ;
+; set_point_tmp[0]                                        ; Stuck at GND due to stuck port data_in                   ;
+; set_point[0]                                            ; Stuck at GND due to stuck port data_in                   ;
+; controlador_potencia:controlador|count_ativacao[19..25] ; Stuck at GND due to stuck port data_in                   ;
+; update_display[0]                                       ; Merged with leitor_temperatura:termometro|delay_1s[0]    ;
+; controlador_potencia:controlador|count_ativacao[14..18] ; Stuck at GND due to stuck port data_in                   ;
+; Total Number of Removed Registers = 40                  ;                                                          ;
++---------------------------------------------------------+----------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                ;
-+--------------------+---------------------------+-----------------------------------------------------------+
-; Register name      ; Reason for Removal        ; Registers Removed due to This Register                    ;
-+--------------------+---------------------------+-----------------------------------------------------------+
-; temperatura_tmp[0] ; Stuck at GND              ; temperatura[0], controlador_pid:pid|ultima_temperatura[1] ;
-;                    ; due to stuck port data_in ;                                                           ;
-; set_point_tmp[0]   ; Stuck at GND              ; set_point[0]                                              ;
-;                    ; due to stuck port data_in ;                                                           ;
-+--------------------+---------------------------+-----------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                   ;
++--------------------------------------------+---------------------------+------------------------------------------------------+
+; Register name                              ; Reason for Removal        ; Registers Removed due to This Register               ;
++--------------------------------------------+---------------------------+------------------------------------------------------+
+; controlador_pid:pid|percentual_potencia[0] ; Stuck at GND              ; controlador_potencia:controlador|count_ativacao[25], ;
+;                                            ; due to stuck port data_in ; controlador_potencia:controlador|count_ativacao[24], ;
+;                                            ;                           ; controlador_potencia:controlador|count_ativacao[23], ;
+;                                            ;                           ; controlador_potencia:controlador|count_ativacao[22], ;
+;                                            ;                           ; controlador_potencia:controlador|count_ativacao[21], ;
+;                                            ;                           ; controlador_potencia:controlador|count_ativacao[20], ;
+;                                            ;                           ; controlador_potencia:controlador|count_ativacao[19], ;
+;                                            ;                           ; controlador_potencia:controlador|count_ativacao[14], ;
+;                                            ;                           ; controlador_potencia:controlador|count_ativacao[15], ;
+;                                            ;                           ; controlador_potencia:controlador|count_ativacao[16], ;
+;                                            ;                           ; controlador_potencia:controlador|count_ativacao[17], ;
+;                                            ;                           ; controlador_potencia:controlador|count_ativacao[18]  ;
+; set_point_tmp[0]                           ; Stuck at GND              ; set_point[0]                                         ;
+;                                            ; due to stuck port data_in ;                                                      ;
++--------------------------------------------+---------------------------+------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -319,30 +349,33 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 150   ;
+; Total registers                              ; 208   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 3     ;
+; Number of registers using Asynchronous Clear ; 4     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 45    ;
+; Number of registers using Clock Enable       ; 66    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; set_point_tmp[8]                       ; 6       ;
-; set_point_tmp[6]                       ; 11      ;
-; set_point_tmp[4]                       ; 11      ;
-; set_point_tmp[2]                       ; 6       ;
-; temperatura_tmp[8]                     ; 6       ;
-; temperatura_tmp[5]                     ; 11      ;
-; temperatura_tmp[3]                     ; 10      ;
-; Total number of inverted registers = 7 ;         ;
-+----------------------------------------+---------+
++---------------------------------------------------------+
+; Inverted Register Statistics                            ;
++-----------------------------------------------+---------+
+; Inverted Register                             ; Fan out ;
++-----------------------------------------------+---------+
+; leitor_temperatura:termometro|cs_tmp          ; 4       ;
+; set_point_tmp[7]                              ; 6       ;
+; set_point_tmp[6]                              ; 5       ;
+; set_point_tmp[4]                              ; 5       ;
+; set_point_tmp[3]                              ; 6       ;
+; set_point_tmp[2]                              ; 6       ;
+; leitor_temperatura:termometro|bit_recebido[0] ; 13      ;
+; leitor_temperatura:termometro|bit_recebido[1] ; 13      ;
+; leitor_temperatura:termometro|bit_recebido[2] ; 11      ;
+; leitor_temperatura:termometro|bit_recebido[3] ; 12      ;
+; Total number of inverted registers = 10       ;         ;
++-----------------------------------------------+---------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -350,16 +383,20 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |controlador_pid_tester|pid_ativo~reg0                                              ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |controlador_pid_tester|controlador_pid:pid|percentual_potencia[6]                  ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |controlador_pid_tester|clk_pid                                                     ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |controlador_pid_tester|controlador_pid:pid|percentual_potencia[3]                  ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |controlador_pid_tester|leitor_temperatura:termometro|sck_tmp                       ;
 ; 5:1                ; 10 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |controlador_pid_tester|set_point_tmp_unsigned                                      ;
-; 5:1                ; 10 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |controlador_pid_tester|temperatura_tmp_unsigned                                    ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |controlador_pid_tester|sete_seg_display:display_dezena_set_point|out_display[6]    ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |controlador_pid_tester|sete_seg_display:display_dezena_set_point|out_display[5]    ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |controlador_pid_tester|sete_seg_display:display_unidade_set_point|out_display[5]   ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |controlador_pid_tester|sete_seg_display:display_dezena_temperatura|out_display[6]  ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |controlador_pid_tester|sete_seg_display:display_unidade_temperatura|out_display[6] ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |controlador_pid_tester|sete_seg_display:display_dezena_potencia|out_display[6]     ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |controlador_pid_tester|sete_seg_display:display_unidade_temperatura|out_display[5] ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |controlador_pid_tester|sete_seg_display:display_dezena_potencia|out_display[5]     ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |controlador_pid_tester|sete_seg_display:display_unidade_potencia|out_display[6]    ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |controlador_pid_tester|controlador_potencia:controlador|pulsos_potencia[1]         ;
+; 16:1               ; 3 bits    ; 30 LEs        ; 24 LEs               ; 6 LEs                  ; No         ; |controlador_pid_tester|controlador_potencia:controlador|pulsos_potencia[7]         ;
+; 18:1               ; 5 bits    ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; No         ; |controlador_pid_tester|controlador_potencia:controlador|pulsos_potencia[4]         ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |controlador_pid_tester|controlador_potencia:controlador|pulsos_potencia[5]         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------+
 
 
@@ -519,25 +556,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 48                          ;
-; cycloneiii_ff         ; 150                         ;
-;     CLR               ; 3                           ;
-;     ENA               ; 45                          ;
-;     plain             ; 102                         ;
-; cycloneiii_lcell_comb ; 925                         ;
-;     arith             ; 332                         ;
+; boundary_port         ; 52                          ;
+; cycloneiii_ff         ; 208                         ;
+;     CLR               ; 4                           ;
+;     ENA               ; 66                          ;
+;     plain             ; 138                         ;
+; cycloneiii_lcell_comb ; 1080                        ;
+;     arith             ; 386                         ;
 ;         1 data inputs ; 6                           ;
-;         2 data inputs ; 119                         ;
-;         3 data inputs ; 207                         ;
-;     normal            ; 593                         ;
-;         0 data inputs ; 37                          ;
+;         2 data inputs ; 140                         ;
+;         3 data inputs ; 240                         ;
+;     normal            ; 694                         ;
+;         0 data inputs ; 39                          ;
 ;         1 data inputs ; 34                          ;
-;         2 data inputs ; 215                         ;
-;         3 data inputs ; 35                          ;
-;         4 data inputs ; 272                         ;
+;         2 data inputs ; 247                         ;
+;         3 data inputs ; 58                          ;
+;         4 data inputs ; 316                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 23.30                       ;
-; Average LUT depth     ; 14.80                       ;
+; Average LUT depth     ; 12.01                       ;
 +-----------------------+-----------------------------+
 
 
@@ -546,7 +583,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:04     ;
 +----------------+--------------+
 
 
@@ -556,10 +593,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Wed May 13 16:33:24 2020
+    Info: Processing started: Fri May 22 21:59:22 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off controlador_pid_tester -c controlador_pid_tester
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file /home/marcelo-note/controle-brassagem/leitor_temperatura/leitor_temperatura.vhd
+    Info (12022): Found design unit 1: leitor_temperatura-main File: /home/marcelo-note/controle-brassagem/leitor_temperatura/leitor_temperatura.vhd Line: 21
+    Info (12023): Found entity 1: leitor_temperatura File: /home/marcelo-note/controle-brassagem/leitor_temperatura/leitor_temperatura.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file /home/marcelo-note/controle-brassagem/controlador_potencia/controlador_potencia.vhd
+    Info (12022): Found design unit 1: controlador_potencia-main File: /home/marcelo-note/controle-brassagem/controlador_potencia/controlador_potencia.vhd Line: 21
+    Info (12023): Found entity 1: controlador_potencia File: /home/marcelo-note/controle-brassagem/controlador_potencia/controlador_potencia.vhd Line: 11
 Info (12021): Found 2 design units, including 1 entities, in source file controlador_pid_tb.vhd
     Info (12022): Found design unit 1: controlador_pid_tb-sim File: /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid_tb.vhd Line: 14
     Info (12023): Found entity 1: controlador_pid_tb File: /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid_tb.vhd Line: 11
@@ -573,21 +616,23 @@ Info (12021): Found 2 design units, including 1 entities, in source file control
     Info (12022): Found design unit 1: controlador_pid-main File: /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid.vhd Line: 20
     Info (12023): Found entity 1: controlador_pid File: /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid.vhd Line: 10
 Info (12021): Found 2 design units, including 1 entities, in source file controlador_pid_tester.vhd
-    Info (12022): Found design unit 1: controlador_pid_tester-main File: /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid_tester.vhd Line: 38
+    Info (12022): Found design unit 1: controlador_pid_tester-main File: /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid_tester.vhd Line: 44
     Info (12023): Found entity 1: controlador_pid_tester File: /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid_tester.vhd Line: 17
 Info (12127): Elaborating entity "controlador_pid_tester" for the top level hierarchy
-Info (12128): Elaborating entity "divisor_clock" for hierarchy "divisor_clock:divisor_50x" File: /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid_tester.vhd Line: 97
-Info (12128): Elaborating entity "controlador_pid" for hierarchy "controlador_pid:pid" File: /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid_tester.vhd Line: 98
-Info (12128): Elaborating entity "sete_seg_display" for hierarchy "sete_seg_display:display_dezena_set_point" File: /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid_tester.vhd Line: 100
+Info (12128): Elaborating entity "divisor_clock" for hierarchy "divisor_clock:divisor_50x" File: /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid_tester.vhd Line: 124
+Info (12128): Elaborating entity "controlador_pid" for hierarchy "controlador_pid:pid" File: /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid_tester.vhd Line: 125
+Info (12128): Elaborating entity "leitor_temperatura" for hierarchy "leitor_temperatura:termometro" File: /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid_tester.vhd Line: 126
+Info (12128): Elaborating entity "controlador_potencia" for hierarchy "controlador_potencia:controlador" File: /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid_tester.vhd Line: 127
+Info (12128): Elaborating entity "sete_seg_display" for hierarchy "sete_seg_display:display_dezena_set_point" File: /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid_tester.vhd Line: 129
 Info (278001): Inferred 6 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid_tester.vhd Line: 192
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid_tester.vhd Line: 193
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div1" File: /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid_tester.vhd Line: 196
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod1" File: /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid_tester.vhd Line: 197
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div2" File: /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid_tester.vhd Line: 203
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod2" File: /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid_tester.vhd Line: 204
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0" File: /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid_tester.vhd Line: 192
-Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter: File: /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid_tester.vhd Line: 192
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid_tester.vhd Line: 193
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid_tester.vhd Line: 194
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div1" File: /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid_tester.vhd Line: 197
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod1" File: /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid_tester.vhd Line: 198
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div2" File: /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid_tester.vhd Line: 204
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod2" File: /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid_tester.vhd Line: 205
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0" File: /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid_tester.vhd Line: 193
+Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter: File: /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid_tester.vhd Line: 193
     Info (12134): Parameter "LPM_WIDTHN" = "12"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -602,8 +647,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/add_
     Info (12023): Found entity 1: add_sub_t3c File: /home/marcelo-note/controle-brassagem/controlador_pid/db/add_sub_t3c.tdf Line: 22
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_u3c.tdf
     Info (12023): Found entity 1: add_sub_u3c File: /home/marcelo-note/controle-brassagem/controlador_pid/db/add_sub_u3c.tdf Line: 22
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod0" File: /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid_tester.vhd Line: 193
-Info (12133): Instantiated megafunction "lpm_divide:Mod0" with the following parameter: File: /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid_tester.vhd Line: 193
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod0" File: /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid_tester.vhd Line: 194
+Info (12133): Instantiated megafunction "lpm_divide:Mod0" with the following parameter: File: /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid_tester.vhd Line: 194
     Info (12134): Parameter "LPM_WIDTHN" = "12"
     Info (12134): Parameter "LPM_WIDTHD" = "12"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -614,8 +659,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_5nh File: /home/marcelo-note/controle-brassagem/controlador_pid/db/sign_div_unsign_5nh.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_kke.tdf
     Info (12023): Found entity 1: alt_u_div_kke File: /home/marcelo-note/controle-brassagem/controlador_pid/db/alt_u_div_kke.tdf Line: 26
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Div2" File: /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid_tester.vhd Line: 203
-Info (12133): Instantiated megafunction "lpm_divide:Div2" with the following parameter: File: /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid_tester.vhd Line: 203
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div2" File: /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid_tester.vhd Line: 204
+Info (12133): Instantiated megafunction "lpm_divide:Div2" with the following parameter: File: /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid_tester.vhd Line: 204
     Info (12134): Parameter "LPM_WIDTHN" = "7"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -626,8 +671,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_akh File: /home/marcelo-note/controle-brassagem/controlador_pid/db/sign_div_unsign_akh.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_uee.tdf
     Info (12023): Found entity 1: alt_u_div_uee File: /home/marcelo-note/controle-brassagem/controlador_pid/db/alt_u_div_uee.tdf Line: 26
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod2" File: /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid_tester.vhd Line: 204
-Info (12133): Instantiated megafunction "lpm_divide:Mod2" with the following parameter: File: /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid_tester.vhd Line: 204
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod2" File: /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid_tester.vhd Line: 205
+Info (12133): Instantiated megafunction "lpm_divide:Mod2" with the following parameter: File: /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid_tester.vhd Line: 205
     Info (12134): Parameter "LPM_WIDTHN" = "7"
     Info (12134): Parameter "LPM_WIDTHD" = "7"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -641,14 +686,14 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/alt_
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1050 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 5 input pins
-    Info (21059): Implemented 43 output pins
-    Info (21061): Implemented 1002 logic cells
+Info (21057): Implemented 1230 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
+    Info (21059): Implemented 46 output pins
+    Info (21061): Implemented 1178 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 1013 megabytes
-    Info: Processing ended: Wed May 13 16:33:42 2020
-    Info: Elapsed time: 00:00:18
-    Info: Total CPU time (on all processors): 00:00:40
+    Info: Peak virtual memory: 1022 megabytes
+    Info: Processing ended: Fri May 22 21:59:50 2020
+    Info: Elapsed time: 00:00:28
+    Info: Total CPU time (on all processors): 00:00:50
 
 

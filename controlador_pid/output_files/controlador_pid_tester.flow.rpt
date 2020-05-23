@@ -1,5 +1,5 @@
 Flow report for controlador_pid_tester
-Wed May 13 16:34:13 2020
+Fri May 22 22:00:32 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,18 +40,18 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Wed May 13 16:34:13 2020       ;
+; Flow Status                        ; Successful - Fri May 22 22:00:32 2020       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; controlador_pid_tester                      ;
 ; Top-level Entity Name              ; controlador_pid_tester                      ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M50DAF484C7G                              ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 928 / 49,760 ( 2 % )                        ;
-;     Total combinational functions  ; 917 / 49,760 ( 2 % )                        ;
-;     Dedicated logic registers      ; 150 / 49,760 ( < 1 % )                      ;
-; Total registers                    ; 150                                         ;
-; Total pins                         ; 48 / 360 ( 13 % )                           ;
+; Total logic elements               ; 1,106 / 49,760 ( 2 % )                      ;
+;     Total combinational functions  ; 1,072 / 49,760 ( 2 % )                      ;
+;     Dedicated logic registers      ; 208 / 49,760 ( < 1 % )                      ;
+; Total registers                    ; 208                                         ;
+; Total pins                         ; 52 / 360 ( 14 % )                           ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 1,677,312 ( 0 % )                       ;
 ; Embedded Multiplier 9-bit elements ; 0 / 288 ( 0 % )                             ;
@@ -66,7 +66,7 @@ refer to the applicable agreement for further details.
 +-------------------+------------------------+
 ; Option            ; Setting                ;
 +-------------------+------------------------+
-; Start date & time ; 05/13/2020 16:33:24    ;
+; Start date & time ; 05/22/2020 21:59:22    ;
 ; Main task         ; Compilation            ;
 ; Revision Name     ; controlador_pid_tester ;
 +-------------------+------------------------+
@@ -77,7 +77,7 @@ refer to the applicable agreement for further details.
 +--------------------------------------+----------------------------------------+---------------+-------------+--------------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id         ;
 +--------------------------------------+----------------------------------------+---------------+-------------+--------------------+
-; COMPILER_SIGNATURE_ID                ; 268891676866174.158939840431526        ; --            ; --          ; --                 ;
+; COMPILER_SIGNATURE_ID                ; 268891676866174.159019556226684        ; --            ; --          ; --                 ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; controlador_pid_tb ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; controlador_pid_tb                     ; --            ; --          ; eda_simulation     ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Vhdl                                   ; --            ; --          ; eda_simulation     ;
@@ -104,12 +104,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:18     ; 1.0                     ; 1005 MB             ; 00:00:39                           ;
-; Fitter               ; 00:00:18     ; 1.1                     ; 1401 MB             ; 00:00:24                           ;
-; Assembler            ; 00:00:04     ; 1.0                     ; 829 MB              ; 00:00:03                           ;
-; Timing Analyzer      ; 00:00:04     ; 1.2                     ; 871 MB              ; 00:00:04                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 1073 MB             ; 00:00:01                           ;
-; Total                ; 00:00:45     ; --                      ; --                  ; 00:01:11                           ;
+; Analysis & Synthesis ; 00:00:28     ; 1.0                     ; 1003 MB             ; 00:00:49                           ;
+; Fitter               ; 00:00:26     ; 1.1                     ; 1404 MB             ; 00:00:33                           ;
+; Assembler            ; 00:00:04     ; 1.0                     ; 830 MB              ; 00:00:04                           ;
+; Timing Analyzer      ; 00:00:06     ; 1.2                     ; 876 MB              ; 00:00:06                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 1072 MB             ; 00:00:01                           ;
+; Total                ; 00:01:05     ; --                      ; --                  ; 00:01:33                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
