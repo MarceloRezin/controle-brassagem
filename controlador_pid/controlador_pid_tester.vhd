@@ -17,12 +17,18 @@ use ieee.numeric_std.all;
 entity controlador_pid_tester is
     port(
         clk_50MHZ           :   in  std_logic;
-        func_select         :   in  std_logic;
         ativar_pid          :   in  std_logic;
         btn_mais            :   in  std_logic;
         btn_menos           :   in  std_logic;
 
         pid_ativo           :   out std_logic;
+
+        so                  :   in  std_logic;
+        cs                  :   out std_logic;
+        sck                 :   out std_logic;
+
+        passagem_zero       :   in  std_logic;
+        disparo_triac       :   out std_logic;
    
         dezena_set_point    :   out std_logic_vector(6 downto 0);
         unidade_set_point   :   out std_logic_vector(6 downto 0);
@@ -47,6 +53,27 @@ architecture main of controlador_pid_tester is
         );
     end component controlador_pid;
 
+    component leitor_temperatura is
+        port(
+            clk_1MHZ    :   in  std_logic;
+            so          :   in  std_logic;
+            
+            cs          :   out std_logic;
+            sck         :   out std_logic;
+            temperatura :   out std_logic_vector(11 downto 0) -- Os 2 lsb's são as frações decimais (dividir o inteiro na base 10 por 4)
+        );
+    end component leitor_temperatura;
+
+    component controlador_potencia is
+        port(
+            clk_1MHZ                :   in  std_logic;
+            passagem_zero           :   in  std_logic;
+            porcentagem_potencia    :   in  integer range 0 to 100;
+       
+            disparo_triac           :   out std_logic
+        );
+    end component controlador_potencia;
+
     component divisor_clock is
         port(
             clk     :   in  std_logic;
@@ -68,10 +95,10 @@ architecture main of controlador_pid_tester is
     signal      clk_pid                 :   std_logic                       :=  '0';
     
     signal      set_point               :   std_logic_vector(11 downto 0)    := (others => '0');
-    signal      set_point_tmp           :   std_logic_vector(11 downto 0)    := "000101010100"; --85
+    signal      set_point_tmp           :   std_logic_vector(11 downto 0)    := "000011011100"; --55
     
     signal      temperatura             :   std_logic_vector(11 downto 0)   :=  (others => '0');
-    signal      temperatura_tmp         :   std_logic_vector(11 downto 0)   :=  "000100101000"; --74
+    signal      temperatura_tmp         :   std_logic_vector(11 downto 0)   :=  (others => '0');
     
     signal      porcentagem_potencia    :   integer range 0 to 100          :=  0;
 
@@ -96,6 +123,8 @@ begin
 
     divisor_50x                 :   divisor_clock port map(clk_50MHZ, prescaler, clk_1MHZ);
     pid                         :   controlador_pid port map(clk_pid, set_point, temperatura, porcentagem_potencia);
+    termometro                  :   leitor_temperatura port map(clk_1MHZ, so, cs, sck, temperatura_tmp);
+    controlador                 :   controlador_potencia port map(clk_1MHZ, passagem_zero, porcentagem_potencia, disparo_triac);
     
     display_dezena_set_point    :   sete_seg_display port map(dezena_set_point_tmp, dezena_set_point);
     display_unidade_set_point   :   sete_seg_display port map(unidade_set_point_tmp, unidade_set_point);
@@ -134,59 +163,31 @@ begin
             if rising_mais = '1' then
                 reset_mais  <= '1';
 
-                if func_select = '1' then --Altera set point
-
-                    if set_point_tmp_unsigned = 396 then
-                        set_point_tmp_unsigned   := (others => '0');
-                    else
-                        set_point_tmp_unsigned   :=  set_point_tmp_unsigned + 4;
-                    end if;
-
-                    set_point_tmp   <=  std_logic_vector(set_point_tmp_unsigned);
-
-                else -- Altera temperatura
-                    
-                    if temperatura_tmp_unsigned = 396 then
-                        temperatura_tmp_unsigned   := (others => '0');
-                    else
-                        temperatura_tmp_unsigned   :=  temperatura_tmp_unsigned + 4;
-                    end if;
-
-                    temperatura_tmp   <=  std_logic_vector(temperatura_tmp_unsigned);
-
+                if set_point_tmp_unsigned = 396 then
+                    set_point_tmp_unsigned   := (others => '0');
+                else
+                    set_point_tmp_unsigned   :=  set_point_tmp_unsigned + 4;
                 end if;
+
+                set_point_tmp   <=  std_logic_vector(set_point_tmp_unsigned);
 
             elsif rising_menos = '1' then
                 reset_menos  <= '1';
 
-                if func_select = '1' then --Altera set point
-
-                    if set_point_tmp_unsigned = 0 then
-                        set_point_tmp_unsigned   := "000110001100"; --396 = 99
-                    else
-                        set_point_tmp_unsigned   :=  set_point_tmp_unsigned - 4;
-                    end if;
-
-                    set_point_tmp   <=  std_logic_vector(set_point_tmp_unsigned);
-
-                else -- Altera temperatura
-
-                    if temperatura_tmp_unsigned = 0 then
-                        temperatura_tmp_unsigned   := "000110001100"; --396 = 99
-                    else
-                        temperatura_tmp_unsigned   :=  temperatura_tmp_unsigned - 4;
-                    end if;
-
-                    temperatura_tmp   <=  std_logic_vector(temperatura_tmp_unsigned);
-
+                if set_point_tmp_unsigned = 0 then
+                    set_point_tmp_unsigned   := "000110001100"; --396 = 99
+                else
+                    set_point_tmp_unsigned   :=  set_point_tmp_unsigned - 4;
                 end if;
+
+                set_point_tmp   <=  std_logic_vector(set_point_tmp_unsigned);
 
             end if;
 
             update_display      :=   update_display + 1;
             update_variaveis    :=   update_variaveis + 1;
 
-            if update_display = 200000 then
+            if update_display = 200_000 then
 
                 set_point_tmp_unsigned      :=  shift_right(set_point_tmp_unsigned, 2); --Divide por 4, apresenta o valor inteiro
                 dezena_set_point_tmp        <=  to_integer(set_point_tmp_unsigned) / 10;
@@ -210,7 +211,7 @@ begin
                 clk_pid                     <=  '0';
             end if;
             
-            if update_variaveis = 1000000 then
+            if update_variaveis = 1_000_000 then
 
                 if ativar_pid = '1' then
                     set_point   <=  set_point_tmp;
