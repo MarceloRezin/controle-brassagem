@@ -226,6 +226,11 @@ public class TelaReceita extends JFrame {
 			rampas.add(rampa);
 		}
 		
+		if(rampas.size() < 1) {
+			JOptionPane.showMessageDialog(this, "A receita precisa ter no mínimo uma rampa.", "Erro:", JOptionPane.ERROR_MESSAGE);
+			return;
+		}
+		
 		if(receita == null) {
 			Receita receita = new Receita(nome, rampas);
 			ReceitaWrapper.getInstance().addReceita(receita);
