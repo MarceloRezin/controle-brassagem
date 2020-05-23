@@ -10,6 +10,7 @@ import javax.swing.border.EmptyBorder;
 import model.Rampa;
 import model.Receita;
 import model.Receita.ReceitaWrapper;
+import persistencia.Persistencia;
 
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -138,6 +139,15 @@ public class TelaReceita extends JFrame {
 			panelSul.add(btnExcluir);
 			
 			addVoltar();
+			
+			txtNome.setText(receita.getNome());
+			
+			ArrayList<Rampa> rampas = receita.getRampas();
+			for(int i=0; i<rampas.size(); i++) {
+				Rampa rampa = rampas.get(i);
+				rampasTemperatura.get(i).setText(rampa.getTemperaturaAlvo().toString().replaceAll("\\.", ","));
+				rampasTempo.get(i).setText(Integer.toString(rampa.getTempo()));
+			}
 		}
 		
 		revalidate(); //Atualiza o jframe
@@ -237,8 +247,12 @@ public class TelaReceita extends JFrame {
 			this.receita = receita;
 			setPropriedades();
 		}else {
-			
+			receita.setNome(nome);
+			receita.setRampas(rampas);
+			Persistencia.save();
 		}
+		
+		JOptionPane.showMessageDialog(this, "Receita salva com sucesso!");
 		
 	}
 	
