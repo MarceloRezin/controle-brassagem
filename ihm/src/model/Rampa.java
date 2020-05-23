@@ -7,7 +7,7 @@ public class Rampa implements Serializable{
 
 	private static final long serialVersionUID = 7637887027718043454L;
 	private BigDecimal temperaturaAlvo;
-    private int tempo;
+    private int tempo; //Em minutos
 
     public BigDecimal getTemperaturaAlvo() {
         return temperaturaAlvo;
