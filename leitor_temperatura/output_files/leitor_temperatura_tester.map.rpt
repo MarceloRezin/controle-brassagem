@@ -1,5 +1,5 @@
 Analysis & Synthesis report for leitor_temperatura_tester
-Mon May 11 15:15:59 2020
+Fri May 22 19:30:34 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -48,7 +48,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon May 11 15:15:59 2020       ;
+; Analysis & Synthesis Status        ; Successful - Fri May 22 19:30:34 2020       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; leitor_temperatura_tester                   ;
 ; Top-level Entity Name              ; leitor_temperatura_tester                   ;
@@ -397,7 +397,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon May 11 15:15:43 2020
+    Info: Processing started: Fri May 22 19:30:08 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off leitor_temperatura_tester -c leitor_temperatura_tester
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -414,8 +414,8 @@ Info (12021): Found 2 design units, including 1 entities, in source file leitor_
     Info (12022): Found design unit 1: leitor_temperatura_tester_tb-main File: /home/marcelo-note/controle-brassagem/leitor_temperatura/leitor_temperatura_tester_tb.vhd Line: 14
     Info (12023): Found entity 1: leitor_temperatura_tester_tb File: /home/marcelo-note/controle-brassagem/leitor_temperatura/leitor_temperatura_tester_tb.vhd Line: 11
 Info (12021): Found 2 design units, including 1 entities, in source file leitor_temperatura.vhd
-    Info (12022): Found design unit 1: leitor_temperatura-main File: /home/marcelo-note/controle-brassagem/leitor_temperatura/leitor_temperatura.vhd Line: 20
-    Info (12023): Found entity 1: leitor_temperatura File: /home/marcelo-note/controle-brassagem/leitor_temperatura/leitor_temperatura.vhd Line: 9
+    Info (12022): Found design unit 1: leitor_temperatura-main File: /home/marcelo-note/controle-brassagem/leitor_temperatura/leitor_temperatura.vhd Line: 21
+    Info (12023): Found entity 1: leitor_temperatura File: /home/marcelo-note/controle-brassagem/leitor_temperatura/leitor_temperatura.vhd Line: 10
 Info (12127): Elaborating entity "leitor_temperatura_tester" for the top level hierarchy
 Info (12128): Elaborating entity "divisor_clock" for hierarchy "divisor_clock:divisor_50x" File: /home/marcelo-note/controle-brassagem/leitor_temperatura/leitor_temperatura_tester.vhd Line: 61
 Info (12128): Elaborating entity "leitor_temperatura" for hierarchy "leitor_temperatura:leitor" File: /home/marcelo-note/controle-brassagem/leitor_temperatura/leitor_temperatura_tester.vhd Line: 62
@@ -459,9 +459,9 @@ Info (21057): Implemented 401 device resources after synthesis - the final resou
     Info (21059): Implemented 16 output pins
     Info (21061): Implemented 383 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 1006 megabytes
-    Info: Processing ended: Mon May 11 15:16:00 2020
-    Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:37
+    Info: Peak virtual memory: 1013 megabytes
+    Info: Processing ended: Fri May 22 19:30:34 2020
+    Info: Elapsed time: 00:00:26
+    Info: Total CPU time (on all processors): 00:00:46
 
 

@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
 
--- DATE "05/11/2020 15:16:22"
+-- DATE "05/22/2020 19:31:06"
 
 -- 
 -- Device: Altera 10M50DAF484C7G Package FBGA484
@@ -621,9 +621,9 @@ SIGNAL \leitor|temperatura_tmp\ : std_logic_vector(11 DOWNTO 0);
 SIGNAL \leitor|delay_1s\ : std_logic_vector(19 DOWNTO 0);
 SIGNAL \leitor|count_bordas\ : std_logic_vector(5 DOWNTO 0);
 SIGNAL \leitor|temperatura\ : std_logic_vector(11 DOWNTO 0);
-SIGNAL \leitor|ALT_INV_cs_tmp~q\ : std_logic;
-SIGNAL \divisor_50x|ALT_INV_reset_out_clk_tmp~q\ : std_logic;
 SIGNAL \ALT_INV_clk_50MHZ~inputclkctrl_outclk\ : std_logic;
+SIGNAL \divisor_50x|ALT_INV_reset_out_clk_tmp~q\ : std_logic;
+SIGNAL \leitor|ALT_INV_cs_tmp~q\ : std_logic;
 
 COMPONENT hard_block
     PORT (
@@ -653,9 +653,9 @@ ww_devpor <= devpor;
 \divisor_50x|out_clk_tmp~clkctrl_INCLK_bus\ <= (vcc & vcc & vcc & \divisor_50x|out_clk_tmp~q\);
 
 \clk_50MHZ~inputclkctrl_INCLK_bus\ <= (vcc & vcc & vcc & \clk_50MHZ~input_o\);
-\leitor|ALT_INV_cs_tmp~q\ <= NOT \leitor|cs_tmp~q\;
-\divisor_50x|ALT_INV_reset_out_clk_tmp~q\ <= NOT \divisor_50x|reset_out_clk_tmp~q\;
 \ALT_INV_clk_50MHZ~inputclkctrl_outclk\ <= NOT \clk_50MHZ~inputclkctrl_outclk\;
+\divisor_50x|ALT_INV_reset_out_clk_tmp~q\ <= NOT \divisor_50x|reset_out_clk_tmp~q\;
+\leitor|ALT_INV_cs_tmp~q\ <= NOT \leitor|cs_tmp~q\;
 auto_generated_inst : hard_block
 PORT MAP (
 	devoe => ww_devoe,
