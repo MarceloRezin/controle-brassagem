@@ -12,8 +12,12 @@ import model.Receita.ReceitaWrapper;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.GridLayout;
+import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.Component;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+
 import javax.swing.Box;
 import java.util.ArrayList;
 import javax.swing.SwingConstants;
@@ -25,9 +29,9 @@ public class TelaPrincial extends JFrame {
 
 	public TelaPrincial() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 460, 377);
+		setBounds(100, 100, 460, 318);
 		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 35));
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(new BorderLayout(0, 10));
 		
@@ -64,24 +68,40 @@ public class TelaPrincial extends JFrame {
 			lblSemReceitas.setVerticalAlignment(SwingConstants.TOP);
 			panelCenter.add(lblSemReceitas);
 		}else {
-			panelCenter.setLayout(new GridLayout(receitas.size(), 1, 0,50));
+			GridBagConstraints gridBagConstraints = new GridBagConstraints();
+			gridBagConstraints.insets = new Insets(10, 10, 0, 10);
+			gridBagConstraints.anchor = GridBagConstraints.NORTHWEST;
+			gridBagConstraints.gridy = 0;
+			gridBagConstraints.gridx = 0;
+			gridBagConstraints.weightx = 1;
+			gridBagConstraints.weighty = 1;
+			
+			panelCenter.setLayout(new GridBagLayout());
 			receitas.forEach(r -> {
-				JPanel panelItem = new JPanel();
-				panelItem.setLayout(new GridLayout(1, 3, 20, 20));
-				panelCenter.add(panelItem);
+				panelCenter.add(new JLabel(r.getNome()), gridBagConstraints);
+				gridBagConstraints.gridx = gridBagConstraints.gridx + 1;
 				
-				
-				panelItem.add(new JLabel(r.getNome()));
+				panelCenter.add(Box.createHorizontalStrut(150), gridBagConstraints);
+				gridBagConstraints.gridx = gridBagConstraints.gridx + 1;
 				
 				JButton btnIniciar = new JButton("Inicar");
-//				btnIniciar.addActionListener((ActionEvent e) -> {}); 
-				panelItem.add(btnIniciar);
+//				btnIniciar.addActionListener((ActionEvent e) -> {});
+				btnIniciar.setSize(30, 30);
+				panelCenter.add(btnIniciar, gridBagConstraints);
+				gridBagConstraints.gridx = gridBagConstraints.gridx + 1;
 				
 				
 				JButton btnEditar = new JButton("Editar");
 				btnEditar.addActionListener((ActionEvent e) -> abrirReceita(r)); 
-				panelItem.add(btnEditar);
+				panelCenter.add(btnEditar, gridBagConstraints);
+				
+				gridBagConstraints.gridy = gridBagConstraints.gridy + 1;
+				gridBagConstraints.gridx = 0;
+				
+				gridBagConstraints.weightx = gridBagConstraints.weightx + 0.1;
+				gridBagConstraints.weighty = gridBagConstraints.weighty + 0.1;
 			});
+			
 		}
 	}
 	
