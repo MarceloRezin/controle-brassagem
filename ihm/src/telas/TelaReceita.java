@@ -7,21 +7,23 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import model.Rampa;
 import model.Receita;
+import model.Receita.ReceitaWrapper;
 
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
+import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
-
 import javax.swing.Box;
 import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
-import javax.swing.JSeparator;
 import javax.swing.border.TitledBorder;
 import javax.swing.text.InternationalFormatter;
 import javax.swing.text.NumberFormatter;
@@ -34,6 +36,7 @@ public class TelaReceita extends JFrame {
 	
 	private JPanel contentPane;
 	private JPanel panelSul;
+	private JLabel lblInfo;
 	private JTextField txtNome;
 	private ArrayList<JFormattedTextField> rampasTemperatura;
 	private ArrayList<JFormattedTextField> rampasTempo;
@@ -46,6 +49,9 @@ public class TelaReceita extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 20));
 		setContentPane(contentPane);
+		
+		lblInfo = new JLabel();
+		contentPane.add(lblInfo, BorderLayout.NORTH);
 		
 		panelSul = new JPanel();
 		contentPane.add(panelSul, BorderLayout.SOUTH);
@@ -111,10 +117,10 @@ public class TelaReceita extends JFrame {
 		panelSul.removeAll();
 		
 		if(receita == null) { //Novo item
-			JLabel lblInfo = new JLabel("Informe os dados da nova receita:");
-			contentPane.add(lblInfo, BorderLayout.NORTH);
+			lblInfo.setText("Informe os dados da nova receita:");
 			
 			JButton btnSalvar = new JButton("Adicionar");
+			btnSalvar.addActionListener((ActionEvent e) -> actionSalvar());
 			panelSul.add(btnSalvar);
 			
 			Component espaco = Box.createHorizontalStrut(20);
@@ -122,10 +128,10 @@ public class TelaReceita extends JFrame {
 			
 			addVoltar();
 		}else { //Edição
-			JLabel lblInfo = new JLabel("Altere os dados da receita:");
-			contentPane.add(lblInfo, BorderLayout.NORTH);
+			lblInfo.setText("Altere os dados da receita:");
 			
 			JButton btnSalvar = new JButton("Salvar");
+			btnSalvar.addActionListener((ActionEvent e) -> actionSalvar());
 			panelSul.add(btnSalvar);
 			
 			JButton btnExcluir = new JButton("Excluir");
@@ -144,6 +150,95 @@ public class TelaReceita extends JFrame {
 			dispose();
 		});
 		panelSul.add(btnVoltar);
+	}
+	
+	private void actionSalvar() {
+		
+		String nome = txtNome.getText();
+		if(isNulaOuVazia(nome)) {
+			JOptionPane.showMessageDialog(this, "É necessário que você informe o nome da receita.", "Erro:", JOptionPane.ERROR_MESSAGE);
+			return;
+		}
+		
+		ArrayList<Rampa> rampas = new ArrayList<Rampa>();
+		for(int i=0; i<10; i++) {
+			
+			String temperatura = rampasTemperatura.get(i).getText();
+			String tempo = rampasTempo.get(i).getText();
+			
+			boolean temperaturaVazia = isNulaOuVazia(temperatura);
+			boolean tempoVazio = isNulaOuVazia(tempo);
+			
+			//Deixando os 2 em branco ignora a rampa
+			if(temperaturaVazia && tempoVazio) {
+				continue;
+			}
+			
+			if(temperaturaVazia) {
+				JOptionPane.showMessageDialog(this, "Informe a temperatura na rampa " + (i+1)	 + ".", "Erro:", JOptionPane.ERROR_MESSAGE);
+				return;
+			}
+			
+			if(tempoVazio){
+				JOptionPane.showMessageDialog(this, "Informe o tempo na rampa " + (i+1) + ".", "Erro:", JOptionPane.ERROR_MESSAGE);
+				return;
+			}
+			
+			Rampa rampa = new Rampa();
+			try {
+				BigDecimal temperaturaBd = new BigDecimal(temperatura.replaceAll("\\.", "").replaceAll(",", "."));
+				
+				if(temperaturaBd.compareTo(new BigDecimal("20")) < 1) {
+					JOptionPane.showMessageDialog(this, "A temperatura na rampa " + (i+1) + " deve ser maior que 20°C.", "Erro:", JOptionPane.ERROR_MESSAGE);
+					return;
+				}
+				
+				if(temperaturaBd.compareTo(new BigDecimal("120")) > 0) {
+					JOptionPane.showMessageDialog(this, "A temperatura na rampa " + (i+1) + " deve ser menor que 120°C.", "Erro:", JOptionPane.ERROR_MESSAGE);
+					return;
+				}
+				
+				rampa.setTemperaturaAlvo(temperaturaBd);
+			}catch(Exception e) {
+				JOptionPane.showMessageDialog(this, "A temperatura na rampa " + (i+1) + " é inválida.", "Erro:", JOptionPane.ERROR_MESSAGE);
+				return;
+			}
+			
+			try {
+				int tempoIn = Integer.parseInt(tempo.replaceAll("\\.", ""));
+				
+				if(tempoIn < 1) {
+					JOptionPane.showMessageDialog(this, "O tempo na rampa " + (i+1) + " deve ser de no mínimo 1 minuto.", "Erro:", JOptionPane.ERROR_MESSAGE);
+					return;
+				}
+				
+				if(tempoIn > 136) {
+					JOptionPane.showMessageDialog(this, "O tempo na rampa " + (i+1) + " deve ser de no máximo 136 minutos.", "Erro:", JOptionPane.ERROR_MESSAGE);
+					return;
+				}
+				
+				rampa.setTempo(tempoIn);
+			}catch(Exception e) {
+				JOptionPane.showMessageDialog(this, "O tempo na rampa " + (i+1) + " é inválido.", "Erro:", JOptionPane.ERROR_MESSAGE);
+				return;
+			}
+			
+			rampas.add(rampa);
+		}
+		
+		if(receita == null) {
+			Receita receita = new Receita(nome, rampas);
+			ReceitaWrapper.getInstance().addReceita(receita);
+			this.receita = receita;
+			setPropriedades();
+		}else {
+			
+		}
+		
+	}
+	
+	private boolean isNulaOuVazia(String txt) {
+		return txt == null || txt.trim().isEmpty();
 	}
 
 }
