@@ -13,9 +13,9 @@ import model.Receita.ReceitaWrapper;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
 import java.awt.Component;
 import javax.swing.Box;
-import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import javax.swing.SwingConstants;
 
@@ -37,6 +37,10 @@ public class TelaPrincial extends JFrame {
 		panelSul.setLayout(new GridLayout(1, 0, 0, 0));
 		
 		JButton btnAdiconarReceita = new JButton("+ Receita");
+		btnAdiconarReceita.addActionListener((ActionEvent e) -> {
+			new TelaReceita().setVisible(true);
+			dispose();
+		});
 		panelSul.add(btnAdiconarReceita);
 		
 		Component horizontalStrut_1 = Box.createHorizontalStrut(20);
