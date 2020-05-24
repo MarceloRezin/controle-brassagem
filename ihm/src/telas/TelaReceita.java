@@ -14,9 +14,6 @@ import persistencia.Persistencia;
 
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
-import java.math.BigDecimal;
-import java.math.RoundingMode;
-import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import javax.swing.Box;
@@ -26,7 +23,6 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
-import javax.swing.text.InternationalFormatter;
 import javax.swing.text.NumberFormatter;
 
 public class TelaReceita extends JFrame {
@@ -79,19 +75,10 @@ public class TelaReceita extends JFrame {
 		panelCenter.add(panelRampas);
 		panelRampas.setLayout(new GridLayout(10, 4, 0, 0));
 		
-		NumberFormat temperaturaFormat = DecimalFormat.getInstance();
-		temperaturaFormat.setMinimumFractionDigits(2);
-		temperaturaFormat.setMaximumFractionDigits(2);
-		temperaturaFormat.setRoundingMode(RoundingMode.HALF_UP);
-
-		InternationalFormatter temperaturaFormatter = new InternationalFormatter(temperaturaFormat);
-		temperaturaFormatter.setAllowsInvalid(false); //this is the key!!
-		temperaturaFormatter.setMinimum(0.0); //Optional
-		
-		NumberFormat tempoFormat = NumberFormat.getIntegerInstance();
-		NumberFormatter tempoFormatter = new NumberFormatter(tempoFormat);
-		tempoFormatter.setAllowsInvalid(false);
-		tempoFormatter.setMinimum(0);
+		NumberFormat intFormat = NumberFormat.getIntegerInstance();
+		NumberFormatter intFormatter = new NumberFormatter(intFormat);
+		intFormatter.setAllowsInvalid(false);
+		intFormatter.setMinimum(0);
 		
 		rampasTemperatura = new ArrayList<>();
 		rampasTempo = new ArrayList<>();
@@ -99,14 +86,14 @@ public class TelaReceita extends JFrame {
 			//Temperatura
 			panelRampas.add(new JLabel("Temperatura " + i + " (°C):"));
 		
-			JFormattedTextField txtTemperatura = new JFormattedTextField(temperaturaFormatter);
+			JFormattedTextField txtTemperatura = new JFormattedTextField(intFormatter);
 			rampasTemperatura.add(txtTemperatura);
 			panelRampas.add(txtTemperatura);
 			
 			//Tempo
 			panelRampas.add(new JLabel("Tempo " + i + " (Minutos):"));
 			
-			JFormattedTextField txtTempo= new JFormattedTextField(tempoFormatter);
+			JFormattedTextField txtTempo= new JFormattedTextField(intFormatter);
 			rampasTempo.add(txtTempo);
 			panelRampas.add(txtTempo);
 		}
@@ -152,7 +139,7 @@ public class TelaReceita extends JFrame {
 			ArrayList<Rampa> rampas = receita.getRampas();
 			for(int i=0; i<rampas.size(); i++) {
 				Rampa rampa = rampas.get(i);
-				rampasTemperatura.get(i).setText(rampa.getTemperaturaAlvo().toString().replaceAll("\\.", ","));
+				rampasTemperatura.get(i).setText(Integer.toString(rampa.getTemperaturaAlvo()));
 				rampasTempo.get(i).setText(Integer.toString(rampa.getTempo()));
 			}
 		}
@@ -205,14 +192,14 @@ public class TelaReceita extends JFrame {
 			
 			Rampa rampa = new Rampa();
 			try {
-				BigDecimal temperaturaBd = new BigDecimal(temperatura.replaceAll("\\.", "").replaceAll(",", "."));
+				int temperaturaBd = Integer.parseInt(temperatura.replaceAll("\\.", ""));
 				
-				if(temperaturaBd.compareTo(new BigDecimal("20")) < 1) {
+				if(temperaturaBd < 21) {
 					JOptionPane.showMessageDialog(this, "A temperatura na rampa " + (i+1) + " deve ser maior que 20°C.", "Erro:", JOptionPane.ERROR_MESSAGE);
 					return;
 				}
 				
-				if(temperaturaBd.compareTo(new BigDecimal("120")) > 0) {
+				if(temperaturaBd > 119) {
 					JOptionPane.showMessageDialog(this, "A temperatura na rampa " + (i+1) + " deve ser menor que 120°C.", "Erro:", JOptionPane.ERROR_MESSAGE);
 					return;
 				}
@@ -222,7 +209,7 @@ public class TelaReceita extends JFrame {
 				JOptionPane.showMessageDialog(this, "A temperatura na rampa " + (i+1) + " é inválida.", "Erro:", JOptionPane.ERROR_MESSAGE);
 				return;
 			}
-			
+
 			try {
 				int tempoIn = Integer.parseInt(tempo.replaceAll("\\.", ""));
 				

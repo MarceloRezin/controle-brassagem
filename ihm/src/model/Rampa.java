@@ -6,14 +6,14 @@ import java.math.BigDecimal;
 public class Rampa implements Serializable{
 
 	private static final long serialVersionUID = 7637887027718043454L;
-	private BigDecimal temperaturaAlvo;
+	private int temperaturaAlvo;
     private int tempo; //Em minutos
 
-    public BigDecimal getTemperaturaAlvo() {
+    public int getTemperaturaAlvo() {
         return temperaturaAlvo;
     }
 
-    public void setTemperaturaAlvo(BigDecimal temperaturaAlvo) {
+    public void setTemperaturaAlvo(int temperaturaAlvo) {
         this.temperaturaAlvo = temperaturaAlvo;
     }
 
