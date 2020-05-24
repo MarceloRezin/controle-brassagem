@@ -24,6 +24,7 @@ public class TelaBrassagem extends JFrame {
 	private Receita receita;
 	private int rampaAtual;
 	private JLabel lblTemperaturaAtual;
+	private JLabel lblPotenciaAtual;
 
 	public TelaBrassagem(Receita receita) {
 		this.receita = receita;
@@ -54,6 +55,9 @@ public class TelaBrassagem extends JFrame {
 		
 		lblTemperaturaAtual = new JLabel();
 		panel.add(lblTemperaturaAtual);
+		
+		lblPotenciaAtual = new JLabel();
+		panel.add(lblPotenciaAtual);
 		
 		Serial s = new Serial(); 
 		try {
@@ -94,9 +98,13 @@ public class TelaBrassagem extends JFrame {
 												" de " + receita.getRampas().get(rampaAtual).getTempo() + " minuto(s)");
 	}
 	
-public void setTemperaturaAtual(int temperaturaAtual) { //Vem multiplicado por quatro por causa do ponto fixo
+	public void setTemperaturaAtual(int temperaturaAtual) { //Vem multiplicado por quatro por causa do ponto fixo
 		double temperaturaReal = (double) temperaturaAtual / 4;
 		
 		lblTemperaturaAtual.setText("Temperatura atual: " + Double.toString(temperaturaReal).replaceAll("\\.", "," ) + "°C de " + receita.getRampas().get(rampaAtual).getTemperaturaAlvo() + "°C");
+	}
+	
+	public void setPotenciaAtual(int potenciaAtual) {
+		lblPotenciaAtual.setText("Potencia atual: " + potenciaAtual + "%");
 	}
 }

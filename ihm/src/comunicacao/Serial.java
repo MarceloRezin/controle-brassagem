@@ -93,9 +93,12 @@ public class Serial implements SerialPortEventListener {
                 		accTemperaturaAtual = retorno << 8;
                 	}else if(indexAtualizacao == 4) {
                 		telaBrassagem.setTemperaturaAtual(accTemperaturaAtual + retorno);
+                	}else if(indexAtualizacao == 5) {
+                		telaBrassagem.setPotenciaAtual(retorno);
                 	}
+
                 	
-                	if(indexAtualizacao == 4) { //Acabou
+                	if(indexAtualizacao == 5) { //Acabou
                 		status = StatusComunicacao.EXECUTANDO;
                 	}else {
                 		indexAtualizacao++;
