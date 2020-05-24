@@ -14,11 +14,21 @@ entity top_level is
         clk_50MHZ   :   in  std_logic;
         rx          :   in  std_logic;
 
-        tx          :   out std_logic
+        tx          :   out std_logic;
+        iniciado    :   out std_logic
     );
 end top_level;
 
 architecture main of top_level is
+
+    component divisor_clock is
+        port(
+            clk     :   in  std_logic;
+            divisor :   in  integer range 0 to 50000000 :=  0; -- divisão máxima de 1hz (De acordo com a placa utilizada). Dá pra usar divisores em cascata  
+            
+            out_clk :   out std_logic
+        );
+    end component divisor_clock;
 
     component uart_rx is
         port(
@@ -41,14 +51,18 @@ architecture main of top_level is
         );
     end component uart_tx;
 
-    component divisor_clock is
+    component temporizador is
         port(
-            clk     :   in  std_logic;
-            divisor :   in  integer range 0 to 50000000 :=  0; -- divisão máxima de 1hz (De acordo com a placa utilizada). Dá pra usar divisores em cascata  
+            clk_1MHZ            :   in std_logic;
+            iniciar             :   in std_logic; --Um pulso indica que o temporizador deve iniciar
+            rampas              :   in rampa;
             
-            out_clk :   out std_logic
+            set_point           :   out std_logic_vector(11 downto 0);
+            rampa_atual         :   out integer range 0 to 9;
+            alteracao_set_point :   out std_logic; --Da um pulso sempre que o set point foi alterado
+            fim                 :   out std_logic --Da um pulso quando as rampas terminarem
         );
-    end component divisor_clock;
+    end component temporizador;
 
     constant    prescaler           :   integer                         :=  50;
     signal      clk_1MHZ            :   std_logic                       :=  '0';
@@ -69,18 +83,34 @@ architecture main of top_level is
     signal      sincronizacao_andamento :   std_logic                   :=  '0';
     signal      indexRampa              :   integer range 0 to 9;
     signal      indexParam              :   std_logic; -- 0 temperatura, 1 tempo
+    signal      iniciado_tmp            :   std_logic   :=  '0';
 
     --Memoria
     signal      rampas              :   rampa;
+
+    --Temporizador
+    signal      set_point           :   std_logic_vector(11 downto 0);
+    signal      rampa_atual         :   integer range 0 to 9;
+    signal      alteracao_set_point :   std_logic;
+    signal      fim                 :   std_logic;
+
+    --Atualizacao da ihm
+    signal      index_atualizacao       :   integer range 0 to 1;
+    signal      atualizacao_andamento   :   std_logic               :=  '0';
 
 begin
 
     divisor_50x :   divisor_clock port map(clk_50MHZ, prescaler, clk_1MHZ);    
     u_rx        :   uart_rx port map(clk_1MHZ, rx, byte_r, byte_recebido);    
     u_tx        :   uart_tx port map(clk_1MHZ, byte_t, iniciar_transmissao, tx, byte_transmitido);
+    tmpr        :   temporizador port map(clk_1MHZ, iniciado_tmp, rampas, set_point, rampa_atual, alteracao_set_point, fim);
+
+    iniciado    <=  iniciado_tmp;
 
     process(clk_1MHZ)
-        variable byte_r_unsigned    :   unsigned(7 downto 0);
+        variable    byte_r_unsigned    :   unsigned(7 downto 0);
+        variable    atualizar_ihm      :   integer range 0 to 200_000   :=  0;
+        variable    count_atualizacao  :   integer range 0 to 2_000   :=  0;
     begin
         if rising_edge(clk_1MHZ) then
 
@@ -141,11 +171,47 @@ begin
                         --Devolve 2 indicando que está tudo pronto para começar
                         byte_t              <=  "00000010";
                         iniciar_transmissao <=  '1';
+                    elsif byte_r_unsigned = 10 then
+                        iniciado_tmp            <=  '1';
                     end if;
                         
                 end if;
 
                 reset_recepcao  <=  '1';
+            end if;
+
+            if iniciado_tmp = '1' then
+                if atualizacao_andamento = '1' then
+                    count_atualizacao   :=   count_atualizacao + 1;
+                    if atualizar_ihm = 2_000 then
+                        count_atualizacao   :=  0;
+                        
+                        if index_atualizacao = 0 then --Envia a rampa atual
+                            byte_t              <=  std_logic_vector(to_unsigned(rampa_atual, 8));
+                            iniciar_transmissao <=  '1';
+                        end if;
+
+                        if index_atualizacao = 1 then --Acabou de enviar as informações
+                            atualizacao_andamento   <=  '0';
+                        else
+                            index_atualizacao   <=  index_atualizacao + 1; 
+                        end if;
+                    end if;
+                end if;
+    
+                atualizar_ihm   :=   atualizar_ihm + 1;
+                if atualizar_ihm = 200_000 then
+    
+                    index_atualizacao       <=  0;
+                    atualizacao_andamento   <=  '1';
+                    count_atualizacao       :=  0;
+    
+                    --Avisa pra ihm que a atualizacao vai começar
+                    byte_t              <=  "00000001";
+                    iniciar_transmissao <=  '1';
+    
+                    atualizar_ihm  :=  0;
+                end if;
             end if;
 
         end if;

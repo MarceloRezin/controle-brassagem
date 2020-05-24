@@ -11,11 +11,14 @@ import javax.swing.border.EmptyBorder;
 import comunicacao.Serial;
 import model.Receita;
 import javax.swing.JButton;
+import javax.swing.JLabel;
+import java.awt.GridLayout;
 
 public class TelaBrassagem extends JFrame {
 
 	private static final long serialVersionUID = 7013388537413496915L;
 	private JPanel contentPane;
+	private JLabel lblRampaAtual;
 	
 	private Receita receita;
 
@@ -30,8 +33,18 @@ public class TelaBrassagem extends JFrame {
 		setContentPane(contentPane);
 		
 		JButton btnVoltar = new JButton("Voltar");
-		btnVoltar.addActionListener((ActionEvent) -> actionVoltar());
-		contentPane.add(btnVoltar, BorderLayout.CENTER);
+		btnVoltar.addActionListener((ActionEvent e) -> actionVoltar());
+		contentPane.add(btnVoltar, BorderLayout.SOUTH);
+		
+		JLabel lblReceita = new JLabel("Brassagem - Receita " + receita.getNome());
+		contentPane.add(lblReceita, BorderLayout.NORTH);
+		
+		JPanel panel = new JPanel();
+		contentPane.add(panel, BorderLayout.CENTER);
+		panel.setLayout(new GridLayout(5, 1, 0, 0));
+		
+		lblRampaAtual = new JLabel();
+		panel.add(lblRampaAtual);
 		
 		Serial s = new Serial(); 
 		try {
@@ -49,5 +62,9 @@ public class TelaBrassagem extends JFrame {
 
 	public Receita getReceita() {
 		return receita;
+	}
+	
+	public void setRampaAtual(int rampa) {
+		lblRampaAtual.setText("Rampa atual: " + (rampa + 1) + " de " + receita.getRampas().size());
 	}
 }

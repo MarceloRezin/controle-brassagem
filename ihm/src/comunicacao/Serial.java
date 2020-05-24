@@ -14,6 +14,8 @@ import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Enumeration;
 
+import javax.swing.JOptionPane;
+
 public class Serial implements SerialPortEventListener {
 
 	private TelaBrassagem telaBrassagem;
@@ -22,9 +24,9 @@ public class Serial implements SerialPortEventListener {
 	private static final int COD_FIM_SINCRONIZACAO = 0;
 	private static final int COD_SOLICITAR_PERMISSAO_SINCRONIZAR = 1;
 	private static final int COD_OK = 2;
+	private static final int COD_INICIAR = 10;
 	
-	private int indexSincronizacao = 0;//Indice da rampa transmitida
-	private int indexParametro = 0; //Par é temperatura, impar é tempo
+	private int indexAtualizacao = 0;
 	
     private static final String PORTA = "/dev/ttyACM0";
     private SerialPort serialPort;
@@ -77,16 +79,34 @@ public class Serial implements SerialPortEventListener {
                 
                 System.out.println(retorno);
                 
-                if(retorno == COD_OK) {
+                if(status == StatusComunicacao.ATUALIZACAO_PARAMETROS) {
                 	
-                	if(status == StatusComunicacao.SINCRONIZACAO_PENDENTE) { //Controlador indicou que pode sincronizar
-                		status = StatusComunicacao.SINCRONIZACAO_EM_ANDAMENTO;
-                		enviarReceita();
-                	}else if(status == StatusComunicacao.SINCRONIZACAO_EM_ANDAMENTO) {
-                		
+                	if(indexAtualizacao == 0) {
+                		telaBrassagem.setRampaAtual(retorno);
                 	}
                 	
+                	if(indexAtualizacao == 1) { //Acabou
+                		status = StatusComunicacao.EXECUTANDO;
+                	}else {
+                		indexAtualizacao++;
+                	}
+          
+                }else {
+                	if(retorno == COD_OK) {
+                    	if(status == StatusComunicacao.SINCRONIZACAO_PENDENTE) { //Controlador indicou que pode sincronizar
+                    		status = StatusComunicacao.SINCRONIZACAO_EM_ANDAMENTO;
+                    		enviarReceita();
+                    	}else if(status == StatusComunicacao.SINCRONIZACAO_EM_ANDAMENTO) {
+                    		JOptionPane.showMessageDialog(null, "Sincronização concluida com sucesso! Clique em \"OK\" para começar.");
+                    		status = StatusComunicacao.EXECUTANDO;
+                    		output.write(COD_INICIAR);
+                    	}
+                    }else if(retorno == COD_SOLICITAR_PERMISSAO_SINCRONIZAR) {
+                    	status = StatusComunicacao.ATUALIZACAO_PARAMETROS;
+                    	indexAtualizacao = 0;
+                    }
                 }
+             
                 
             } catch (Exception e) {
                 System.err.println(e.toString());
