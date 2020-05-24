@@ -46,6 +46,8 @@ public class TelaBrassagem extends JFrame {
 		new TelaPrincial().setVisible(true);
 		dispose();
 	}
-	
 
+	public Receita getReceita() {
+		return receita;
+	}
 }
