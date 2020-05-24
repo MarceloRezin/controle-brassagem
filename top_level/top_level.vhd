@@ -14,10 +14,12 @@ entity top_level is
         clk_50MHZ   :   in  std_logic;
         rx          :   in  std_logic;
         so          :   in  std_logic;
+        passagem_zero   :   in  std_logic;
 
         tx          :   out std_logic;
         cs          :   out std_logic;
         sck         :   out std_logic;
+        disparo_triac   :   out std_logic;
         iniciado    :   out std_logic;
         pid_ativo   :   out std_logic
     );
@@ -91,6 +93,16 @@ architecture main of top_level is
         );
     end component controlador_pid;
 
+    component controlador_potencia is
+        port(
+            clk_1MHZ                :   in  std_logic;
+            passagem_zero           :   in  std_logic;
+            porcentagem_potencia    :   in  integer range 0 to 100;
+       
+            disparo_triac           :   out std_logic
+        );
+    end component controlador_potencia;
+
     constant    prescaler           :   integer                         :=  50;
     signal      clk_1MHZ            :   std_logic                       :=  '0';
     signal      reset               :   std_logic                       :=  '0';
@@ -144,7 +156,8 @@ begin
     tmpr        :   temporizador port map(clk_1MHZ, reset, iniciado_tmp, rampas, set_point, rampa_atual, tempo_decorrido, alteracao_set_point, fim);
     termometro  :   leitor_temperatura port map(clk_1MHZ, so, cs, sck, temperatura_atual);
     pid         :   controlador_pid port map(clk_pid, set_point, temperatura_atual, potencia_atual);
-
+    controlador :   controlador_potencia port map(clk_1MHZ, passagem_zero, potencia_atual, disparo_triac);
+    
     iniciado    <=  iniciado_tmp;
 
     process(clk_1MHZ)
