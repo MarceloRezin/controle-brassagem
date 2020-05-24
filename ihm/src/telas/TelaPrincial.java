@@ -85,7 +85,7 @@ public class TelaPrincial extends JFrame {
 				gridBagConstraints.gridx = gridBagConstraints.gridx + 1;
 				
 				JButton btnIniciar = new JButton("Inicar");
-//				btnIniciar.addActionListener((ActionEvent e) -> {});
+				btnIniciar.addActionListener((ActionEvent e) -> iniciarReceita(r));
 				btnIniciar.setSize(30, 30);
 				panelCenter.add(btnIniciar, gridBagConstraints);
 				gridBagConstraints.gridx = gridBagConstraints.gridx + 1;
@@ -110,4 +110,8 @@ public class TelaPrincial extends JFrame {
 		dispose();
 	}
 
+	private void iniciarReceita(Receita receita) {
+		new TelaBrassagem(receita).setVisible(true);
+		dispose();
+	}
 }
