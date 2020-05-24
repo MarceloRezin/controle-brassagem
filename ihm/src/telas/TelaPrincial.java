@@ -81,7 +81,7 @@ public class TelaPrincial extends JFrame {
 				panelCenter.add(new JLabel(r.getNome()), gridBagConstraints);
 				gridBagConstraints.gridx = gridBagConstraints.gridx + 1;
 				
-				panelCenter.add(Box.createHorizontalStrut(150), gridBagConstraints);
+				panelCenter.add(Box.createHorizontalStrut(50), gridBagConstraints);
 				gridBagConstraints.gridx = gridBagConstraints.gridx + 1;
 				
 				JButton btnIniciar = new JButton("Inicar");
