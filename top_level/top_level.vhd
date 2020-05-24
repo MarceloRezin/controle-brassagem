@@ -13,8 +13,11 @@ entity top_level is
     port(
         clk_50MHZ   :   in  std_logic;
         rx          :   in  std_logic;
+        so          :   in  std_logic;
 
         tx          :   out std_logic;
+        cs          :   out std_logic;
+        sck         :   out std_logic;
         iniciado    :   out std_logic
     );
 end top_level;
@@ -66,6 +69,17 @@ architecture main of top_level is
         );
     end component temporizador;
 
+    component leitor_temperatura is
+        port(
+            clk_1MHZ    :   in  std_logic;
+            so          :   in  std_logic;
+            
+            cs          :   out std_logic;
+            sck         :   out std_logic;
+            temperatura :   out std_logic_vector(11 downto 0) -- Os 2 lsb's são as frações decimais (dividir o inteiro na base 10 por 4)
+        );
+    end component leitor_temperatura;
+
     constant    prescaler           :   integer                         :=  50;
     signal      clk_1MHZ            :   std_logic                       :=  '0';
     signal      reset               :   std_logic                       :=  '0';
@@ -105,7 +119,7 @@ architecture main of top_level is
     signal      atualizacao_andamento   :   std_logic               :=  '0';
 
     --Leitor de temperatura
-    signal      temperatura_atual       :   std_logic_vector(11 downto 0)   :=  "000001011011";
+    signal      temperatura_atual       :   std_logic_vector(11 downto 0)   :=  (others => '0');
 
     --Pid
     signal      potencia_atual          :   integer range 0 to 100  :=  85;
@@ -116,6 +130,7 @@ begin
     u_rx        :   uart_rx port map(clk_1MHZ, rx, byte_r, byte_recebido);    
     u_tx        :   uart_tx port map(clk_1MHZ, byte_t, iniciar_transmissao, tx, byte_transmitido);
     tmpr        :   temporizador port map(clk_1MHZ, reset, iniciado_tmp, rampas, set_point, rampa_atual, tempo_decorrido, alteracao_set_point, fim);
+    termometro  :   leitor_temperatura port map(clk_1MHZ, so, cs, sck, temperatura_atual);
 
     iniciado    <=  iniciado_tmp;
 
