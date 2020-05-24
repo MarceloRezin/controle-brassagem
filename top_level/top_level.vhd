@@ -97,8 +97,11 @@ architecture main of top_level is
     signal      fim                 :   std_logic;
 
     --Atualizacao da ihm
-    signal      index_atualizacao       :   integer range 0 to 2;
+    signal      index_atualizacao       :   integer range 0 to 4;
     signal      atualizacao_andamento   :   std_logic               :=  '0';
+
+    --Leitor de temperatura
+    signal      temperatura_atual       :   std_logic_vector(11 downto 0)   :=  "000001011001";
 
 begin
 
@@ -198,9 +201,16 @@ begin
                         elsif index_atualizacao = 2 then --Envia os bits menos significativos do tempo
                             byte_t              <=  std_logic_vector(to_unsigned(tempo_decorrido, 13))(7 downto 0);
                             iniciar_transmissao <=  '1';
+                        elsif index_atualizacao = 3 then --Envia os bits mais significativos da temperatura atual
+                            byte_t              <=  (others => '0');
+                            byte_t(3 downto 0)  <=  temperatura_atual(11 downto 8);
+                            iniciar_transmissao <=  '1';
+                        elsif index_atualizacao = 4 then --Envia os bits menos significativos do tempo
+                            byte_t              <=  temperatura_atual(7 downto 0);
+                            iniciar_transmissao <=  '1';
                         end if;
 
-                        if index_atualizacao = 2 then --Acabou de enviar as informações
+                        if index_atualizacao = 4 then --Acabou de enviar as informações
                             atualizacao_andamento   <=  '0';
                         else
                             index_atualizacao   <=  index_atualizacao + 1; 

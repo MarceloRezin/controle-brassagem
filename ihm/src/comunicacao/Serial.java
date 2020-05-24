@@ -28,6 +28,7 @@ public class Serial implements SerialPortEventListener {
 	
 	private int indexAtualizacao = 0;
 	private int accTempoDecorrido = 0; //Acumula o tempo decorrido em segundos pois é recebido em 2 bytes
+	private int accTemperaturaAtual = 0; //Acumula a temperatura atual pois é recebida em 2 bytes
 	
     private static final String PORTA = "/dev/ttyACM0";
     private SerialPort serialPort;
@@ -88,9 +89,13 @@ public class Serial implements SerialPortEventListener {
                 		accTempoDecorrido = retorno << 8;
                 	}else if(indexAtualizacao == 2) {
                 		telaBrassagem.setTempoDecorrido(accTempoDecorrido + retorno);
+                	}else if(indexAtualizacao == 3) {
+                		accTemperaturaAtual = retorno << 8;
+                	}else if(indexAtualizacao == 4) {
+                		telaBrassagem.setTemperaturaAtual(accTemperaturaAtual + retorno);
                 	}
                 	
-                	if(indexAtualizacao == 2) { //Acabou
+                	if(indexAtualizacao == 4) { //Acabou
                 		status = StatusComunicacao.EXECUTANDO;
                 	}else {
                 		indexAtualizacao++;
