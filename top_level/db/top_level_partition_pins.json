@@ -1,0 +1,49 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "tx",
+					"strict" : false
+				},
+				{
+					"name" : "cs",
+					"strict" : false
+				},
+				{
+					"name" : "sck",
+					"strict" : false
+				},
+				{
+					"name" : "disparo_triac",
+					"strict" : false
+				},
+				{
+					"name" : "iniciado",
+					"strict" : false
+				},
+				{
+					"name" : "pid_ativo",
+					"strict" : false
+				},
+				{
+					"name" : "clk_50MHZ",
+					"strict" : false
+				},
+				{
+					"name" : "passagem_zero",
+					"strict" : false
+				},
+				{
+					"name" : "so",
+					"strict" : false
+				},
+				{
+					"name" : "rx",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

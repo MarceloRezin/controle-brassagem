@@ -1,5 +1,5 @@
 Timing Analyzer report for leitor_temperatura_tester
-Fri May 22 19:31:03 2020
+Sun May 24 17:15:35 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -93,12 +93,12 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
-; Average used               ; 1.09        ;
+; Average used               ; 1.10        ;
 ; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   9.0%      ;
+;     Processor 2            ;  10.0%      ;
 +----------------------------+-------------+
 
 
@@ -114,15 +114,15 @@ refer to the applicable agreement for further details.
 +------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------------------------------+
 
 
-+-----------------------------------------------------------------------------+
-; Slow 1200mV 85C Model Fmax Summary                                          ;
-+------------+-----------------+---------------------------------------+------+
-; Fmax       ; Restricted Fmax ; Clock Name                            ; Note ;
-+------------+-----------------+---------------------------------------+------+
-; 153.09 MHz ; 153.09 MHz      ; divisor_clock:divisor_50x|out_clk_tmp ;      ;
-; 164.02 MHz ; 164.02 MHz      ; clk_50MHZ                             ;      ;
-; 408.66 MHz ; 408.66 MHz      ; leitor_temperatura:leitor|sck_tmp     ;      ;
-+------------+-----------------+---------------------------------------+------+
++-----------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary                                                                                    ;
++------------+-----------------+---------------------------------------+------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name                            ; Note                                           ;
++------------+-----------------+---------------------------------------+------------------------------------------------+
+; 162.05 MHz ; 162.05 MHz      ; divisor_clock:divisor_50x|out_clk_tmp ;                                                ;
+; 163.99 MHz ; 163.99 MHz      ; clk_50MHZ                             ;                                                ;
+; 429.18 MHz ; 416.15 MHz      ; leitor_temperatura:leitor|sck_tmp     ; limit due to minimum period restriction (tmin) ;
++------------+-----------------+---------------------------------------+------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -131,9 +131,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------------------------+--------+---------------+
 ; Clock                                 ; Slack  ; End Point TNS ;
 +---------------------------------------+--------+---------------+
-; divisor_clock:divisor_50x|out_clk_tmp ; -5.532 ; -112.117      ;
-; clk_50MHZ                             ; -5.097 ; -60.125       ;
-; leitor_temperatura:leitor|sck_tmp     ; -1.447 ; -14.002       ;
+; divisor_clock:divisor_50x|out_clk_tmp ; -5.171 ; -112.512      ;
+; clk_50MHZ                             ; -5.098 ; -59.216       ;
+; leitor_temperatura:leitor|sck_tmp     ; -1.330 ; -13.282       ;
 +---------------------------------------+--------+---------------+
 
 
@@ -142,9 +142,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------------------------+-------+---------------+
 ; Clock                                 ; Slack ; End Point TNS ;
 +---------------------------------------+-------+---------------+
-; divisor_clock:divisor_50x|out_clk_tmp ; 0.340 ; 0.000         ;
-; leitor_temperatura:leitor|sck_tmp     ; 0.341 ; 0.000         ;
-; clk_50MHZ                             ; 0.402 ; 0.000         ;
+; divisor_clock:divisor_50x|out_clk_tmp ; 0.339 ; 0.000         ;
+; leitor_temperatura:leitor|sck_tmp     ; 0.348 ; 0.000         ;
+; clk_50MHZ                             ; 0.401 ; 0.000         ;
 +---------------------------------------+-------+---------------+
 
 
@@ -153,7 +153,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------------------------------------+--------+---------------+
 ; Clock                                    ; Slack  ; End Point TNS ;
 +------------------------------------------+--------+---------------+
-; divisor_clock:divisor_50x|out_clk_tmp_up ; -3.441 ; -3.441        ;
+; divisor_clock:divisor_50x|out_clk_tmp_up ; -3.094 ; -3.094        ;
 +------------------------------------------+--------+---------------+
 
 
@@ -162,7 +162,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------------------------------------+-------+---------------+
 ; Clock                                    ; Slack ; End Point TNS ;
 +------------------------------------------+-------+---------------+
-; divisor_clock:divisor_50x|out_clk_tmp_up ; 3.904 ; 0.000         ;
+; divisor_clock:divisor_50x|out_clk_tmp_up ; 3.553 ; 0.000         ;
 +------------------------------------------+-------+---------------+
 
 
@@ -189,9 +189,9 @@ No synchronizer chains to report.
 +------------+-----------------+---------------------------------------+------------------------------------------------+
 ; Fmax       ; Restricted Fmax ; Clock Name                            ; Note                                           ;
 +------------+-----------------+---------------------------------------+------------------------------------------------+
-; 168.86 MHz ; 168.86 MHz      ; divisor_clock:divisor_50x|out_clk_tmp ;                                                ;
-; 180.05 MHz ; 180.05 MHz      ; clk_50MHZ                             ;                                                ;
-; 444.64 MHz ; 416.15 MHz      ; leitor_temperatura:leitor|sck_tmp     ; limit due to minimum period restriction (tmin) ;
+; 178.32 MHz ; 178.32 MHz      ; divisor_clock:divisor_50x|out_clk_tmp ;                                                ;
+; 179.76 MHz ; 179.76 MHz      ; clk_50MHZ                             ;                                                ;
+; 473.04 MHz ; 416.15 MHz      ; leitor_temperatura:leitor|sck_tmp     ; limit due to minimum period restriction (tmin) ;
 +------------+-----------------+---------------------------------------+------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -201,9 +201,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------------------------+--------+---------------+
 ; Clock                                 ; Slack  ; End Point TNS ;
 +---------------------------------------+--------+---------------+
-; divisor_clock:divisor_50x|out_clk_tmp ; -4.922 ; -98.816       ;
-; clk_50MHZ                             ; -4.554 ; -51.985       ;
-; leitor_temperatura:leitor|sck_tmp     ; -1.249 ; -11.797       ;
+; divisor_clock:divisor_50x|out_clk_tmp ; -4.608 ; -99.660       ;
+; clk_50MHZ                             ; -4.563 ; -51.184       ;
+; leitor_temperatura:leitor|sck_tmp     ; -1.114 ; -11.101       ;
 +---------------------------------------+--------+---------------+
 
 
@@ -213,8 +213,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; Clock                                 ; Slack ; End Point TNS ;
 +---------------------------------------+-------+---------------+
 ; divisor_clock:divisor_50x|out_clk_tmp ; 0.305 ; 0.000         ;
-; leitor_temperatura:leitor|sck_tmp     ; 0.305 ; 0.000         ;
-; clk_50MHZ                             ; 0.371 ; 0.000         ;
+; leitor_temperatura:leitor|sck_tmp     ; 0.311 ; 0.000         ;
+; clk_50MHZ                             ; 0.369 ; 0.000         ;
 +---------------------------------------+-------+---------------+
 
 
@@ -223,7 +223,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------------------------------------+--------+---------------+
 ; Clock                                    ; Slack  ; End Point TNS ;
 +------------------------------------------+--------+---------------+
-; divisor_clock:divisor_50x|out_clk_tmp_up ; -3.059 ; -3.059        ;
+; divisor_clock:divisor_50x|out_clk_tmp_up ; -2.734 ; -2.734        ;
 +------------------------------------------+--------+---------------+
 
 
@@ -232,7 +232,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------------------------------------+-------+---------------+
 ; Clock                                    ; Slack ; End Point TNS ;
 +------------------------------------------+-------+---------------+
-; divisor_clock:divisor_50x|out_clk_tmp_up ; 3.565 ; 0.000         ;
+; divisor_clock:divisor_50x|out_clk_tmp_up ; 3.232 ; 0.000         ;
 +------------------------------------------+-------+---------------+
 
 
@@ -259,9 +259,9 @@ No synchronizer chains to report.
 +---------------------------------------+--------+---------------+
 ; Clock                                 ; Slack  ; End Point TNS ;
 +---------------------------------------+--------+---------------+
-; divisor_clock:divisor_50x|out_clk_tmp ; -1.704 ; -26.705       ;
-; clk_50MHZ                             ; -1.446 ; -8.383        ;
-; leitor_temperatura:leitor|sck_tmp     ; -0.015 ; -0.023        ;
+; divisor_clock:divisor_50x|out_clk_tmp ; -1.521 ; -27.757       ;
+; clk_50MHZ                             ; -1.430 ; -7.946        ;
+; leitor_temperatura:leitor|sck_tmp     ; 0.012  ; 0.000         ;
 +---------------------------------------+--------+---------------+
 
 
@@ -270,9 +270,9 @@ No synchronizer chains to report.
 +---------------------------------------+-------+---------------+
 ; Clock                                 ; Slack ; End Point TNS ;
 +---------------------------------------+-------+---------------+
-; divisor_clock:divisor_50x|out_clk_tmp ; 0.148 ; 0.000         ;
-; leitor_temperatura:leitor|sck_tmp     ; 0.148 ; 0.000         ;
-; clk_50MHZ                             ; 0.160 ; 0.000         ;
+; divisor_clock:divisor_50x|out_clk_tmp ; 0.147 ; 0.000         ;
+; leitor_temperatura:leitor|sck_tmp     ; 0.153 ; 0.000         ;
+; clk_50MHZ                             ; 0.158 ; 0.000         ;
 +---------------------------------------+-------+---------------+
 
 
@@ -281,7 +281,7 @@ No synchronizer chains to report.
 +------------------------------------------+--------+---------------+
 ; Clock                                    ; Slack  ; End Point TNS ;
 +------------------------------------------+--------+---------------+
-; divisor_clock:divisor_50x|out_clk_tmp_up ; -1.743 ; -1.743        ;
+; divisor_clock:divisor_50x|out_clk_tmp_up ; -1.612 ; -1.612        ;
 +------------------------------------------+--------+---------------+
 
 
@@ -290,7 +290,7 @@ No synchronizer chains to report.
 +------------------------------------------+-------+---------------+
 ; Clock                                    ; Slack ; End Point TNS ;
 +------------------------------------------+-------+---------------+
-; divisor_clock:divisor_50x|out_clk_tmp_up ; 2.472 ; 0.000         ;
+; divisor_clock:divisor_50x|out_clk_tmp_up ; 2.338 ; 0.000         ;
 +------------------------------------------+-------+---------------+
 
 
@@ -299,7 +299,7 @@ No synchronizer chains to report.
 +------------------------------------------+--------+---------------+
 ; Clock                                    ; Slack  ; End Point TNS ;
 +------------------------------------------+--------+---------------+
-; clk_50MHZ                                ; -3.000 ; -31.988       ;
+; clk_50MHZ                                ; -3.000 ; -31.921       ;
 ; divisor_clock:divisor_50x|out_clk_tmp    ; -1.000 ; -38.000       ;
 ; leitor_temperatura:leitor|sck_tmp        ; -1.000 ; -14.000       ;
 ; divisor_clock:divisor_50x|out_clk_tmp_up ; -1.000 ; -1.000        ;
@@ -317,16 +317,16 @@ No synchronizer chains to report.
 +-------------------------------------------+----------+-------+----------+---------+---------------------+
 ; Clock                                     ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +-------------------------------------------+----------+-------+----------+---------+---------------------+
-; Worst-case Slack                          ; -5.532   ; 0.148 ; -3.441   ; 2.472   ; -3.000              ;
-;  clk_50MHZ                                ; -5.097   ; 0.160 ; N/A      ; N/A     ; -3.000              ;
-;  divisor_clock:divisor_50x|out_clk_tmp    ; -5.532   ; 0.148 ; N/A      ; N/A     ; -1.403              ;
-;  divisor_clock:divisor_50x|out_clk_tmp_up ; N/A      ; N/A   ; -3.441   ; 2.472   ; -1.403              ;
-;  leitor_temperatura:leitor|sck_tmp        ; -1.447   ; 0.148 ; N/A      ; N/A     ; -1.403              ;
-; Design-wide TNS                           ; -186.244 ; 0.0   ; -3.441   ; 0.0     ; -116.643            ;
-;  clk_50MHZ                                ; -60.125  ; 0.000 ; N/A      ; N/A     ; -42.284             ;
-;  divisor_clock:divisor_50x|out_clk_tmp    ; -112.117 ; 0.000 ; N/A      ; N/A     ; -53.314             ;
-;  divisor_clock:divisor_50x|out_clk_tmp_up ; N/A      ; N/A   ; -3.441   ; 0.000   ; -1.403              ;
-;  leitor_temperatura:leitor|sck_tmp        ; -14.002  ; 0.000 ; N/A      ; N/A     ; -19.642             ;
+; Worst-case Slack                          ; -5.171   ; 0.147 ; -3.094   ; 2.338   ; -3.000              ;
+;  clk_50MHZ                                ; -5.098   ; 0.158 ; N/A      ; N/A     ; -3.000              ;
+;  divisor_clock:divisor_50x|out_clk_tmp    ; -5.171   ; 0.147 ; N/A      ; N/A     ; -1.403              ;
+;  divisor_clock:divisor_50x|out_clk_tmp_up ; N/A      ; N/A   ; -3.094   ; 2.338   ; -1.403              ;
+;  leitor_temperatura:leitor|sck_tmp        ; -1.330   ; 0.153 ; N/A      ; N/A     ; -1.403              ;
+; Design-wide TNS                           ; -185.01  ; 0.0   ; -3.094   ; 0.0     ; -116.643            ;
+;  clk_50MHZ                                ; -59.216  ; 0.000 ; N/A      ; N/A     ; -42.284             ;
+;  divisor_clock:divisor_50x|out_clk_tmp    ; -112.512 ; 0.000 ; N/A      ; N/A     ; -53.314             ;
+;  divisor_clock:divisor_50x|out_clk_tmp_up ; N/A      ; N/A   ; -3.094   ; 0.000   ; -1.403              ;
+;  leitor_temperatura:leitor|sck_tmp        ; -13.282  ; 0.000 ; N/A      ; N/A     ; -19.642             ;
 +-------------------------------------------+----------+-------+----------+---------+---------------------+
 
 
@@ -377,7 +377,7 @@ No synchronizer chains to report.
 +--------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 ; Pin          ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
 +--------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
-; cs           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.26e-09 V                   ; 2.4 V               ; -0.0773 V           ; 0.156 V                              ; 0.166 V                              ; 4.55e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.26e-09 V                  ; 2.4 V              ; -0.0773 V          ; 0.156 V                             ; 0.166 V                             ; 4.55e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
+; cs           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.26e-09 V                   ; 2.4 V               ; -0.0783 V           ; 0.157 V                              ; 0.167 V                              ; 4.55e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.26e-09 V                  ; 2.4 V              ; -0.0783 V          ; 0.157 V                             ; 0.167 V                             ; 4.55e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
 ; sck          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.26e-09 V                   ; 2.4 V               ; -0.0773 V           ; 0.156 V                              ; 0.166 V                              ; 4.55e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.26e-09 V                  ; 2.4 V              ; -0.0773 V          ; 0.156 V                             ; 0.166 V                             ; 4.55e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
 ; dezena[0]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0871 V           ; 0.291 V                              ; 0.138 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0871 V          ; 0.291 V                             ; 0.138 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
 ; dezena[1]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0871 V           ; 0.291 V                              ; 0.138 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0871 V          ; 0.291 V                             ; 0.138 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
@@ -402,7 +402,7 @@ No synchronizer chains to report.
 +--------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 ; Pin          ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
 +--------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
-; cs           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.0449 V           ; 0.201 V                              ; 0.093 V                              ; 4.89e-10 s                  ; 5.81e-10 s                  ; Yes                        ; No                         ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.0449 V          ; 0.201 V                             ; 0.093 V                             ; 4.89e-10 s                 ; 5.81e-10 s                 ; Yes                       ; No                        ;
+; cs           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.0459 V           ; 0.201 V                              ; 0.093 V                              ; 4.9e-10 s                   ; 5.83e-10 s                  ; Yes                        ; No                         ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.0459 V          ; 0.201 V                             ; 0.093 V                             ; 4.9e-10 s                  ; 5.83e-10 s                 ; Yes                       ; No                        ;
 ; sck          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.0449 V           ; 0.201 V                              ; 0.093 V                              ; 4.89e-10 s                  ; 5.81e-10 s                  ; Yes                        ; No                         ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.0449 V          ; 0.201 V                             ; 0.093 V                             ; 4.89e-10 s                 ; 5.81e-10 s                 ; Yes                       ; No                        ;
 ; dezena[0]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.0508 V           ; 0.153 V                              ; 0.187 V                              ; 4.63e-10 s                  ; 4.49e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.0508 V          ; 0.153 V                             ; 0.187 V                             ; 4.63e-10 s                 ; 4.49e-10 s                 ; Yes                       ; Yes                       ;
 ; dezena[1]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.0508 V           ; 0.153 V                              ; 0.187 V                              ; 4.63e-10 s                  ; 4.49e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.0508 V          ; 0.153 V                             ; 0.187 V                             ; 4.63e-10 s                 ; 4.49e-10 s                 ; Yes                       ; Yes                       ;
@@ -427,7 +427,7 @@ No synchronizer chains to report.
 +--------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 ; Pin          ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
 +--------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
-; cs           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.95e-08 V                   ; 2.77 V              ; -0.0486 V           ; 0.285 V                              ; 0.06 V                               ; 2.8e-10 s                   ; 3.04e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.95e-08 V                  ; 2.77 V             ; -0.0486 V          ; 0.285 V                             ; 0.06 V                              ; 2.8e-10 s                  ; 3.04e-10 s                 ; No                        ; Yes                       ;
+; cs           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.94e-08 V                   ; 2.77 V              ; -0.0485 V           ; 0.289 V                              ; 0.058 V                              ; 2.81e-10 s                  ; 3.04e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.94e-08 V                  ; 2.77 V             ; -0.0485 V          ; 0.289 V                             ; 0.058 V                             ; 2.81e-10 s                 ; 3.04e-10 s                 ; No                        ; Yes                       ;
 ; sck          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.95e-08 V                   ; 2.77 V              ; -0.0486 V           ; 0.285 V                              ; 0.06 V                               ; 2.8e-10 s                   ; 3.04e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.95e-08 V                  ; 2.77 V             ; -0.0486 V          ; 0.285 V                             ; 0.06 V                              ; 2.8e-10 s                  ; 3.04e-10 s                 ; No                        ; Yes                       ;
 ; dezena[0]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.94e-08 V                   ; 2.78 V              ; -0.0444 V           ; 0.25 V                               ; 0.107 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.94e-08 V                  ; 2.78 V             ; -0.0444 V          ; 0.25 V                              ; 0.107 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
 ; dezena[1]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.94e-08 V                   ; 2.78 V              ; -0.0444 V           ; 0.25 V                               ; 0.107 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.94e-08 V                  ; 2.78 V             ; -0.0444 V          ; 0.25 V                              ; 0.107 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
@@ -605,7 +605,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Fri May 22 19:31:00 2020
+    Info: Processing started: Sun May 24 17:15:31 2020
 Info: Command: quartus_sta leitor_temperatura_tester -c leitor_temperatura_tester
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -625,26 +625,26 @@ Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
 Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -5.532
+Info (332146): Worst-case setup slack is -5.171
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -5.532            -112.117 divisor_clock:divisor_50x|out_clk_tmp 
-    Info (332119):    -5.097             -60.125 clk_50MHZ 
-    Info (332119):    -1.447             -14.002 leitor_temperatura:leitor|sck_tmp 
-Info (332146): Worst-case hold slack is 0.340
+    Info (332119):    -5.171            -112.512 divisor_clock:divisor_50x|out_clk_tmp 
+    Info (332119):    -5.098             -59.216 clk_50MHZ 
+    Info (332119):    -1.330             -13.282 leitor_temperatura:leitor|sck_tmp 
+Info (332146): Worst-case hold slack is 0.339
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.340               0.000 divisor_clock:divisor_50x|out_clk_tmp 
-    Info (332119):     0.341               0.000 leitor_temperatura:leitor|sck_tmp 
-    Info (332119):     0.402               0.000 clk_50MHZ 
-Info (332146): Worst-case recovery slack is -3.441
+    Info (332119):     0.339               0.000 divisor_clock:divisor_50x|out_clk_tmp 
+    Info (332119):     0.348               0.000 leitor_temperatura:leitor|sck_tmp 
+    Info (332119):     0.401               0.000 clk_50MHZ 
+Info (332146): Worst-case recovery slack is -3.094
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.441              -3.441 divisor_clock:divisor_50x|out_clk_tmp_up 
-Info (332146): Worst-case removal slack is 3.904
+    Info (332119):    -3.094              -3.094 divisor_clock:divisor_50x|out_clk_tmp_up 
+Info (332146): Worst-case removal slack is 3.553
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     3.904               0.000 divisor_clock:divisor_50x|out_clk_tmp_up 
+    Info (332119):     3.553               0.000 divisor_clock:divisor_50x|out_clk_tmp_up 
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
@@ -657,26 +657,26 @@ Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -4.922
+Info (332146): Worst-case setup slack is -4.608
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.922             -98.816 divisor_clock:divisor_50x|out_clk_tmp 
-    Info (332119):    -4.554             -51.985 clk_50MHZ 
-    Info (332119):    -1.249             -11.797 leitor_temperatura:leitor|sck_tmp 
+    Info (332119):    -4.608             -99.660 divisor_clock:divisor_50x|out_clk_tmp 
+    Info (332119):    -4.563             -51.184 clk_50MHZ 
+    Info (332119):    -1.114             -11.101 leitor_temperatura:leitor|sck_tmp 
 Info (332146): Worst-case hold slack is 0.305
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     0.305               0.000 divisor_clock:divisor_50x|out_clk_tmp 
-    Info (332119):     0.305               0.000 leitor_temperatura:leitor|sck_tmp 
-    Info (332119):     0.371               0.000 clk_50MHZ 
-Info (332146): Worst-case recovery slack is -3.059
+    Info (332119):     0.311               0.000 leitor_temperatura:leitor|sck_tmp 
+    Info (332119):     0.369               0.000 clk_50MHZ 
+Info (332146): Worst-case recovery slack is -2.734
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.059              -3.059 divisor_clock:divisor_50x|out_clk_tmp_up 
-Info (332146): Worst-case removal slack is 3.565
+    Info (332119):    -2.734              -2.734 divisor_clock:divisor_50x|out_clk_tmp_up 
+Info (332146): Worst-case removal slack is 3.232
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     3.565               0.000 divisor_clock:divisor_50x|out_clk_tmp_up 
+    Info (332119):     3.232               0.000 divisor_clock:divisor_50x|out_clk_tmp_up 
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
@@ -687,30 +687,30 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
 Info: Analyzing Fast 1200mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -1.704
+Info (332146): Worst-case setup slack is -1.521
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -1.704             -26.705 divisor_clock:divisor_50x|out_clk_tmp 
-    Info (332119):    -1.446              -8.383 clk_50MHZ 
-    Info (332119):    -0.015              -0.023 leitor_temperatura:leitor|sck_tmp 
-Info (332146): Worst-case hold slack is 0.148
+    Info (332119):    -1.521             -27.757 divisor_clock:divisor_50x|out_clk_tmp 
+    Info (332119):    -1.430              -7.946 clk_50MHZ 
+    Info (332119):     0.012               0.000 leitor_temperatura:leitor|sck_tmp 
+Info (332146): Worst-case hold slack is 0.147
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.148               0.000 divisor_clock:divisor_50x|out_clk_tmp 
-    Info (332119):     0.148               0.000 leitor_temperatura:leitor|sck_tmp 
-    Info (332119):     0.160               0.000 clk_50MHZ 
-Info (332146): Worst-case recovery slack is -1.743
+    Info (332119):     0.147               0.000 divisor_clock:divisor_50x|out_clk_tmp 
+    Info (332119):     0.153               0.000 leitor_temperatura:leitor|sck_tmp 
+    Info (332119):     0.158               0.000 clk_50MHZ 
+Info (332146): Worst-case recovery slack is -1.612
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -1.743              -1.743 divisor_clock:divisor_50x|out_clk_tmp_up 
-Info (332146): Worst-case removal slack is 2.472
+    Info (332119):    -1.612              -1.612 divisor_clock:divisor_50x|out_clk_tmp_up 
+Info (332146): Worst-case removal slack is 2.338
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     2.472               0.000 divisor_clock:divisor_50x|out_clk_tmp_up 
+    Info (332119):     2.338               0.000 divisor_clock:divisor_50x|out_clk_tmp_up 
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.000             -31.988 clk_50MHZ 
+    Info (332119):    -3.000             -31.921 clk_50MHZ 
     Info (332119):    -1.000             -38.000 divisor_clock:divisor_50x|out_clk_tmp 
     Info (332119):    -1.000             -14.000 leitor_temperatura:leitor|sck_tmp 
     Info (332119):    -1.000              -1.000 divisor_clock:divisor_50x|out_clk_tmp_up 
@@ -718,8 +718,8 @@ Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 5 warnings
     Info: Peak virtual memory: 864 megabytes
-    Info: Processing ended: Fri May 22 19:31:03 2020
-    Info: Elapsed time: 00:00:03
+    Info: Processing ended: Sun May 24 17:15:35 2020
+    Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:04
 
 

@@ -1,11 +1,11 @@
-Fitter Status : Successful - Fri May 22 19:30:52 2020
+Fitter Status : Successful - Sun May 24 17:15:25 2020
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : leitor_temperatura_tester
 Top-level Entity Name : leitor_temperatura_tester
 Family : MAX 10
 Device : 10M50DAF484C7G
 Timing Models : Final
-Total logic elements : 348 / 49,760 ( < 1 % )
+Total logic elements : 350 / 49,760 ( < 1 % )
     Total combinational functions : 337 / 49,760 ( < 1 % )
     Dedicated logic registers : 81 / 49,760 ( < 1 % )
 Total registers : 81

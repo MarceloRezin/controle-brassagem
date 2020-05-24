@@ -1,5 +1,5 @@
 Flow report for leitor_temperatura_tester
-Fri May 22 19:31:06 2020
+Sun May 24 17:15:36 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,14 +40,14 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Fri May 22 19:31:06 2020       ;
+; Flow Status                        ; Successful - Sun May 24 17:15:36 2020       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; leitor_temperatura_tester                   ;
 ; Top-level Entity Name              ; leitor_temperatura_tester                   ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M50DAF484C7G                              ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 348 / 49,760 ( < 1 % )                      ;
+; Total logic elements               ; 350 / 49,760 ( < 1 % )                      ;
 ;     Total combinational functions  ; 337 / 49,760 ( < 1 % )                      ;
 ;     Dedicated logic registers      ; 81 / 49,760 ( < 1 % )                       ;
 ; Total registers                    ; 81                                          ;
@@ -66,7 +66,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------------+
 ; Option            ; Setting                   ;
 +-------------------+---------------------------+
-; Start date & time ; 05/22/2020 19:30:09       ;
+; Start date & time ; 05/24/2020 17:14:53       ;
 ; Main task         ; Compilation               ;
 ; Revision Name     ; leitor_temperatura_tester ;
 +-------------------+---------------------------+
@@ -77,7 +77,7 @@ refer to the applicable agreement for further details.
 +--------------------------------------+----------------------------------------+---------------+-------------+------------------------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id                   ;
 +--------------------------------------+----------------------------------------+---------------+-------------+------------------------------+
-; COMPILER_SIGNATURE_ID                ; 268891676866174.159018660917742        ; --            ; --          ; --                           ;
+; COMPILER_SIGNATURE_ID                ; 106024619331895.159035129330999        ; --            ; --          ; --                           ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; leitor_temperatura_tester_tb ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; leitor_temperatura_tester_tb           ; --            ; --          ; eda_simulation               ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Vhdl                                   ; --            ; --          ; eda_simulation               ;
@@ -104,12 +104,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:26     ; 1.0                     ; 995 MB              ; 00:00:46                           ;
-; Fitter               ; 00:00:17     ; 1.0                     ; 1392 MB             ; 00:00:21                           ;
-; Assembler            ; 00:00:04     ; 1.0                     ; 830 MB              ; 00:00:04                           ;
-; Timing Analyzer      ; 00:00:03     ; 1.1                     ; 864 MB              ; 00:00:04                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 1063 MB             ; 00:00:01                           ;
-; Total                ; 00:00:51     ; --                      ; --                  ; 00:01:16                           ;
+; Analysis & Synthesis ; 00:00:18     ; 1.0                     ; 997 MB              ; 00:00:41                           ;
+; Fitter               ; 00:00:13     ; 1.0                     ; 1389 MB             ; 00:00:17                           ;
+; Assembler            ; 00:00:04     ; 1.0                     ; 825 MB              ; 00:00:04                           ;
+; Timing Analyzer      ; 00:00:04     ; 1.1                     ; 864 MB              ; 00:00:03                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 1063 MB             ; 00:00:01                           ;
+; Total                ; 00:00:39     ; --                      ; --                  ; 00:01:06                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
