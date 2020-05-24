@@ -18,7 +18,8 @@ entity top_level is
         tx          :   out std_logic;
         cs          :   out std_logic;
         sck         :   out std_logic;
-        iniciado    :   out std_logic
+        iniciado    :   out std_logic;
+        pid_ativo   :   out std_logic
     );
 end top_level;
 
@@ -80,6 +81,16 @@ architecture main of top_level is
         );
     end component leitor_temperatura;
 
+    component controlador_pid is
+        port(
+            clk                 :   in std_logic;
+            set_point           :   in std_logic_vector(11 downto 0); -- Ponto fixo, 2 últimos bits é fração decimal - Faixa de 0 a 128
+            temperatura_atual   :   in std_logic_vector(11 downto 0); --Ponto fixo, 2 últimos bits é fração decimal
+            
+            percentual_potencia :   out integer range 0 to 100
+        );
+    end component controlador_pid;
+
     constant    prescaler           :   integer                         :=  50;
     signal      clk_1MHZ            :   std_logic                       :=  '0';
     signal      reset               :   std_logic                       :=  '0';
@@ -121,8 +132,9 @@ architecture main of top_level is
     --Leitor de temperatura
     signal      temperatura_atual       :   std_logic_vector(11 downto 0)   :=  (others => '0');
 
-    --Pid
-    signal      potencia_atual          :   integer range 0 to 100  :=  85;
+    --PID
+    signal      clk_pid                 :   std_logic               :=  '0';
+    signal      potencia_atual          :   integer range 0 to 100  :=   0;
 
 begin
 
@@ -131,6 +143,7 @@ begin
     u_tx        :   uart_tx port map(clk_1MHZ, byte_t, iniciar_transmissao, tx, byte_transmitido);
     tmpr        :   temporizador port map(clk_1MHZ, reset, iniciado_tmp, rampas, set_point, rampa_atual, tempo_decorrido, alteracao_set_point, fim);
     termometro  :   leitor_temperatura port map(clk_1MHZ, so, cs, sck, temperatura_atual);
+    pid         :   controlador_pid port map(clk_pid, set_point, temperatura_atual, potencia_atual);
 
     iniciado    <=  iniciado_tmp;
 
@@ -138,6 +151,7 @@ begin
         variable    byte_r_unsigned    :   unsigned(7 downto 0);
         variable    atualizar_ihm      :   integer range 0 to 200_000   :=  0;
         variable    count_atualizacao  :   integer range 0 to 2_000   :=  0;
+        variable    atualizacao_pid    :   integer range 0 to 1_000_000    :=  0; --Atualiza as variaveis a casa 1s
     begin
         if rising_edge(clk_1MHZ) then
 
@@ -172,8 +186,7 @@ begin
                     else
 
                         if indexParam = '0' then --Temperatura
-                            rampas(indexRampa)(0)(7 downto 0)   <=    byte_r_tmp;
-                            rampas(indexRampa)(0)               <=    std_logic_vector(shift_left(unsigned(rampas(indexRampa)(0)), 2)); --Faz o shift para considerar as casas decimais
+                            rampas(indexRampa)(0)(9 downto 2)   <=    byte_r_tmp; --Faz o shift para considerar as casas decimais
                         else --Tempo
                             rampas(indexRampa)(1)   <=    std_logic_vector(byte_r_unsigned * 60)(12 downto 0);
                         end if;
@@ -203,6 +216,10 @@ begin
                         indexParam              <=  '0';
                         rampas                  <= (others => ((others => '0'), (others => '0')));
 
+                        atualizar_ihm       :=  0;
+                        count_atualizacao   :=  0;
+                        atualizacao_pid     := 0;
+
                         --Devolve 2 indicando que está tudo pronto para começar
                         byte_t              <=  "00000010";
                         iniciar_transmissao <=  '1';
@@ -211,6 +228,8 @@ begin
                     elsif byte_r_unsigned = 11 then --Sinal de reset
                         iniciado_tmp    <=  '0';
                         reset           <=  '1';
+                        clk_pid         <=  '0';
+                        pid_ativo       <=  '0';
                     end if;
                         
                 end if;
@@ -256,6 +275,8 @@ begin
     
                 atualizar_ihm   :=   atualizar_ihm + 1;
                 if atualizar_ihm = 200_000 then
+                    clk_pid     <=  '0';
+                    pid_ativo   <=  '0';
 
                     if fim_tmp = '1' then --Acabou a brassagem, reseta tudo e avisa a IHM
                         reset_fim   <=  '1';
@@ -277,6 +298,14 @@ begin
     
                         atualizar_ihm  :=  0;
                     end if;
+                end if;
+
+                atualizacao_pid    :=   atualizacao_pid + 1;
+                if atualizacao_pid = 1_000_000 then
+                    clk_pid     <=  '1';
+                    pid_ativo   <=  '1';
+    
+                    atualizacao_pid  :=  0;
                 end if;
             end if;
 
