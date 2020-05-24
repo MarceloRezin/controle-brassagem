@@ -15,6 +15,7 @@ entity temporizador is
         
         set_point           :   out std_logic_vector(11 downto 0);
         rampa_atual         :   out integer range 0 to 9;
+        tempo_passado       :   out integer range 0 to 8_191;
         alteracao_set_point :   out std_logic; --Da um pulso sempre que o set point foi alterado
         fim                 :   out std_logic --Da um pulso quando as rampas terminarem
     );
@@ -110,7 +111,8 @@ begin
 
                 end if;
 
-                rampa_atual <=  index;
+                rampa_atual     <=  index;
+                tempo_passado   <= tempo_decorrido;
             end if;
 
         end if;

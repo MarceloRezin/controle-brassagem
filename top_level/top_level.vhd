@@ -59,6 +59,7 @@ architecture main of top_level is
             
             set_point           :   out std_logic_vector(11 downto 0);
             rampa_atual         :   out integer range 0 to 9;
+            tempo_passado       :   out integer range 0 to 8_191;
             alteracao_set_point :   out std_logic; --Da um pulso sempre que o set point foi alterado
             fim                 :   out std_logic --Da um pulso quando as rampas terminarem
         );
@@ -91,11 +92,12 @@ architecture main of top_level is
     --Temporizador
     signal      set_point           :   std_logic_vector(11 downto 0);
     signal      rampa_atual         :   integer range 0 to 9;
+    signal      tempo_decorrido     :   integer range 0 to 8_191;
     signal      alteracao_set_point :   std_logic;
     signal      fim                 :   std_logic;
 
     --Atualizacao da ihm
-    signal      index_atualizacao       :   integer range 0 to 1;
+    signal      index_atualizacao       :   integer range 0 to 2;
     signal      atualizacao_andamento   :   std_logic               :=  '0';
 
 begin
@@ -103,7 +105,7 @@ begin
     divisor_50x :   divisor_clock port map(clk_50MHZ, prescaler, clk_1MHZ);    
     u_rx        :   uart_rx port map(clk_1MHZ, rx, byte_r, byte_recebido);    
     u_tx        :   uart_tx port map(clk_1MHZ, byte_t, iniciar_transmissao, tx, byte_transmitido);
-    tmpr        :   temporizador port map(clk_1MHZ, iniciado_tmp, rampas, set_point, rampa_atual, alteracao_set_point, fim);
+    tmpr        :   temporizador port map(clk_1MHZ, iniciado_tmp, rampas, set_point, rampa_atual, tempo_decorrido, alteracao_set_point, fim);
 
     iniciado    <=  iniciado_tmp;
 
@@ -183,15 +185,22 @@ begin
             if iniciado_tmp = '1' then
                 if atualizacao_andamento = '1' then
                     count_atualizacao   :=   count_atualizacao + 1;
-                    if atualizar_ihm = 2_000 then
+                    if count_atualizacao = 2_000 then
                         count_atualizacao   :=  0;
                         
                         if index_atualizacao = 0 then --Envia a rampa atual
                             byte_t              <=  std_logic_vector(to_unsigned(rampa_atual, 8));
                             iniciar_transmissao <=  '1';
+                        elsif index_atualizacao = 1 then --Envia os bits mais significativos do tempo
+                            byte_t              <=  (others => '0');
+                            byte_t(4 downto 0)  <=  std_logic_vector(to_unsigned(tempo_decorrido, 13))(12 downto 8);
+                            iniciar_transmissao <=  '1';
+                        elsif index_atualizacao = 2 then --Envia os bits menos significativos do tempo
+                            byte_t              <=  std_logic_vector(to_unsigned(tempo_decorrido, 13))(7 downto 0);
+                            iniciar_transmissao <=  '1';
                         end if;
 
-                        if index_atualizacao = 1 then --Acabou de enviar as informações
+                        if index_atualizacao = 2 then --Acabou de enviar as informações
                             atualizacao_andamento   <=  '0';
                         else
                             index_atualizacao   <=  index_atualizacao + 1; 
