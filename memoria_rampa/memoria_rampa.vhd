@@ -13,7 +13,7 @@ use ieee.numeric_std.all;
 
 package memoria_rampa is
     type    parametros  is array (0 to 1)   of std_logic_vector(12 downto 0);
-    type    rampa       is array (0 to 8)   of parametros;
+    type    rampa       is array (0 to 9)   of parametros;
 
     function get_temperatura(p : parametros) return  std_logic_vector;
     function get_tempo(p : parametros) return  std_logic_vector;
