@@ -31,14 +31,14 @@ begin
 
     process(clk_1MHZ)
 
-        variable    delay_1s        :   integer range 0 to 1000000  :=  0;
+        variable    delay_10s       :   integer range 0 to 10_000_000  :=  0;
         variable    count_bordas    :   integer range 0 to 32       :=  0; -- 2 bordas por pulso, 16 bits
 
     begin
 
         if rising_edge(clk_1MHZ) then
 
-            delay_1s  :=  delay_1s + 1;
+            delay_10s  :=  delay_10s + 1;
 
             if cs_tmp = '0' then
                 sck_tmp         <=  not sck_tmp;
@@ -52,9 +52,9 @@ begin
 
             end if;
            
-            if delay_1s = 1000000 then
+            if delay_10s = 10_000_000 then
                 cs_tmp      <=  '0';
-                delay_1s    :=  0;
+                delay_10s    :=  0;
 
                 sck_tmp       <=  '0';
                 count_bordas  :=  0;
