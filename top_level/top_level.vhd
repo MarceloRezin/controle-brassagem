@@ -65,6 +65,11 @@ architecture main of top_level is
     signal      byte_t              :   std_logic_vector(7 downto 0)    :=  (others => '0');
     signal      byte_transmitido    :   std_logic                       :=  '0';
 
+    --Sincronização
+    signal      sincronizacao_andamento :   std_logic                   :=  '0';
+    signal      indexRampa              :   integer range 0 to 9;
+    signal      indexParam              :   std_logic; -- 0 temperatura, 1 tempo
+
     --Memoria
     signal      rampas              :   rampa;
 
@@ -75,6 +80,7 @@ begin
     u_tx        :   uart_tx port map(clk_1MHZ, byte_t, iniciar_transmissao, tx, byte_transmitido);
 
     process(clk_1MHZ)
+        variable byte_r_unsigned    :   unsigned(7 downto 0);
     begin
         if rising_edge(clk_1MHZ) then
 
@@ -88,14 +94,55 @@ begin
 
             if nova_recepcao = '1' then
 
-                if unsigned(byte_r_tmp) = 1 then --Indica que a sincronizacao vai comecar
+                byte_r_unsigned :=  unsigned(byte_r_tmp);
 
-                    --Zera tudo para inicar a sincronizacao
-                    rampas              <= (others => ((others => '0'), (others => '0')));
+                if sincronizacao_andamento = '1' then --Byte com informações do usuário
 
-                    --Devolve 2 indicando que está tudo pronto para começar
-                    byte_t              <=  "00000010";
-                    iniciar_transmissao <=  '1';
+                    if byte_r_unsigned = 0 and indexParam = '0' then --Terminou antes de dar o total de rampas
+                        sincronizacao_andamento <=  '0';
+
+                        --Devolve 2 indicando que está tudo pronto para começar
+                        byte_t              <=  "00000010";
+                        iniciar_transmissao <=  '1';
+                    else
+
+                        if indexParam = '0' then --Temperatura
+                            rampas(indexRampa)(0)(7 downto 0)   <=    byte_r_tmp;
+                            rampas(indexRampa)(0)               <=    std_logic_vector(shift_left(unsigned(rampas(indexRampa)(0)), 2)); --Faz o shift para considerar as casas decimais
+                        else --Tempo
+                            rampas(indexRampa)(1)   <=    std_logic_vector(byte_r_unsigned * 60)(12 downto 0);
+                        end if;
+
+                        if indexParam = '1' then --Significa que já veio os 2 params dessa rampa
+                            if indexRampa = 9 then --Acabou a sincronização 
+                                sincronizacao_andamento <=  '0';
+
+                                --Devolve 2 indicando que está tudo pronto para começar
+                                byte_t              <=  "00000010";
+                                iniciar_transmissao <=  '1';
+                            else
+                                indexRampa  <=  indexRampa + 1;
+                            end if;
+                        end if;
+
+                        indexParam  <=  not indexParam;
+                    end if;
+
+                else --Byte com código
+
+                    if byte_r_unsigned = 1 then --Indica que a sincronizacao vai comecar
+
+                        --Zera tudo para inicar a sincronizacao
+                        sincronizacao_andamento <=  '1';
+                        indexRampa              <=  0;
+                        indexParam              <=  '0';
+                        rampas                  <= (others => ((others => '0'), (others => '0')));
+
+                        --Devolve 2 indicando que está tudo pronto para começar
+                        byte_t              <=  "00000010";
+                        iniciar_transmissao <=  '1';
+                    end if;
+                        
                 end if;
 
                 reset_recepcao  <=  '1';
