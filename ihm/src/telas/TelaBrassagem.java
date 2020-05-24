@@ -13,6 +13,8 @@ import model.Receita;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import java.awt.GridLayout;
+import java.awt.Component;
+import javax.swing.Box;
 
 public class TelaBrassagem extends JFrame {
 
@@ -21,10 +23,14 @@ public class TelaBrassagem extends JFrame {
 	private JLabel lblRampaAtual;
 	private JLabel lblTempoDecorrido;
 	
+	private Serial serial;
 	private Receita receita;
 	private int rampaAtual;
 	private JLabel lblTemperaturaAtual;
 	private JLabel lblPotenciaAtual;
+	private JPanel panelSul;
+	private Component horizontalStrut;
+	private Component horizontalStrut_1;
 
 	public TelaBrassagem(Receita receita) {
 		this.receita = receita;
@@ -35,10 +41,6 @@ public class TelaBrassagem extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
-		
-		JButton btnVoltar = new JButton("Voltar");
-		btnVoltar.addActionListener((ActionEvent e) -> actionVoltar());
-		contentPane.add(btnVoltar, BorderLayout.SOUTH);
 		
 		JLabel lblReceita = new JLabel("Brassagem - Receita " + receita.getNome());
 		contentPane.add(lblReceita, BorderLayout.NORTH);
@@ -59,18 +61,33 @@ public class TelaBrassagem extends JFrame {
 		lblPotenciaAtual = new JLabel();
 		panel.add(lblPotenciaAtual);
 		
-		Serial s = new Serial(); 
+		panelSul = new JPanel();
+		contentPane.add(panelSul, BorderLayout.SOUTH);
+		panelSul.setLayout(new GridLayout(1, 3, 0, 0));
+		
+		horizontalStrut = Box.createHorizontalStrut(20);
+		panelSul.add(horizontalStrut);
+		
+		horizontalStrut_1 = Box.createHorizontalStrut(20);
+		panelSul.add(horizontalStrut_1);
+		
+		serial = new Serial(); 
 		try {
-			s.inciar(this);
+			serial.iniciar(this);
 		}catch (Exception e) {
 		  JOptionPane.showMessageDialog(null, e.getMessage(), "Erro:", JOptionPane.ERROR_MESSAGE); 
 		}
+		
+		JButton btnInterromper = new JButton("Interromper");
+		panelSul.add(btnInterromper);
+		btnInterromper.addActionListener((ActionEvent e) -> {
+			if(JOptionPane.showConfirmDialog(this, "Tem certeza que deseja interromper essa receita?", "Confirmação de cancelamento:", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+				serial.parar();
+				new TelaPrincial().setVisible(true);
+				dispose();
+			}
+		});
 				
-	}
-	
-	private void actionVoltar() {
-		new TelaPrincial().setVisible(true);
-		dispose();
 	}
 
 	public Receita getReceita() {
@@ -106,5 +123,12 @@ public class TelaBrassagem extends JFrame {
 	
 	public void setPotenciaAtual(int potenciaAtual) {
 		lblPotenciaAtual.setText("Potencia atual: " + potenciaAtual + "%");
+	}
+	
+	public void fim() {
+		JOptionPane.showMessageDialog(null, "A brassagem foi finalizada com sucesso! Clique em \"OK\" para retorna a tela inical.");
+		serial.parar();
+		new TelaPrincial().setVisible(true);
+		dispose();
 	}
 }

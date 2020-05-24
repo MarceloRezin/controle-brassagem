@@ -10,6 +10,7 @@ use work.memoria_rampa.all;
 entity temporizador is
     port(
         clk_1MHZ            :   in std_logic;
+        reset               :   in std_logic;
         iniciar             :   in std_logic; --Um pulso indica que o temporizador deve iniciar
         rampas              :   in rampa;
         
@@ -49,6 +50,7 @@ architecture main of temporizador is
     signal      fim_tmp                 :   std_logic   :=  '0';
 
     signal      iniciado                :   std_logic   :=  '0';
+    signal      reset_iniciado          :   std_logic   :=  '0';
 
 begin
 
@@ -56,6 +58,7 @@ begin
 
     alteracao_set_point <=  alteracao_set_point_tmp;
     fim                 <=  fim_tmp;
+    reset_iniciado      <=  fim_tmp or reset;
 
     process(clk_1HZ, iniciar)
         
@@ -93,14 +96,12 @@ begin
 
                         if index = 9 then -- acabou
                             fim_tmp         <=  '1';
-                            segundo_zero    := '1';
                         else
                             index       :=  index + 1;
                             tempo_alvo  :=  set_tempo_alvo(index, rampas);
                             
                             if tempo_alvo = 0 then -- acabou
                                 fim_tmp         <=  '1';
-                                segundo_zero    := '1';
                             else --Trocou o set point
                                 set_point               <=  set_set_point(index, rampas);
                                 alteracao_set_point_tmp <=  '1';
@@ -113,15 +114,17 @@ begin
 
                 rampa_atual     <=  index;
                 tempo_passado   <= tempo_decorrido;
+            else
+                segundo_zero    := '1';
             end if;
 
         end if;
     end process;
 
-    process(iniciar, fim_tmp)
+    process(iniciar, reset_iniciado)
     begin
 
-        if fim_tmp = '1' then
+        if reset_iniciado = '1' then
             iniciado    <=  '0';
         elsif rising_edge(iniciar) then
             iniciado    <=   '1';

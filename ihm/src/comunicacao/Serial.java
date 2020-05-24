@@ -25,6 +25,8 @@ public class Serial implements SerialPortEventListener {
 	private static final int COD_SOLICITAR_PERMISSAO_SINCRONIZAR = 1;
 	private static final int COD_OK = 2;
 	private static final int COD_INICIAR = 10;
+	private static final int COD_RESET = 11;
+	private static final int COD_FIM = 12;
 	
 	private int indexAtualizacao = 0;
 	private int accTempoDecorrido = 0; //Acumula o tempo decorrido em segundos pois é recebido em 2 bytes
@@ -35,7 +37,7 @@ public class Serial implements SerialPortEventListener {
     private BufferedReader input;
     private OutputStream output;
 
-    public void inciar(TelaBrassagem telaBrassagem) throws Exception {
+    public void iniciar(TelaBrassagem telaBrassagem) throws Exception {
     	this.telaBrassagem = telaBrassagem;
     	
         System.setProperty("gnu.io.rxtx.SerialPorts", PORTA);
@@ -73,6 +75,18 @@ public class Serial implements SerialPortEventListener {
         status = StatusComunicacao.SINCRONIZACAO_PENDENTE;
         output.write(COD_SOLICITAR_PERMISSAO_SINCRONIZAR);
     }
+    
+    public void parar() {
+		if (serialPort != null) {
+			try {
+				output.write(COD_RESET);
+				serialPort.removeEventListener();
+				serialPort.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+	}
 
     public void serialEvent(SerialPortEvent oEvent) {
         if (oEvent.getEventType() == SerialPortEvent.DATA_AVAILABLE) {
@@ -117,10 +131,11 @@ public class Serial implements SerialPortEventListener {
                     }else if(retorno == COD_SOLICITAR_PERMISSAO_SINCRONIZAR) {
                     	status = StatusComunicacao.ATUALIZACAO_PARAMETROS;
                     	indexAtualizacao = 0;
+                    }else if(retorno == COD_FIM) {
+                    	telaBrassagem.fim();
                     }
                 }
              
-                
             } catch (Exception e) {
                 System.err.println(e.toString());
             }

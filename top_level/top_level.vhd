@@ -54,6 +54,7 @@ architecture main of top_level is
     component temporizador is
         port(
             clk_1MHZ            :   in std_logic;
+            reset               :   in std_logic;
             iniciar             :   in std_logic; --Um pulso indica que o temporizador deve iniciar
             rampas              :   in rampa;
             
@@ -67,6 +68,7 @@ architecture main of top_level is
 
     constant    prescaler           :   integer                         :=  50;
     signal      clk_1MHZ            :   std_logic                       :=  '0';
+    signal      reset               :   std_logic                       :=  '0';
 
     --rx
     signal      byte_r              :   std_logic_vector(7 downto 0)    :=  (others => '0');
@@ -95,6 +97,8 @@ architecture main of top_level is
     signal      tempo_decorrido     :   integer range 0 to 8_191;
     signal      alteracao_set_point :   std_logic;
     signal      fim                 :   std_logic;
+    signal      fim_tmp             :   std_logic   :=  '0';
+    signal      reset_fim           :   std_logic   :=  '0';
 
     --Atualizacao da ihm
     signal      index_atualizacao       :   integer range 0 to 5;
@@ -111,7 +115,7 @@ begin
     divisor_50x :   divisor_clock port map(clk_50MHZ, prescaler, clk_1MHZ);    
     u_rx        :   uart_rx port map(clk_1MHZ, rx, byte_r, byte_recebido);    
     u_tx        :   uart_tx port map(clk_1MHZ, byte_t, iniciar_transmissao, tx, byte_transmitido);
-    tmpr        :   temporizador port map(clk_1MHZ, iniciado_tmp, rampas, set_point, rampa_atual, tempo_decorrido, alteracao_set_point, fim);
+    tmpr        :   temporizador port map(clk_1MHZ, reset, iniciado_tmp, rampas, set_point, rampa_atual, tempo_decorrido, alteracao_set_point, fim);
 
     iniciado    <=  iniciado_tmp;
 
@@ -128,6 +132,14 @@ begin
 
             if iniciar_transmissao = '1' then
                 iniciar_transmissao <=  '0';
+            end if;
+
+            if reset = '1' then
+                reset <=  '0';
+            end if;
+            
+            if reset_fim = '1' then
+                reset_fim <=  '0';
             end if;
 
             if nova_recepcao = '1' then
@@ -181,6 +193,9 @@ begin
                         iniciar_transmissao <=  '1';
                     elsif byte_r_unsigned = 10 then
                         iniciado_tmp            <=  '1';
+                    elsif byte_r_unsigned = 11 then --Sinal de reset
+                        iniciado_tmp    <=  '0';
+                        reset           <=  '1';
                     end if;
                         
                 end if;
@@ -226,16 +241,27 @@ begin
     
                 atualizar_ihm   :=   atualizar_ihm + 1;
                 if atualizar_ihm = 200_000 then
+
+                    if fim_tmp = '1' then --Acabou a brassagem, reseta tudo e avisa a IHM
+                        reset_fim   <=  '1';
     
-                    index_atualizacao       <=  0;
-                    atualizacao_andamento   <=  '1';
-                    count_atualizacao       :=  0;
+                        iniciado_tmp    <=  '0';
+                        reset           <=  '1';
     
-                    --Avisa pra ihm que a atualizacao vai começar
-                    byte_t              <=  "00000001";
-                    iniciar_transmissao <=  '1';
+                        --Devolve 12
+                        byte_t              <=  "00001100";
+                        iniciar_transmissao <=  '1';
+                    else
+                        index_atualizacao       <=  0;
+                        atualizacao_andamento   <=  '1';
+                        count_atualizacao       :=  0;
     
-                    atualizar_ihm  :=  0;
+                        --Avisa pra ihm que a atualizacao vai começar
+                        byte_t              <=  "00000001";
+                        iniciar_transmissao <=  '1';
+    
+                        atualizar_ihm  :=  0;
+                    end if;
                 end if;
             end if;
 
@@ -255,4 +281,13 @@ begin
         end if;
     end process;
 
+    --Temporizador
+    process(fim, reset_fim)
+    begin
+        if reset_fim = '1' then
+            fim_tmp <=  '0';
+        elsif rising_edge(fim) then
+            fim_tmp <=  '1';
+        end if;
+    end process;
 end main;
