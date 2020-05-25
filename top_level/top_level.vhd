@@ -99,6 +99,7 @@ architecture main of top_level is
     component controlador_potencia is
         port(
             clk_1MHZ                :   in  std_logic;
+            ativo                   :   in  std_logic;
             passagem_zero           :   in  std_logic;
             porcentagem_potencia    :   in  integer range 0 to 100;
        
@@ -160,7 +161,7 @@ begin
     tmpr        :   temporizador port map(clk_1MHZ, reset, iniciado_tmp, paralizar_contagem, rampas, set_point, rampa_atual, tempo_decorrido, alteracao_set_point, fim);
     termometro  :   leitor_temperatura port map(clk_1MHZ, so, cs, sck, temperatura_atual);
     pid         :   controlador_pid port map(clk_pid, set_point, temperatura_atual, potencia_atual, paralizar_contagem);
-    controlador :   controlador_potencia port map(clk_1MHZ, passagem_zero, potencia_atual, disparo_triac);
+    controlador :   controlador_potencia port map(clk_1MHZ, iniciado_tmp, passagem_zero, potencia_atual, disparo_triac);
     
     iniciado        <=  iniciado_tmp;
     contagem_ativa  <=  not paralizar_contagem;

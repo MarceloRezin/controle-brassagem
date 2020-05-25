@@ -11,6 +11,7 @@ use ieee.numeric_std.all;
 entity controlador_potencia is
     port(
         clk_1MHZ                :   in  std_logic;
+        ativo                   :   in  std_logic;
         passagem_zero           :   in  std_logic;
         porcentagem_potencia    :   in  integer range 0 to 100;
    
@@ -102,7 +103,9 @@ begin
                 delay_triac      <=  '1';
                 
                 --Ativar o triac
-                disparo_triac   <=  '1';      
+                if ativo = '1' then
+                    disparo_triac   <=  '1';      
+                end if;
             end if;
 
             if delay_triac = '1' then
