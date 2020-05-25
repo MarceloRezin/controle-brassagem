@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(10M50DAF484) Path("/home/marcelo-note/controle-brassagem/top_level/output_files/") File("top_level.sof") MfrSpec(OpMask(1));
+		Device PartName(10M50DAF484) Path("/home/marcelo-note/controle-brassagem/top_level/output_files/") File("top_level.pof") MfrSpec(OpMask(3) Child_OpMask(2 3 3));
 
 ChainEnd;
 

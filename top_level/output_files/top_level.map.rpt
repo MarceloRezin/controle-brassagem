@@ -1,5 +1,5 @@
 Analysis & Synthesis report for top_level
-Mon May 25 13:21:26 2020
+Mon May 25 14:15:22 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -18,12 +18,14 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
  10. General Register Statistics
  11. Inverted Register Statistics
  12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Port Connectivity Checks: "temporizador:tmpr"
- 14. Port Connectivity Checks: "uart_tx:u_tx"
- 15. Port Connectivity Checks: "divisor_clock:divisor_50x"
- 16. Post-Synthesis Netlist Statistics for Top Partition
- 17. Elapsed Time Per Partition
- 18. Analysis & Synthesis Messages
+ 13. Parameter Settings for Inferred Entity Instance: controlador_pid:pid|lpm_mult:Mult0
+ 14. lpm_mult Parameter Settings by Entity Instance
+ 15. Port Connectivity Checks: "temporizador:tmpr"
+ 16. Port Connectivity Checks: "uart_tx:u_tx"
+ 17. Port Connectivity Checks: "divisor_clock:divisor_50x"
+ 18. Post-Synthesis Netlist Statistics for Top Partition
+ 19. Elapsed Time Per Partition
+ 20. Analysis & Synthesis Messages
 
 
 
@@ -49,15 +51,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon May 25 13:21:26 2020       ;
+; Analysis & Synthesis Status        ; Successful - Mon May 25 14:15:22 2020       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; top_level                                   ;
 ; Top-level Entity Name              ; top_level                                   ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 1,136                                       ;
-;     Total combinational functions  ; 912                                         ;
-;     Dedicated logic registers      ; 514                                         ;
-; Total registers                    ; 514                                         ;
+; Total logic elements               ; 1,176                                       ;
+;     Total combinational functions  ; 952                                         ;
+;     Dedicated logic registers      ; 515                                         ;
+; Total registers                    ; 515                                         ;
 ; Total pins                         ; 11                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -171,21 +173,45 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                               ;
-+--------------------------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path                 ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                        ; Library ;
-+--------------------------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------+---------+
-; ../controlador_potencia/controlador_potencia.vhd ; yes             ; User VHDL File  ; /home/marcelo-note/controle-brassagem/controlador_potencia/controlador_potencia.vhd ;         ;
-; ../controlador_pid/controlador_pid.vhd           ; yes             ; User VHDL File  ; /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid.vhd           ;         ;
-; ../leitor_temperatura/leitor_temperatura.vhd     ; yes             ; User VHDL File  ; /home/marcelo-note/controle-brassagem/leitor_temperatura/leitor_temperatura.vhd     ;         ;
-; ../temporizador/temporizador.vhd                 ; yes             ; User VHDL File  ; /home/marcelo-note/controle-brassagem/temporizador/temporizador.vhd                 ;         ;
-; ../divisor_clock/divisor_clock.vhd               ; yes             ; User VHDL File  ; /home/marcelo-note/controle-brassagem/divisor_clock/divisor_clock.vhd               ;         ;
-; ../memoria_rampa/memoria_rampa.vhd               ; yes             ; User VHDL File  ; /home/marcelo-note/controle-brassagem/memoria_rampa/memoria_rampa.vhd               ;         ;
-; ../uart/uart_tx.vhd                              ; yes             ; User VHDL File  ; /home/marcelo-note/controle-brassagem/uart/uart_tx.vhd                              ;         ;
-; ../uart/uart_rx.vhd                              ; yes             ; User VHDL File  ; /home/marcelo-note/controle-brassagem/uart/uart_rx.vhd                              ;         ;
-; top_level.vhd                                    ; yes             ; User VHDL File  ; /home/marcelo-note/controle-brassagem/top_level/top_level.vhd                       ;         ;
-+--------------------------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                       ;
++--------------------------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                 ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                   ; Library ;
++--------------------------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------+---------+
+; ../controlador_potencia/controlador_potencia.vhd ; yes             ; User VHDL File               ; /home/marcelo-note/controle-brassagem/controlador_potencia/controlador_potencia.vhd            ;         ;
+; ../controlador_pid/controlador_pid.vhd           ; yes             ; User VHDL File               ; /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid.vhd                      ;         ;
+; ../leitor_temperatura/leitor_temperatura.vhd     ; yes             ; User VHDL File               ; /home/marcelo-note/controle-brassagem/leitor_temperatura/leitor_temperatura.vhd                ;         ;
+; ../temporizador/temporizador.vhd                 ; yes             ; User VHDL File               ; /home/marcelo-note/controle-brassagem/temporizador/temporizador.vhd                            ;         ;
+; ../divisor_clock/divisor_clock.vhd               ; yes             ; User VHDL File               ; /home/marcelo-note/controle-brassagem/divisor_clock/divisor_clock.vhd                          ;         ;
+; ../memoria_rampa/memoria_rampa.vhd               ; yes             ; User VHDL File               ; /home/marcelo-note/controle-brassagem/memoria_rampa/memoria_rampa.vhd                          ;         ;
+; ../uart/uart_tx.vhd                              ; yes             ; User VHDL File               ; /home/marcelo-note/controle-brassagem/uart/uart_tx.vhd                                         ;         ;
+; ../uart/uart_rx.vhd                              ; yes             ; User VHDL File               ; /home/marcelo-note/controle-brassagem/uart/uart_rx.vhd                                         ;         ;
+; top_level.vhd                                    ; yes             ; User VHDL File               ; /home/marcelo-note/controle-brassagem/top_level/top_level.vhd                                  ;         ;
+; lpm_mult.tdf                                     ; yes             ; Megafunction                 ; /home/marcelo-note/intelFPGA_lite/18.1/quartus/libraries/megafunctions/lpm_mult.tdf            ;         ;
+; aglobal181.inc                                   ; yes             ; Megafunction                 ; /home/marcelo-note/intelFPGA_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc          ;         ;
+; lpm_add_sub.inc                                  ; yes             ; Megafunction                 ; /home/marcelo-note/intelFPGA_lite/18.1/quartus/libraries/megafunctions/lpm_add_sub.inc         ;         ;
+; multcore.inc                                     ; yes             ; Megafunction                 ; /home/marcelo-note/intelFPGA_lite/18.1/quartus/libraries/megafunctions/multcore.inc            ;         ;
+; bypassff.inc                                     ; yes             ; Megafunction                 ; /home/marcelo-note/intelFPGA_lite/18.1/quartus/libraries/megafunctions/bypassff.inc            ;         ;
+; altshift.inc                                     ; yes             ; Megafunction                 ; /home/marcelo-note/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altshift.inc            ;         ;
+; multcore.tdf                                     ; yes             ; Megafunction                 ; /home/marcelo-note/intelFPGA_lite/18.1/quartus/libraries/megafunctions/multcore.tdf            ;         ;
+; csa_add.inc                                      ; yes             ; Megafunction                 ; /home/marcelo-note/intelFPGA_lite/18.1/quartus/libraries/megafunctions/csa_add.inc             ;         ;
+; mpar_add.inc                                     ; yes             ; Megafunction                 ; /home/marcelo-note/intelFPGA_lite/18.1/quartus/libraries/megafunctions/mpar_add.inc            ;         ;
+; muleabz.inc                                      ; yes             ; Megafunction                 ; /home/marcelo-note/intelFPGA_lite/18.1/quartus/libraries/megafunctions/muleabz.inc             ;         ;
+; mul_lfrg.inc                                     ; yes             ; Megafunction                 ; /home/marcelo-note/intelFPGA_lite/18.1/quartus/libraries/megafunctions/mul_lfrg.inc            ;         ;
+; mul_boothc.inc                                   ; yes             ; Megafunction                 ; /home/marcelo-note/intelFPGA_lite/18.1/quartus/libraries/megafunctions/mul_boothc.inc          ;         ;
+; alt_ded_mult.inc                                 ; yes             ; Megafunction                 ; /home/marcelo-note/intelFPGA_lite/18.1/quartus/libraries/megafunctions/alt_ded_mult.inc        ;         ;
+; alt_ded_mult_y.inc                               ; yes             ; Megafunction                 ; /home/marcelo-note/intelFPGA_lite/18.1/quartus/libraries/megafunctions/alt_ded_mult_y.inc      ;         ;
+; dffpipe.inc                                      ; yes             ; Megafunction                 ; /home/marcelo-note/intelFPGA_lite/18.1/quartus/libraries/megafunctions/dffpipe.inc             ;         ;
+; mpar_add.tdf                                     ; yes             ; Megafunction                 ; /home/marcelo-note/intelFPGA_lite/18.1/quartus/libraries/megafunctions/mpar_add.tdf            ;         ;
+; lpm_add_sub.tdf                                  ; yes             ; Megafunction                 ; /home/marcelo-note/intelFPGA_lite/18.1/quartus/libraries/megafunctions/lpm_add_sub.tdf         ;         ;
+; addcore.inc                                      ; yes             ; Megafunction                 ; /home/marcelo-note/intelFPGA_lite/18.1/quartus/libraries/megafunctions/addcore.inc             ;         ;
+; look_add.inc                                     ; yes             ; Megafunction                 ; /home/marcelo-note/intelFPGA_lite/18.1/quartus/libraries/megafunctions/look_add.inc            ;         ;
+; alt_stratix_add_sub.inc                          ; yes             ; Megafunction                 ; /home/marcelo-note/intelFPGA_lite/18.1/quartus/libraries/megafunctions/alt_stratix_add_sub.inc ;         ;
+; db/add_sub_otg.tdf                               ; yes             ; Auto-Generated Megafunction  ; /home/marcelo-note/controle-brassagem/top_level/db/add_sub_otg.tdf                             ;         ;
+; db/add_sub_uig.tdf                               ; yes             ; Auto-Generated Megafunction  ; /home/marcelo-note/controle-brassagem/top_level/db/add_sub_uig.tdf                             ;         ;
+; db/add_sub_3vg.tdf                               ; yes             ; Auto-Generated Megafunction  ; /home/marcelo-note/controle-brassagem/top_level/db/add_sub_3vg.tdf                             ;         ;
+; altshift.tdf                                     ; yes             ; Megafunction                 ; /home/marcelo-note/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altshift.tdf            ;         ;
++--------------------------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------+---------+
 
 
 +-------------------------------------------------------------------------------------+
@@ -193,20 +219,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+---------------------------------------+
 ; Resource                                    ; Usage                                 ;
 +---------------------------------------------+---------------------------------------+
-; Estimated Total logic elements              ; 1,136                                 ;
+; Estimated Total logic elements              ; 1,176                                 ;
 ;                                             ;                                       ;
-; Total combinational functions               ; 912                                   ;
+; Total combinational functions               ; 952                                   ;
 ; Logic element usage by number of LUT inputs ;                                       ;
-;     -- 4 input functions                    ; 474                                   ;
-;     -- 3 input functions                    ; 213                                   ;
-;     -- <=2 input functions                  ; 225                                   ;
+;     -- 4 input functions                    ; 476                                   ;
+;     -- 3 input functions                    ; 241                                   ;
+;     -- <=2 input functions                  ; 235                                   ;
 ;                                             ;                                       ;
 ; Logic elements by mode                      ;                                       ;
-;     -- normal mode                          ; 673                                   ;
-;     -- arithmetic mode                      ; 239                                   ;
+;     -- normal mode                          ; 700                                   ;
+;     -- arithmetic mode                      ; 252                                   ;
 ;                                             ;                                       ;
-; Total registers                             ; 514                                   ;
-;     -- Dedicated logic registers            ; 514                                   ;
+; Total registers                             ; 515                                   ;
+;     -- Dedicated logic registers            ; 515                                   ;
 ;     -- I/O registers                        ; 0                                     ;
 ;                                             ;                                       ;
 ; I/O pins                                    ; 11                                    ;
@@ -214,110 +240,119 @@ refer to the applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0                                     ;
 ;                                             ;                                       ;
 ; Maximum fan-out node                        ; divisor_clock:divisor_50x|out_clk_tmp ;
-; Maximum fan-out                             ; 436                                   ;
-; Total fan-out                               ; 4326                                  ;
-; Average fan-out                             ; 2.99                                  ;
+; Maximum fan-out                             ; 437                                   ;
+; Total fan-out                               ; 4440                                  ;
+; Average fan-out                             ; 2.98                                  ;
 +---------------------------------------------+---------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                            ;
-+---------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------+----------------------+--------------+
-; Compilation Hierarchy Node            ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                         ; Entity Name          ; Library Name ;
-+---------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------+----------------------+--------------+
-; |top_level                            ; 912 (284)           ; 514 (274)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 11   ; 0            ; 0          ; |top_level                                  ; top_level            ; work         ;
-;    |controlador_pid:pid|              ; 73 (73)             ; 19 (19)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|controlador_pid:pid              ; controlador_pid      ; work         ;
-;    |controlador_potencia:controlador| ; 120 (120)           ; 27 (27)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|controlador_potencia:controlador ; controlador_potencia ; work         ;
-;    |divisor_clock:divisor_50x|        ; 39 (39)             ; 29 (29)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|divisor_clock:divisor_50x        ; divisor_clock        ; work         ;
-;    |leitor_temperatura:termometro|    ; 80 (80)             ; 60 (60)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|leitor_temperatura:termometro    ; leitor_temperatura   ; work         ;
-;    |temporizador:tmpr|                ; 233 (233)           ; 59 (59)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|temporizador:tmpr                ; temporizador         ; work         ;
-;    |uart_rx:u_rx|                     ; 49 (49)             ; 31 (31)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|uart_rx:u_rx                     ; uart_rx              ; work         ;
-;    |uart_tx:u_tx|                     ; 34 (34)             ; 15 (15)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|uart_tx:u_tx                     ; uart_tx              ; work         ;
-+---------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------+----------------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                  ;
++---------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
+; Compilation Hierarchy Node                        ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                                                   ; Entity Name          ; Library Name ;
++---------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
+; |top_level                                        ; 952 (283)           ; 515 (274)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 11   ; 0            ; 0          ; |top_level                                                                                                                                            ; top_level            ; work         ;
+;    |controlador_pid:pid|                          ; 109 (62)            ; 19 (19)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|controlador_pid:pid                                                                                                                        ; controlador_pid      ; work         ;
+;       |lpm_mult:Mult0|                            ; 47 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|controlador_pid:pid|lpm_mult:Mult0                                                                                                         ; lpm_mult             ; work         ;
+;          |multcore:mult_core|                     ; 47 (20)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|controlador_pid:pid|lpm_mult:Mult0|multcore:mult_core                                                                                      ; multcore             ; work         ;
+;             |mpar_add:padder|                     ; 27 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|controlador_pid:pid|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder                                                                      ; mpar_add             ; work         ;
+;                |lpm_add_sub:adder[0]|             ; 9 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|controlador_pid:pid|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                                                 ; lpm_add_sub          ; work         ;
+;                   |add_sub_uig:auto_generated|    ; 9 (9)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|controlador_pid:pid|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_uig:auto_generated                      ; add_sub_uig          ; work         ;
+;                |lpm_add_sub:adder[1]|             ; 7 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|controlador_pid:pid|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[1]                                                 ; lpm_add_sub          ; work         ;
+;                   |add_sub_otg:auto_generated|    ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|controlador_pid:pid|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[1]|add_sub_otg:auto_generated                      ; add_sub_otg          ; work         ;
+;                |mpar_add:sub_par_add|             ; 11 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|controlador_pid:pid|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add                                                 ; mpar_add             ; work         ;
+;                   |lpm_add_sub:adder[0]|          ; 11 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|controlador_pid:pid|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]                            ; lpm_add_sub          ; work         ;
+;                      |add_sub_3vg:auto_generated| ; 11 (11)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|controlador_pid:pid|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|add_sub_3vg:auto_generated ; add_sub_3vg          ; work         ;
+;    |controlador_potencia:controlador|             ; 125 (125)           ; 28 (28)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|controlador_potencia:controlador                                                                                                           ; controlador_potencia ; work         ;
+;    |divisor_clock:divisor_50x|                    ; 39 (39)             ; 29 (29)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|divisor_clock:divisor_50x                                                                                                                  ; divisor_clock        ; work         ;
+;    |leitor_temperatura:termometro|                ; 80 (80)             ; 60 (60)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|leitor_temperatura:termometro                                                                                                              ; leitor_temperatura   ; work         ;
+;    |temporizador:tmpr|                            ; 233 (233)           ; 59 (59)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|temporizador:tmpr                                                                                                                          ; temporizador         ; work         ;
+;    |uart_rx:u_rx|                                 ; 49 (49)             ; 31 (31)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|uart_rx:u_rx                                                                                                                               ; uart_rx              ; work         ;
+;    |uart_tx:u_tx|                                 ; 34 (34)             ; 15 (15)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|uart_tx:u_tx                                                                                                                               ; uart_tx              ; work         ;
++---------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+--------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                 ;
-+---------------------------------------------------------+----------------------------------------------------------+
-; Register name                                           ; Reason for Removal                                       ;
-+---------------------------------------------------------+----------------------------------------------------------+
-; controlador_pid:pid|ultima_temperatura[13]              ; Stuck at GND due to stuck port data_in                   ;
-; controlador_pid:pid|percentual_potencia[0]              ; Stuck at GND due to stuck port data_in                   ;
-; rampas[9][0][0]                                         ; Stuck at GND due to stuck port data_in                   ;
-; rampas[9][0][1]                                         ; Stuck at GND due to stuck port data_in                   ;
-; rampas[9][0][10]                                        ; Stuck at GND due to stuck port data_in                   ;
-; rampas[8][0][0]                                         ; Stuck at GND due to stuck port data_in                   ;
-; rampas[8][0][1]                                         ; Stuck at GND due to stuck port data_in                   ;
-; rampas[8][0][10]                                        ; Stuck at GND due to stuck port data_in                   ;
-; rampas[7][0][0]                                         ; Stuck at GND due to stuck port data_in                   ;
-; rampas[7][0][1]                                         ; Stuck at GND due to stuck port data_in                   ;
-; rampas[7][0][10]                                        ; Stuck at GND due to stuck port data_in                   ;
-; rampas[6][0][0]                                         ; Stuck at GND due to stuck port data_in                   ;
-; rampas[6][0][1]                                         ; Stuck at GND due to stuck port data_in                   ;
-; rampas[6][0][10]                                        ; Stuck at GND due to stuck port data_in                   ;
-; rampas[5][0][0]                                         ; Stuck at GND due to stuck port data_in                   ;
-; rampas[5][0][1]                                         ; Stuck at GND due to stuck port data_in                   ;
-; rampas[5][0][10]                                        ; Stuck at GND due to stuck port data_in                   ;
-; rampas[4][0][0]                                         ; Stuck at GND due to stuck port data_in                   ;
-; rampas[4][0][1]                                         ; Stuck at GND due to stuck port data_in                   ;
-; rampas[4][0][10]                                        ; Stuck at GND due to stuck port data_in                   ;
-; rampas[3][0][0]                                         ; Stuck at GND due to stuck port data_in                   ;
-; rampas[3][0][1]                                         ; Stuck at GND due to stuck port data_in                   ;
-; rampas[3][0][10]                                        ; Stuck at GND due to stuck port data_in                   ;
-; rampas[2][0][0]                                         ; Stuck at GND due to stuck port data_in                   ;
-; rampas[2][0][1]                                         ; Stuck at GND due to stuck port data_in                   ;
-; rampas[2][0][10]                                        ; Stuck at GND due to stuck port data_in                   ;
-; rampas[1][0][0]                                         ; Stuck at GND due to stuck port data_in                   ;
-; rampas[1][0][1]                                         ; Stuck at GND due to stuck port data_in                   ;
-; rampas[1][0][10]                                        ; Stuck at GND due to stuck port data_in                   ;
-; rampas[0][0][0]                                         ; Stuck at GND due to stuck port data_in                   ;
-; rampas[0][0][1]                                         ; Stuck at GND due to stuck port data_in                   ;
-; rampas[0][0][10]                                        ; Stuck at GND due to stuck port data_in                   ;
-; controlador_potencia:controlador|disparo_triac          ; Merged with controlador_potencia:controlador|delay_triac ;
-; temporizador:tmpr|tempo_passado[7]                      ; Merged with temporizador:tmpr|tempo_decorrido[7]         ;
-; temporizador:tmpr|tempo_passado[6]                      ; Merged with temporizador:tmpr|tempo_decorrido[6]         ;
-; temporizador:tmpr|tempo_passado[5]                      ; Merged with temporizador:tmpr|tempo_decorrido[5]         ;
-; temporizador:tmpr|tempo_passado[4]                      ; Merged with temporizador:tmpr|tempo_decorrido[4]         ;
-; temporizador:tmpr|tempo_passado[12]                     ; Merged with temporizador:tmpr|tempo_decorrido[12]        ;
-; temporizador:tmpr|tempo_passado[3]                      ; Merged with temporizador:tmpr|tempo_decorrido[3]         ;
-; temporizador:tmpr|tempo_passado[11]                     ; Merged with temporizador:tmpr|tempo_decorrido[11]        ;
-; temporizador:tmpr|rampa_atual[3]                        ; Merged with temporizador:tmpr|index[3]                   ;
-; temporizador:tmpr|tempo_passado[2]                      ; Merged with temporizador:tmpr|tempo_decorrido[2]         ;
-; temporizador:tmpr|tempo_passado[10]                     ; Merged with temporizador:tmpr|tempo_decorrido[10]        ;
-; temporizador:tmpr|rampa_atual[2]                        ; Merged with temporizador:tmpr|index[2]                   ;
-; temporizador:tmpr|tempo_passado[1]                      ; Merged with temporizador:tmpr|tempo_decorrido[1]         ;
-; temporizador:tmpr|tempo_passado[9]                      ; Merged with temporizador:tmpr|tempo_decorrido[9]         ;
-; temporizador:tmpr|rampa_atual[1]                        ; Merged with temporizador:tmpr|index[1]                   ;
-; temporizador:tmpr|tempo_passado[0]                      ; Merged with temporizador:tmpr|tempo_decorrido[0]         ;
-; temporizador:tmpr|tempo_passado[8]                      ; Merged with temporizador:tmpr|tempo_decorrido[8]         ;
-; temporizador:tmpr|rampa_atual[0]                        ; Merged with temporizador:tmpr|index[0]                   ;
-; rampas[0][1][1]                                         ; Merged with rampas[0][1][0]                              ;
-; rampas[1][1][1]                                         ; Merged with rampas[1][1][0]                              ;
-; rampas[2][1][1]                                         ; Merged with rampas[2][1][0]                              ;
-; rampas[3][1][1]                                         ; Merged with rampas[3][1][0]                              ;
-; rampas[4][1][1]                                         ; Merged with rampas[4][1][0]                              ;
-; rampas[5][1][1]                                         ; Merged with rampas[5][1][0]                              ;
-; rampas[6][1][1]                                         ; Merged with rampas[6][1][0]                              ;
-; rampas[7][1][1]                                         ; Merged with rampas[7][1][0]                              ;
-; rampas[8][1][1]                                         ; Merged with rampas[8][1][0]                              ;
-; rampas[9][1][1]                                         ; Merged with rampas[9][1][0]                              ;
-; temporizador:tmpr|set_point[0,1,10]                     ; Stuck at GND due to stuck port data_in                   ;
-; rampas[9][1][0]                                         ; Stuck at GND due to stuck port data_in                   ;
-; rampas[8][1][0]                                         ; Stuck at GND due to stuck port data_in                   ;
-; rampas[7][1][0]                                         ; Stuck at GND due to stuck port data_in                   ;
-; rampas[6][1][0]                                         ; Stuck at GND due to stuck port data_in                   ;
-; rampas[5][1][0]                                         ; Stuck at GND due to stuck port data_in                   ;
-; rampas[4][1][0]                                         ; Stuck at GND due to stuck port data_in                   ;
-; rampas[3][1][0]                                         ; Stuck at GND due to stuck port data_in                   ;
-; rampas[2][1][0]                                         ; Stuck at GND due to stuck port data_in                   ;
-; rampas[1][1][0]                                         ; Stuck at GND due to stuck port data_in                   ;
-; rampas[0][1][0]                                         ; Stuck at GND due to stuck port data_in                   ;
-; controlador_potencia:controlador|count_ativacao[19..25] ; Stuck at GND due to stuck port data_in                   ;
-; temporizador:tmpr|tempo_alvo[0,1]                       ; Stuck at GND due to stuck port data_in                   ;
-; controlador_potencia:controlador|count_ativacao[14..18] ; Stuck at GND due to stuck port data_in                   ;
-; Total Number of Removed Registers = 87                  ;                                                          ;
-+---------------------------------------------------------+----------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                          ;
++---------------------------------------------------------+---------------------------------------------------+
+; Register name                                           ; Reason for Removal                                ;
++---------------------------------------------------------+---------------------------------------------------+
+; controlador_pid:pid|ultima_temperatura[13]              ; Stuck at GND due to stuck port data_in            ;
+; controlador_pid:pid|percentual_potencia[0]              ; Stuck at GND due to stuck port data_in            ;
+; rampas[9][0][0]                                         ; Stuck at GND due to stuck port data_in            ;
+; rampas[9][0][1]                                         ; Stuck at GND due to stuck port data_in            ;
+; rampas[9][0][10]                                        ; Stuck at GND due to stuck port data_in            ;
+; rampas[8][0][0]                                         ; Stuck at GND due to stuck port data_in            ;
+; rampas[8][0][1]                                         ; Stuck at GND due to stuck port data_in            ;
+; rampas[8][0][10]                                        ; Stuck at GND due to stuck port data_in            ;
+; rampas[7][0][0]                                         ; Stuck at GND due to stuck port data_in            ;
+; rampas[7][0][1]                                         ; Stuck at GND due to stuck port data_in            ;
+; rampas[7][0][10]                                        ; Stuck at GND due to stuck port data_in            ;
+; rampas[6][0][0]                                         ; Stuck at GND due to stuck port data_in            ;
+; rampas[6][0][1]                                         ; Stuck at GND due to stuck port data_in            ;
+; rampas[6][0][10]                                        ; Stuck at GND due to stuck port data_in            ;
+; rampas[5][0][0]                                         ; Stuck at GND due to stuck port data_in            ;
+; rampas[5][0][1]                                         ; Stuck at GND due to stuck port data_in            ;
+; rampas[5][0][10]                                        ; Stuck at GND due to stuck port data_in            ;
+; rampas[4][0][0]                                         ; Stuck at GND due to stuck port data_in            ;
+; rampas[4][0][1]                                         ; Stuck at GND due to stuck port data_in            ;
+; rampas[4][0][10]                                        ; Stuck at GND due to stuck port data_in            ;
+; rampas[3][0][0]                                         ; Stuck at GND due to stuck port data_in            ;
+; rampas[3][0][1]                                         ; Stuck at GND due to stuck port data_in            ;
+; rampas[3][0][10]                                        ; Stuck at GND due to stuck port data_in            ;
+; rampas[2][0][0]                                         ; Stuck at GND due to stuck port data_in            ;
+; rampas[2][0][1]                                         ; Stuck at GND due to stuck port data_in            ;
+; rampas[2][0][10]                                        ; Stuck at GND due to stuck port data_in            ;
+; rampas[1][0][0]                                         ; Stuck at GND due to stuck port data_in            ;
+; rampas[1][0][1]                                         ; Stuck at GND due to stuck port data_in            ;
+; rampas[1][0][10]                                        ; Stuck at GND due to stuck port data_in            ;
+; rampas[0][0][0]                                         ; Stuck at GND due to stuck port data_in            ;
+; rampas[0][0][1]                                         ; Stuck at GND due to stuck port data_in            ;
+; rampas[0][0][10]                                        ; Stuck at GND due to stuck port data_in            ;
+; temporizador:tmpr|tempo_passado[7]                      ; Merged with temporizador:tmpr|tempo_decorrido[7]  ;
+; temporizador:tmpr|tempo_passado[6]                      ; Merged with temporizador:tmpr|tempo_decorrido[6]  ;
+; temporizador:tmpr|tempo_passado[5]                      ; Merged with temporizador:tmpr|tempo_decorrido[5]  ;
+; temporizador:tmpr|tempo_passado[4]                      ; Merged with temporizador:tmpr|tempo_decorrido[4]  ;
+; temporizador:tmpr|tempo_passado[12]                     ; Merged with temporizador:tmpr|tempo_decorrido[12] ;
+; temporizador:tmpr|tempo_passado[3]                      ; Merged with temporizador:tmpr|tempo_decorrido[3]  ;
+; temporizador:tmpr|tempo_passado[11]                     ; Merged with temporizador:tmpr|tempo_decorrido[11] ;
+; temporizador:tmpr|rampa_atual[3]                        ; Merged with temporizador:tmpr|index[3]            ;
+; temporizador:tmpr|tempo_passado[2]                      ; Merged with temporizador:tmpr|tempo_decorrido[2]  ;
+; temporizador:tmpr|tempo_passado[10]                     ; Merged with temporizador:tmpr|tempo_decorrido[10] ;
+; temporizador:tmpr|rampa_atual[2]                        ; Merged with temporizador:tmpr|index[2]            ;
+; temporizador:tmpr|tempo_passado[1]                      ; Merged with temporizador:tmpr|tempo_decorrido[1]  ;
+; temporizador:tmpr|tempo_passado[9]                      ; Merged with temporizador:tmpr|tempo_decorrido[9]  ;
+; temporizador:tmpr|rampa_atual[1]                        ; Merged with temporizador:tmpr|index[1]            ;
+; temporizador:tmpr|tempo_passado[0]                      ; Merged with temporizador:tmpr|tempo_decorrido[0]  ;
+; temporizador:tmpr|tempo_passado[8]                      ; Merged with temporizador:tmpr|tempo_decorrido[8]  ;
+; temporizador:tmpr|rampa_atual[0]                        ; Merged with temporizador:tmpr|index[0]            ;
+; rampas[0][1][1]                                         ; Merged with rampas[0][1][0]                       ;
+; rampas[1][1][1]                                         ; Merged with rampas[1][1][0]                       ;
+; rampas[2][1][1]                                         ; Merged with rampas[2][1][0]                       ;
+; rampas[3][1][1]                                         ; Merged with rampas[3][1][0]                       ;
+; rampas[4][1][1]                                         ; Merged with rampas[4][1][0]                       ;
+; rampas[5][1][1]                                         ; Merged with rampas[5][1][0]                       ;
+; rampas[6][1][1]                                         ; Merged with rampas[6][1][0]                       ;
+; rampas[7][1][1]                                         ; Merged with rampas[7][1][0]                       ;
+; rampas[8][1][1]                                         ; Merged with rampas[8][1][0]                       ;
+; rampas[9][1][1]                                         ; Merged with rampas[9][1][0]                       ;
+; temporizador:tmpr|set_point[0,1,10]                     ; Stuck at GND due to stuck port data_in            ;
+; rampas[9][1][0]                                         ; Stuck at GND due to stuck port data_in            ;
+; rampas[8][1][0]                                         ; Stuck at GND due to stuck port data_in            ;
+; rampas[7][1][0]                                         ; Stuck at GND due to stuck port data_in            ;
+; rampas[6][1][0]                                         ; Stuck at GND due to stuck port data_in            ;
+; rampas[5][1][0]                                         ; Stuck at GND due to stuck port data_in            ;
+; rampas[4][1][0]                                         ; Stuck at GND due to stuck port data_in            ;
+; rampas[3][1][0]                                         ; Stuck at GND due to stuck port data_in            ;
+; rampas[2][1][0]                                         ; Stuck at GND due to stuck port data_in            ;
+; rampas[1][1][0]                                         ; Stuck at GND due to stuck port data_in            ;
+; rampas[0][1][0]                                         ; Stuck at GND due to stuck port data_in            ;
+; controlador_potencia:controlador|count_ativacao[19..25] ; Stuck at GND due to stuck port data_in            ;
+; temporizador:tmpr|tempo_alvo[0,1]                       ; Stuck at GND due to stuck port data_in            ;
+; controlador_potencia:controlador|count_ativacao[14..18] ; Stuck at GND due to stuck port data_in            ;
+; Total Number of Removed Registers = 86                  ;                                                   ;
++---------------------------------------------------------+---------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------+
@@ -353,7 +388,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 514   ;
+; Total registers                              ; 515   ;
 ; Number of registers using Synchronous Clear  ; 2     ;
 ; Number of registers using Synchronous Load   ; 5     ;
 ; Number of registers using Asynchronous Clear ; 7     ;
@@ -372,7 +407,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; leitor_temperatura:termometro|cs_tmp          ; 4       ;
 ; uart_tx:u_tx|start_bit                        ; 14      ;
 ; temporizador:tmpr|segundo_zero                ; 43      ;
-; uart_rx:u_rx|start_bit                        ; 3       ;
+; uart_rx:u_rx|start_bit                        ; 2       ;
 ; leitor_temperatura:termometro|bit_recebido[3] ; 12      ;
 ; leitor_temperatura:termometro|bit_recebido[1] ; 13      ;
 ; leitor_temperatura:termometro|bit_recebido[0] ; 13      ;
@@ -386,9 +421,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |top_level|uart_tx:u_tx|pulsos_tempo[5]                         ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |top_level|uart_tx:u_tx|pulsos_tempo[4]                         ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top_level|indexRampa[3]                                        ;
-; 3:1                ; 20 bits   ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; Yes        ; |top_level|atualizacao_pid[11]                                  ;
+; 3:1                ; 20 bits   ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; Yes        ; |top_level|atualizacao_pid[4]                                   ;
 ; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |top_level|controlador_pid:pid|percentual_potencia[6]           ;
 ; 3:1                ; 18 bits   ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; Yes        ; |top_level|atualizar_ihm[7]                                     ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |top_level|index_atualizacao[2]                                 ;
@@ -411,6 +446,61 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 18:1               ; 5 bits    ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; No         ; |top_level|controlador_potencia:controlador|pulsos_potencia[8]  ;
 ; 19:1               ; 2 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |top_level|controlador_potencia:controlador|pulsos_potencia[6]  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: controlador_pid:pid|lpm_mult:Mult0 ;
++------------------------------------------------+---------+--------------------------+
+; Parameter Name                                 ; Value   ; Type                     ;
++------------------------------------------------+---------+--------------------------+
+; AUTO_CARRY_CHAINS                              ; ON      ; AUTO_CARRY               ;
+; IGNORE_CARRY_BUFFERS                           ; OFF     ; IGNORE_CARRY             ;
+; AUTO_CASCADE_CHAINS                            ; ON      ; AUTO_CASCADE             ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF     ; IGNORE_CASCADE           ;
+; LPM_WIDTHA                                     ; 14      ; Untyped                  ;
+; LPM_WIDTHB                                     ; 5       ; Untyped                  ;
+; LPM_WIDTHP                                     ; 19      ; Untyped                  ;
+; LPM_WIDTHR                                     ; 19      ; Untyped                  ;
+; LPM_WIDTHS                                     ; 1       ; Untyped                  ;
+; LPM_REPRESENTATION                             ; SIGNED  ; Untyped                  ;
+; LPM_PIPELINE                                   ; 0       ; Untyped                  ;
+; LATENCY                                        ; 0       ; Untyped                  ;
+; INPUT_A_IS_CONSTANT                            ; NO      ; Untyped                  ;
+; INPUT_B_IS_CONSTANT                            ; YES     ; Untyped                  ;
+; USE_EAB                                        ; OFF     ; Untyped                  ;
+; MAXIMIZE_SPEED                                 ; 6       ; Untyped                  ;
+; DEVICE_FAMILY                                  ; MAX 10  ; Untyped                  ;
+; CARRY_CHAIN                                    ; MANUAL  ; Untyped                  ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT     ; TECH_MAPPER_APEX20K      ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO    ; Untyped                  ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0       ; Untyped                  ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0       ; Untyped                  ;
+; CBXI_PARAMETER                                 ; NOTHING ; Untyped                  ;
+; INPUT_A_FIXED_VALUE                            ; Bx      ; Untyped                  ;
+; INPUT_B_FIXED_VALUE                            ; Bx      ; Untyped                  ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF     ; Untyped                  ;
++------------------------------------------------+---------+--------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                             ;
++---------------------------------------+------------------------------------+
+; Name                                  ; Value                              ;
++---------------------------------------+------------------------------------+
+; Number of entity instances            ; 1                                  ;
+; Entity Instance                       ; controlador_pid:pid|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 14                                 ;
+;     -- LPM_WIDTHB                     ; 5                                  ;
+;     -- LPM_WIDTHP                     ; 19                                 ;
+;     -- LPM_REPRESENTATION             ; SIGNED                             ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                 ;
+;     -- INPUT_B_IS_CONSTANT            ; YES                                ;
+;     -- USE_EAB                        ; OFF                                ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                               ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                 ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                 ;
++---------------------------------------+------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -450,26 +540,26 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 11                          ;
-; cycloneiii_ff         ; 514                         ;
+; cycloneiii_ff         ; 515                         ;
 ;     CLR               ; 7                           ;
 ;     ENA               ; 303                         ;
 ;     SCLR              ; 1                           ;
 ;     SCLR SLD          ; 1                           ;
 ;     SLD               ; 4                           ;
-;     plain             ; 198                         ;
-; cycloneiii_lcell_comb ; 915                         ;
-;     arith             ; 239                         ;
-;         2 data inputs ; 123                         ;
-;         3 data inputs ; 116                         ;
-;     normal            ; 676                         ;
+;     plain             ; 199                         ;
+; cycloneiii_lcell_comb ; 955                         ;
+;     arith             ; 252                         ;
+;         2 data inputs ; 127                         ;
+;         3 data inputs ; 125                         ;
+;     normal            ; 703                         ;
 ;         0 data inputs ; 6                           ;
 ;         1 data inputs ; 11                          ;
-;         2 data inputs ; 88                          ;
-;         3 data inputs ; 97                          ;
-;         4 data inputs ; 474                         ;
+;         2 data inputs ; 94                          ;
+;         3 data inputs ; 116                         ;
+;         4 data inputs ; 476                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 10.70                       ;
-; Average LUT depth     ; 6.09                        ;
+; Max LUT depth         ; 11.00                       ;
+; Average LUT depth     ; 6.42                        ;
 +-----------------------+-----------------------------+
 
 
@@ -478,7 +568,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:04     ;
 +----------------+--------------+
 
 
@@ -488,12 +578,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon May 25 13:21:04 2020
+    Info: Processing started: Mon May 25 14:14:59 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off top_level -c top_level
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file /home/marcelo-note/controle-brassagem/controlador_potencia/controlador_potencia.vhd
-    Info (12022): Found design unit 1: controlador_potencia-main File: /home/marcelo-note/controle-brassagem/controlador_potencia/controlador_potencia.vhd Line: 21
+    Info (12022): Found design unit 1: controlador_potencia-main File: /home/marcelo-note/controle-brassagem/controlador_potencia/controlador_potencia.vhd Line: 22
     Info (12023): Found entity 1: controlador_potencia File: /home/marcelo-note/controle-brassagem/controlador_potencia/controlador_potencia.vhd Line: 11
 Info (12021): Found 2 design units, including 1 entities, in source file /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid.vhd
     Info (12022): Found design unit 1: controlador_pid-main File: /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid.vhd Line: 21
@@ -520,29 +610,55 @@ Info (12021): Found 2 design units, including 1 entities, in source file top_lev
     Info (12022): Found design unit 1: top_level-main File: /home/marcelo-note/controle-brassagem/top_level/top_level.vhd Line: 29
     Info (12023): Found entity 1: top_level File: /home/marcelo-note/controle-brassagem/top_level/top_level.vhd Line: 12
 Info (12127): Elaborating entity "top_level" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at top_level.vhd(123): object "byte_transmitido" assigned a value but never read File: /home/marcelo-note/controle-brassagem/top_level/top_level.vhd Line: 123
-Warning (10036): Verilog HDL or VHDL warning at top_level.vhd(138): object "alteracao_set_point" assigned a value but never read File: /home/marcelo-note/controle-brassagem/top_level/top_level.vhd Line: 138
+Warning (10036): Verilog HDL or VHDL warning at top_level.vhd(124): object "byte_transmitido" assigned a value but never read File: /home/marcelo-note/controle-brassagem/top_level/top_level.vhd Line: 124
+Warning (10036): Verilog HDL or VHDL warning at top_level.vhd(139): object "alteracao_set_point" assigned a value but never read File: /home/marcelo-note/controle-brassagem/top_level/top_level.vhd Line: 139
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "rampas" into its bus
-Info (12128): Elaborating entity "divisor_clock" for hierarchy "divisor_clock:divisor_50x" File: /home/marcelo-note/controle-brassagem/top_level/top_level.vhd Line: 157
-Info (12128): Elaborating entity "uart_rx" for hierarchy "uart_rx:u_rx" File: /home/marcelo-note/controle-brassagem/top_level/top_level.vhd Line: 158
-Info (12128): Elaborating entity "uart_tx" for hierarchy "uart_tx:u_tx" File: /home/marcelo-note/controle-brassagem/top_level/top_level.vhd Line: 159
-Info (12128): Elaborating entity "temporizador" for hierarchy "temporizador:tmpr" File: /home/marcelo-note/controle-brassagem/top_level/top_level.vhd Line: 160
+Info (12128): Elaborating entity "divisor_clock" for hierarchy "divisor_clock:divisor_50x" File: /home/marcelo-note/controle-brassagem/top_level/top_level.vhd Line: 158
+Info (12128): Elaborating entity "uart_rx" for hierarchy "uart_rx:u_rx" File: /home/marcelo-note/controle-brassagem/top_level/top_level.vhd Line: 159
+Info (12128): Elaborating entity "uart_tx" for hierarchy "uart_tx:u_tx" File: /home/marcelo-note/controle-brassagem/top_level/top_level.vhd Line: 160
+Info (12128): Elaborating entity "temporizador" for hierarchy "temporizador:tmpr" File: /home/marcelo-note/controle-brassagem/top_level/top_level.vhd Line: 161
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "rampas" into its bus
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "rampas" into its bus
-Info (12128): Elaborating entity "leitor_temperatura" for hierarchy "leitor_temperatura:termometro" File: /home/marcelo-note/controle-brassagem/top_level/top_level.vhd Line: 161
-Info (12128): Elaborating entity "controlador_pid" for hierarchy "controlador_pid:pid" File: /home/marcelo-note/controle-brassagem/top_level/top_level.vhd Line: 162
-Info (12128): Elaborating entity "controlador_potencia" for hierarchy "controlador_potencia:controlador" File: /home/marcelo-note/controle-brassagem/top_level/top_level.vhd Line: 163
+Info (12128): Elaborating entity "leitor_temperatura" for hierarchy "leitor_temperatura:termometro" File: /home/marcelo-note/controle-brassagem/top_level/top_level.vhd Line: 162
+Info (12128): Elaborating entity "controlador_pid" for hierarchy "controlador_pid:pid" File: /home/marcelo-note/controle-brassagem/top_level/top_level.vhd Line: 163
+Info (12128): Elaborating entity "controlador_potencia" for hierarchy "controlador_potencia:controlador" File: /home/marcelo-note/controle-brassagem/top_level/top_level.vhd Line: 164
+Info (278001): Inferred 1 megafunctions from design logic
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "controlador_pid:pid|Mult0" File: /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid.vhd Line: 50
+Info (12130): Elaborated megafunction instantiation "controlador_pid:pid|lpm_mult:Mult0" File: /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid.vhd Line: 50
+Info (12133): Instantiated megafunction "controlador_pid:pid|lpm_mult:Mult0" with the following parameter: File: /home/marcelo-note/controle-brassagem/controlador_pid/controlador_pid.vhd Line: 50
+    Info (12134): Parameter "LPM_WIDTHA" = "14"
+    Info (12134): Parameter "LPM_WIDTHB" = "5"
+    Info (12134): Parameter "LPM_WIDTHP" = "19"
+    Info (12134): Parameter "LPM_WIDTHR" = "19"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "YES"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "6"
+Info (12131): Elaborated megafunction instantiation "controlador_pid:pid|lpm_mult:Mult0|multcore:mult_core", which is child of megafunction instantiation "controlador_pid:pid|lpm_mult:Mult0" File: /home/marcelo-note/intelFPGA_lite/18.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 308
+Info (12131): Elaborated megafunction instantiation "controlador_pid:pid|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "controlador_pid:pid|lpm_mult:Mult0" File: /home/marcelo-note/intelFPGA_lite/18.1/quartus/libraries/megafunctions/multcore.tdf Line: 228
+Info (12131): Elaborated megafunction instantiation "controlador_pid:pid|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[1]", which is child of megafunction instantiation "controlador_pid:pid|lpm_mult:Mult0" File: /home/marcelo-note/intelFPGA_lite/18.1/quartus/libraries/megafunctions/mpar_add.tdf Line: 115
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_otg.tdf
+    Info (12023): Found entity 1: add_sub_otg File: /home/marcelo-note/controle-brassagem/top_level/db/add_sub_otg.tdf Line: 22
+Info (12131): Elaborated megafunction instantiation "controlador_pid:pid|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]", which is child of megafunction instantiation "controlador_pid:pid|lpm_mult:Mult0" File: /home/marcelo-note/intelFPGA_lite/18.1/quartus/libraries/megafunctions/mpar_add.tdf Line: 115
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_uig.tdf
+    Info (12023): Found entity 1: add_sub_uig File: /home/marcelo-note/controle-brassagem/top_level/db/add_sub_uig.tdf Line: 22
+Info (12131): Elaborated megafunction instantiation "controlador_pid:pid|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add", which is child of megafunction instantiation "controlador_pid:pid|lpm_mult:Mult0" File: /home/marcelo-note/intelFPGA_lite/18.1/quartus/libraries/megafunctions/mpar_add.tdf Line: 138
+Info (12131): Elaborated megafunction instantiation "controlador_pid:pid|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]", which is child of megafunction instantiation "controlador_pid:pid|lpm_mult:Mult0" File: /home/marcelo-note/intelFPGA_lite/18.1/quartus/libraries/megafunctions/mpar_add.tdf Line: 115
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_3vg.tdf
+    Info (12023): Found entity 1: add_sub_3vg File: /home/marcelo-note/controle-brassagem/top_level/db/add_sub_3vg.tdf Line: 22
+Info (12131): Elaborated megafunction instantiation "controlador_pid:pid|lpm_mult:Mult0|altshift:external_latency_ffs", which is child of megafunction instantiation "controlador_pid:pid|lpm_mult:Mult0" File: /home/marcelo-note/intelFPGA_lite/18.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 351
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1218 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1258 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
     Info (21059): Implemented 7 output pins
-    Info (21061): Implemented 1207 logic cells
+    Info (21061): Implemented 1247 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 988 megabytes
-    Info: Processing ended: Mon May 25 13:21:26 2020
-    Info: Elapsed time: 00:00:22
-    Info: Total CPU time (on all processors): 00:00:44
+    Info: Peak virtual memory: 1018 megabytes
+    Info: Processing ended: Mon May 25 14:15:22 2020
+    Info: Elapsed time: 00:00:23
+    Info: Total CPU time (on all processors): 00:00:45
 
 
