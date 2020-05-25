@@ -93,7 +93,7 @@ public class Serial implements SerialPortEventListener {
             try {
                 int retorno = input.read();
                 
-                System.out.println(retorno);
+//                System.out.println(retorno);
                 
                 if(status == StatusComunicacao.ATUALIZACAO_PARAMETROS) {
                 	
@@ -137,7 +137,7 @@ public class Serial implements SerialPortEventListener {
                 }
              
             } catch (Exception e) {
-                System.err.println(e.toString());
+                System.err.println(e.getMessage());
             }
         }
     }

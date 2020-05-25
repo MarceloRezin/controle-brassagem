@@ -95,8 +95,13 @@ public class TelaBrassagem extends JFrame {
 	}
 	
 	public void setRampaAtual(int rampa) {
-		this.rampaAtual = rampa;
-		lblRampaAtual.setText("Rampa atual: " + (rampa + 1) + " de " + receita.getRampas().size());
+		
+		int qtdRampas = receita.getRampas().size();
+		
+		if(rampa < qtdRampas) {
+			this.rampaAtual = rampa;
+			lblRampaAtual.setText("Rampa atual: " + (rampa + 1) + " de " + receita.getRampas().size());
+		}
 	}
 	
 	public void setTempoDecorrido(int tempoDecorrido) { //Vem em segundos
