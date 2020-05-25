@@ -28,6 +28,7 @@ public class TelaPrincial extends JFrame {
 	private JPanel contentPane;
 
 	public TelaPrincial() {
+		setTitle("Controle de Brassagem");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 460, 318);
 		contentPane = new JPanel();

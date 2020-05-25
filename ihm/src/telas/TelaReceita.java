@@ -40,6 +40,8 @@ public class TelaReceita extends JFrame {
 
 	public TelaReceita(Receita receita) {
 		this.receita = receita;
+
+		setTitle("Controle de Brassagem");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 647, 430);
 		contentPane = new JPanel();
