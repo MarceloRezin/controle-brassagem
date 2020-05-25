@@ -21,7 +21,7 @@ end controlador_pid;
 architecture main of controlador_pid is
 
     --Tudo multiplicado por 8 causa do ponto fixo de 3 casas
-    constant    kp                      :   signed(4 downto 0)  :=  "01010"; -- 8 -> 1
+    constant    kp                      :   signed(4 downto 0)  :=  "01101"; -- 8 -> 1
     constant    ki                      :   signed(4 downto 0)  :=  "00000"; -- 0 -> 0
     constant    kd                      :   signed(4 downto 0)  :=  "00001"; -- 1 -> .125
 
