@@ -19,9 +19,9 @@ end divisor_clock;
 
 architecture main of divisor_clock is
 
-	signal	out_clk_tmp	:	std_logic	:=	'0';
-	signal	out_clk_tmp_up	:	std_logic	:=	'0';
-	signal	reset_out_clk_tmp           	:	std_logic	:=	'0';
+	signal	out_clk_tmp	        :	std_logic	:=	'0';
+	signal	out_clk_tmp_up	    :	std_logic	:=	'0';
+	signal	reset_out_clk_tmp   :	std_logic	:=	'0';
 
 begin
 

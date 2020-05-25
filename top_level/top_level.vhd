@@ -11,17 +11,17 @@ use work.memoria_rampa.all;
 -- Entidade
 entity top_level is
     port(
-        clk_50MHZ   :   in  std_logic;
-        rx          :   in  std_logic;
-        so          :   in  std_logic;
+        clk_50MHZ       :   in  std_logic;
+        rx              :   in  std_logic;
+        so              :   in  std_logic;
         passagem_zero   :   in  std_logic;
 
-        tx          :   out std_logic;
-        cs          :   out std_logic;
-        sck         :   out std_logic;
+        tx              :   out std_logic;
+        cs              :   out std_logic;
+        sck             :   out std_logic;
         disparo_triac   :   out std_logic;
-        iniciado    :   out std_logic;
-        pid_ativo   :   out std_logic;
+        iniciado        :   out std_logic;
+        pid_ativo       :   out std_logic;
         contagem_ativa  :   out std_logic
     );
 end top_level;
@@ -107,50 +107,50 @@ architecture main of top_level is
         );
     end component controlador_potencia;
 
-    constant    prescaler           :   integer                         :=  50;
-    signal      clk_1MHZ            :   std_logic                       :=  '0';
-    signal      reset               :   std_logic                       :=  '0';
+    constant    prescaler               :   integer                         :=  50;
+    signal      clk_1MHZ                :   std_logic                       :=  '0';
+    signal      reset                   :   std_logic                       :=  '0';
 
     --rx
-    signal      byte_r              :   std_logic_vector(7 downto 0)    :=  (others => '0');
-    signal      byte_r_tmp          :   std_logic_vector(7 downto 0)    :=  (others => '0');
-    signal      byte_recebido       :   std_logic                       :=  '0';
-    signal      nova_recepcao       :   std_logic                       :=  '0';
-    signal      reset_recepcao      :   std_logic                      :=  '0';
+    signal      byte_r                  :   std_logic_vector(7 downto 0)    :=  (others => '0');
+    signal      byte_r_tmp              :   std_logic_vector(7 downto 0)    :=  (others => '0');
+    signal      byte_recebido           :   std_logic                       :=  '0';
+    signal      nova_recepcao           :   std_logic                       :=  '0';
+    signal      reset_recepcao          :   std_logic                       :=  '0';
     
     --tx
-    signal      iniciar_transmissao :   std_logic                       :=  '0';
-    signal      byte_t              :   std_logic_vector(7 downto 0)    :=  (others => '0');
-    signal      byte_transmitido    :   std_logic                       :=  '0';
+    signal      iniciar_transmissao     :   std_logic                       :=  '0';
+    signal      byte_t                  :   std_logic_vector(7 downto 0)    :=  (others => '0');
+    signal      byte_transmitido        :   std_logic                       :=  '0';
 
     --Sincronização
-    signal      sincronizacao_andamento :   std_logic                   :=  '0';
+    signal      sincronizacao_andamento :   std_logic                       :=  '0';
     signal      indexRampa              :   integer range 0 to 9;
     signal      indexParam              :   std_logic; -- 0 temperatura, 1 tempo
-    signal      iniciado_tmp            :   std_logic   :=  '0';
+    signal      iniciado_tmp            :   std_logic                       :=  '0';
 
     --Memoria
-    signal      rampas              :   rampa;
+    signal      rampas                  :   rampa;
 
     --Temporizador
-    signal      set_point           :   std_logic_vector(11 downto 0);
-    signal      rampa_atual         :   integer range 0 to 9;
-    signal      tempo_decorrido     :   integer range 0 to 8_191;
-    signal      alteracao_set_point :   std_logic;
-    signal      fim                 :   std_logic;
-    signal      fim_tmp             :   std_logic   :=  '0';
-    signal      reset_fim           :   std_logic   :=  '0';
+    signal      set_point               :   std_logic_vector(11 downto 0);
+    signal      rampa_atual             :   integer range 0 to 9;
+    signal      tempo_decorrido         :   integer range 0 to 8_191;
+    signal      alteracao_set_point     :   std_logic;
+    signal      fim                     :   std_logic;
+    signal      fim_tmp                 :   std_logic                       :=  '0';
+    signal      reset_fim               :   std_logic                       :=  '0';
 
     --Atualizacao da ihm
     signal      index_atualizacao       :   integer range 0 to 7;
-    signal      atualizacao_andamento   :   std_logic               :=  '0';
+    signal      atualizacao_andamento   :   std_logic                       :=  '0';
 
     --Leitor de temperatura
     signal      temperatura_atual       :   std_logic_vector(11 downto 0)   :=  (others => '0');
 
     --PID
-    signal      clk_pid                 :   std_logic               :=  '0';
-    signal      potencia_atual          :   integer range 0 to 100  :=   0;
+    signal      clk_pid                 :   std_logic                       :=  '0';
+    signal      potencia_atual          :   integer range 0 to 100          :=   0;
     signal      paralizar_contagem      :   std_logic;
 
 begin
@@ -169,8 +169,8 @@ begin
     process(clk_1MHZ)
         variable    byte_r_unsigned    :   unsigned(7 downto 0);
         variable    atualizar_ihm      :   integer range 0 to 200_000   :=  0;
-        variable    count_atualizacao  :   integer range 0 to 2_000   :=  0;
-        variable    atualizacao_pid    :   integer range 0 to 1_000_000    :=  0; --Atualiza as variaveis a casa 1s
+        variable    count_atualizacao  :   integer range 0 to 2_000     :=  0;
+        variable    atualizacao_pid    :   integer range 0 to 1_000_000 :=  0; --Atualiza as variaveis a casa 1s
     begin
         if rising_edge(clk_1MHZ) then
 
