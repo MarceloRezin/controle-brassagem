@@ -12,6 +12,7 @@ entity temporizador is
         clk_1MHZ            :   in std_logic;
         reset               :   in std_logic;
         iniciar             :   in std_logic; --Um pulso indica que o temporizador deve iniciar
+        paralizar_contagem  :   in std_logic; --Indica que a panela está aquecendo e não deve contar o tempo
         rampas              :   in rampa;
         
         set_point           :   out std_logic_vector(11 downto 0);
@@ -76,7 +77,7 @@ begin
         
                     tempo_alvo      :=  set_tempo_alvo(index, rampas);
                     set_point       <=  set_set_point(index, rampas);
-                else
+                elsif paralizar_contagem = '0' then
                     delay_1s    :=  delay_1s + 1;
                     if delay_1s = 1_000_000 then
                         delay_1s    :=  0;

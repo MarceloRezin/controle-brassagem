@@ -73,4 +73,5 @@ set_global_assignment -name VHDL_FILE ../uart/uart_rx.vhd
 set_global_assignment -name VHDL_FILE top_level.vhd
 set_location_assignment PIN_W8 -to passagem_zero
 set_location_assignment PIN_V7 -to disparo_triac
+set_location_assignment PIN_A10 -to contagem_ativa
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

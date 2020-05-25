@@ -13,21 +13,25 @@ entity controlador_pid is
         set_point           :   in std_logic_vector(11 downto 0); -- Ponto fixo, 2 últimos bits é fração decimal - Faixa de 0 a 128
         temperatura_atual   :   in std_logic_vector(11 downto 0); --Ponto fixo, 2 últimos bits é fração decimal
         
-        percentual_potencia :   out integer range 0 to 100
+        percentual_potencia :   out integer range 0 to 100;
+        paralizar_contagem  :   out std_logic --Quando o erro é maior que 3C° paraliza o timer, significa que a panela está em aquecimento
     );
 end controlador_pid;
 
 architecture main of controlador_pid is
 
     --Tudo multiplicado por 8 causa do ponto fixo de 3 casas
-    constant    kp                  :   signed(4 downto 0)  :=  "01010"; -- 8 -> 1
-    constant    ki                  :   signed(4 downto 0)  :=  "00000"; -- 0 -> 0
-    constant    kd                  :   signed(4 downto 0)  :=  "00001"; -- 1 -> .125
+    constant    kp                      :   signed(4 downto 0)  :=  "01010"; -- 8 -> 1
+    constant    ki                      :   signed(4 downto 0)  :=  "00000"; -- 0 -> 0
+    constant    kd                      :   signed(4 downto 0)  :=  "00001"; -- 1 -> .125
 
-    signal      i                   :   signed(18 downto 0) :=  (others => '0');
-    signal      ultima_temperatura  :   signed(13 downto 0) :=  (others => '0');
+    signal      i                       :   signed(18 downto 0) :=  (others => '0');
+    signal      ultima_temperatura      :   signed(13 downto 0) :=  (others => '0');
+    signal      paralizar_contagem_tmp  :   std_logic           :=  '0';
 
 begin
+
+    paralizar_contagem  <= paralizar_contagem_tmp;
 
     process(clk)
         
@@ -56,6 +60,12 @@ begin
                 percentual_potencia <=  0;
             else
                 percentual_potencia <=  to_integer(pid) * 10;
+            end if;
+
+            if erro > 24 then --24 = 3 no ponto fixo - Aguarda a panela aquecer
+                paralizar_contagem_tmp  <=  '1';
+            else
+                paralizar_contagem_tmp  <=  '0';
             end if;
 
         end if;

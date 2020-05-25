@@ -31,6 +31,7 @@ public class TelaBrassagem extends JFrame {
 	private JPanel panelSul;
 	private Component horizontalStrut;
 	private Component horizontalStrut_1;
+	private JLabel lblStatusRampa;
 
 	public TelaBrassagem(Receita receita) {
 		this.receita = receita;
@@ -60,6 +61,9 @@ public class TelaBrassagem extends JFrame {
 		
 		lblPotenciaAtual = new JLabel();
 		panel.add(lblPotenciaAtual);
+		
+		lblStatusRampa = new JLabel();
+		panel.add(lblStatusRampa);
 		
 		panelSul = new JPanel();
 		contentPane.add(panelSul, BorderLayout.SOUTH);
@@ -128,6 +132,10 @@ public class TelaBrassagem extends JFrame {
 	
 	public void setPotenciaAtual(int potenciaAtual) {
 		lblPotenciaAtual.setText("Potencia atual: " + potenciaAtual + "%");
+	}
+	
+	public void setStatusContagemTempo(int status) {
+		lblStatusRampa.setText("Status da rampa: " + (status == 1 ? "Executando" : "Aguardando aquecimento"));
 	}
 	
 	public void fim() {

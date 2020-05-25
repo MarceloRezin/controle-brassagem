@@ -21,7 +21,8 @@ entity top_level is
         sck         :   out std_logic;
         disparo_triac   :   out std_logic;
         iniciado    :   out std_logic;
-        pid_ativo   :   out std_logic
+        pid_ativo   :   out std_logic;
+        contagem_ativa  :   out std_logic
     );
 end top_level;
 
@@ -62,6 +63,7 @@ architecture main of top_level is
             clk_1MHZ            :   in std_logic;
             reset               :   in std_logic;
             iniciar             :   in std_logic; --Um pulso indica que o temporizador deve iniciar
+            paralizar_contagem  :   in std_logic; --Indica que a panela está aquecendo e não deve contar o tempo
             rampas              :   in rampa;
             
             set_point           :   out std_logic_vector(11 downto 0);
@@ -89,7 +91,8 @@ architecture main of top_level is
             set_point           :   in std_logic_vector(11 downto 0); -- Ponto fixo, 2 últimos bits é fração decimal - Faixa de 0 a 128
             temperatura_atual   :   in std_logic_vector(11 downto 0); --Ponto fixo, 2 últimos bits é fração decimal
             
-            percentual_potencia :   out integer range 0 to 100
+            percentual_potencia :   out integer range 0 to 100;
+            paralizar_contagem  :   out std_logic --Quando o erro é maior que 3C° paraliza o timer, significa que a panela está em aquecimento
         );
     end component controlador_pid;
 
@@ -138,7 +141,7 @@ architecture main of top_level is
     signal      reset_fim           :   std_logic   :=  '0';
 
     --Atualizacao da ihm
-    signal      index_atualizacao       :   integer range 0 to 5;
+    signal      index_atualizacao       :   integer range 0 to 7;
     signal      atualizacao_andamento   :   std_logic               :=  '0';
 
     --Leitor de temperatura
@@ -147,18 +150,20 @@ architecture main of top_level is
     --PID
     signal      clk_pid                 :   std_logic               :=  '0';
     signal      potencia_atual          :   integer range 0 to 100  :=   0;
+    signal      paralizar_contagem      :   std_logic;
 
 begin
 
     divisor_50x :   divisor_clock port map(clk_50MHZ, prescaler, clk_1MHZ);    
     u_rx        :   uart_rx port map(clk_1MHZ, rx, byte_r, byte_recebido);    
     u_tx        :   uart_tx port map(clk_1MHZ, byte_t, iniciar_transmissao, tx, byte_transmitido);
-    tmpr        :   temporizador port map(clk_1MHZ, reset, iniciado_tmp, rampas, set_point, rampa_atual, tempo_decorrido, alteracao_set_point, fim);
+    tmpr        :   temporizador port map(clk_1MHZ, reset, iniciado_tmp, paralizar_contagem, rampas, set_point, rampa_atual, tempo_decorrido, alteracao_set_point, fim);
     termometro  :   leitor_temperatura port map(clk_1MHZ, so, cs, sck, temperatura_atual);
-    pid         :   controlador_pid port map(clk_pid, set_point, temperatura_atual, potencia_atual);
+    pid         :   controlador_pid port map(clk_pid, set_point, temperatura_atual, potencia_atual, paralizar_contagem);
     controlador :   controlador_potencia port map(clk_1MHZ, passagem_zero, potencia_atual, disparo_triac);
     
-    iniciado    <=  iniciado_tmp;
+    iniciado        <=  iniciado_tmp;
+    contagem_ativa  <=  not paralizar_contagem;
 
     process(clk_1MHZ)
         variable    byte_r_unsigned    :   unsigned(7 downto 0);
@@ -276,9 +281,17 @@ begin
                         elsif index_atualizacao = 5 then --Envia a potencia atual
                             byte_t              <=  std_logic_vector(to_unsigned(potencia_atual, 8));
                             iniciar_transmissao <=  '1';
+                        elsif index_atualizacao = 6 then --Envia o status do contador
+                            byte_t              <=  (others => '0');
+
+                            if paralizar_contagem = '0' then
+                                byte_t(0)  <=  '1';
+                            end if;
+
+                            iniciar_transmissao <=  '1';
                         end if;
 
-                        if index_atualizacao = 5 then --Acabou de enviar as informações
+                        if index_atualizacao = 6 then --Acabou de enviar as informações
                             atualizacao_andamento   <=  '0';
                         else
                             index_atualizacao   <=  index_atualizacao + 1; 

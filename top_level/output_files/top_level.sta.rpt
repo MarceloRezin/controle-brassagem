@@ -1,5 +1,5 @@
 Timing Analyzer report for top_level
-Sun May 24 19:02:32 2020
+Mon May 25 13:22:00 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -93,130 +93,121 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
-; Average used               ; 1.31        ;
+; Average used               ; 1.27        ;
 ; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  30.8%      ;
+;     Processor 2            ;  27.1%      ;
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Clocks                                                                                                                                                                                                                                                                                 ;
-+------------------------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------------------------------------------------+
-; Clock Name                                                 ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                                                        ;
-+------------------------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------------------------------------------------+
-; clk_50MHZ                                                  ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk_50MHZ }                                                  ;
-; clk_pid                                                    ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk_pid }                                                    ;
-; divisor_clock:divisor_50x|out_clk_tmp                      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { divisor_clock:divisor_50x|out_clk_tmp }                      ;
-; divisor_clock:divisor_50x|out_clk_tmp_up                   ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { divisor_clock:divisor_50x|out_clk_tmp_up }                   ;
-; iniciado_tmp                                               ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { iniciado_tmp }                                               ;
-; iniciar_transmissao                                        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { iniciar_transmissao }                                        ;
-; leitor_temperatura:termometro|sck_tmp                      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { leitor_temperatura:termometro|sck_tmp }                      ;
-; passagem_zero                                              ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { passagem_zero }                                              ;
-; rx                                                         ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { rx }                                                         ;
-; temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp    ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp }    ;
-; temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp_up ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp_up } ;
-; temporizador:tmpr|fim_tmp                                  ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { temporizador:tmpr|fim_tmp }                                  ;
-; uart_rx:u_rx|byte_recebido_tmp                             ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { uart_rx:u_rx|byte_recebido_tmp }                             ;
-+------------------------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                                             ;
++------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------------------------------+
+; Clock Name                               ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                                      ;
++------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------------------------------+
+; clk_50MHZ                                ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk_50MHZ }                                ;
+; clk_pid                                  ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk_pid }                                  ;
+; divisor_clock:divisor_50x|out_clk_tmp    ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { divisor_clock:divisor_50x|out_clk_tmp }    ;
+; divisor_clock:divisor_50x|out_clk_tmp_up ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { divisor_clock:divisor_50x|out_clk_tmp_up } ;
+; iniciado_tmp                             ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { iniciado_tmp }                             ;
+; iniciar_transmissao                      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { iniciar_transmissao }                      ;
+; leitor_temperatura:termometro|sck_tmp    ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { leitor_temperatura:termometro|sck_tmp }    ;
+; passagem_zero                            ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { passagem_zero }                            ;
+; rx                                       ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { rx }                                       ;
+; temporizador:tmpr|fim_tmp                ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { temporizador:tmpr|fim_tmp }                ;
+; uart_rx:u_rx|byte_recebido_tmp           ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { uart_rx:u_rx|byte_recebido_tmp }           ;
++------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 85C Model Fmax Summary                                                                                                      ;
-+------------+-----------------+---------------------------------------------------------+------------------------------------------------+
-; Fmax       ; Restricted Fmax ; Clock Name                                              ; Note                                           ;
-+------------+-----------------+---------------------------------------------------------+------------------------------------------------+
-; 105.46 MHz ; 105.46 MHz      ; divisor_clock:divisor_50x|out_clk_tmp                   ;                                                ;
-; 127.93 MHz ; 127.93 MHz      ; temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp ;                                                ;
-; 161.68 MHz ; 161.68 MHz      ; clk_pid                                                 ;                                                ;
-; 166.03 MHz ; 166.03 MHz      ; clk_50MHZ                                               ;                                                ;
-; 338.75 MHz ; 338.75 MHz      ; leitor_temperatura:termometro|sck_tmp                   ;                                                ;
-; 551.88 MHz ; 416.15 MHz      ; uart_rx:u_rx|byte_recebido_tmp                          ; limit due to minimum period restriction (tmin) ;
-+------------+-----------------+---------------------------------------------------------+------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary                                                                                    ;
++------------+-----------------+---------------------------------------+------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name                            ; Note                                           ;
++------------+-----------------+---------------------------------------+------------------------------------------------+
+; 110.4 MHz  ; 110.4 MHz       ; divisor_clock:divisor_50x|out_clk_tmp ;                                                ;
+; 160.88 MHz ; 160.88 MHz      ; clk_pid                               ;                                                ;
+; 164.91 MHz ; 164.91 MHz      ; clk_50MHZ                             ;                                                ;
+; 368.19 MHz ; 368.19 MHz      ; leitor_temperatura:termometro|sck_tmp ;                                                ;
+; 610.5 MHz  ; 416.15 MHz      ; uart_rx:u_rx|byte_recebido_tmp        ; limit due to minimum period restriction (tmin) ;
++------------+-----------------+---------------------------------------+------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
-+----------------------------------------------------------------------------------+
-; Slow 1200mV 85C Model Setup Summary                                              ;
-+---------------------------------------------------------+--------+---------------+
-; Clock                                                   ; Slack  ; End Point TNS ;
-+---------------------------------------------------------+--------+---------------+
-; divisor_clock:divisor_50x|out_clk_tmp                   ; -9.764 ; -2065.177     ;
-; temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp ; -6.817 ; -206.197      ;
-; clk_pid                                                 ; -6.708 ; -49.427       ;
-; clk_50MHZ                                               ; -5.023 ; -58.630       ;
-; leitor_temperatura:termometro|sck_tmp                   ; -1.952 ; -19.329       ;
-; uart_rx:u_rx|byte_recebido_tmp                          ; -1.079 ; -8.632        ;
-+---------------------------------------------------------+--------+---------------+
++----------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup Summary                            ;
++---------------------------------------+--------+---------------+
+; Clock                                 ; Slack  ; End Point TNS ;
++---------------------------------------+--------+---------------+
+; divisor_clock:divisor_50x|out_clk_tmp ; -8.525 ; -2132.812     ;
+; clk_pid                               ; -6.629 ; -51.276       ;
+; clk_50MHZ                             ; -5.064 ; -59.909       ;
+; leitor_temperatura:termometro|sck_tmp ; -1.716 ; -20.672       ;
+; uart_rx:u_rx|byte_recebido_tmp        ; -1.315 ; -10.520       ;
++---------------------------------------+--------+---------------+
 
 
-+---------------------------------------------------------------------------------+
-; Slow 1200mV 85C Model Hold Summary                                              ;
-+---------------------------------------------------------+-------+---------------+
-; Clock                                                   ; Slack ; End Point TNS ;
-+---------------------------------------------------------+-------+---------------+
-; divisor_clock:divisor_50x|out_clk_tmp                   ; 0.323 ; 0.000         ;
-; temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp ; 0.341 ; 0.000         ;
-; leitor_temperatura:termometro|sck_tmp                   ; 0.344 ; 0.000         ;
-; clk_50MHZ                                               ; 0.408 ; 0.000         ;
-; clk_pid                                                 ; 0.983 ; 0.000         ;
-; uart_rx:u_rx|byte_recebido_tmp                          ; 1.070 ; 0.000         ;
-+---------------------------------------------------------+-------+---------------+
++---------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold Summary                            ;
++---------------------------------------+-------+---------------+
+; Clock                                 ; Slack ; End Point TNS ;
++---------------------------------------+-------+---------------+
+; divisor_clock:divisor_50x|out_clk_tmp ; 0.324 ; 0.000         ;
+; leitor_temperatura:termometro|sck_tmp ; 0.343 ; 0.000         ;
+; clk_50MHZ                             ; 0.410 ; 0.000         ;
+; clk_pid                               ; 0.489 ; 0.000         ;
+; uart_rx:u_rx|byte_recebido_tmp        ; 1.089 ; 0.000         ;
++---------------------------------------+-------+---------------+
 
 
-+-------------------------------------------------------------------------------------+
-; Slow 1200mV 85C Model Recovery Summary                                              ;
-+------------------------------------------------------------+--------+---------------+
-; Clock                                                      ; Slack  ; End Point TNS ;
-+------------------------------------------------------------+--------+---------------+
-; iniciado_tmp                                               ; -3.414 ; -3.414        ;
-; divisor_clock:divisor_50x|out_clk_tmp_up                   ; -3.149 ; -3.149        ;
-; temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp_up ; -2.994 ; -2.994        ;
-; iniciar_transmissao                                        ; -2.466 ; -2.466        ;
-; temporizador:tmpr|fim_tmp                                  ; -2.097 ; -2.097        ;
-; rx                                                         ; -1.339 ; -1.339        ;
-; passagem_zero                                              ; -0.372 ; -0.372        ;
-; uart_rx:u_rx|byte_recebido_tmp                             ; -0.306 ; -0.306        ;
-+------------------------------------------------------------+--------+---------------+
++-------------------------------------------------------------------+
+; Slow 1200mV 85C Model Recovery Summary                            ;
++------------------------------------------+--------+---------------+
+; Clock                                    ; Slack  ; End Point TNS ;
++------------------------------------------+--------+---------------+
+; divisor_clock:divisor_50x|out_clk_tmp_up ; -3.459 ; -3.459        ;
+; iniciar_transmissao                      ; -3.037 ; -3.037        ;
+; iniciado_tmp                             ; -2.978 ; -2.978        ;
+; temporizador:tmpr|fim_tmp                ; -2.381 ; -2.381        ;
+; rx                                       ; -1.661 ; -1.661        ;
+; uart_rx:u_rx|byte_recebido_tmp           ; -0.730 ; -0.730        ;
+; passagem_zero                            ; -0.482 ; -0.482        ;
++------------------------------------------+--------+---------------+
 
 
-+------------------------------------------------------------------------------------+
-; Slow 1200mV 85C Model Removal Summary                                              ;
-+------------------------------------------------------------+-------+---------------+
-; Clock                                                      ; Slack ; End Point TNS ;
-+------------------------------------------------------------+-------+---------------+
-; uart_rx:u_rx|byte_recebido_tmp                             ; 0.646 ; 0.000         ;
-; passagem_zero                                              ; 0.747 ; 0.000         ;
-; iniciado_tmp                                               ; 0.819 ; 0.000         ;
-; rx                                                         ; 1.770 ; 0.000         ;
-; temporizador:tmpr|fim_tmp                                  ; 2.531 ; 0.000         ;
-; iniciar_transmissao                                        ; 2.956 ; 0.000         ;
-; temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp_up ; 3.459 ; 0.000         ;
-; divisor_clock:divisor_50x|out_clk_tmp_up                   ; 3.622 ; 0.000         ;
-+------------------------------------------------------------+-------+---------------+
++------------------------------------------------------------------+
+; Slow 1200mV 85C Model Removal Summary                            ;
++------------------------------------------+-------+---------------+
+; Clock                                    ; Slack ; End Point TNS ;
++------------------------------------------+-------+---------------+
+; iniciado_tmp                             ; 0.681 ; 0.000         ;
+; passagem_zero                            ; 0.844 ; 0.000         ;
+; uart_rx:u_rx|byte_recebido_tmp           ; 1.084 ; 0.000         ;
+; rx                                       ; 2.065 ; 0.000         ;
+; temporizador:tmpr|fim_tmp                ; 2.830 ; 0.000         ;
+; iniciar_transmissao                      ; 3.543 ; 0.000         ;
+; divisor_clock:divisor_50x|out_clk_tmp_up ; 3.947 ; 0.000         ;
++------------------------------------------+-------+---------------+
 
 
-+-------------------------------------------------------------------------------------+
-; Slow 1200mV 85C Model Minimum Pulse Width Summary                                   ;
-+------------------------------------------------------------+--------+---------------+
-; Clock                                                      ; Slack  ; End Point TNS ;
-+------------------------------------------------------------+--------+---------------+
-; clk_50MHZ                                                  ; -3.000 ; -42.284       ;
-; passagem_zero                                              ; -3.000 ; -4.403        ;
-; rx                                                         ; -3.000 ; -4.403        ;
-; divisor_clock:divisor_50x|out_clk_tmp                      ; -1.403 ; -566.812      ;
-; temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp    ; -1.403 ; -53.314       ;
-; clk_pid                                                    ; -1.403 ; -25.254       ;
-; leitor_temperatura:termometro|sck_tmp                      ; -1.403 ; -22.448       ;
-; uart_rx:u_rx|byte_recebido_tmp                             ; -1.403 ; -12.627       ;
-; divisor_clock:divisor_50x|out_clk_tmp_up                   ; -1.403 ; -1.403        ;
-; iniciado_tmp                                               ; -1.403 ; -1.403        ;
-; iniciar_transmissao                                        ; -1.403 ; -1.403        ;
-; temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp_up ; -1.403 ; -1.403        ;
-; temporizador:tmpr|fim_tmp                                  ; -1.403 ; -1.403        ;
-+------------------------------------------------------------+--------+---------------+
++-------------------------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width Summary                 ;
++------------------------------------------+--------+---------------+
+; Clock                                    ; Slack  ; End Point TNS ;
++------------------------------------------+--------+---------------+
+; clk_50MHZ                                ; -3.000 ; -42.284       ;
+; passagem_zero                            ; -3.000 ; -4.403        ;
+; rx                                       ; -3.000 ; -4.403        ;
+; divisor_clock:divisor_50x|out_clk_tmp    ; -1.403 ; -611.708      ;
+; clk_pid                                  ; -1.403 ; -26.657       ;
+; leitor_temperatura:termometro|sck_tmp    ; -1.403 ; -22.448       ;
+; uart_rx:u_rx|byte_recebido_tmp           ; -1.403 ; -12.627       ;
+; divisor_clock:divisor_50x|out_clk_tmp_up ; -1.403 ; -1.403        ;
+; iniciado_tmp                             ; -1.403 ; -1.403        ;
+; iniciar_transmissao                      ; -1.403 ; -1.403        ;
+; temporizador:tmpr|fim_tmp                ; -1.403 ; -1.403        ;
++------------------------------------------+--------+---------------+
 
 
 -----------------------------------------------
@@ -225,100 +216,93 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 No synchronizer chains to report.
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 0C Model Fmax Summary                                                                                                       ;
-+------------+-----------------+---------------------------------------------------------+------------------------------------------------+
-; Fmax       ; Restricted Fmax ; Clock Name                                              ; Note                                           ;
-+------------+-----------------+---------------------------------------------------------+------------------------------------------------+
-; 114.46 MHz ; 114.46 MHz      ; divisor_clock:divisor_50x|out_clk_tmp                   ;                                                ;
-; 137.44 MHz ; 137.44 MHz      ; temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp ;                                                ;
-; 175.75 MHz ; 175.75 MHz      ; clk_pid                                                 ;                                                ;
-; 182.68 MHz ; 182.68 MHz      ; clk_50MHZ                                               ;                                                ;
-; 368.32 MHz ; 368.32 MHz      ; leitor_temperatura:termometro|sck_tmp                   ;                                                ;
-; 597.01 MHz ; 416.15 MHz      ; uart_rx:u_rx|byte_recebido_tmp                          ; limit due to minimum period restriction (tmin) ;
-+------------+-----------------+---------------------------------------------------------+------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                                                                                     ;
++------------+-----------------+---------------------------------------+------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name                            ; Note                                           ;
++------------+-----------------+---------------------------------------+------------------------------------------------+
+; 119.72 MHz ; 119.72 MHz      ; divisor_clock:divisor_50x|out_clk_tmp ;                                                ;
+; 175.9 MHz  ; 175.9 MHz       ; clk_pid                               ;                                                ;
+; 181.52 MHz ; 181.52 MHz      ; clk_50MHZ                             ;                                                ;
+; 400.48 MHz ; 400.48 MHz      ; leitor_temperatura:termometro|sck_tmp ;                                                ;
+; 665.34 MHz ; 416.15 MHz      ; uart_rx:u_rx|byte_recebido_tmp        ; limit due to minimum period restriction (tmin) ;
++------------+-----------------+---------------------------------------+------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
-+----------------------------------------------------------------------------------+
-; Slow 1200mV 0C Model Setup Summary                                               ;
-+---------------------------------------------------------+--------+---------------+
-; Clock                                                   ; Slack  ; End Point TNS ;
-+---------------------------------------------------------+--------+---------------+
-; divisor_clock:divisor_50x|out_clk_tmp                   ; -8.911 ; -1866.022     ;
-; temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp ; -6.276 ; -187.076      ;
-; clk_pid                                                 ; -5.986 ; -43.528       ;
-; clk_50MHZ                                               ; -4.474 ; -50.596       ;
-; leitor_temperatura:termometro|sck_tmp                   ; -1.715 ; -16.408       ;
-; uart_rx:u_rx|byte_recebido_tmp                          ; -0.914 ; -7.312        ;
-+---------------------------------------------------------+--------+---------------+
++----------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup Summary                             ;
++---------------------------------------+--------+---------------+
+; Clock                                 ; Slack  ; End Point TNS ;
++---------------------------------------+--------+---------------+
+; divisor_clock:divisor_50x|out_clk_tmp ; -7.803 ; -1933.171     ;
+; clk_pid                               ; -6.005 ; -45.663       ;
+; clk_50MHZ                             ; -4.509 ; -51.783       ;
+; leitor_temperatura:termometro|sck_tmp ; -1.497 ; -17.637       ;
+; uart_rx:u_rx|byte_recebido_tmp        ; -1.110 ; -8.880        ;
++---------------------------------------+--------+---------------+
 
 
-+---------------------------------------------------------------------------------+
-; Slow 1200mV 0C Model Hold Summary                                               ;
-+---------------------------------------------------------+-------+---------------+
-; Clock                                                   ; Slack ; End Point TNS ;
-+---------------------------------------------------------+-------+---------------+
-; divisor_clock:divisor_50x|out_clk_tmp                   ; 0.290 ; 0.000         ;
-; temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp ; 0.306 ; 0.000         ;
-; leitor_temperatura:termometro|sck_tmp                   ; 0.309 ; 0.000         ;
-; clk_50MHZ                                               ; 0.376 ; 0.000         ;
-; clk_pid                                                 ; 0.846 ; 0.000         ;
-; uart_rx:u_rx|byte_recebido_tmp                          ; 0.953 ; 0.000         ;
-+---------------------------------------------------------+-------+---------------+
++---------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold Summary                             ;
++---------------------------------------+-------+---------------+
+; Clock                                 ; Slack ; End Point TNS ;
++---------------------------------------+-------+---------------+
+; divisor_clock:divisor_50x|out_clk_tmp ; 0.291 ; 0.000         ;
+; leitor_temperatura:termometro|sck_tmp ; 0.308 ; 0.000         ;
+; clk_50MHZ                             ; 0.377 ; 0.000         ;
+; clk_pid                               ; 0.442 ; 0.000         ;
+; uart_rx:u_rx|byte_recebido_tmp        ; 1.008 ; 0.000         ;
++---------------------------------------+-------+---------------+
 
 
-+-------------------------------------------------------------------------------------+
-; Slow 1200mV 0C Model Recovery Summary                                               ;
-+------------------------------------------------------------+--------+---------------+
-; Clock                                                      ; Slack  ; End Point TNS ;
-+------------------------------------------------------------+--------+---------------+
-; iniciado_tmp                                               ; -3.022 ; -3.022        ;
-; divisor_clock:divisor_50x|out_clk_tmp_up                   ; -2.812 ; -2.812        ;
-; temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp_up ; -2.613 ; -2.613        ;
-; iniciar_transmissao                                        ; -2.138 ; -2.138        ;
-; temporizador:tmpr|fim_tmp                                  ; -1.808 ; -1.808        ;
-; rx                                                         ; -1.134 ; -1.134        ;
-; uart_rx:u_rx|byte_recebido_tmp                             ; -0.187 ; -0.187        ;
-; passagem_zero                                              ; -0.147 ; -0.147        ;
-+------------------------------------------------------------+--------+---------------+
++-------------------------------------------------------------------+
+; Slow 1200mV 0C Model Recovery Summary                             ;
++------------------------------------------+--------+---------------+
+; Clock                                    ; Slack  ; End Point TNS ;
++------------------------------------------+--------+---------------+
+; divisor_clock:divisor_50x|out_clk_tmp_up ; -3.094 ; -3.094        ;
+; iniciar_transmissao                      ; -2.663 ; -2.663        ;
+; iniciado_tmp                             ; -2.651 ; -2.651        ;
+; temporizador:tmpr|fim_tmp                ; -2.055 ; -2.055        ;
+; rx                                       ; -1.415 ; -1.415        ;
+; uart_rx:u_rx|byte_recebido_tmp           ; -0.567 ; -0.567        ;
+; passagem_zero                            ; -0.236 ; -0.236        ;
++------------------------------------------+--------+---------------+
 
 
-+------------------------------------------------------------------------------------+
-; Slow 1200mV 0C Model Removal Summary                                               ;
-+------------------------------------------------------------+-------+---------------+
-; Clock                                                      ; Slack ; End Point TNS ;
-+------------------------------------------------------------+-------+---------------+
-; passagem_zero                                              ; 0.565 ; 0.000         ;
-; uart_rx:u_rx|byte_recebido_tmp                             ; 0.602 ; 0.000         ;
-; iniciado_tmp                                               ; 0.755 ; 0.000         ;
-; rx                                                         ; 1.625 ; 0.000         ;
-; temporizador:tmpr|fim_tmp                                  ; 2.291 ; 0.000         ;
-; iniciar_transmissao                                        ; 2.689 ; 0.000         ;
-; temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp_up ; 3.122 ; 0.000         ;
-; divisor_clock:divisor_50x|out_clk_tmp_up                   ; 3.325 ; 0.000         ;
-+------------------------------------------------------------+-------+---------------+
++------------------------------------------------------------------+
+; Slow 1200mV 0C Model Removal Summary                             ;
++------------------------------------------+-------+---------------+
+; Clock                                    ; Slack ; End Point TNS ;
++------------------------------------------+-------+---------------+
+; iniciado_tmp                             ; 0.640 ; 0.000         ;
+; passagem_zero                            ; 0.642 ; 0.000         ;
+; uart_rx:u_rx|byte_recebido_tmp           ; 1.004 ; 0.000         ;
+; rx                                       ; 1.902 ; 0.000         ;
+; temporizador:tmpr|fim_tmp                ; 2.550 ; 0.000         ;
+; iniciar_transmissao                      ; 3.227 ; 0.000         ;
+; divisor_clock:divisor_50x|out_clk_tmp_up ; 3.621 ; 0.000         ;
++------------------------------------------+-------+---------------+
 
 
-+-------------------------------------------------------------------------------------+
-; Slow 1200mV 0C Model Minimum Pulse Width Summary                                    ;
-+------------------------------------------------------------+--------+---------------+
-; Clock                                                      ; Slack  ; End Point TNS ;
-+------------------------------------------------------------+--------+---------------+
-; clk_50MHZ                                                  ; -3.000 ; -42.284       ;
-; passagem_zero                                              ; -3.000 ; -4.403        ;
-; rx                                                         ; -3.000 ; -4.403        ;
-; divisor_clock:divisor_50x|out_clk_tmp                      ; -1.403 ; -566.812      ;
-; temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp    ; -1.403 ; -53.314       ;
-; clk_pid                                                    ; -1.403 ; -25.254       ;
-; leitor_temperatura:termometro|sck_tmp                      ; -1.403 ; -22.448       ;
-; uart_rx:u_rx|byte_recebido_tmp                             ; -1.403 ; -12.627       ;
-; divisor_clock:divisor_50x|out_clk_tmp_up                   ; -1.403 ; -1.403        ;
-; iniciado_tmp                                               ; -1.403 ; -1.403        ;
-; iniciar_transmissao                                        ; -1.403 ; -1.403        ;
-; temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp_up ; -1.403 ; -1.403        ;
-; temporizador:tmpr|fim_tmp                                  ; -1.403 ; -1.403        ;
-+------------------------------------------------------------+--------+---------------+
++-------------------------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width Summary                  ;
++------------------------------------------+--------+---------------+
+; Clock                                    ; Slack  ; End Point TNS ;
++------------------------------------------+--------+---------------+
+; clk_50MHZ                                ; -3.000 ; -42.284       ;
+; passagem_zero                            ; -3.000 ; -4.403        ;
+; rx                                       ; -3.000 ; -4.403        ;
+; divisor_clock:divisor_50x|out_clk_tmp    ; -1.403 ; -611.708      ;
+; clk_pid                                  ; -1.403 ; -26.657       ;
+; leitor_temperatura:termometro|sck_tmp    ; -1.403 ; -22.448       ;
+; uart_rx:u_rx|byte_recebido_tmp           ; -1.403 ; -12.627       ;
+; divisor_clock:divisor_50x|out_clk_tmp_up ; -1.403 ; -1.403        ;
+; iniciado_tmp                             ; -1.403 ; -1.403        ;
+; iniciar_transmissao                      ; -1.403 ; -1.403        ;
+; temporizador:tmpr|fim_tmp                ; -1.403 ; -1.403        ;
++------------------------------------------+--------+---------------+
 
 
 ----------------------------------------------
@@ -327,85 +311,79 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 No synchronizer chains to report.
 
 
-+----------------------------------------------------------------------------------+
-; Fast 1200mV 0C Model Setup Summary                                               ;
-+---------------------------------------------------------+--------+---------------+
-; Clock                                                   ; Slack  ; End Point TNS ;
-+---------------------------------------------------------+--------+---------------+
-; divisor_clock:divisor_50x|out_clk_tmp                   ; -3.688 ; -657.085      ;
-; temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp ; -2.470 ; -66.626       ;
-; clk_pid                                                 ; -2.170 ; -13.032       ;
-; clk_50MHZ                                               ; -1.416 ; -7.871        ;
-; leitor_temperatura:termometro|sck_tmp                   ; -0.225 ; -0.852        ;
-; uart_rx:u_rx|byte_recebido_tmp                          ; 0.095  ; 0.000         ;
-+---------------------------------------------------------+--------+---------------+
++----------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup Summary                             ;
++---------------------------------------+--------+---------------+
+; Clock                                 ; Slack  ; End Point TNS ;
++---------------------------------------+--------+---------------+
+; divisor_clock:divisor_50x|out_clk_tmp ; -3.119 ; -659.006      ;
+; clk_pid                               ; -2.032 ; -13.508       ;
+; clk_50MHZ                             ; -1.444 ; -8.193        ;
+; leitor_temperatura:termometro|sck_tmp ; -0.154 ; -0.547        ;
+; uart_rx:u_rx|byte_recebido_tmp        ; -0.031 ; -0.248        ;
++---------------------------------------+--------+---------------+
 
 
-+---------------------------------------------------------------------------------+
-; Fast 1200mV 0C Model Hold Summary                                               ;
-+---------------------------------------------------------+-------+---------------+
-; Clock                                                   ; Slack ; End Point TNS ;
-+---------------------------------------------------------+-------+---------------+
-; divisor_clock:divisor_50x|out_clk_tmp                   ; 0.117 ; 0.000         ;
-; temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp ; 0.149 ; 0.000         ;
-; leitor_temperatura:termometro|sck_tmp                   ; 0.151 ; 0.000         ;
-; clk_50MHZ                                               ; 0.164 ; 0.000         ;
-; clk_pid                                                 ; 0.356 ; 0.000         ;
-; uart_rx:u_rx|byte_recebido_tmp                          ; 0.395 ; 0.000         ;
-+---------------------------------------------------------+-------+---------------+
++---------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold Summary                             ;
++---------------------------------------+-------+---------------+
+; Clock                                 ; Slack ; End Point TNS ;
++---------------------------------------+-------+---------------+
+; clk_pid                               ; 0.141 ; 0.000         ;
+; divisor_clock:divisor_50x|out_clk_tmp ; 0.141 ; 0.000         ;
+; leitor_temperatura:termometro|sck_tmp ; 0.150 ; 0.000         ;
+; clk_50MHZ                             ; 0.164 ; 0.000         ;
+; uart_rx:u_rx|byte_recebido_tmp        ; 0.462 ; 0.000         ;
++---------------------------------------+-------+---------------+
 
 
-+-------------------------------------------------------------------------------------+
-; Fast 1200mV 0C Model Recovery Summary                                               ;
-+------------------------------------------------------------+--------+---------------+
-; Clock                                                      ; Slack  ; End Point TNS ;
-+------------------------------------------------------------+--------+---------------+
-; divisor_clock:divisor_50x|out_clk_tmp_up                   ; -1.606 ; -1.606        ;
-; temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp_up ; -1.294 ; -1.294        ;
-; iniciado_tmp                                               ; -1.128 ; -1.128        ;
-; iniciar_transmissao                                        ; -0.682 ; -0.682        ;
-; temporizador:tmpr|fim_tmp                                  ; -0.533 ; -0.533        ;
-; rx                                                         ; -0.172 ; -0.172        ;
-; passagem_zero                                              ; 0.149  ; 0.000         ;
-; uart_rx:u_rx|byte_recebido_tmp                             ; 0.396  ; 0.000         ;
-+------------------------------------------------------------+--------+---------------+
++-------------------------------------------------------------------+
+; Fast 1200mV 0C Model Recovery Summary                             ;
++------------------------------------------+--------+---------------+
+; Clock                                    ; Slack  ; End Point TNS ;
++------------------------------------------+--------+---------------+
+; divisor_clock:divisor_50x|out_clk_tmp_up ; -1.737 ; -1.737        ;
+; iniciar_transmissao                      ; -0.958 ; -0.958        ;
+; iniciado_tmp                             ; -0.952 ; -0.952        ;
+; temporizador:tmpr|fim_tmp                ; -0.657 ; -0.657        ;
+; rx                                       ; -0.364 ; -0.364        ;
+; passagem_zero                            ; 0.082  ; 0.000         ;
+; uart_rx:u_rx|byte_recebido_tmp           ; 0.185  ; 0.000         ;
++------------------------------------------+--------+---------------+
 
 
-+------------------------------------------------------------------------------------+
-; Fast 1200mV 0C Model Removal Summary                                               ;
-+------------------------------------------------------------+-------+---------------+
-; Clock                                                      ; Slack ; End Point TNS ;
-+------------------------------------------------------------+-------+---------------+
-; uart_rx:u_rx|byte_recebido_tmp                             ; 0.255 ; 0.000         ;
-; iniciado_tmp                                               ; 0.334 ; 0.000         ;
-; passagem_zero                                              ; 0.534 ; 0.000         ;
-; rx                                                         ; 0.861 ; 0.000         ;
-; temporizador:tmpr|fim_tmp                                  ; 1.265 ; 0.000         ;
-; iniciar_transmissao                                        ; 1.423 ; 0.000         ;
-; temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp_up ; 2.034 ; 0.000         ;
-; divisor_clock:divisor_50x|out_clk_tmp_up                   ; 2.338 ; 0.000         ;
-+------------------------------------------------------------+-------+---------------+
++------------------------------------------------------------------+
+; Fast 1200mV 0C Model Removal Summary                             ;
++------------------------------------------+-------+---------------+
+; Clock                                    ; Slack ; End Point TNS ;
++------------------------------------------+-------+---------------+
+; iniciado_tmp                             ; 0.240 ; 0.000         ;
+; uart_rx:u_rx|byte_recebido_tmp           ; 0.473 ; 0.000         ;
+; passagem_zero                            ; 0.598 ; 0.000         ;
+; rx                                       ; 1.014 ; 0.000         ;
+; temporizador:tmpr|fim_tmp                ; 1.397 ; 0.000         ;
+; iniciar_transmissao                      ; 1.705 ; 0.000         ;
+; divisor_clock:divisor_50x|out_clk_tmp_up ; 2.477 ; 0.000         ;
++------------------------------------------+-------+---------------+
 
 
-+-------------------------------------------------------------------------------------+
-; Fast 1200mV 0C Model Minimum Pulse Width Summary                                    ;
-+------------------------------------------------------------+--------+---------------+
-; Clock                                                      ; Slack  ; End Point TNS ;
-+------------------------------------------------------------+--------+---------------+
-; clk_50MHZ                                                  ; -3.000 ; -32.001       ;
-; passagem_zero                                              ; -3.000 ; -4.150        ;
-; rx                                                         ; -3.000 ; -4.000        ;
-; divisor_clock:divisor_50x|out_clk_tmp                      ; -1.000 ; -404.000      ;
-; temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp    ; -1.000 ; -38.000       ;
-; clk_pid                                                    ; -1.000 ; -18.000       ;
-; leitor_temperatura:termometro|sck_tmp                      ; -1.000 ; -16.000       ;
-; uart_rx:u_rx|byte_recebido_tmp                             ; -1.000 ; -9.000        ;
-; divisor_clock:divisor_50x|out_clk_tmp_up                   ; -1.000 ; -1.000        ;
-; iniciado_tmp                                               ; -1.000 ; -1.000        ;
-; iniciar_transmissao                                        ; -1.000 ; -1.000        ;
-; temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp_up ; -1.000 ; -1.000        ;
-; temporizador:tmpr|fim_tmp                                  ; -1.000 ; -1.000        ;
-+------------------------------------------------------------+--------+---------------+
++-------------------------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width Summary                  ;
++------------------------------------------+--------+---------------+
+; Clock                                    ; Slack  ; End Point TNS ;
++------------------------------------------+--------+---------------+
+; clk_50MHZ                                ; -3.000 ; -31.975       ;
+; passagem_zero                            ; -3.000 ; -4.121        ;
+; rx                                       ; -3.000 ; -4.000        ;
+; divisor_clock:divisor_50x|out_clk_tmp    ; -1.000 ; -436.000      ;
+; clk_pid                                  ; -1.000 ; -19.000       ;
+; leitor_temperatura:termometro|sck_tmp    ; -1.000 ; -16.000       ;
+; uart_rx:u_rx|byte_recebido_tmp           ; -1.000 ; -9.000        ;
+; divisor_clock:divisor_50x|out_clk_tmp_up ; -1.000 ; -1.000        ;
+; iniciado_tmp                             ; -1.000 ; -1.000        ;
+; iniciar_transmissao                      ; -1.000 ; -1.000        ;
+; temporizador:tmpr|fim_tmp                ; -1.000 ; -1.000        ;
++------------------------------------------+--------+---------------+
 
 
 ----------------------------------------------
@@ -414,55 +392,52 @@ No synchronizer chains to report.
 No synchronizer chains to report.
 
 
-+----------------------------------------------------------------------------------------------------------------------------+
-; Multicorner Timing Analysis Summary                                                                                        ;
-+-------------------------------------------------------------+-----------+-------+----------+---------+---------------------+
-; Clock                                                       ; Setup     ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
-+-------------------------------------------------------------+-----------+-------+----------+---------+---------------------+
-; Worst-case Slack                                            ; -9.764    ; 0.117 ; -3.414   ; 0.255   ; -3.000              ;
-;  clk_50MHZ                                                  ; -5.023    ; 0.164 ; N/A      ; N/A     ; -3.000              ;
-;  clk_pid                                                    ; -6.708    ; 0.356 ; N/A      ; N/A     ; -1.403              ;
-;  divisor_clock:divisor_50x|out_clk_tmp                      ; -9.764    ; 0.117 ; N/A      ; N/A     ; -1.403              ;
-;  divisor_clock:divisor_50x|out_clk_tmp_up                   ; N/A       ; N/A   ; -3.149   ; 2.338   ; -1.403              ;
-;  iniciado_tmp                                               ; N/A       ; N/A   ; -3.414   ; 0.334   ; -1.403              ;
-;  iniciar_transmissao                                        ; N/A       ; N/A   ; -2.466   ; 1.423   ; -1.403              ;
-;  leitor_temperatura:termometro|sck_tmp                      ; -1.952    ; 0.151 ; N/A      ; N/A     ; -1.403              ;
-;  passagem_zero                                              ; N/A       ; N/A   ; -0.372   ; 0.534   ; -3.000              ;
-;  rx                                                         ; N/A       ; N/A   ; -1.339   ; 0.861   ; -3.000              ;
-;  temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp    ; -6.817    ; 0.149 ; N/A      ; N/A     ; -1.403              ;
-;  temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp_up ; N/A       ; N/A   ; -2.994   ; 2.034   ; -1.403              ;
-;  temporizador:tmpr|fim_tmp                                  ; N/A       ; N/A   ; -2.097   ; 1.265   ; -1.403              ;
-;  uart_rx:u_rx|byte_recebido_tmp                             ; -1.079    ; 0.395 ; -0.306   ; 0.255   ; -1.403              ;
-; Design-wide TNS                                             ; -2407.392 ; 0.0   ; -16.137  ; 0.0     ; -738.56             ;
-;  clk_50MHZ                                                  ; -58.630   ; 0.000 ; N/A      ; N/A     ; -42.284             ;
-;  clk_pid                                                    ; -49.427   ; 0.000 ; N/A      ; N/A     ; -25.254             ;
-;  divisor_clock:divisor_50x|out_clk_tmp                      ; -2065.177 ; 0.000 ; N/A      ; N/A     ; -566.812            ;
-;  divisor_clock:divisor_50x|out_clk_tmp_up                   ; N/A       ; N/A   ; -3.149   ; 0.000   ; -1.403              ;
-;  iniciado_tmp                                               ; N/A       ; N/A   ; -3.414   ; 0.000   ; -1.403              ;
-;  iniciar_transmissao                                        ; N/A       ; N/A   ; -2.466   ; 0.000   ; -1.403              ;
-;  leitor_temperatura:termometro|sck_tmp                      ; -19.329   ; 0.000 ; N/A      ; N/A     ; -22.448             ;
-;  passagem_zero                                              ; N/A       ; N/A   ; -0.372   ; 0.000   ; -4.403              ;
-;  rx                                                         ; N/A       ; N/A   ; -1.339   ; 0.000   ; -4.403              ;
-;  temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp    ; -206.197  ; 0.000 ; N/A      ; N/A     ; -53.314             ;
-;  temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp_up ; N/A       ; N/A   ; -2.994   ; 0.000   ; -1.403              ;
-;  temporizador:tmpr|fim_tmp                                  ; N/A       ; N/A   ; -2.097   ; 0.000   ; -1.403              ;
-;  uart_rx:u_rx|byte_recebido_tmp                             ; -8.632    ; 0.000 ; -0.306   ; 0.000   ; -12.627             ;
-+-------------------------------------------------------------+-----------+-------+----------+---------+---------------------+
++----------------------------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                                      ;
++-------------------------------------------+-----------+-------+----------+---------+---------------------+
+; Clock                                     ; Setup     ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++-------------------------------------------+-----------+-------+----------+---------+---------------------+
+; Worst-case Slack                          ; -8.525    ; 0.141 ; -3.459   ; 0.240   ; -3.000              ;
+;  clk_50MHZ                                ; -5.064    ; 0.164 ; N/A      ; N/A     ; -3.000              ;
+;  clk_pid                                  ; -6.629    ; 0.141 ; N/A      ; N/A     ; -1.403              ;
+;  divisor_clock:divisor_50x|out_clk_tmp    ; -8.525    ; 0.141 ; N/A      ; N/A     ; -1.403              ;
+;  divisor_clock:divisor_50x|out_clk_tmp_up ; N/A       ; N/A   ; -3.459   ; 2.477   ; -1.403              ;
+;  iniciado_tmp                             ; N/A       ; N/A   ; -2.978   ; 0.240   ; -1.403              ;
+;  iniciar_transmissao                      ; N/A       ; N/A   ; -3.037   ; 1.705   ; -1.403              ;
+;  leitor_temperatura:termometro|sck_tmp    ; -1.716    ; 0.150 ; N/A      ; N/A     ; -1.403              ;
+;  passagem_zero                            ; N/A       ; N/A   ; -0.482   ; 0.598   ; -3.000              ;
+;  rx                                       ; N/A       ; N/A   ; -1.661   ; 1.014   ; -3.000              ;
+;  temporizador:tmpr|fim_tmp                ; N/A       ; N/A   ; -2.381   ; 1.397   ; -1.403              ;
+;  uart_rx:u_rx|byte_recebido_tmp           ; -1.315    ; 0.462 ; -0.730   ; 0.473   ; -1.403              ;
+; Design-wide TNS                           ; -2275.189 ; 0.0   ; -14.728  ; 0.0     ; -730.142            ;
+;  clk_50MHZ                                ; -59.909   ; 0.000 ; N/A      ; N/A     ; -42.284             ;
+;  clk_pid                                  ; -51.276   ; 0.000 ; N/A      ; N/A     ; -26.657             ;
+;  divisor_clock:divisor_50x|out_clk_tmp    ; -2132.812 ; 0.000 ; N/A      ; N/A     ; -611.708            ;
+;  divisor_clock:divisor_50x|out_clk_tmp_up ; N/A       ; N/A   ; -3.459   ; 0.000   ; -1.403              ;
+;  iniciado_tmp                             ; N/A       ; N/A   ; -2.978   ; 0.000   ; -1.403              ;
+;  iniciar_transmissao                      ; N/A       ; N/A   ; -3.037   ; 0.000   ; -1.403              ;
+;  leitor_temperatura:termometro|sck_tmp    ; -20.672   ; 0.000 ; N/A      ; N/A     ; -22.448             ;
+;  passagem_zero                            ; N/A       ; N/A   ; -0.482   ; 0.000   ; -4.403              ;
+;  rx                                       ; N/A       ; N/A   ; -1.661   ; 0.000   ; -4.403              ;
+;  temporizador:tmpr|fim_tmp                ; N/A       ; N/A   ; -2.381   ; 0.000   ; -1.403              ;
+;  uart_rx:u_rx|byte_recebido_tmp           ; -10.520   ; 0.000 ; -0.730   ; 0.000   ; -12.627             ;
++-------------------------------------------+-----------+-------+----------+---------+---------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                    ;
-+---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
-; Pin           ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
-+---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
-; tx            ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
-; cs            ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
-; sck           ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
-; disparo_triac ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
-; iniciado      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
-; pid_ativo     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
-; ~ALTERA_TDO~  ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
-+---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                     ;
++----------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin            ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++----------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; tx             ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; cs             ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; sck            ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; disparo_triac  ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; iniciado       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; pid_ativo      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; contagem_ativa ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_TDO~   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++----------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
 
 
 +---------------------------------------------------------------------------------+
@@ -484,146 +459,135 @@ No synchronizer chains to report.
 +---------------------+-----------------------+-----------------+-----------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Signal Integrity Metrics (Slow 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
-+---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
-; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
-+---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
-; tx            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.26e-09 V                   ; 2.4 V               ; -0.0773 V           ; 0.156 V                              ; 0.166 V                              ; 4.55e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.26e-09 V                  ; 2.4 V              ; -0.0773 V          ; 0.156 V                             ; 0.166 V                             ; 4.55e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
-; cs            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.26e-09 V                   ; 2.4 V               ; -0.0783 V           ; 0.157 V                              ; 0.167 V                              ; 4.55e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.26e-09 V                  ; 2.4 V              ; -0.0783 V          ; 0.157 V                             ; 0.167 V                             ; 4.55e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
-; sck           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.26e-09 V                   ; 2.4 V               ; -0.0773 V           ; 0.156 V                              ; 0.166 V                              ; 4.55e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.26e-09 V                  ; 2.4 V              ; -0.0773 V          ; 0.156 V                             ; 0.166 V                             ; 4.55e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
-; disparo_triac ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.26e-09 V                   ; 2.4 V               ; -0.0783 V           ; 0.157 V                              ; 0.167 V                              ; 4.55e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.26e-09 V                  ; 2.4 V              ; -0.0783 V          ; 0.157 V                             ; 0.167 V                             ; 4.55e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
-; iniciado      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0859 V           ; 0.289 V                              ; 0.136 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0859 V          ; 0.289 V                             ; 0.136 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
-; pid_ativo     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0871 V           ; 0.291 V                              ; 0.138 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0871 V          ; 0.291 V                             ; 0.138 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
-; ~ALTERA_TDO~  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.39e-08 V                   ; 2.39 V              ; -0.0407 V           ; 0.211 V                              ; 0.121 V                              ; 4.7e-10 s                   ; 5.93e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 1.39e-08 V                  ; 2.39 V             ; -0.0407 V          ; 0.211 V                             ; 0.121 V                             ; 4.7e-10 s                  ; 5.93e-10 s                 ; No                        ; Yes                       ;
-+---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             ;
++----------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin            ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++----------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; tx             ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.26e-09 V                   ; 2.4 V               ; -0.0773 V           ; 0.156 V                              ; 0.166 V                              ; 4.55e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.26e-09 V                  ; 2.4 V              ; -0.0773 V          ; 0.156 V                             ; 0.166 V                             ; 4.55e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
+; cs             ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.26e-09 V                   ; 2.4 V               ; -0.0783 V           ; 0.157 V                              ; 0.167 V                              ; 4.55e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.26e-09 V                  ; 2.4 V              ; -0.0783 V          ; 0.157 V                             ; 0.167 V                             ; 4.55e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
+; sck            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.26e-09 V                   ; 2.4 V               ; -0.0773 V           ; 0.156 V                              ; 0.166 V                              ; 4.55e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.26e-09 V                  ; 2.4 V              ; -0.0773 V          ; 0.156 V                             ; 0.166 V                             ; 4.55e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
+; disparo_triac  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.26e-09 V                   ; 2.4 V               ; -0.0783 V           ; 0.157 V                              ; 0.167 V                              ; 4.55e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.26e-09 V                  ; 2.4 V              ; -0.0783 V          ; 0.157 V                             ; 0.167 V                             ; 4.55e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
+; iniciado       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0859 V           ; 0.289 V                              ; 0.136 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0859 V          ; 0.289 V                             ; 0.136 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
+; pid_ativo      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0871 V           ; 0.291 V                              ; 0.138 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0871 V          ; 0.291 V                             ; 0.138 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
+; contagem_ativa ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0859 V           ; 0.289 V                              ; 0.136 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0859 V          ; 0.289 V                             ; 0.136 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
+; ~ALTERA_TDO~   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.39e-08 V                   ; 2.39 V              ; -0.0407 V           ; 0.211 V                              ; 0.121 V                              ; 4.7e-10 s                   ; 5.93e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 1.39e-08 V                  ; 2.39 V             ; -0.0407 V          ; 0.211 V                             ; 0.121 V                             ; 4.7e-10 s                  ; 5.93e-10 s                 ; No                        ; Yes                       ;
++----------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Signal Integrity Metrics (Slow 1200mv 85c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
-+---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
-; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
-+---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
-; tx            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.0449 V           ; 0.201 V                              ; 0.093 V                              ; 4.89e-10 s                  ; 5.81e-10 s                  ; Yes                        ; No                         ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.0449 V          ; 0.201 V                             ; 0.093 V                             ; 4.89e-10 s                 ; 5.81e-10 s                 ; Yes                       ; No                        ;
-; cs            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.0459 V           ; 0.201 V                              ; 0.093 V                              ; 4.9e-10 s                   ; 5.83e-10 s                  ; Yes                        ; No                         ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.0459 V          ; 0.201 V                             ; 0.093 V                             ; 4.9e-10 s                  ; 5.83e-10 s                 ; Yes                       ; No                        ;
-; sck           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.0449 V           ; 0.201 V                              ; 0.093 V                              ; 4.89e-10 s                  ; 5.81e-10 s                  ; Yes                        ; No                         ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.0449 V          ; 0.201 V                             ; 0.093 V                             ; 4.89e-10 s                 ; 5.81e-10 s                 ; Yes                       ; No                        ;
-; disparo_triac ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.0459 V           ; 0.201 V                              ; 0.093 V                              ; 4.9e-10 s                   ; 5.83e-10 s                  ; Yes                        ; No                         ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.0459 V          ; 0.201 V                             ; 0.093 V                             ; 4.9e-10 s                  ; 5.83e-10 s                 ; Yes                       ; No                        ;
-; iniciado      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.049 V            ; 0.154 V                              ; 0.186 V                              ; 4.63e-10 s                  ; 4.5e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.049 V           ; 0.154 V                             ; 0.186 V                             ; 4.63e-10 s                 ; 4.5e-10 s                  ; Yes                       ; Yes                       ;
-; pid_ativo     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.0508 V           ; 0.153 V                              ; 0.187 V                              ; 4.63e-10 s                  ; 4.49e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.0508 V          ; 0.153 V                             ; 0.187 V                             ; 4.63e-10 s                 ; 4.49e-10 s                 ; Yes                       ; Yes                       ;
-; ~ALTERA_TDO~  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.97e-06 V                   ; 2.36 V              ; -0.0174 V           ; 0.144 V                              ; 0.094 V                              ; 6.44e-10 s                  ; 7.22e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 1.97e-06 V                  ; 2.36 V             ; -0.0174 V          ; 0.144 V                             ; 0.094 V                             ; 6.44e-10 s                 ; 7.22e-10 s                 ; No                        ; Yes                       ;
-+---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 85c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++----------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin            ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++----------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; tx             ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.0449 V           ; 0.201 V                              ; 0.093 V                              ; 4.89e-10 s                  ; 5.81e-10 s                  ; Yes                        ; No                         ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.0449 V          ; 0.201 V                             ; 0.093 V                             ; 4.89e-10 s                 ; 5.81e-10 s                 ; Yes                       ; No                        ;
+; cs             ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.0459 V           ; 0.201 V                              ; 0.093 V                              ; 4.9e-10 s                   ; 5.83e-10 s                  ; Yes                        ; No                         ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.0459 V          ; 0.201 V                             ; 0.093 V                             ; 4.9e-10 s                  ; 5.83e-10 s                 ; Yes                       ; No                        ;
+; sck            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.0449 V           ; 0.201 V                              ; 0.093 V                              ; 4.89e-10 s                  ; 5.81e-10 s                  ; Yes                        ; No                         ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.0449 V          ; 0.201 V                             ; 0.093 V                             ; 4.89e-10 s                 ; 5.81e-10 s                 ; Yes                       ; No                        ;
+; disparo_triac  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.0459 V           ; 0.201 V                              ; 0.093 V                              ; 4.9e-10 s                   ; 5.83e-10 s                  ; Yes                        ; No                         ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.0459 V          ; 0.201 V                             ; 0.093 V                             ; 4.9e-10 s                  ; 5.83e-10 s                 ; Yes                       ; No                        ;
+; iniciado       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.049 V            ; 0.154 V                              ; 0.186 V                              ; 4.63e-10 s                  ; 4.5e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.049 V           ; 0.154 V                             ; 0.186 V                             ; 4.63e-10 s                 ; 4.5e-10 s                  ; Yes                       ; Yes                       ;
+; pid_ativo      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.0508 V           ; 0.153 V                              ; 0.187 V                              ; 4.63e-10 s                  ; 4.49e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.0508 V          ; 0.153 V                             ; 0.187 V                             ; 4.63e-10 s                 ; 4.49e-10 s                 ; Yes                       ; Yes                       ;
+; contagem_ativa ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.049 V            ; 0.154 V                              ; 0.186 V                              ; 4.63e-10 s                  ; 4.5e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.049 V           ; 0.154 V                             ; 0.186 V                             ; 4.63e-10 s                 ; 4.5e-10 s                  ; Yes                       ; Yes                       ;
+; ~ALTERA_TDO~   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.97e-06 V                   ; 2.36 V              ; -0.0174 V           ; 0.144 V                              ; 0.094 V                              ; 6.44e-10 s                  ; 7.22e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 1.97e-06 V                  ; 2.36 V             ; -0.0174 V          ; 0.144 V                             ; 0.094 V                             ; 6.44e-10 s                 ; 7.22e-10 s                 ; No                        ; Yes                       ;
++----------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Signal Integrity Metrics (Fast 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
-+---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
-; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
-+---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
-; tx            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.95e-08 V                   ; 2.77 V              ; -0.0486 V           ; 0.285 V                              ; 0.06 V                               ; 2.8e-10 s                   ; 3.04e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.95e-08 V                  ; 2.77 V             ; -0.0486 V          ; 0.285 V                             ; 0.06 V                              ; 2.8e-10 s                  ; 3.04e-10 s                 ; No                        ; Yes                       ;
-; cs            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.94e-08 V                   ; 2.77 V              ; -0.0485 V           ; 0.289 V                              ; 0.058 V                              ; 2.81e-10 s                  ; 3.04e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.94e-08 V                  ; 2.77 V             ; -0.0485 V          ; 0.289 V                             ; 0.058 V                             ; 2.81e-10 s                 ; 3.04e-10 s                 ; No                        ; Yes                       ;
-; sck           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.95e-08 V                   ; 2.77 V              ; -0.0486 V           ; 0.285 V                              ; 0.06 V                               ; 2.8e-10 s                   ; 3.04e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.95e-08 V                  ; 2.77 V             ; -0.0486 V          ; 0.285 V                             ; 0.06 V                              ; 2.8e-10 s                  ; 3.04e-10 s                 ; No                        ; Yes                       ;
-; disparo_triac ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.94e-08 V                   ; 2.77 V              ; -0.0485 V           ; 0.289 V                              ; 0.058 V                              ; 2.81e-10 s                  ; 3.04e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.94e-08 V                  ; 2.77 V             ; -0.0485 V          ; 0.289 V                             ; 0.058 V                             ; 2.81e-10 s                 ; 3.04e-10 s                 ; No                        ; Yes                       ;
-; iniciado      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.95e-08 V                   ; 2.78 V              ; -0.0452 V           ; 0.248 V                              ; 0.108 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.95e-08 V                  ; 2.78 V             ; -0.0452 V          ; 0.248 V                             ; 0.108 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
-; pid_ativo     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.94e-08 V                   ; 2.78 V              ; -0.0444 V           ; 0.25 V                               ; 0.107 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.94e-08 V                  ; 2.78 V             ; -0.0444 V          ; 0.25 V                              ; 0.107 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
-; ~ALTERA_TDO~  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 1.68e-07 V                   ; 2.73 V              ; -0.0396 V           ; 0.362 V                              ; 0.108 V                              ; 3.11e-10 s                  ; 4.42e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 1.68e-07 V                  ; 2.73 V             ; -0.0396 V          ; 0.362 V                             ; 0.108 V                             ; 3.11e-10 s                 ; 4.42e-10 s                 ; No                        ; Yes                       ;
-+---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             ;
++----------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin            ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++----------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; tx             ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.95e-08 V                   ; 2.77 V              ; -0.0486 V           ; 0.285 V                              ; 0.06 V                               ; 2.8e-10 s                   ; 3.04e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.95e-08 V                  ; 2.77 V             ; -0.0486 V          ; 0.285 V                             ; 0.06 V                              ; 2.8e-10 s                  ; 3.04e-10 s                 ; No                        ; Yes                       ;
+; cs             ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.94e-08 V                   ; 2.77 V              ; -0.0485 V           ; 0.289 V                              ; 0.058 V                              ; 2.81e-10 s                  ; 3.04e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.94e-08 V                  ; 2.77 V             ; -0.0485 V          ; 0.289 V                             ; 0.058 V                             ; 2.81e-10 s                 ; 3.04e-10 s                 ; No                        ; Yes                       ;
+; sck            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.95e-08 V                   ; 2.77 V              ; -0.0486 V           ; 0.285 V                              ; 0.06 V                               ; 2.8e-10 s                   ; 3.04e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.95e-08 V                  ; 2.77 V             ; -0.0486 V          ; 0.285 V                             ; 0.06 V                              ; 2.8e-10 s                  ; 3.04e-10 s                 ; No                        ; Yes                       ;
+; disparo_triac  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.94e-08 V                   ; 2.77 V              ; -0.0485 V           ; 0.289 V                              ; 0.058 V                              ; 2.81e-10 s                  ; 3.04e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.94e-08 V                  ; 2.77 V             ; -0.0485 V          ; 0.289 V                             ; 0.058 V                             ; 2.81e-10 s                 ; 3.04e-10 s                 ; No                        ; Yes                       ;
+; iniciado       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.95e-08 V                   ; 2.78 V              ; -0.0452 V           ; 0.248 V                              ; 0.108 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.95e-08 V                  ; 2.78 V             ; -0.0452 V          ; 0.248 V                             ; 0.108 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; pid_ativo      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.94e-08 V                   ; 2.78 V              ; -0.0444 V           ; 0.25 V                               ; 0.107 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.94e-08 V                  ; 2.78 V             ; -0.0444 V          ; 0.25 V                              ; 0.107 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; contagem_ativa ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.95e-08 V                   ; 2.78 V              ; -0.0452 V           ; 0.248 V                              ; 0.108 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.95e-08 V                  ; 2.78 V             ; -0.0452 V          ; 0.248 V                             ; 0.108 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; ~ALTERA_TDO~   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 1.68e-07 V                   ; 2.73 V              ; -0.0396 V           ; 0.362 V                              ; 0.108 V                              ; 3.11e-10 s                  ; 4.42e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 1.68e-07 V                  ; 2.73 V             ; -0.0396 V          ; 0.362 V                             ; 0.108 V                             ; 3.11e-10 s                 ; 4.42e-10 s                 ; No                        ; Yes                       ;
++----------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Setup Transfers                                                                                                                                                  ;
-+------------------------------------------------------------+---------------------------------------------------------+----------+----------+----------+----------+
-; From Clock                                                 ; To Clock                                                ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
-+------------------------------------------------------------+---------------------------------------------------------+----------+----------+----------+----------+
-; clk_50MHZ                                                  ; clk_50MHZ                                               ; 1755     ; 0        ; 0        ; 1        ;
-; divisor_clock:divisor_50x|out_clk_tmp_up                   ; clk_50MHZ                                               ; 0        ; 0        ; 1        ; 1        ;
-; clk_pid                                                    ; clk_pid                                                 ; 6675     ; 0        ; 0        ; 0        ;
-; divisor_clock:divisor_50x|out_clk_tmp                      ; clk_pid                                                 ; 48911    ; 0        ; 0        ; 0        ;
-; temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp    ; clk_pid                                                 ; 25667    ; 0        ; 0        ; 0        ;
-; clk_pid                                                    ; divisor_clock:divisor_50x|out_clk_tmp                   ; 5208     ; 0        ; 0        ; 0        ;
-; divisor_clock:divisor_50x|out_clk_tmp                      ; divisor_clock:divisor_50x|out_clk_tmp                   ; 54004    ; 0        ; 0        ; 1        ;
-; iniciado_tmp                                               ; divisor_clock:divisor_50x|out_clk_tmp                   ; 128      ; 128      ; 0        ; 0        ;
-; iniciar_transmissao                                        ; divisor_clock:divisor_50x|out_clk_tmp                   ; 14       ; 0        ; 0        ; 0        ;
-; leitor_temperatura:termometro|sck_tmp                      ; divisor_clock:divisor_50x|out_clk_tmp                   ; 13       ; 1        ; 0        ; 0        ;
-; passagem_zero                                              ; divisor_clock:divisor_50x|out_clk_tmp                   ; 2        ; 0        ; 0        ; 0        ;
-; rx                                                         ; divisor_clock:divisor_50x|out_clk_tmp                   ; 8        ; 38       ; 0        ; 0        ;
-; temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp    ; divisor_clock:divisor_50x|out_clk_tmp                   ; 19       ; 0        ; 0        ; 0        ;
-; temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp_up ; divisor_clock:divisor_50x|out_clk_tmp                   ; 0        ; 0        ; 1        ; 1        ;
-; temporizador:tmpr|fim_tmp                                  ; divisor_clock:divisor_50x|out_clk_tmp                   ; 41       ; 0        ; 0        ; 0        ;
-; uart_rx:u_rx|byte_recebido_tmp                             ; divisor_clock:divisor_50x|out_clk_tmp                   ; 170476   ; 0        ; 0        ; 0        ;
-; leitor_temperatura:termometro|sck_tmp                      ; leitor_temperatura:termometro|sck_tmp                   ; 70       ; 0        ; 0        ; 0        ;
-; divisor_clock:divisor_50x|out_clk_tmp                      ; temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp ; 1191     ; 0        ; 0        ; 0        ;
-; iniciado_tmp                                               ; temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp ; 38       ; 0        ; 0        ; 0        ;
-; temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp    ; temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp ; 6374     ; 0        ; 0        ; 0        ;
-; divisor_clock:divisor_50x|out_clk_tmp                      ; uart_rx:u_rx|byte_recebido_tmp                          ; 16       ; 0        ; 0        ; 0        ;
-; uart_rx:u_rx|byte_recebido_tmp                             ; uart_rx:u_rx|byte_recebido_tmp                          ; 8        ; 0        ; 0        ; 0        ;
-+------------------------------------------------------------+---------------------------------------------------------+----------+----------+----------+----------+
++------------------------------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                                              ;
++------------------------------------------+---------------------------------------+----------+----------+----------+----------+
+; From Clock                               ; To Clock                              ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------------------------------------+---------------------------------------+----------+----------+----------+----------+
+; clk_50MHZ                                ; clk_50MHZ                             ; 1755     ; 0        ; 0        ; 1        ;
+; divisor_clock:divisor_50x|out_clk_tmp_up ; clk_50MHZ                             ; 0        ; 0        ; 1        ; 1        ;
+; clk_pid                                  ; clk_pid                               ; 6675     ; 0        ; 0        ; 0        ;
+; divisor_clock:divisor_50x|out_clk_tmp    ; clk_pid                               ; 74728    ; 0        ; 0        ; 0        ;
+; clk_pid                                  ; divisor_clock:divisor_50x|out_clk_tmp ; 5344     ; 0        ; 0        ; 0        ;
+; divisor_clock:divisor_50x|out_clk_tmp    ; divisor_clock:divisor_50x|out_clk_tmp ; 66160    ; 0        ; 0        ; 0        ;
+; iniciado_tmp                             ; divisor_clock:divisor_50x|out_clk_tmp ; 182      ; 124      ; 0        ; 0        ;
+; iniciar_transmissao                      ; divisor_clock:divisor_50x|out_clk_tmp ; 14       ; 0        ; 0        ; 0        ;
+; leitor_temperatura:termometro|sck_tmp    ; divisor_clock:divisor_50x|out_clk_tmp ; 13       ; 1        ; 0        ; 0        ;
+; passagem_zero                            ; divisor_clock:divisor_50x|out_clk_tmp ; 2        ; 0        ; 0        ; 0        ;
+; rx                                       ; divisor_clock:divisor_50x|out_clk_tmp ; 8        ; 38       ; 0        ; 0        ;
+; temporizador:tmpr|fim_tmp                ; divisor_clock:divisor_50x|out_clk_tmp ; 40       ; 0        ; 0        ; 0        ;
+; uart_rx:u_rx|byte_recebido_tmp           ; divisor_clock:divisor_50x|out_clk_tmp ; 162523   ; 0        ; 0        ; 0        ;
+; leitor_temperatura:termometro|sck_tmp    ; leitor_temperatura:termometro|sck_tmp ; 70       ; 0        ; 0        ; 0        ;
+; divisor_clock:divisor_50x|out_clk_tmp    ; uart_rx:u_rx|byte_recebido_tmp        ; 16       ; 0        ; 0        ; 0        ;
+; uart_rx:u_rx|byte_recebido_tmp           ; uart_rx:u_rx|byte_recebido_tmp        ; 8        ; 0        ; 0        ; 0        ;
++------------------------------------------+---------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Hold Transfers                                                                                                                                                   ;
-+------------------------------------------------------------+---------------------------------------------------------+----------+----------+----------+----------+
-; From Clock                                                 ; To Clock                                                ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
-+------------------------------------------------------------+---------------------------------------------------------+----------+----------+----------+----------+
-; clk_50MHZ                                                  ; clk_50MHZ                                               ; 1755     ; 0        ; 0        ; 1        ;
-; divisor_clock:divisor_50x|out_clk_tmp_up                   ; clk_50MHZ                                               ; 0        ; 0        ; 1        ; 1        ;
-; clk_pid                                                    ; clk_pid                                                 ; 6675     ; 0        ; 0        ; 0        ;
-; divisor_clock:divisor_50x|out_clk_tmp                      ; clk_pid                                                 ; 48911    ; 0        ; 0        ; 0        ;
-; temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp    ; clk_pid                                                 ; 25667    ; 0        ; 0        ; 0        ;
-; clk_pid                                                    ; divisor_clock:divisor_50x|out_clk_tmp                   ; 5208     ; 0        ; 0        ; 0        ;
-; divisor_clock:divisor_50x|out_clk_tmp                      ; divisor_clock:divisor_50x|out_clk_tmp                   ; 54004    ; 0        ; 0        ; 1        ;
-; iniciado_tmp                                               ; divisor_clock:divisor_50x|out_clk_tmp                   ; 128      ; 128      ; 0        ; 0        ;
-; iniciar_transmissao                                        ; divisor_clock:divisor_50x|out_clk_tmp                   ; 14       ; 0        ; 0        ; 0        ;
-; leitor_temperatura:termometro|sck_tmp                      ; divisor_clock:divisor_50x|out_clk_tmp                   ; 13       ; 1        ; 0        ; 0        ;
-; passagem_zero                                              ; divisor_clock:divisor_50x|out_clk_tmp                   ; 2        ; 0        ; 0        ; 0        ;
-; rx                                                         ; divisor_clock:divisor_50x|out_clk_tmp                   ; 8        ; 38       ; 0        ; 0        ;
-; temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp    ; divisor_clock:divisor_50x|out_clk_tmp                   ; 19       ; 0        ; 0        ; 0        ;
-; temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp_up ; divisor_clock:divisor_50x|out_clk_tmp                   ; 0        ; 0        ; 1        ; 1        ;
-; temporizador:tmpr|fim_tmp                                  ; divisor_clock:divisor_50x|out_clk_tmp                   ; 41       ; 0        ; 0        ; 0        ;
-; uart_rx:u_rx|byte_recebido_tmp                             ; divisor_clock:divisor_50x|out_clk_tmp                   ; 170476   ; 0        ; 0        ; 0        ;
-; leitor_temperatura:termometro|sck_tmp                      ; leitor_temperatura:termometro|sck_tmp                   ; 70       ; 0        ; 0        ; 0        ;
-; divisor_clock:divisor_50x|out_clk_tmp                      ; temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp ; 1191     ; 0        ; 0        ; 0        ;
-; iniciado_tmp                                               ; temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp ; 38       ; 0        ; 0        ; 0        ;
-; temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp    ; temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp ; 6374     ; 0        ; 0        ; 0        ;
-; divisor_clock:divisor_50x|out_clk_tmp                      ; uart_rx:u_rx|byte_recebido_tmp                          ; 16       ; 0        ; 0        ; 0        ;
-; uart_rx:u_rx|byte_recebido_tmp                             ; uart_rx:u_rx|byte_recebido_tmp                          ; 8        ; 0        ; 0        ; 0        ;
-+------------------------------------------------------------+---------------------------------------------------------+----------+----------+----------+----------+
++------------------------------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                                               ;
++------------------------------------------+---------------------------------------+----------+----------+----------+----------+
+; From Clock                               ; To Clock                              ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------------------------------------+---------------------------------------+----------+----------+----------+----------+
+; clk_50MHZ                                ; clk_50MHZ                             ; 1755     ; 0        ; 0        ; 1        ;
+; divisor_clock:divisor_50x|out_clk_tmp_up ; clk_50MHZ                             ; 0        ; 0        ; 1        ; 1        ;
+; clk_pid                                  ; clk_pid                               ; 6675     ; 0        ; 0        ; 0        ;
+; divisor_clock:divisor_50x|out_clk_tmp    ; clk_pid                               ; 74728    ; 0        ; 0        ; 0        ;
+; clk_pid                                  ; divisor_clock:divisor_50x|out_clk_tmp ; 5344     ; 0        ; 0        ; 0        ;
+; divisor_clock:divisor_50x|out_clk_tmp    ; divisor_clock:divisor_50x|out_clk_tmp ; 66160    ; 0        ; 0        ; 0        ;
+; iniciado_tmp                             ; divisor_clock:divisor_50x|out_clk_tmp ; 182      ; 124      ; 0        ; 0        ;
+; iniciar_transmissao                      ; divisor_clock:divisor_50x|out_clk_tmp ; 14       ; 0        ; 0        ; 0        ;
+; leitor_temperatura:termometro|sck_tmp    ; divisor_clock:divisor_50x|out_clk_tmp ; 13       ; 1        ; 0        ; 0        ;
+; passagem_zero                            ; divisor_clock:divisor_50x|out_clk_tmp ; 2        ; 0        ; 0        ; 0        ;
+; rx                                       ; divisor_clock:divisor_50x|out_clk_tmp ; 8        ; 38       ; 0        ; 0        ;
+; temporizador:tmpr|fim_tmp                ; divisor_clock:divisor_50x|out_clk_tmp ; 40       ; 0        ; 0        ; 0        ;
+; uart_rx:u_rx|byte_recebido_tmp           ; divisor_clock:divisor_50x|out_clk_tmp ; 162523   ; 0        ; 0        ; 0        ;
+; leitor_temperatura:termometro|sck_tmp    ; leitor_temperatura:termometro|sck_tmp ; 70       ; 0        ; 0        ; 0        ;
+; divisor_clock:divisor_50x|out_clk_tmp    ; uart_rx:u_rx|byte_recebido_tmp        ; 16       ; 0        ; 0        ; 0        ;
+; uart_rx:u_rx|byte_recebido_tmp           ; uart_rx:u_rx|byte_recebido_tmp        ; 8        ; 0        ; 0        ; 0        ;
++------------------------------------------+---------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------+
-; Recovery Transfers                                                                                                                             ;
-+---------------------------------------+------------------------------------------------------------+----------+----------+----------+----------+
-; From Clock                            ; To Clock                                                   ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
-+---------------------------------------+------------------------------------------------------------+----------+----------+----------+----------+
-; clk_50MHZ                             ; divisor_clock:divisor_50x|out_clk_tmp_up                   ; 0        ; 1        ; 0        ; 0        ;
-; divisor_clock:divisor_50x|out_clk_tmp ; iniciado_tmp                                               ; 1        ; 0        ; 0        ; 0        ;
-; temporizador:tmpr|fim_tmp             ; iniciado_tmp                                               ; 1        ; 1        ; 0        ; 0        ;
-; divisor_clock:divisor_50x|out_clk_tmp ; iniciar_transmissao                                        ; 1        ; 0        ; 0        ; 0        ;
-; divisor_clock:divisor_50x|out_clk_tmp ; passagem_zero                                              ; 1        ; 0        ; 0        ; 0        ;
-; divisor_clock:divisor_50x|out_clk_tmp ; rx                                                         ; 0        ; 0        ; 1        ; 0        ;
-; divisor_clock:divisor_50x|out_clk_tmp ; temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp_up ; 0        ; 1        ; 0        ; 0        ;
-; divisor_clock:divisor_50x|out_clk_tmp ; temporizador:tmpr|fim_tmp                                  ; 1        ; 0        ; 0        ; 0        ;
-; divisor_clock:divisor_50x|out_clk_tmp ; uart_rx:u_rx|byte_recebido_tmp                             ; 1        ; 0        ; 0        ; 0        ;
-+---------------------------------------+------------------------------------------------------------+----------+----------+----------+----------+
++------------------------------------------------------------------------------------------------------------------------------+
+; Recovery Transfers                                                                                                           ;
++---------------------------------------+------------------------------------------+----------+----------+----------+----------+
+; From Clock                            ; To Clock                                 ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++---------------------------------------+------------------------------------------+----------+----------+----------+----------+
+; clk_50MHZ                             ; divisor_clock:divisor_50x|out_clk_tmp_up ; 0        ; 1        ; 0        ; 0        ;
+; divisor_clock:divisor_50x|out_clk_tmp ; iniciado_tmp                             ; 1        ; 0        ; 0        ; 0        ;
+; temporizador:tmpr|fim_tmp             ; iniciado_tmp                             ; 1        ; 1        ; 0        ; 0        ;
+; divisor_clock:divisor_50x|out_clk_tmp ; iniciar_transmissao                      ; 1        ; 0        ; 0        ; 0        ;
+; divisor_clock:divisor_50x|out_clk_tmp ; passagem_zero                            ; 1        ; 0        ; 0        ; 0        ;
+; divisor_clock:divisor_50x|out_clk_tmp ; rx                                       ; 0        ; 0        ; 1        ; 0        ;
+; divisor_clock:divisor_50x|out_clk_tmp ; temporizador:tmpr|fim_tmp                ; 1        ; 0        ; 0        ; 0        ;
+; divisor_clock:divisor_50x|out_clk_tmp ; uart_rx:u_rx|byte_recebido_tmp           ; 1        ; 0        ; 0        ; 0        ;
++---------------------------------------+------------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removal Transfers                                                                                                                              ;
-+---------------------------------------+------------------------------------------------------------+----------+----------+----------+----------+
-; From Clock                            ; To Clock                                                   ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
-+---------------------------------------+------------------------------------------------------------+----------+----------+----------+----------+
-; clk_50MHZ                             ; divisor_clock:divisor_50x|out_clk_tmp_up                   ; 0        ; 1        ; 0        ; 0        ;
-; divisor_clock:divisor_50x|out_clk_tmp ; iniciado_tmp                                               ; 1        ; 0        ; 0        ; 0        ;
-; temporizador:tmpr|fim_tmp             ; iniciado_tmp                                               ; 1        ; 1        ; 0        ; 0        ;
-; divisor_clock:divisor_50x|out_clk_tmp ; iniciar_transmissao                                        ; 1        ; 0        ; 0        ; 0        ;
-; divisor_clock:divisor_50x|out_clk_tmp ; passagem_zero                                              ; 1        ; 0        ; 0        ; 0        ;
-; divisor_clock:divisor_50x|out_clk_tmp ; rx                                                         ; 0        ; 0        ; 1        ; 0        ;
-; divisor_clock:divisor_50x|out_clk_tmp ; temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp_up ; 0        ; 1        ; 0        ; 0        ;
-; divisor_clock:divisor_50x|out_clk_tmp ; temporizador:tmpr|fim_tmp                                  ; 1        ; 0        ; 0        ; 0        ;
-; divisor_clock:divisor_50x|out_clk_tmp ; uart_rx:u_rx|byte_recebido_tmp                             ; 1        ; 0        ; 0        ; 0        ;
-+---------------------------------------+------------------------------------------------------------+----------+----------+----------+----------+
++------------------------------------------------------------------------------------------------------------------------------+
+; Removal Transfers                                                                                                            ;
++---------------------------------------+------------------------------------------+----------+----------+----------+----------+
+; From Clock                            ; To Clock                                 ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++---------------------------------------+------------------------------------------+----------+----------+----------+----------+
+; clk_50MHZ                             ; divisor_clock:divisor_50x|out_clk_tmp_up ; 0        ; 1        ; 0        ; 0        ;
+; divisor_clock:divisor_50x|out_clk_tmp ; iniciado_tmp                             ; 1        ; 0        ; 0        ; 0        ;
+; temporizador:tmpr|fim_tmp             ; iniciado_tmp                             ; 1        ; 1        ; 0        ; 0        ;
+; divisor_clock:divisor_50x|out_clk_tmp ; iniciar_transmissao                      ; 1        ; 0        ; 0        ; 0        ;
+; divisor_clock:divisor_50x|out_clk_tmp ; passagem_zero                            ; 1        ; 0        ; 0        ; 0        ;
+; divisor_clock:divisor_50x|out_clk_tmp ; rx                                       ; 0        ; 0        ; 1        ; 0        ;
+; divisor_clock:divisor_50x|out_clk_tmp ; temporizador:tmpr|fim_tmp                ; 1        ; 0        ; 0        ; 0        ;
+; divisor_clock:divisor_50x|out_clk_tmp ; uart_rx:u_rx|byte_recebido_tmp           ; 1        ; 0        ; 0        ; 0        ;
++---------------------------------------+------------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
 
@@ -648,30 +612,28 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 1     ; 1    ;
 ; Unconstrained Input Port Paths  ; 12    ; 12   ;
-; Unconstrained Output Ports      ; 6     ; 6    ;
-; Unconstrained Output Port Paths ; 6     ; 6    ;
+; Unconstrained Output Ports      ; 7     ; 7    ;
+; Unconstrained Output Port Paths ; 7     ; 7    ;
 +---------------------------------+-------+------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Clock Status Summary                                                                                                                         ;
-+------------------------------------------------------------+------------------------------------------------------------+------+-------------+
-; Target                                                     ; Clock                                                      ; Type ; Status      ;
-+------------------------------------------------------------+------------------------------------------------------------+------+-------------+
-; clk_50MHZ                                                  ; clk_50MHZ                                                  ; Base ; Constrained ;
-; clk_pid                                                    ; clk_pid                                                    ; Base ; Constrained ;
-; divisor_clock:divisor_50x|out_clk_tmp                      ; divisor_clock:divisor_50x|out_clk_tmp                      ; Base ; Constrained ;
-; divisor_clock:divisor_50x|out_clk_tmp_up                   ; divisor_clock:divisor_50x|out_clk_tmp_up                   ; Base ; Constrained ;
-; iniciado_tmp                                               ; iniciado_tmp                                               ; Base ; Constrained ;
-; iniciar_transmissao                                        ; iniciar_transmissao                                        ; Base ; Constrained ;
-; leitor_temperatura:termometro|sck_tmp                      ; leitor_temperatura:termometro|sck_tmp                      ; Base ; Constrained ;
-; passagem_zero                                              ; passagem_zero                                              ; Base ; Constrained ;
-; rx                                                         ; rx                                                         ; Base ; Constrained ;
-; temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp    ; temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp    ; Base ; Constrained ;
-; temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp_up ; temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp_up ; Base ; Constrained ;
-; temporizador:tmpr|fim_tmp                                  ; temporizador:tmpr|fim_tmp                                  ; Base ; Constrained ;
-; uart_rx:u_rx|byte_recebido_tmp                             ; uart_rx:u_rx|byte_recebido_tmp                             ; Base ; Constrained ;
-+------------------------------------------------------------+------------------------------------------------------------+------+-------------+
++----------------------------------------------------------------------------------------------------------+
+; Clock Status Summary                                                                                     ;
++------------------------------------------+------------------------------------------+------+-------------+
+; Target                                   ; Clock                                    ; Type ; Status      ;
++------------------------------------------+------------------------------------------+------+-------------+
+; clk_50MHZ                                ; clk_50MHZ                                ; Base ; Constrained ;
+; clk_pid                                  ; clk_pid                                  ; Base ; Constrained ;
+; divisor_clock:divisor_50x|out_clk_tmp    ; divisor_clock:divisor_50x|out_clk_tmp    ; Base ; Constrained ;
+; divisor_clock:divisor_50x|out_clk_tmp_up ; divisor_clock:divisor_50x|out_clk_tmp_up ; Base ; Constrained ;
+; iniciado_tmp                             ; iniciado_tmp                             ; Base ; Constrained ;
+; iniciar_transmissao                      ; iniciar_transmissao                      ; Base ; Constrained ;
+; leitor_temperatura:termometro|sck_tmp    ; leitor_temperatura:termometro|sck_tmp    ; Base ; Constrained ;
+; passagem_zero                            ; passagem_zero                            ; Base ; Constrained ;
+; rx                                       ; rx                                       ; Base ; Constrained ;
+; temporizador:tmpr|fim_tmp                ; temporizador:tmpr|fim_tmp                ; Base ; Constrained ;
+; uart_rx:u_rx|byte_recebido_tmp           ; uart_rx:u_rx|byte_recebido_tmp           ; Base ; Constrained ;
++------------------------------------------+------------------------------------------+------+-------------+
 
 
 +---------------------------------------------------------------------------------------------------+
@@ -683,18 +645,19 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +------------+--------------------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------+
-; Unconstrained Output Ports                                                                            ;
-+---------------+---------------------------------------------------------------------------------------+
-; Output Port   ; Comment                                                                               ;
-+---------------+---------------------------------------------------------------------------------------+
-; cs            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; disparo_triac ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; iniciado      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pid_ativo     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; sck           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; tx            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-+---------------+---------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                             ;
++----------------+---------------------------------------------------------------------------------------+
+; Output Port    ; Comment                                                                               ;
++----------------+---------------------------------------------------------------------------------------+
+; contagem_ativa ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cs             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; disparo_triac  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; iniciado       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; pid_ativo      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sck            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; tx             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++----------------+---------------------------------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------+
@@ -706,18 +669,19 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +------------+--------------------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------+
-; Unconstrained Output Ports                                                                            ;
-+---------------+---------------------------------------------------------------------------------------+
-; Output Port   ; Comment                                                                               ;
-+---------------+---------------------------------------------------------------------------------------+
-; cs            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; disparo_triac ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; iniciado      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pid_ativo     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; sck           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; tx            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-+---------------+---------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                             ;
++----------------+---------------------------------------------------------------------------------------+
+; Output Port    ; Comment                                                                               ;
++----------------+---------------------------------------------------------------------------------------+
+; contagem_ativa ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cs             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; disparo_triac  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; iniciado       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; pid_ativo      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sck            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; tx             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++----------------+---------------------------------------------------------------------------------------+
 
 
 +--------------------------+
@@ -726,7 +690,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun May 24 19:02:27 2020
+    Info: Processing started: Mon May 25 13:21:56 2020
 Info: Command: quartus_sta top_level -c top_level
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -737,16 +701,14 @@ Critical Warning (332012): Synopsys Design Constraints File file not found: 'top
 Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
 Info (332105): Deriving Clocks
     Info (332105): create_clock -period 1.000 -name divisor_clock:divisor_50x|out_clk_tmp divisor_clock:divisor_50x|out_clk_tmp
-    Info (332105): create_clock -period 1.000 -name temporizador:tmpr|fim_tmp temporizador:tmpr|fim_tmp
     Info (332105): create_clock -period 1.000 -name uart_rx:u_rx|byte_recebido_tmp uart_rx:u_rx|byte_recebido_tmp
     Info (332105): create_clock -period 1.000 -name divisor_clock:divisor_50x|out_clk_tmp_up divisor_clock:divisor_50x|out_clk_tmp_up
     Info (332105): create_clock -period 1.000 -name clk_50MHZ clk_50MHZ
     Info (332105): create_clock -period 1.000 -name rx rx
-    Info (332105): create_clock -period 1.000 -name temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp
+    Info (332105): create_clock -period 1.000 -name temporizador:tmpr|fim_tmp temporizador:tmpr|fim_tmp
     Info (332105): create_clock -period 1.000 -name iniciado_tmp iniciado_tmp
-    Info (332105): create_clock -period 1.000 -name temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp_up temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp_up
-    Info (332105): create_clock -period 1.000 -name leitor_temperatura:termometro|sck_tmp leitor_temperatura:termometro|sck_tmp
     Info (332105): create_clock -period 1.000 -name clk_pid clk_pid
+    Info (332105): create_clock -period 1.000 -name leitor_temperatura:termometro|sck_tmp leitor_temperatura:termometro|sck_tmp
     Info (332105): create_clock -period 1.000 -name iniciar_transmissao iniciar_transmissao
     Info (332105): create_clock -period 1.000 -name passagem_zero passagem_zero
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
@@ -755,188 +717,170 @@ Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
 Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -9.764
+Info (332146): Worst-case setup slack is -8.525
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -9.764           -2065.177 divisor_clock:divisor_50x|out_clk_tmp 
-    Info (332119):    -6.817            -206.197 temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp 
-    Info (332119):    -6.708             -49.427 clk_pid 
-    Info (332119):    -5.023             -58.630 clk_50MHZ 
-    Info (332119):    -1.952             -19.329 leitor_temperatura:termometro|sck_tmp 
-    Info (332119):    -1.079              -8.632 uart_rx:u_rx|byte_recebido_tmp 
-Info (332146): Worst-case hold slack is 0.323
+    Info (332119):    -8.525           -2132.812 divisor_clock:divisor_50x|out_clk_tmp 
+    Info (332119):    -6.629             -51.276 clk_pid 
+    Info (332119):    -5.064             -59.909 clk_50MHZ 
+    Info (332119):    -1.716             -20.672 leitor_temperatura:termometro|sck_tmp 
+    Info (332119):    -1.315             -10.520 uart_rx:u_rx|byte_recebido_tmp 
+Info (332146): Worst-case hold slack is 0.324
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.323               0.000 divisor_clock:divisor_50x|out_clk_tmp 
-    Info (332119):     0.341               0.000 temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp 
-    Info (332119):     0.344               0.000 leitor_temperatura:termometro|sck_tmp 
-    Info (332119):     0.408               0.000 clk_50MHZ 
-    Info (332119):     0.983               0.000 clk_pid 
-    Info (332119):     1.070               0.000 uart_rx:u_rx|byte_recebido_tmp 
-Info (332146): Worst-case recovery slack is -3.414
+    Info (332119):     0.324               0.000 divisor_clock:divisor_50x|out_clk_tmp 
+    Info (332119):     0.343               0.000 leitor_temperatura:termometro|sck_tmp 
+    Info (332119):     0.410               0.000 clk_50MHZ 
+    Info (332119):     0.489               0.000 clk_pid 
+    Info (332119):     1.089               0.000 uart_rx:u_rx|byte_recebido_tmp 
+Info (332146): Worst-case recovery slack is -3.459
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.414              -3.414 iniciado_tmp 
-    Info (332119):    -3.149              -3.149 divisor_clock:divisor_50x|out_clk_tmp_up 
-    Info (332119):    -2.994              -2.994 temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp_up 
-    Info (332119):    -2.466              -2.466 iniciar_transmissao 
-    Info (332119):    -2.097              -2.097 temporizador:tmpr|fim_tmp 
-    Info (332119):    -1.339              -1.339 rx 
-    Info (332119):    -0.372              -0.372 passagem_zero 
-    Info (332119):    -0.306              -0.306 uart_rx:u_rx|byte_recebido_tmp 
-Info (332146): Worst-case removal slack is 0.646
+    Info (332119):    -3.459              -3.459 divisor_clock:divisor_50x|out_clk_tmp_up 
+    Info (332119):    -3.037              -3.037 iniciar_transmissao 
+    Info (332119):    -2.978              -2.978 iniciado_tmp 
+    Info (332119):    -2.381              -2.381 temporizador:tmpr|fim_tmp 
+    Info (332119):    -1.661              -1.661 rx 
+    Info (332119):    -0.730              -0.730 uart_rx:u_rx|byte_recebido_tmp 
+    Info (332119):    -0.482              -0.482 passagem_zero 
+Info (332146): Worst-case removal slack is 0.681
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.646               0.000 uart_rx:u_rx|byte_recebido_tmp 
-    Info (332119):     0.747               0.000 passagem_zero 
-    Info (332119):     0.819               0.000 iniciado_tmp 
-    Info (332119):     1.770               0.000 rx 
-    Info (332119):     2.531               0.000 temporizador:tmpr|fim_tmp 
-    Info (332119):     2.956               0.000 iniciar_transmissao 
-    Info (332119):     3.459               0.000 temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp_up 
-    Info (332119):     3.622               0.000 divisor_clock:divisor_50x|out_clk_tmp_up 
+    Info (332119):     0.681               0.000 iniciado_tmp 
+    Info (332119):     0.844               0.000 passagem_zero 
+    Info (332119):     1.084               0.000 uart_rx:u_rx|byte_recebido_tmp 
+    Info (332119):     2.065               0.000 rx 
+    Info (332119):     2.830               0.000 temporizador:tmpr|fim_tmp 
+    Info (332119):     3.543               0.000 iniciar_transmissao 
+    Info (332119):     3.947               0.000 divisor_clock:divisor_50x|out_clk_tmp_up 
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):    -3.000             -42.284 clk_50MHZ 
     Info (332119):    -3.000              -4.403 passagem_zero 
     Info (332119):    -3.000              -4.403 rx 
-    Info (332119):    -1.403            -566.812 divisor_clock:divisor_50x|out_clk_tmp 
-    Info (332119):    -1.403             -53.314 temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp 
-    Info (332119):    -1.403             -25.254 clk_pid 
+    Info (332119):    -1.403            -611.708 divisor_clock:divisor_50x|out_clk_tmp 
+    Info (332119):    -1.403             -26.657 clk_pid 
     Info (332119):    -1.403             -22.448 leitor_temperatura:termometro|sck_tmp 
     Info (332119):    -1.403             -12.627 uart_rx:u_rx|byte_recebido_tmp 
     Info (332119):    -1.403              -1.403 divisor_clock:divisor_50x|out_clk_tmp_up 
     Info (332119):    -1.403              -1.403 iniciado_tmp 
     Info (332119):    -1.403              -1.403 iniciar_transmissao 
-    Info (332119):    -1.403              -1.403 temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp_up 
     Info (332119):    -1.403              -1.403 temporizador:tmpr|fim_tmp 
 Info: Analyzing Slow 1200mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -8.911
+Info (332146): Worst-case setup slack is -7.803
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -8.911           -1866.022 divisor_clock:divisor_50x|out_clk_tmp 
-    Info (332119):    -6.276            -187.076 temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp 
-    Info (332119):    -5.986             -43.528 clk_pid 
-    Info (332119):    -4.474             -50.596 clk_50MHZ 
-    Info (332119):    -1.715             -16.408 leitor_temperatura:termometro|sck_tmp 
-    Info (332119):    -0.914              -7.312 uart_rx:u_rx|byte_recebido_tmp 
-Info (332146): Worst-case hold slack is 0.290
+    Info (332119):    -7.803           -1933.171 divisor_clock:divisor_50x|out_clk_tmp 
+    Info (332119):    -6.005             -45.663 clk_pid 
+    Info (332119):    -4.509             -51.783 clk_50MHZ 
+    Info (332119):    -1.497             -17.637 leitor_temperatura:termometro|sck_tmp 
+    Info (332119):    -1.110              -8.880 uart_rx:u_rx|byte_recebido_tmp 
+Info (332146): Worst-case hold slack is 0.291
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.290               0.000 divisor_clock:divisor_50x|out_clk_tmp 
-    Info (332119):     0.306               0.000 temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp 
-    Info (332119):     0.309               0.000 leitor_temperatura:termometro|sck_tmp 
-    Info (332119):     0.376               0.000 clk_50MHZ 
-    Info (332119):     0.846               0.000 clk_pid 
-    Info (332119):     0.953               0.000 uart_rx:u_rx|byte_recebido_tmp 
-Info (332146): Worst-case recovery slack is -3.022
+    Info (332119):     0.291               0.000 divisor_clock:divisor_50x|out_clk_tmp 
+    Info (332119):     0.308               0.000 leitor_temperatura:termometro|sck_tmp 
+    Info (332119):     0.377               0.000 clk_50MHZ 
+    Info (332119):     0.442               0.000 clk_pid 
+    Info (332119):     1.008               0.000 uart_rx:u_rx|byte_recebido_tmp 
+Info (332146): Worst-case recovery slack is -3.094
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.022              -3.022 iniciado_tmp 
-    Info (332119):    -2.812              -2.812 divisor_clock:divisor_50x|out_clk_tmp_up 
-    Info (332119):    -2.613              -2.613 temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp_up 
-    Info (332119):    -2.138              -2.138 iniciar_transmissao 
-    Info (332119):    -1.808              -1.808 temporizador:tmpr|fim_tmp 
-    Info (332119):    -1.134              -1.134 rx 
-    Info (332119):    -0.187              -0.187 uart_rx:u_rx|byte_recebido_tmp 
-    Info (332119):    -0.147              -0.147 passagem_zero 
-Info (332146): Worst-case removal slack is 0.565
+    Info (332119):    -3.094              -3.094 divisor_clock:divisor_50x|out_clk_tmp_up 
+    Info (332119):    -2.663              -2.663 iniciar_transmissao 
+    Info (332119):    -2.651              -2.651 iniciado_tmp 
+    Info (332119):    -2.055              -2.055 temporizador:tmpr|fim_tmp 
+    Info (332119):    -1.415              -1.415 rx 
+    Info (332119):    -0.567              -0.567 uart_rx:u_rx|byte_recebido_tmp 
+    Info (332119):    -0.236              -0.236 passagem_zero 
+Info (332146): Worst-case removal slack is 0.640
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.565               0.000 passagem_zero 
-    Info (332119):     0.602               0.000 uart_rx:u_rx|byte_recebido_tmp 
-    Info (332119):     0.755               0.000 iniciado_tmp 
-    Info (332119):     1.625               0.000 rx 
-    Info (332119):     2.291               0.000 temporizador:tmpr|fim_tmp 
-    Info (332119):     2.689               0.000 iniciar_transmissao 
-    Info (332119):     3.122               0.000 temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp_up 
-    Info (332119):     3.325               0.000 divisor_clock:divisor_50x|out_clk_tmp_up 
+    Info (332119):     0.640               0.000 iniciado_tmp 
+    Info (332119):     0.642               0.000 passagem_zero 
+    Info (332119):     1.004               0.000 uart_rx:u_rx|byte_recebido_tmp 
+    Info (332119):     1.902               0.000 rx 
+    Info (332119):     2.550               0.000 temporizador:tmpr|fim_tmp 
+    Info (332119):     3.227               0.000 iniciar_transmissao 
+    Info (332119):     3.621               0.000 divisor_clock:divisor_50x|out_clk_tmp_up 
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):    -3.000             -42.284 clk_50MHZ 
     Info (332119):    -3.000              -4.403 passagem_zero 
     Info (332119):    -3.000              -4.403 rx 
-    Info (332119):    -1.403            -566.812 divisor_clock:divisor_50x|out_clk_tmp 
-    Info (332119):    -1.403             -53.314 temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp 
-    Info (332119):    -1.403             -25.254 clk_pid 
+    Info (332119):    -1.403            -611.708 divisor_clock:divisor_50x|out_clk_tmp 
+    Info (332119):    -1.403             -26.657 clk_pid 
     Info (332119):    -1.403             -22.448 leitor_temperatura:termometro|sck_tmp 
     Info (332119):    -1.403             -12.627 uart_rx:u_rx|byte_recebido_tmp 
     Info (332119):    -1.403              -1.403 divisor_clock:divisor_50x|out_clk_tmp_up 
     Info (332119):    -1.403              -1.403 iniciado_tmp 
     Info (332119):    -1.403              -1.403 iniciar_transmissao 
-    Info (332119):    -1.403              -1.403 temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp_up 
     Info (332119):    -1.403              -1.403 temporizador:tmpr|fim_tmp 
 Info: Analyzing Fast 1200mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -3.688
+Info (332146): Worst-case setup slack is -3.119
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.688            -657.085 divisor_clock:divisor_50x|out_clk_tmp 
-    Info (332119):    -2.470             -66.626 temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp 
-    Info (332119):    -2.170             -13.032 clk_pid 
-    Info (332119):    -1.416              -7.871 clk_50MHZ 
-    Info (332119):    -0.225              -0.852 leitor_temperatura:termometro|sck_tmp 
-    Info (332119):     0.095               0.000 uart_rx:u_rx|byte_recebido_tmp 
-Info (332146): Worst-case hold slack is 0.117
+    Info (332119):    -3.119            -659.006 divisor_clock:divisor_50x|out_clk_tmp 
+    Info (332119):    -2.032             -13.508 clk_pid 
+    Info (332119):    -1.444              -8.193 clk_50MHZ 
+    Info (332119):    -0.154              -0.547 leitor_temperatura:termometro|sck_tmp 
+    Info (332119):    -0.031              -0.248 uart_rx:u_rx|byte_recebido_tmp 
+Info (332146): Worst-case hold slack is 0.141
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.117               0.000 divisor_clock:divisor_50x|out_clk_tmp 
-    Info (332119):     0.149               0.000 temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp 
-    Info (332119):     0.151               0.000 leitor_temperatura:termometro|sck_tmp 
+    Info (332119):     0.141               0.000 clk_pid 
+    Info (332119):     0.141               0.000 divisor_clock:divisor_50x|out_clk_tmp 
+    Info (332119):     0.150               0.000 leitor_temperatura:termometro|sck_tmp 
     Info (332119):     0.164               0.000 clk_50MHZ 
-    Info (332119):     0.356               0.000 clk_pid 
-    Info (332119):     0.395               0.000 uart_rx:u_rx|byte_recebido_tmp 
-Info (332146): Worst-case recovery slack is -1.606
+    Info (332119):     0.462               0.000 uart_rx:u_rx|byte_recebido_tmp 
+Info (332146): Worst-case recovery slack is -1.737
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -1.606              -1.606 divisor_clock:divisor_50x|out_clk_tmp_up 
-    Info (332119):    -1.294              -1.294 temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp_up 
-    Info (332119):    -1.128              -1.128 iniciado_tmp 
-    Info (332119):    -0.682              -0.682 iniciar_transmissao 
-    Info (332119):    -0.533              -0.533 temporizador:tmpr|fim_tmp 
-    Info (332119):    -0.172              -0.172 rx 
-    Info (332119):     0.149               0.000 passagem_zero 
-    Info (332119):     0.396               0.000 uart_rx:u_rx|byte_recebido_tmp 
-Info (332146): Worst-case removal slack is 0.255
+    Info (332119):    -1.737              -1.737 divisor_clock:divisor_50x|out_clk_tmp_up 
+    Info (332119):    -0.958              -0.958 iniciar_transmissao 
+    Info (332119):    -0.952              -0.952 iniciado_tmp 
+    Info (332119):    -0.657              -0.657 temporizador:tmpr|fim_tmp 
+    Info (332119):    -0.364              -0.364 rx 
+    Info (332119):     0.082               0.000 passagem_zero 
+    Info (332119):     0.185               0.000 uart_rx:u_rx|byte_recebido_tmp 
+Info (332146): Worst-case removal slack is 0.240
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.255               0.000 uart_rx:u_rx|byte_recebido_tmp 
-    Info (332119):     0.334               0.000 iniciado_tmp 
-    Info (332119):     0.534               0.000 passagem_zero 
-    Info (332119):     0.861               0.000 rx 
-    Info (332119):     1.265               0.000 temporizador:tmpr|fim_tmp 
-    Info (332119):     1.423               0.000 iniciar_transmissao 
-    Info (332119):     2.034               0.000 temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp_up 
-    Info (332119):     2.338               0.000 divisor_clock:divisor_50x|out_clk_tmp_up 
+    Info (332119):     0.240               0.000 iniciado_tmp 
+    Info (332119):     0.473               0.000 uart_rx:u_rx|byte_recebido_tmp 
+    Info (332119):     0.598               0.000 passagem_zero 
+    Info (332119):     1.014               0.000 rx 
+    Info (332119):     1.397               0.000 temporizador:tmpr|fim_tmp 
+    Info (332119):     1.705               0.000 iniciar_transmissao 
+    Info (332119):     2.477               0.000 divisor_clock:divisor_50x|out_clk_tmp_up 
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.000             -32.001 clk_50MHZ 
-    Info (332119):    -3.000              -4.150 passagem_zero 
+    Info (332119):    -3.000             -31.975 clk_50MHZ 
+    Info (332119):    -3.000              -4.121 passagem_zero 
     Info (332119):    -3.000              -4.000 rx 
-    Info (332119):    -1.000            -404.000 divisor_clock:divisor_50x|out_clk_tmp 
-    Info (332119):    -1.000             -38.000 temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp 
-    Info (332119):    -1.000             -18.000 clk_pid 
+    Info (332119):    -1.000            -436.000 divisor_clock:divisor_50x|out_clk_tmp 
+    Info (332119):    -1.000             -19.000 clk_pid 
     Info (332119):    -1.000             -16.000 leitor_temperatura:termometro|sck_tmp 
     Info (332119):    -1.000              -9.000 uart_rx:u_rx|byte_recebido_tmp 
     Info (332119):    -1.000              -1.000 divisor_clock:divisor_50x|out_clk_tmp_up 
     Info (332119):    -1.000              -1.000 iniciado_tmp 
     Info (332119):    -1.000              -1.000 iniciar_transmissao 
-    Info (332119):    -1.000              -1.000 temporizador:tmpr|divisor_clock:divisor_1Mx|out_clk_tmp_up 
     Info (332119):    -1.000              -1.000 temporizador:tmpr|fim_tmp 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 871 megabytes
-    Info: Processing ended: Sun May 24 19:02:32 2020
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:06
+    Info: Peak virtual memory: 877 megabytes
+    Info: Processing ended: Mon May 25 13:22:00 2020
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:05
 
 

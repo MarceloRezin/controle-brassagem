@@ -28,6 +28,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "contagem_ativa",
+					"strict" : false
+				},
+				{
 					"name" : "clk_50MHZ",
 					"strict" : false
 				},
