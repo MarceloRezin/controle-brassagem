@@ -267,17 +267,19 @@ begin
                             iniciar_transmissao <=  '1';
                         elsif index_atualizacao = 1 then --Envia os bits mais significativos do tempo
                             byte_t              <=  (others => '0');
-                            byte_t(4 downto 0)  <=  std_logic_vector(to_unsigned(tempo_decorrido, 13))(12 downto 8);
+                            byte_t(5 downto 0)  <=  std_logic_vector(to_unsigned(tempo_decorrido, 13))(12 downto 7);
                             iniciar_transmissao <=  '1';
                         elsif index_atualizacao = 2 then --Envia os bits menos significativos do tempo
-                            byte_t              <=  std_logic_vector(to_unsigned(tempo_decorrido, 13))(7 downto 0);
+                            byte_t              <=  (others => '0');
+                            byte_t(6 downto 0)  <=  std_logic_vector(to_unsigned(tempo_decorrido, 13))(6 downto 0);
                             iniciar_transmissao <=  '1';
                         elsif index_atualizacao = 3 then --Envia os bits mais significativos da temperatura atual
                             byte_t              <=  (others => '0');
-                            byte_t(3 downto 0)  <=  temperatura_atual(11 downto 8);
+                            byte_t(4 downto 0)  <=  temperatura_atual(11 downto 7);
                             iniciar_transmissao <=  '1';
                         elsif index_atualizacao = 4 then --Envia os bits menos significativos do tempo
-                            byte_t              <=  temperatura_atual(7 downto 0);
+                            byte_t              <=  (others => '0');
+                            byte_t(6 downto 0)  <=  temperatura_atual(6 downto 0);
                             iniciar_transmissao <=  '1';
                         elsif index_atualizacao = 5 then --Envia a potencia atual
                             byte_t              <=  std_logic_vector(to_unsigned(potencia_atual, 8));

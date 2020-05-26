@@ -90,7 +90,7 @@ public class Serial implements SerialPortEventListener {
 
     public void serialEvent(SerialPortEvent oEvent) {
         if (oEvent.getEventType() == SerialPortEvent.DATA_AVAILABLE) {
-            try {
+            try {            	
                 int retorno = input.read();
                 
 //                System.out.println(retorno);
@@ -100,11 +100,11 @@ public class Serial implements SerialPortEventListener {
                 	if(indexAtualizacao == 0) {
                 		telaBrassagem.setRampaAtual(retorno);
                 	}else if(indexAtualizacao == 1) {
-                		accTempoDecorrido = retorno << 8;
+                		accTempoDecorrido = retorno << 7;
                 	}else if(indexAtualizacao == 2) {
                 		telaBrassagem.setTempoDecorrido(accTempoDecorrido + retorno);
                 	}else if(indexAtualizacao == 3) {
-                		accTemperaturaAtual = retorno << 8;
+                		accTemperaturaAtual = retorno << 7;
                 	}else if(indexAtualizacao == 4) {
                 		telaBrassagem.setTemperaturaAtual(accTemperaturaAtual + retorno);
                 	}else if(indexAtualizacao == 5) {
