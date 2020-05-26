@@ -2,100 +2,100 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'clk_pid'
-Slack : -10.290
-TNS   : -85.086
-
 Type  : Slow 1200mV 85C Model Setup 'divisor_clock:divisor_50x|out_clk_tmp'
-Slack : -8.090
-TNS   : -1967.384
+Slack : -9.884
+TNS   : -2448.413
+
+Type  : Slow 1200mV 85C Model Setup 'clk_pid'
+Slack : -8.673
+TNS   : -64.359
 
 Type  : Slow 1200mV 85C Model Setup 'clk_50MHZ'
-Slack : -5.034
-TNS   : -58.907
-
-Type  : Slow 1200mV 85C Model Setup 'uart_rx:u_rx|byte_recebido_tmp'
-Slack : -1.721
-TNS   : -13.768
+Slack : -4.968
+TNS   : -58.862
 
 Type  : Slow 1200mV 85C Model Setup 'leitor_temperatura:termometro|sck_tmp'
-Slack : -1.592
-TNS   : -19.225
+Slack : -1.395
+TNS   : -15.004
+
+Type  : Slow 1200mV 85C Model Setup 'uart_rx:u_rx|byte_recebido_tmp'
+Slack : -0.858
+TNS   : -6.864
 
 Type  : Slow 1200mV 85C Model Hold 'divisor_clock:divisor_50x|out_clk_tmp'
-Slack : 0.323
+Slack : 0.325
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'leitor_temperatura:termometro|sck_tmp'
-Slack : 0.342
+Slack : 0.343
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'clk_50MHZ'
-Slack : 0.402
+Slack : 0.408
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'uart_rx:u_rx|byte_recebido_tmp'
-Slack : 1.279
+Slack : 0.570
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'clk_pid'
-Slack : 1.542
+Slack : 0.699
 TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Recovery 'iniciado_tmp'
-Slack : -3.749
-TNS   : -3.749
 
 Type  : Slow 1200mV 85C Model Recovery 'divisor_clock:divisor_50x|out_clk_tmp_up'
-Slack : -3.724
-TNS   : -3.724
+Slack : -3.456
+TNS   : -3.456
 
-Type  : Slow 1200mV 85C Model Recovery 'temporizador:tmpr|fim_tmp'
-Slack : -3.176
-TNS   : -3.176
+Type  : Slow 1200mV 85C Model Recovery 'iniciado_tmp'
+Slack : -2.807
+TNS   : -2.807
 
 Type  : Slow 1200mV 85C Model Recovery 'iniciar_transmissao'
-Slack : -2.904
-TNS   : -2.904
+Slack : -2.066
+TNS   : -2.066
+
+Type  : Slow 1200mV 85C Model Recovery 'temporizador:tmpr|fim_tmp'
+Slack : -1.790
+TNS   : -1.790
 
 Type  : Slow 1200mV 85C Model Recovery 'rx'
-Slack : -1.523
-TNS   : -1.523
+Slack : -0.666
+TNS   : -0.666
 
 Type  : Slow 1200mV 85C Model Recovery 'uart_rx:u_rx|byte_recebido_tmp'
-Slack : -1.134
-TNS   : -1.134
+Slack : -0.126
+TNS   : -0.126
 
 Type  : Slow 1200mV 85C Model Recovery 'passagem_zero'
-Slack : -0.787
-TNS   : -0.787
-
-Type  : Slow 1200mV 85C Model Removal 'iniciado_tmp'
-Slack : 0.820
-TNS   : 0.000
+Slack : -0.081
+TNS   : -0.081
 
 Type  : Slow 1200mV 85C Model Removal 'passagem_zero'
-Slack : 1.143
+Slack : 0.462
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Removal 'uart_rx:u_rx|byte_recebido_tmp'
-Slack : 1.501
+Slack : 0.504
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'iniciado_tmp'
+Slack : 0.748
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Removal 'rx'
-Slack : 1.885
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Removal 'iniciar_transmissao'
-Slack : 3.354
+Slack : 1.057
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Removal 'temporizador:tmpr|fim_tmp'
-Slack : 3.644
+Slack : 2.262
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'iniciar_transmissao'
+Slack : 2.574
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Removal 'divisor_clock:divisor_50x|out_clk_tmp_up'
-Slack : 4.199
+Slack : 3.941
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk_50MHZ'
@@ -142,100 +142,100 @@ Type  : Slow 1200mV 85C Model Minimum Pulse Width 'temporizador:tmpr|fim_tmp'
 Slack : -1.403
 TNS   : -1.403
 
-Type  : Slow 1200mV 0C Model Setup 'clk_pid'
-Slack : -9.438
-TNS   : -77.259
-
 Type  : Slow 1200mV 0C Model Setup 'divisor_clock:divisor_50x|out_clk_tmp'
-Slack : -7.345
-TNS   : -1777.434
+Slack : -9.098
+TNS   : -2226.065
+
+Type  : Slow 1200mV 0C Model Setup 'clk_pid'
+Slack : -7.911
+TNS   : -57.716
 
 Type  : Slow 1200mV 0C Model Setup 'clk_50MHZ'
-Slack : -4.482
-TNS   : -50.797
-
-Type  : Slow 1200mV 0C Model Setup 'uart_rx:u_rx|byte_recebido_tmp'
-Slack : -1.489
-TNS   : -11.912
+Slack : -4.425
+TNS   : -50.786
 
 Type  : Slow 1200mV 0C Model Setup 'leitor_temperatura:termometro|sck_tmp'
-Slack : -1.394
-TNS   : -16.322
+Slack : -1.197
+TNS   : -12.475
+
+Type  : Slow 1200mV 0C Model Setup 'uart_rx:u_rx|byte_recebido_tmp'
+Slack : -0.717
+TNS   : -5.736
 
 Type  : Slow 1200mV 0C Model Hold 'divisor_clock:divisor_50x|out_clk_tmp'
-Slack : 0.290
+Slack : 0.291
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'leitor_temperatura:termometro|sck_tmp'
-Slack : 0.307
+Slack : 0.308
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'clk_50MHZ'
-Slack : 0.370
+Slack : 0.376
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'uart_rx:u_rx|byte_recebido_tmp'
-Slack : 1.183
+Slack : 0.462
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'clk_pid'
-Slack : 1.388
+Slack : 0.576
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Recovery 'divisor_clock:divisor_50x|out_clk_tmp_up'
-Slack : -3.334
-TNS   : -3.334
+Slack : -3.095
+TNS   : -3.095
 
 Type  : Slow 1200mV 0C Model Recovery 'iniciado_tmp'
-Slack : -3.331
-TNS   : -3.331
-
-Type  : Slow 1200mV 0C Model Recovery 'temporizador:tmpr|fim_tmp'
-Slack : -2.796
-TNS   : -2.796
+Slack : -2.402
+TNS   : -2.402
 
 Type  : Slow 1200mV 0C Model Recovery 'iniciar_transmissao'
-Slack : -2.541
-TNS   : -2.541
+Slack : -1.751
+TNS   : -1.751
+
+Type  : Slow 1200mV 0C Model Recovery 'temporizador:tmpr|fim_tmp'
+Slack : -1.463
+TNS   : -1.463
 
 Type  : Slow 1200mV 0C Model Recovery 'rx'
-Slack : -1.299
-TNS   : -1.299
+Slack : -0.518
+TNS   : -0.518
 
 Type  : Slow 1200mV 0C Model Recovery 'uart_rx:u_rx|byte_recebido_tmp'
-Slack : -0.943
-TNS   : -0.943
+Slack : -0.001
+TNS   : -0.001
 
 Type  : Slow 1200mV 0C Model Recovery 'passagem_zero'
-Slack : -0.522
-TNS   : -0.522
-
-Type  : Slow 1200mV 0C Model Removal 'iniciado_tmp'
-Slack : 0.771
+Slack : 0.142
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Removal 'passagem_zero'
-Slack : 0.924
+Slack : 0.284
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Removal 'uart_rx:u_rx|byte_recebido_tmp'
-Slack : 1.385
+Slack : 0.428
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'iniciado_tmp'
+Slack : 0.703
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Removal 'rx'
-Slack : 1.711
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Removal 'iniciar_transmissao'
-Slack : 3.034
+Slack : 0.956
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Removal 'temporizador:tmpr|fim_tmp'
-Slack : 3.306
+Slack : 2.003
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'iniciar_transmissao'
+Slack : 2.317
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Removal 'divisor_clock:divisor_50x|out_clk_tmp_up'
-Slack : 3.850
+Slack : 3.620
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk_50MHZ'
@@ -282,28 +282,28 @@ Type  : Slow 1200mV 0C Model Minimum Pulse Width 'temporizador:tmpr|fim_tmp'
 Slack : -1.403
 TNS   : -1.403
 
-Type  : Fast 1200mV 0C Model Setup 'clk_pid'
-Slack : -3.770
-TNS   : -26.400
-
 Type  : Fast 1200mV 0C Model Setup 'divisor_clock:divisor_50x|out_clk_tmp'
-Slack : -2.960
-TNS   : -597.361
+Slack : -3.687
+TNS   : -805.637
+
+Type  : Fast 1200mV 0C Model Setup 'clk_pid'
+Slack : -3.024
+TNS   : -18.605
 
 Type  : Fast 1200mV 0C Model Setup 'clk_50MHZ'
-Slack : -1.429
-TNS   : -8.059
-
-Type  : Fast 1200mV 0C Model Setup 'uart_rx:u_rx|byte_recebido_tmp'
-Slack : -0.211
-TNS   : -1.621
+Slack : -1.423
+TNS   : -7.905
 
 Type  : Fast 1200mV 0C Model Setup 'leitor_temperatura:termometro|sck_tmp'
-Slack : -0.108
-TNS   : -0.274
+Slack : 0.007
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'uart_rx:u_rx|byte_recebido_tmp'
+Slack : 0.207
+TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'divisor_clock:divisor_50x|out_clk_tmp'
-Slack : 0.140
+Slack : 0.142
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'leitor_temperatura:termometro|sck_tmp'
@@ -311,84 +311,84 @@ Slack : 0.149
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'clk_50MHZ'
-Slack : 0.160
+Slack : 0.163
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'uart_rx:u_rx|byte_recebido_tmp'
-Slack : 0.534
+Slack : 0.200
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'clk_pid'
-Slack : 0.634
+Slack : 0.252
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Recovery 'divisor_clock:divisor_50x|out_clk_tmp_up'
-Slack : -1.871
-TNS   : -1.871
+Slack : -1.745
+TNS   : -1.745
 
 Type  : Fast 1200mV 0C Model Recovery 'iniciado_tmp'
-Slack : -1.304
-TNS   : -1.304
-
-Type  : Fast 1200mV 0C Model Recovery 'temporizador:tmpr|fim_tmp'
-Slack : -1.014
-TNS   : -1.014
+Slack : -0.851
+TNS   : -0.851
 
 Type  : Fast 1200mV 0C Model Recovery 'iniciar_transmissao'
-Slack : -0.890
-TNS   : -0.890
+Slack : -0.531
+TNS   : -0.531
+
+Type  : Fast 1200mV 0C Model Recovery 'temporizador:tmpr|fim_tmp'
+Slack : -0.406
+TNS   : -0.406
 
 Type  : Fast 1200mV 0C Model Recovery 'rx'
-Slack : -0.296
-TNS   : -0.296
-
-Type  : Fast 1200mV 0C Model Recovery 'passagem_zero'
-Slack : -0.065
-TNS   : -0.065
-
-Type  : Fast 1200mV 0C Model Recovery 'uart_rx:u_rx|byte_recebido_tmp'
-Slack : 0.015
+Slack : 0.078
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Removal 'iniciado_tmp'
-Slack : 0.305
+Type  : Fast 1200mV 0C Model Recovery 'passagem_zero'
+Slack : 0.265
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'uart_rx:u_rx|byte_recebido_tmp'
+Slack : 0.454
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Removal 'uart_rx:u_rx|byte_recebido_tmp'
-Slack : 0.650
+Slack : 0.177
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'iniciado_tmp'
+Slack : 0.284
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Removal 'passagem_zero'
-Slack : 0.740
+Slack : 0.420
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Removal 'rx'
-Slack : 0.968
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Removal 'iniciar_transmissao'
-Slack : 1.629
+Slack : 0.608
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Removal 'temporizador:tmpr|fim_tmp'
-Slack : 1.760
+Slack : 1.133
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'iniciar_transmissao'
+Slack : 1.278
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Removal 'divisor_clock:divisor_50x|out_clk_tmp_up'
-Slack : 2.604
+Slack : 2.483
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk_50MHZ'
 Slack : -3.000
-TNS   : -32.084
+TNS   : -31.956
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'passagem_zero'
 Slack : -3.000
-TNS   : -4.139
+TNS   : -4.135
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'rx'
 Slack : -3.000
-TNS   : -4.012
+TNS   : -4.124
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'divisor_clock:divisor_50x|out_clk_tmp'
 Slack : -1.000

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for top_level
-Mon May 25 14:15:22 2020
+Mon May 25 16:24:51 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -51,13 +51,13 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon May 25 14:15:22 2020       ;
+; Analysis & Synthesis Status        ; Successful - Mon May 25 16:24:51 2020       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; top_level                                   ;
 ; Top-level Entity Name              ; top_level                                   ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 1,176                                       ;
-;     Total combinational functions  ; 952                                         ;
+; Total logic elements               ; 1,186                                       ;
+;     Total combinational functions  ; 962                                         ;
 ;     Dedicated logic registers      ; 515                                         ;
 ; Total registers                    ; 515                                         ;
 ; Total pins                         ; 11                                          ;
@@ -219,16 +219,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+---------------------------------------+
 ; Resource                                    ; Usage                                 ;
 +---------------------------------------------+---------------------------------------+
-; Estimated Total logic elements              ; 1,176                                 ;
+; Estimated Total logic elements              ; 1,186                                 ;
 ;                                             ;                                       ;
-; Total combinational functions               ; 952                                   ;
+; Total combinational functions               ; 962                                   ;
 ; Logic element usage by number of LUT inputs ;                                       ;
-;     -- 4 input functions                    ; 476                                   ;
-;     -- 3 input functions                    ; 241                                   ;
-;     -- <=2 input functions                  ; 235                                   ;
+;     -- 4 input functions                    ; 480                                   ;
+;     -- 3 input functions                    ; 248                                   ;
+;     -- <=2 input functions                  ; 234                                   ;
 ;                                             ;                                       ;
 ; Logic elements by mode                      ;                                       ;
-;     -- normal mode                          ; 700                                   ;
+;     -- normal mode                          ; 710                                   ;
 ;     -- arithmetic mode                      ; 252                                   ;
 ;                                             ;                                       ;
 ; Total registers                             ; 515                                   ;
@@ -241,8 +241,8 @@ refer to the applicable agreement for further details.
 ;                                             ;                                       ;
 ; Maximum fan-out node                        ; divisor_clock:divisor_50x|out_clk_tmp ;
 ; Maximum fan-out                             ; 437                                   ;
-; Total fan-out                               ; 4440                                  ;
-; Average fan-out                             ; 2.98                                  ;
+; Total fan-out                               ; 4477                                  ;
+; Average fan-out                             ; 2.99                                  ;
 +---------------------------------------------+---------------------------------------+
 
 
@@ -251,7 +251,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
 ; Compilation Hierarchy Node                        ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                                                   ; Entity Name          ; Library Name ;
 +---------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
-; |top_level                                        ; 952 (283)           ; 515 (274)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 11   ; 0            ; 0          ; |top_level                                                                                                                                            ; top_level            ; work         ;
+; |top_level                                        ; 962 (295)           ; 515 (274)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 11   ; 0            ; 0          ; |top_level                                                                                                                                            ; top_level            ; work         ;
 ;    |controlador_pid:pid|                          ; 109 (62)            ; 19 (19)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|controlador_pid:pid                                                                                                                        ; controlador_pid      ; work         ;
 ;       |lpm_mult:Mult0|                            ; 47 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|controlador_pid:pid|lpm_mult:Mult0                                                                                                         ; lpm_mult             ; work         ;
 ;          |multcore:mult_core|                     ; 47 (20)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|controlador_pid:pid|lpm_mult:Mult0|multcore:mult_core                                                                                      ; multcore             ; work         ;
@@ -263,10 +263,10 @@ refer to the applicable agreement for further details.
 ;                |mpar_add:sub_par_add|             ; 11 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|controlador_pid:pid|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add                                                 ; mpar_add             ; work         ;
 ;                   |lpm_add_sub:adder[0]|          ; 11 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|controlador_pid:pid|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]                            ; lpm_add_sub          ; work         ;
 ;                      |add_sub_3vg:auto_generated| ; 11 (11)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|controlador_pid:pid|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|add_sub_3vg:auto_generated ; add_sub_3vg          ; work         ;
-;    |controlador_potencia:controlador|             ; 125 (125)           ; 28 (28)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|controlador_potencia:controlador                                                                                                           ; controlador_potencia ; work         ;
+;    |controlador_potencia:controlador|             ; 122 (122)           ; 28 (28)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|controlador_potencia:controlador                                                                                                           ; controlador_potencia ; work         ;
 ;    |divisor_clock:divisor_50x|                    ; 39 (39)             ; 29 (29)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|divisor_clock:divisor_50x                                                                                                                  ; divisor_clock        ; work         ;
 ;    |leitor_temperatura:termometro|                ; 80 (80)             ; 60 (60)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|leitor_temperatura:termometro                                                                                                              ; leitor_temperatura   ; work         ;
-;    |temporizador:tmpr|                            ; 233 (233)           ; 59 (59)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|temporizador:tmpr                                                                                                                          ; temporizador         ; work         ;
+;    |temporizador:tmpr|                            ; 234 (234)           ; 59 (59)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|temporizador:tmpr                                                                                                                          ; temporizador         ; work         ;
 ;    |uart_rx:u_rx|                                 ; 49 (49)             ; 31 (31)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|uart_rx:u_rx                                                                                                                               ; uart_rx              ; work         ;
 ;    |uart_tx:u_tx|                                 ; 34 (34)             ; 15 (15)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|uart_tx:u_tx                                                                                                                               ; uart_tx              ; work         ;
 +---------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
@@ -310,22 +310,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; rampas[0][0][0]                                         ; Stuck at GND due to stuck port data_in            ;
 ; rampas[0][0][1]                                         ; Stuck at GND due to stuck port data_in            ;
 ; rampas[0][0][10]                                        ; Stuck at GND due to stuck port data_in            ;
-; temporizador:tmpr|tempo_passado[7]                      ; Merged with temporizador:tmpr|tempo_decorrido[7]  ;
 ; temporizador:tmpr|tempo_passado[6]                      ; Merged with temporizador:tmpr|tempo_decorrido[6]  ;
 ; temporizador:tmpr|tempo_passado[5]                      ; Merged with temporizador:tmpr|tempo_decorrido[5]  ;
-; temporizador:tmpr|tempo_passado[4]                      ; Merged with temporizador:tmpr|tempo_decorrido[4]  ;
 ; temporizador:tmpr|tempo_passado[12]                     ; Merged with temporizador:tmpr|tempo_decorrido[12] ;
-; temporizador:tmpr|tempo_passado[3]                      ; Merged with temporizador:tmpr|tempo_decorrido[3]  ;
+; temporizador:tmpr|tempo_passado[4]                      ; Merged with temporizador:tmpr|tempo_decorrido[4]  ;
 ; temporizador:tmpr|tempo_passado[11]                     ; Merged with temporizador:tmpr|tempo_decorrido[11] ;
+; temporizador:tmpr|tempo_passado[3]                      ; Merged with temporizador:tmpr|tempo_decorrido[3]  ;
+; temporizador:tmpr|tempo_passado[10]                     ; Merged with temporizador:tmpr|tempo_decorrido[10] ;
 ; temporizador:tmpr|rampa_atual[3]                        ; Merged with temporizador:tmpr|index[3]            ;
 ; temporizador:tmpr|tempo_passado[2]                      ; Merged with temporizador:tmpr|tempo_decorrido[2]  ;
-; temporizador:tmpr|tempo_passado[10]                     ; Merged with temporizador:tmpr|tempo_decorrido[10] ;
+; temporizador:tmpr|tempo_passado[9]                      ; Merged with temporizador:tmpr|tempo_decorrido[9]  ;
 ; temporizador:tmpr|rampa_atual[2]                        ; Merged with temporizador:tmpr|index[2]            ;
 ; temporizador:tmpr|tempo_passado[1]                      ; Merged with temporizador:tmpr|tempo_decorrido[1]  ;
-; temporizador:tmpr|tempo_passado[9]                      ; Merged with temporizador:tmpr|tempo_decorrido[9]  ;
+; temporizador:tmpr|tempo_passado[8]                      ; Merged with temporizador:tmpr|tempo_decorrido[8]  ;
 ; temporizador:tmpr|rampa_atual[1]                        ; Merged with temporizador:tmpr|index[1]            ;
 ; temporizador:tmpr|tempo_passado[0]                      ; Merged with temporizador:tmpr|tempo_decorrido[0]  ;
-; temporizador:tmpr|tempo_passado[8]                      ; Merged with temporizador:tmpr|tempo_decorrido[8]  ;
+; temporizador:tmpr|tempo_passado[7]                      ; Merged with temporizador:tmpr|tempo_decorrido[7]  ;
 ; temporizador:tmpr|rampa_atual[0]                        ; Merged with temporizador:tmpr|index[0]            ;
 ; rampas[0][1][1]                                         ; Merged with rampas[0][1][0]                       ;
 ; rampas[1][1][1]                                         ; Merged with rampas[1][1][0]                       ;
@@ -390,10 +390,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Total registers                              ; 515   ;
 ; Number of registers using Synchronous Clear  ; 2     ;
-; Number of registers using Synchronous Load   ; 5     ;
+; Number of registers using Synchronous Load   ; 7     ;
 ; Number of registers using Asynchronous Clear ; 7     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 303   ;
+; Number of registers using Clock Enable       ; 301   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -407,7 +407,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; leitor_temperatura:termometro|cs_tmp          ; 4       ;
 ; uart_tx:u_tx|start_bit                        ; 14      ;
 ; temporizador:tmpr|segundo_zero                ; 43      ;
-; uart_rx:u_rx|start_bit                        ; 2       ;
+; uart_rx:u_rx|start_bit                        ; 3       ;
 ; leitor_temperatura:termometro|bit_recebido[3] ; 12      ;
 ; leitor_temperatura:termometro|bit_recebido[1] ; 13      ;
 ; leitor_temperatura:termometro|bit_recebido[0] ; 13      ;
@@ -421,12 +421,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |top_level|uart_tx:u_tx|pulsos_tempo[4]                         ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |top_level|uart_tx:u_tx|pulsos_tempo[1]                         ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top_level|indexRampa[3]                                        ;
-; 3:1                ; 20 bits   ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; Yes        ; |top_level|atualizacao_pid[4]                                   ;
+; 3:1                ; 20 bits   ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; Yes        ; |top_level|atualizacao_pid[13]                                  ;
 ; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |top_level|controlador_pid:pid|percentual_potencia[6]           ;
 ; 3:1                ; 18 bits   ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; Yes        ; |top_level|atualizar_ihm[7]                                     ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |top_level|index_atualizacao[2]                                 ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |top_level|index_atualizacao[0]                                 ;
 ; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |top_level|temporizador:tmpr|tempo_alvo[1]                      ;
 ; 3:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; Yes        ; |top_level|temporizador:tmpr|tempo_alvo[12]                     ;
 ; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |top_level|uart_rx:u_rx|pulsos_tempo[5]                         ;
@@ -436,9 +436,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 4:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; Yes        ; |top_level|temporizador:tmpr|tempo_decorrido[4]                 ;
 ; 4:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |top_level|temporizador:tmpr|delay_1s[18]                       ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |top_level|pid_ativo~reg0                                       ;
-; 5:1                ; 11 bits   ; 33 LEs        ; 22 LEs               ; 11 LEs                 ; Yes        ; |top_level|count_atualizacao[10]                                ;
-; 12:1               ; 8 bits    ; 64 LEs        ; 48 LEs               ; 16 LEs                 ; Yes        ; |top_level|temporizador:tmpr|set_point[3]                       ;
-; 14:1               ; 2 bits    ; 18 LEs        ; 8 LEs                ; 10 LEs                 ; Yes        ; |top_level|byte_t[5]                                            ;
+; 5:1                ; 11 bits   ; 33 LEs        ; 22 LEs               ; 11 LEs                 ; Yes        ; |top_level|count_atualizacao[8]                                 ;
+; 12:1               ; 8 bits    ; 64 LEs        ; 48 LEs               ; 16 LEs                 ; Yes        ; |top_level|temporizador:tmpr|set_point[2]                       ;
 ; 14:1               ; 2 bits    ; 18 LEs        ; 10 LEs               ; 8 LEs                  ; Yes        ; |top_level|byte_t[2]                                            ;
 ; 10:1               ; 11 bits   ; 66 LEs        ; 66 LEs               ; 0 LEs                  ; No         ; |top_level|temporizador:tmpr|Mux1                               ;
 ; 9:1                ; 2 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |top_level|controlador_potencia:controlador|pulsos_potencia[1]  ;
@@ -542,24 +541,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; boundary_port         ; 11                          ;
 ; cycloneiii_ff         ; 515                         ;
 ;     CLR               ; 7                           ;
-;     ENA               ; 303                         ;
+;     ENA               ; 301                         ;
 ;     SCLR              ; 1                           ;
 ;     SCLR SLD          ; 1                           ;
-;     SLD               ; 4                           ;
+;     SLD               ; 6                           ;
 ;     plain             ; 199                         ;
-; cycloneiii_lcell_comb ; 955                         ;
+; cycloneiii_lcell_comb ; 965                         ;
 ;     arith             ; 252                         ;
 ;         2 data inputs ; 127                         ;
 ;         3 data inputs ; 125                         ;
-;     normal            ; 703                         ;
+;     normal            ; 713                         ;
 ;         0 data inputs ; 6                           ;
 ;         1 data inputs ; 11                          ;
-;         2 data inputs ; 94                          ;
-;         3 data inputs ; 116                         ;
-;         4 data inputs ; 476                         ;
+;         2 data inputs ; 93                          ;
+;         3 data inputs ; 123                         ;
+;         4 data inputs ; 480                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 11.00                       ;
-; Average LUT depth     ; 6.42                        ;
+; Max LUT depth         ; 11.50                       ;
+; Average LUT depth     ; 6.51                        ;
 +-----------------------+-----------------------------+
 
 
@@ -578,7 +577,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon May 25 14:14:59 2020
+    Info: Processing started: Mon May 25 16:24:28 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off top_level -c top_level
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -651,13 +650,13 @@ Info (12131): Elaborated megafunction instantiation "controlador_pid:pid|lpm_mul
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1258 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1269 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
     Info (21059): Implemented 7 output pins
-    Info (21061): Implemented 1247 logic cells
+    Info (21061): Implemented 1258 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 1018 megabytes
-    Info: Processing ended: Mon May 25 14:15:22 2020
+    Info: Peak virtual memory: 1017 megabytes
+    Info: Processing ended: Mon May 25 16:24:51 2020
     Info: Elapsed time: 00:00:23
     Info: Total CPU time (on all processors): 00:00:45
 
